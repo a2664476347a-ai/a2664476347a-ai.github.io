@@ -1,0 +1,11 @@
+.card-widget img:hover,
+.recent-post-item img:hover,
+#post img:hover {
+  opacity: 1;
+}
+
+/* Mermaid 图表宽度修复 */
+.mermaid svg {
+  max-width: 100% !important;
+  height: 100% !important;
+}
