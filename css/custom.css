@@ -1,5 +1,10 @@
-/* Mermaid 图表宽度修复 */
+/* Mermaid 图表修复 */
+.mermaid {
+  width: 100%;
+  overflow: visible !important;
+}
+
 .mermaid svg {
   max-width: 100% !important;
-  height: 100% !important;
+  height: auto !important;
 }
