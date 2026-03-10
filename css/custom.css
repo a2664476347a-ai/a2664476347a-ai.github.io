@@ -1,10 +1,24 @@
-/* Mermaid 图表修复 */
+/* Mermaid 修复 */
 .mermaid {
-  width: 100%;
+  text-align: center;
   overflow: visible !important;
 }
 
 .mermaid svg {
   max-width: 100% !important;
   height: auto !important;
+  display: block;
+  margin: auto;
+}
+/* 修复 Mermaid 图被当成代码块处理 */
+pre.mermaid {
+  background: none !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  white-space: normal !important;
+}
+
+/* 可选：让 Mermaid 图不被外层 div 限制 */
+.mermaid {
+  overflow-x: visible !important;
 }
