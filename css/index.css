@@ -5714,9 +5714,6 @@ pre[class*='language-'] pre > code.highlight {
 .mermaid-wrap > svg:active {
   cursor: grabbing;
 }
-pre > code.mermaid {
-  display: none;
-}
 .utterances,
 .fb-comments iframe {
   width: 100% !important;
