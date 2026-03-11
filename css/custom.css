@@ -1,24 +1,51 @@
 /* ================================
-   Mermaid 图修复（Butterfly）
+   Mermaid 图修复补丁（Butterfly 主题）
+   俊逸专用版本
    ================================ */
 
-.mermaid {
-  max-width: 100%;
-  overflow-x: auto;
-  text-align: center;
-}
-
+/* 让 Mermaid SVG 正常缩放，不被压扁 */
 .mermaid svg {
-  max-width: 100%;
-  height: auto;
+  max-width: 100% !important;
+  height: auto !important;
   display: block;
-  margin: 0 auto;
+  margin: -40px;   /* 左移 */
 }
 
-/* 防止被当作代码块 */
-#article-container pre.mermaid {
-  background: transparent !important;
+/* 让 Mermaid 不被当成代码块处理 */
+pre.mermaid {
+  background: none !important;
   padding: 0 !important;
-  border: none !important;
+  overflow: visible !important;
+  white-space: normal !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+}
+/* 给文章底部增加空间，防止Mermaid被挡 */
+#article-container {
+  padding-bottom: 120px;
+}
+
+/* 让 Mermaid 容器不限制宽度 */
+.mermaid {
+  width: 100% !important;
+  overflow-x: visible !important;
+}
+
+/* 让外层 div 不强制横向滚动条 */
+.mermaid svg {
   overflow: visible !important;
 }
+
+/* 防止 Butterfly 的 pre 样式干扰 Mermaid */
+#article-container pre.mermaid {
+  background: transparent !important;
+  color: inherit !important;
+  line-height: normal !important;
+}
+
+/* 如果 Mermaid 图仍然太窄，可以启用下面这一条 */
+/*
+pre.mermaid > svg {
+  min-width: 600px;
+}
+*/
