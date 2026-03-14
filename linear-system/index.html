@@ -1,17 +1,17 @@
-<!DOCTYPE html><html lang="cn" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>sequences | 私家菜的个人博客</title><meta name="author" content="Joey"><meta name="copyright" content="Joey"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="数列简介**数列（Sequence）**是按照一定顺序排列的一列数，通常记为 $a_1, a_2, a_3, \dots$，其中 $a_n$ 表示第 $n$ 项。在数学上，数列可以看作是一个从自然数集合 $\mathbb{N}$ 到实数集合 $\mathbb{R}$ 的函数，即 $a:\mathbb{N}\to\mathbb{R}$。 与集合不同，数列具有顺序并且允许元素重复。数列的研究主要关注当">
+<!DOCTYPE html><html lang="cn" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>linear-system | 私家菜的个人博客</title><meta name="author" content="Joey"><meta name="copyright" content="Joey"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Linear System（线性方程组）定义（Definition）线性方程组是形如 $\begin{cases}a_{11}x_1 + a_{12}x_2 + \dots + a_{1n}x_n &#x3D; b_1 \a_{21}x_1 + a_{22}x_2 + \dots + a_{2n}x_n &#x3D; b_2 \\vdots \a_{m1}x_1 + a_{m2}x_2 + \do">
 <meta property="og:type" content="website">
-<meta property="og:title" content="sequences">
-<meta property="og:url" content="https://a2664476347a-ai.github.io/sequences/index.html">
+<meta property="og:title" content="linear-system">
+<meta property="og:url" content="https://a2664476347a-ai.github.io/linear-system/index.html">
 <meta property="og:site_name" content="私家菜的个人博客">
-<meta property="og:description" content="数列简介**数列（Sequence）**是按照一定顺序排列的一列数，通常记为 $a_1, a_2, a_3, \dots$，其中 $a_n$ 表示第 $n$ 项。在数学上，数列可以看作是一个从自然数集合 $\mathbb{N}$ 到实数集合 $\mathbb{R}$ 的函数，即 $a:\mathbb{N}\to\mathbb{R}$。 与集合不同，数列具有顺序并且允许元素重复。数列的研究主要关注当">
+<meta property="og:description" content="Linear System（线性方程组）定义（Definition）线性方程组是形如 $\begin{cases}a_{11}x_1 + a_{12}x_2 + \dots + a_{1n}x_n &#x3D; b_1 \a_{21}x_1 + a_{22}x_2 + \dots + a_{2n}x_n &#x3D; b_2 \\vdots \a_{m1}x_1 + a_{m2}x_2 + \do">
 <meta property="og:locale">
 <meta property="og:image" content="https://a2664476347a-ai.github.io/img/avatar.jpg">
-<meta property="article:published_time" content="2026-03-13T09:20:06.000Z">
-<meta property="article:modified_time" content="2026-03-14T14:25:16.528Z">
+<meta property="article:published_time" content="2026-03-14T20:06:51.000Z">
+<meta property="article:modified_time" content="2026-03-14T20:16:15.905Z">
 <meta property="article:author" content="Joey">
-<meta property="article:tag" content="analyse">
+<meta property="article:tag" content="linear-algebra">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://a2664476347a-ai.github.io/img/avatar.jpg"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://a2664476347a-ai.github.io/sequences/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+<meta name="twitter:image" content="https://a2664476347a-ai.github.io/img/avatar.jpg"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://a2664476347a-ai.github.io/linear-system/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
     (() => {
       
     const saveToLocal = {
@@ -140,175 +140,103 @@
   },
   autoDarkmode: false
 }</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: 'sequences',
+  title: 'linear-system',
   isHighlightShrink: false,
   isToc: false,
   pageType: 'page'
-}</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">11</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><span> 学习</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/analyse/"><i class="fa-fw fas fa-square-root-alt"></i><span> 数学分析</span></a></li><li><a class="site-page child" href="/categories/linear-algebra/"><i class="fa-fw fas fa-th"></i><span> 线性代数</span></a></li><li><a class="site-page child" href="/categories/logic/"><i class="fa-fw fas fa-project-diagram"></i><span> 逻辑学</span></a></li><li><a class="site-page child" href="/categories/philosophy/"><i class="fa-fw fas fa-brain"></i><span> 普通哲学</span></a></li><li><a class="site-page child" href="/categories/other/"><i class="fa-fw fas fa-folder"></i><span> 其他</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/categories/reading/"><i class="fa-fw fas fa-book-open"></i><span> 阅读</span></a></div><div class="menus_item"><span class="site-page group"><span> 兴趣</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/anime/"><i class="fa-fw fas fa-tv"></i><span> 动漫</span></a></li><li><a class="site-page child" href="/categories/game/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/categories/travel/"><i class="fa-fw fas fa-plane"></i><span> 旅行</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%97%A5%E8%AE%B0/"><i class="fa-fw fas fa-pen"></i><span> 日记</span></a></li><li><a class="site-page child" href="/categories/%E6%9D%82%E8%B0%88/"><i class="fa-fw fas fa-comment"></i><span> 杂谈</span></a></li></ul></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(/img/math.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">私家菜的个人博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><span> 学习</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/analyse/"><i class="fa-fw fas fa-square-root-alt"></i><span> 数学分析</span></a></li><li><a class="site-page child" href="/categories/linear-algebra/"><i class="fa-fw fas fa-th"></i><span> 线性代数</span></a></li><li><a class="site-page child" href="/categories/logic/"><i class="fa-fw fas fa-project-diagram"></i><span> 逻辑学</span></a></li><li><a class="site-page child" href="/categories/philosophy/"><i class="fa-fw fas fa-brain"></i><span> 普通哲学</span></a></li><li><a class="site-page child" href="/categories/other/"><i class="fa-fw fas fa-folder"></i><span> 其他</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/categories/reading/"><i class="fa-fw fas fa-book-open"></i><span> 阅读</span></a></div><div class="menus_item"><span class="site-page group"><span> 兴趣</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/anime/"><i class="fa-fw fas fa-tv"></i><span> 动漫</span></a></li><li><a class="site-page child" href="/categories/game/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/categories/travel/"><i class="fa-fw fas fa-plane"></i><span> 旅行</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%97%A5%E8%AE%B0/"><i class="fa-fw fas fa-pen"></i><span> 日记</span></a></li><li><a class="site-page child" href="/categories/%E6%9D%82%E8%B0%88/"><i class="fa-fw fas fa-comment"></i><span> 杂谈</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title">sequences</h1></div></header><main class="layout" id="content-inner"><div id="page"><div class="container" id="article-container"><h1 id="数列"><a href="#数列" class="headerlink" title="数列"></a>数列</h1><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>**数列（Sequence）**是按照一定顺序排列的一列数，通常记为 $a_1, a_2, a_3, \dots$，其中 $a_n$ 表示第 $n$ 项。在数学上，数列可以看作是一个从自然数集合 $\mathbb{N}$ 到实数集合 $\mathbb{R}$ 的函数，即 $a:\mathbb{N}\to\mathbb{R}$。</p>
-<p>与集合不同，数列具有顺序并且允许元素重复。数列的研究主要关注当 $n\to\infty$ 时各项的变化趋势，即数列是否收敛或发散。</p>
-<hr>
-<h3 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h3><h5 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h5><p>数列可以已被看成是一个函数$f（a）:\mathbb{N}\rightarrow\mathbb{R}$。</p>
-<p>也就是说，一个数列把每一个自然数 $n\in\mathbb{N}$ 映射到一个实数 $a(n)$。通常将 $a(n)$ 记作 $a_n$，称为数列的第 $n$ 项。</p>
-<h5 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h5><ol>
-<li><p>$a_n &#x3D; n$，对应数列为<br>$1, 2, 3, 4, 5, \dots$</p>
-</li>
-<li><p>$a_n &#x3D; \frac{1}{n}$，对应数列为<br>$1, \frac12, \frac13, \frac14, \dots$</p>
-</li>
-<li><p>$a_n &#x3D; (-1)^n$，对应数列为<br>$-1, 1, -1, 1, \dots$</p>
-</li>
-</ol>
-<hr>
-<h3 id="基本性质"><a href="#基本性质" class="headerlink" title="基本性质"></a>基本性质</h3><p>数列就两个基本性质，一是<strong>单调性</strong>，二是<strong>有界</strong>，这两个性质可以帮助我们判断数列的<strong>极限（limit）。</strong></p>
-<h4 id="单调数列"><a href="#单调数列" class="headerlink" title="单调数列"></a>单调数列</h4><h5 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h5><p>设 $(a_n)$ 为一个数列。</p>
-<p>​                                             <strong>基础</strong></p>
-<p>如果对所有 $n\in\mathbb{N}$ 都有 $a_n &lt; a_{n+1}$，则称该数列为<strong>递增数列（increasing）</strong>。</p>
-<p>如果对所有 $n\in\mathbb{N}$ 都有 $a_n &gt; a_{n+1}$，则称该数列为<strong>递减数列（decreasing）</strong>。</p>
-<p>​                                             <strong>进阶</strong></p>
-<p>如果对所有 $n\in\mathbb{N}$ 都有 $a_n \le a_{n+1}$，则称为<strong>非递减数列（non-decreasing）</strong>。</p>
-<p>如果对所有 $n\in\mathbb{N}$ 都有 $a_n \ge a_{n+1}$，则称为<strong>非递增数列（non-increasing）</strong>。</p>
-<p>如果一个数列是非递减或非递增的，则称该数列为<strong>单调数列（monotone）</strong>。</p>
-<h5 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h5><ol>
-<li><p>$a_n &#x3D; n$ 数列为<br>$1,2,3,4,5,\dots$</p>
-<p>由于 $a_n &lt; a_{n+1}$，因此这是一个<strong>递增数列</strong>。</p>
-</li>
-<li><p>$a_n &#x3D; \frac{1}{n}$ 数列为<br>$1,\frac12,\frac13,\frac14,\dots$</p>
-<p>由于 $a_n &gt; a_{n+1}$，因此这是一个<strong>递减数列</strong>。</p>
-</li>
-<li><p>$a_n &#x3D; 1$ 数列为<br>$1,1,1,1,\dots$</p>
-<p>该数列既是<strong>非递增</strong>也是<strong>非递减</strong>，因此是一个<strong>单调数列</strong>。</p>
-<hr>
-</li>
-</ol>
-<h4 id="有界数列"><a href="#有界数列" class="headerlink" title="有界数列"></a>有界数列</h4><h5 id="定义-2"><a href="#定义-2" class="headerlink" title="定义"></a>定义</h5><p>设 $(a_n)$ 为一个数列。</p>
-<ol>
-<li><p>如果存在某个 $M \in \mathbb{R}$，使得对所有 $n \in \mathbb{N}$ 都有 </p>
-<p>$a_n \le M$，则称该数列<strong>上有界（bounded above）</strong>。</p>
-</li>
-<li><p>如果存在某个 $L \in \mathbb{R}$，使得对所有 $n \in \mathbb{N}$ 都有<br>$a_n \ge L$，则称该数列<strong>下有界（bounded below）</strong>。</p>
-</li>
-<li><p>如果一个数列既上有界又下有界，则称该数列为<strong>有界数列（bounded）</strong>；</p>
-<p>否则称为<strong>无界数列（unbounded）</strong>。</p>
-</li>
-</ol>
-<h5 id="例子-2"><a href="#例子-2" class="headerlink" title="例子"></a>例子</h5><ol>
-<li><p>$a_n&#x3D;\frac{1}{n}$ 是有界数列，因为   $0&lt;a_n\le1$。</p>
-</li>
-<li><p>$a_n&#x3D;n$ 是无界数列，因为数列会无限增大。</p>
-</li>
-</ol>
-<hr>
-<h3 id="极限（limit）"><a href="#极限（limit）" class="headerlink" title="极限（limit）"></a>极限（limit）</h3><p>这是数列最重要而的一部分，我们将在此部分中学到许多求极限的方法，包括</p>
-<ol>
-<li><p>$\epsilon -N$</p>
-</li>
-<li><p>squeeze</p>
-</li>
-<li><p>boundedness test</p>
-</li>
-<li><p>subsequence test</p>
-</li>
-<li><p>monotone convergence test</p>
-</li>
-<li><p>Bosano-Wirtrass theorem </p>
-</li>
-<li><p>Cauchy criterion </p>
-<hr>
-</li>
-</ol>
-<h4 id="epsilon-N-definition-of-limit"><a href="#epsilon-N-definition-of-limit" class="headerlink" title="$\epsilon-N$definition of limit"></a>$\epsilon-N$definition of limit</h4><p>这是最基本的求极限定理，没什么其他特殊条件。</p>
-<h5 id="定义-3"><a href="#定义-3" class="headerlink" title="定义"></a>定义</h5><p>设 $(a_n)$ 为一个数列。若存在 $a\in\mathbb{R}$，使得对任意 $\varepsilon&gt;0$，都存在 $N\in\mathbb{N}$，当 $n&gt;N$ 时有<br>$$<br>|a_n-a|&lt;\varepsilon<br>$$<br>则称数列 $(a_n)$ <strong>收敛（converge）到 $a$</strong>。记作<br>$$<br>a_n \to a \quad (n\to\infty)<br>$$<br>或<br>$$<br>\lim_{n\to\infty} a_n &#x3D; a<br>$$<br>此时称 $a$ 为数列 $(a_n)$ 的<strong>极限（limit）</strong>。</p>
-<p>如果不存在这样的 $a$，则称该数列<strong>发散（diverge）</strong>。</p>
-<p>这与我们在实数中的<strong>逼近性质</strong>相似都引入了$\epsilon$ 这个无穷小量，不同的是：在逼近性质中我们是用所选择的数与<strong>上界</strong>比较，但在这里我们是用数列内的数与数列的极限进行比较（如下图）。</p>
-<h6 id="图例"><a href="#图例" class="headerlink" title="图例"></a>图例</h6><p><img src="https://cdn.jsdelivr.net/gh/a2664476347a-ai/blog-images/img/image-20260313115109998.png" alt="image-20260313115109998"></p>
-<p>这张图就是有极限的数列，我们会发现，当n越来越大的时候，$a_n$会接近a，而$\epsilon$ 就是可接受范围。所以对于这样的数列，我们只需要让n&gt;N的时候就可以满足极限的定义。</p>
-<center>⋯</center>
-
-<h4 id="夹逼定理（squeeze-theorem）"><a href="#夹逼定理（squeeze-theorem）" class="headerlink" title="夹逼定理（squeeze theorem）"></a>夹逼定理（squeeze theorem）</h4><h6 id="（挺奇怪的名字，我觉得应该叫挤压定理🤨？）"><a href="#（挺奇怪的名字，我觉得应该叫挤压定理🤨？）" class="headerlink" title="（挺奇怪的名字，我觉得应该叫挤压定理🤨？）"></a>（挺奇怪的名字，我觉得应该叫挤压定理🤨？）</h6><p>这个定理非常好用是我个人最喜欢的，专门用于处理一些看着很麻烦的数列。</p>
-<h5 id="定义-4"><a href="#定义-4" class="headerlink" title="定义"></a>定义</h5><p>设 $(a_n)$、$(\ell_n)$ 和 $(u_n)$ 为三个数列，并满足：</p>
-<ol>
-<li>对所有 $n\in\mathbb{N}$ 都有$\ell_n \le a_n \le u_n$；</li>
-<li>数列 $(\ell_n)$ 和 $(u_n)$ 都收敛，并且 $\lim_{n\to\infty}\ell_n&#x3D;\lim_{n\to\infty}u_n&#x3D;a$。</li>
-</ol>
-<p>则数列 $(a_n)$ 也收敛，并且<br>$$<br>\lim_{n\to\infty} a_n &#x3D; a<br>$$</p>
-<h6 id="图例-1"><a href="#图例-1" class="headerlink" title="图例"></a>图例</h6><p><img src="https://cdn.jsdelivr.net/gh/a2664476347a-ai/blog-images/img/image-20260313121406434.png" alt="image-20260313121406434"></p>
-<p>$-\frac{1}{n} \le \frac{\sin n}{n} \le \frac{1}{n}$</p>
-<p>我们可以非常直观的看到中间的数列被夹住了因此我可以很快的得出，极限是0，因为上下两部分都趋近于零。</p>
-<center>⋯</center>
-
-<h4 id="有界性判别"><a href="#有界性判别" class="headerlink" title="有界性判别"></a>有界性判别</h4><p>如果一个数列收敛，则该数列一定是有界的。</p>
-<p>就这么一句话，但是如果反过来说就不一定成立了。</p>
-<p>比如</p>
-<p>设$$a_n &#x3D; (-1)^n$$ 则数列为$$ -1,,1,,-1,,1,,-1,,1,\dots$$ 该数列满足<br>$$<br>-1 \le a_n \le 1<br>$$<br>因此数列是<strong>有界的</strong>。</p>
-<p>但该数列在 $-1$ 和 $1$ 之间不断震荡，并不会趋近于某个固定的数，因此该数列<strong>不收敛</strong>。</p>
-<center>⋯</center>
-
-<h4 id="子列判别"><a href="#子列判别" class="headerlink" title="子列判别"></a>子列判别</h4><p>在这之前我们需要引入一下什么是<strong>子列</strong></p>
-<h5 id="定义-5"><a href="#定义-5" class="headerlink" title="定义"></a>定义</h5><p>设 $(a_n)$ 为一个实数数列。如果存在一个严格递增的自然数序列 $(n_k)$，即</p>
-<p>$$<br>n_1 &lt; n_2 &lt; n_3 &lt; \cdots<br>$$</p>
-<p>并且 $n_k \in \mathbb{N}$，则数列$$(a_{n_k})$$ 称为 $(a_n)$ 的一个<strong>子列（subsequence）</strong>。</p>
-<p>也就是说，子列是从原数列中按顺序选取若干项（可能是全部项）所得到的数列。</p>
-<p>然后是理论</p>
-<h5 id="推论"><a href="#推论" class="headerlink" title="推论"></a>推论</h5><p>设 $(a_n)$ 为一个数列，$(a_{n_k})$ 和 $(a_{m_k})$ 为它的两个子列。</p>
-<p>如果$$a_{n_k} \to b, \qquad a_{m_k} \to c \quad (k\to\infty)$$</p>
-<p>其中 $b,c\in\mathbb{R}$ 且 $b \ne c$，则数列 $(a_n)$ <strong>发散</strong>。</p>
-<p>原因是对于一个收敛的数列，它的子列也必定收敛于同一点。</p>
-<h5 id="例子-3"><a href="#例子-3" class="headerlink" title="例子"></a><strong>例子</strong></h5><p>设$$a_n &#x3D; (-1)^n$$ 则数列为</p>
-<p>$$<br>-1,1,-1,1,-1,1,\dots<br>$$</p>
-<p>取两个子列：</p>
+}</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">11</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><span> 学习</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/analyse/"><i class="fa-fw fas fa-square-root-alt"></i><span> 数学分析</span></a></li><li><a class="site-page child" href="/categories/linear-algebra/"><i class="fa-fw fas fa-th"></i><span> 线性代数</span></a></li><li><a class="site-page child" href="/categories/logic/"><i class="fa-fw fas fa-project-diagram"></i><span> 逻辑学</span></a></li><li><a class="site-page child" href="/categories/philosophy/"><i class="fa-fw fas fa-brain"></i><span> 普通哲学</span></a></li><li><a class="site-page child" href="/categories/other/"><i class="fa-fw fas fa-folder"></i><span> 其他</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/categories/reading/"><i class="fa-fw fas fa-book-open"></i><span> 阅读</span></a></div><div class="menus_item"><span class="site-page group"><span> 兴趣</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/anime/"><i class="fa-fw fas fa-tv"></i><span> 动漫</span></a></li><li><a class="site-page child" href="/categories/game/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/categories/travel/"><i class="fa-fw fas fa-plane"></i><span> 旅行</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%97%A5%E8%AE%B0/"><i class="fa-fw fas fa-pen"></i><span> 日记</span></a></li><li><a class="site-page child" href="/categories/%E6%9D%82%E8%B0%88/"><i class="fa-fw fas fa-comment"></i><span> 杂谈</span></a></li></ul></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(/img/linear.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">私家菜的个人博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><span> 学习</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/analyse/"><i class="fa-fw fas fa-square-root-alt"></i><span> 数学分析</span></a></li><li><a class="site-page child" href="/categories/linear-algebra/"><i class="fa-fw fas fa-th"></i><span> 线性代数</span></a></li><li><a class="site-page child" href="/categories/logic/"><i class="fa-fw fas fa-project-diagram"></i><span> 逻辑学</span></a></li><li><a class="site-page child" href="/categories/philosophy/"><i class="fa-fw fas fa-brain"></i><span> 普通哲学</span></a></li><li><a class="site-page child" href="/categories/other/"><i class="fa-fw fas fa-folder"></i><span> 其他</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/categories/reading/"><i class="fa-fw fas fa-book-open"></i><span> 阅读</span></a></div><div class="menus_item"><span class="site-page group"><span> 兴趣</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/anime/"><i class="fa-fw fas fa-tv"></i><span> 动漫</span></a></li><li><a class="site-page child" href="/categories/game/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/categories/travel/"><i class="fa-fw fas fa-plane"></i><span> 旅行</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%97%A5%E8%AE%B0/"><i class="fa-fw fas fa-pen"></i><span> 日记</span></a></li><li><a class="site-page child" href="/categories/%E6%9D%82%E8%B0%88/"><i class="fa-fw fas fa-comment"></i><span> 杂谈</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title">linear-system</h1></div></header><main class="layout" id="content-inner"><div id="page"><div class="container" id="article-container"><h1 id="Linear-System（线性方程组）"><a href="#Linear-System（线性方程组）" class="headerlink" title="Linear System（线性方程组）"></a>Linear System（线性方程组）</h1><h3 id="定义（Definition）"><a href="#定义（Definition）" class="headerlink" title="定义（Definition）"></a>定义（Definition）</h3><p>线性方程组是形如</p>
+<p>$<br>\begin{cases}<br>a_{11}x_1 + a_{12}x_2 + \dots + a_{1n}x_n &#x3D; b_1 \<br>a_{21}x_1 + a_{22}x_2 + \dots + a_{2n}x_n &#x3D; b_2 \<br>\vdots \<br>a_{m1}x_1 + a_{m2}x_2 + \dots + a_{mn}x_n &#x3D; b_m<br>\end{cases}<br>$</p>
+<p>的一组方程。</p>
+<p>其中</p>
 <ul>
-<li>偶数项：$a_{2k}&#x3D;1$，因此<br>$$a_{2k}\to1$$</li>
-<li>奇数项：$a_{2k-1}&#x3D;-1$，因此<br>$$a_{2k-1}\to-1$$</li>
+<li>$x_1,\dots,x_n$ 为未知数  </li>
+<li>$a_{ij}$ 为系数  </li>
+<li>$b_i$ 为常数项</li>
 </ul>
-<p>由于两个子列的极限不同，因此数列 $(a_n)$ <strong>不收敛</strong>。</p>
-<center>⋯</center>
-
-<h4 id="单调收敛定理"><a href="#单调收敛定理" class="headerlink" title="单调收敛定理"></a>单调收敛定理</h4><h5 id="定义-6"><a href="#定义-6" class="headerlink" title="定义"></a>定义</h5><p>设 $(a_n)$ 为一个数列。</p>
-<ol>
-<li>如果 $(a_n)$ <strong>非递减</strong>并且<strong>上有界</strong>，则该数列收敛（如图2）。</li>
-<li>如果 $(a_n)$ <strong>非递增</strong>并且<strong>下有界</strong>，则该数列收敛（如图1）。</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/a2664476347a-ai/blog-images/img/image-20260313124155504.png" alt="image-20260313124155504"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/a2664476347a-ai/blog-images/img/image-20260313124234855.png" alt="image-20260313124234855"></p>
-<center>⋯</center>
-
-<h4 id="Bolzano–Weierstrass定理"><a href="#Bolzano–Weierstrass定理" class="headerlink" title="Bolzano–Weierstrass定理"></a>Bolzano–Weierstrass定理</h4><p>我们已经知道：</p>
-<ul>
-<li>收敛数列一定是有界的；</li>
-<li>数列可以取出子列。</li>
-</ul>
-<p>那么一个自然的问题是：</p>
-<p>如果一个数列是有界的，但本身不收敛，会发生什么？</p>
-<p>例如数列 $a_n &#x3D; (-1)^n$ 是有界的，但并不收敛。不过我们可以发现，它存在收敛的子列：</p>
-<ul>
-<li>$a_{2k} &#x3D; 1$，因此 $a_{2k} \to 1$；</li>
-<li>$a_{2k-1} &#x3D; -1$，因此 $a_{2k-1} \to -1$。</li>
-</ul>
-<p>这启发我们提出一个重要问题：</p>
-<p><strong>任何有界数列是否都能找到一个收敛的子列？</strong></p>
-<p>Bolzano–Weierstrass 定理回答了这个问题。</p>
-<h5 id="定理"><a href="#定理" class="headerlink" title="定理"></a>定理</h5><p>每一个有界数列都存在一个收敛的子列。</p>
-<center>⋯</center>
-
-<h4 id="Cauchy-判别式"><a href="#Cauchy-判别式" class="headerlink" title="Cauchy 判别式"></a>Cauchy 判别式</h4><p>柯西判别式是另一套判断是否收敛的方式，它不需要知道收敛值是什么。</p>
-<h5 id="定义-7"><a href="#定义-7" class="headerlink" title="定义"></a>定义</h5><p>设 $(a_n)$ 为一个实数数列。如果对任意 $\varepsilon &gt; 0$，都存在 $N \in \mathbb{N}$，使得当 $m,n &gt; N$ 时，<br>$$<br>|a_n - a_m| &lt; \varepsilon<br>$$<br>则称数列 $(a_n)$ 为 <strong>Cauchy 数列</strong>。</p>
-<h5 id="直观理解"><a href="#直观理解" class="headerlink" title="直观理解"></a><strong>直观理解</strong></h5><p>当 $n$ 足够大时，数列中任意两项之间的距离都可以任意小，也就是说数列的项会彼此越来越接近。</p>
-<h5 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h5><p>当一个数列满足柯西判别式时，我们就可以称它是Cauchy, 也就是收敛的。</p>
 <hr>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>本章主要介绍了数列的基本概念及其收敛性质。</p>
+<h3 id="矩阵形式（Matrix-Form）"><a href="#矩阵形式（Matrix-Form）" class="headerlink" title="矩阵形式（Matrix Form）"></a>矩阵形式（Matrix Form）</h3><p>线性方程组可以写成矩阵形式</p>
+<p>$<br>Ax&#x3D;b<br>$</p>
+<p>其中</p>
+<p>$<br>A&#x3D;<br>\begin{bmatrix}<br>a_{11}&amp;a_{12}&amp;\dots&amp;a_{1n}\<br>a_{21}&amp;a_{22}&amp;\dots&amp;a_{2n}\<br>\vdots&amp;\vdots&amp;\ddots&amp;\vdots\<br>a_{m1}&amp;a_{m2}&amp;\dots&amp;a_{mn}<br>\end{bmatrix},<br>\quad<br>x&#x3D;<br>\begin{bmatrix}<br>x_1\<br>x_2\<br>\vdots\<br>x_n<br>\end{bmatrix},<br>\quad<br>b&#x3D;<br>\begin{bmatrix}<br>b_1\<br>b_2\<br>\vdots\<br>b_m<br>\end{bmatrix}<br>$</p>
+<hr>
+<h3 id="解的类型（Types-of-Solutions）"><a href="#解的类型（Types-of-Solutions）" class="headerlink" title="解的类型（Types of Solutions）"></a>解的类型（Types of Solutions）</h3><p>线性方程组可能有三种情况：</p>
 <ol>
-<li><strong>数列定义</strong><br>数列可以看作是一个函数 $a:\mathbb{N}\to\mathbb{R}$，通常记为 $(a_n)$。</li>
-<li><strong>单调性与有界性</strong><br>数列可以是递增或递减的。如果数列既有上界又有下界，则称为有界数列。</li>
-<li><strong>数列极限</strong><br>如果存在 $a\in\mathbb{R}$，使得 $a_n \to a$，则称数列收敛，否则称为发散。</li>
-<li><strong>重要定理</strong></li>
+<li><strong>唯一解（Unique Solution）</strong></li>
 </ol>
+<p>$<br>x &#x3D; A^{-1}b<br>$</p>
+<p>（当 $A$ 可逆）</p>
+<hr>
+<ol start="2">
+<li><strong>无穷多解（Infinitely Many Solutions）</strong></li>
+</ol>
+<p>当存在自由变量时。</p>
+<hr>
+<ol start="3">
+<li><strong>无解（No Solution）</strong></li>
+</ol>
+<p>当方程组矛盾时。</p>
+<hr>
+<h3 id="行变换（Row-Reduction）"><a href="#行变换（Row-Reduction）" class="headerlink" title="行变换（Row Reduction）"></a>行变换（Row Reduction）</h3><p>通过 <strong>初等行变换</strong> 可以化简矩阵：</p>
+<ol>
+<li>交换两行  </li>
+<li>某行乘以非零常数  </li>
+<li>一行加到另一行</li>
+</ol>
+<p>通过这些操作可以得到 <strong>Row Echelon Form</strong>。</p>
+<hr>
+<h4 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h4><p>解方程组</p>
+<p>$<br>\begin{cases}<br>x+y&#x3D;2\<br>x-y&#x3D;0<br>\end{cases}<br>$</p>
+<p>对应矩阵</p>
+<p>$<br>\begin{bmatrix}<br>1&amp;1&amp;|&amp;2\<br>1&amp;-1&amp;|&amp;0<br>\end{bmatrix}<br>$</p>
+<p>行变换：</p>
+<p>$<br>R_2 \leftarrow R_2-R_1<br>$</p>
+<p>得到</p>
+<p>$<br>\begin{bmatrix}<br>1&amp;1&amp;|&amp;2\<br>0&amp;-2&amp;|&amp;-2<br>\end{bmatrix}<br>$</p>
+<p>解得</p>
+<p>$<br>x&#x3D;1,\quad y&#x3D;1<br>$</p>
+<hr>
+<h3 id="Row-Echelon-Form（REF）"><a href="#Row-Echelon-Form（REF）" class="headerlink" title="Row Echelon Form（REF）"></a>Row Echelon Form（REF）</h3><p>一个矩阵称为 <strong>Row Echelon Form</strong>，如果满足：</p>
+<ol>
+<li>所有零行在矩阵底部</li>
+<li>每一行的第一个非零元素（pivot）在上一行 pivot 的右侧</li>
+<li>pivot 下方元素为 0</li>
+</ol>
+<p>例：</p>
+<p>$<br>\begin{bmatrix}<br>1&amp;2&amp;1&amp;|&amp;4\<br>0&amp;3&amp;2&amp;|&amp;5\<br>0&amp;0&amp;1&amp;|&amp;2<br>\end{bmatrix}<br>$</p>
+<hr>
+<h3 id="Reduced-Row-Echelon-Form（RREF）"><a href="#Reduced-Row-Echelon-Form（RREF）" class="headerlink" title="Reduced Row Echelon Form（RREF）"></a>Reduced Row Echelon Form（RREF）</h3><p>RREF 在 REF 基础上进一步要求：</p>
+<ol>
+<li>每个 pivot 等于 1</li>
+<li>pivot 所在列的其他元素为 0</li>
+</ol>
+<p>例：</p>
+<p>$<br>\begin{bmatrix}<br>1&amp;0&amp;0&amp;|&amp;1\<br>0&amp;1&amp;0&amp;|&amp;2\<br>0&amp;0&amp;1&amp;|&amp;3<br>\end{bmatrix}<br>$</p>
+<hr>
+<h3 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h3><p>求矩阵的 RREF：</p>
+<p>$<br>\begin{bmatrix}<br>1&amp;1&amp;|&amp;2\<br>1&amp;-1&amp;|&amp;0<br>\end{bmatrix}<br>$</p>
+<p>行变换：</p>
+<p>$<br>R_2 \leftarrow R_2 - R_1<br>$</p>
+<p>$<br>\begin{bmatrix}<br>1&amp;1&amp;|&amp;2\<br>0&amp;-2&amp;|&amp;-2<br>\end{bmatrix}<br>$</p>
+<p>$R_2 \leftarrow -\frac{1}{2}R_2<br>$</p>
+<p>$\begin{bmatrix}<br>1&amp;1&amp;|&amp;2\<br>0&amp;1&amp;|&amp;1<br>\end{bmatrix}$</p>
+<p>$R_1 \leftarrow R_1 - R_2<br>$</p>
+<p>$\begin{bmatrix}<br>1&amp;0&amp;|&amp;1\<br>0&amp;1&amp;|&amp;1<br>\end{bmatrix}$</p>
+<p>因此</p>
+<p>$<br>x&#x3D;1,\quad y&#x3D;1<br>$</p>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>线性方程组可以表示为</p>
+<p>$<br>Ax&#x3D;b<br>$</p>
+<p>求解方法包括：</p>
 <ul>
-<li>夹逼定理：若 $\ell_n \le a_n \le u_n$ 且 $\ell_n,u_n$ 收敛到同一极限，则 $a_n$ 也收敛。</li>
-<li>单调收敛定理：单调且有界的数列必收敛。</li>
-<li>Bolzano–Weierstrass 定理：每个有界数列都存在收敛的子列。</li>
+<li>逆矩阵法  </li>
+<li>行化简（Gaussian elimination）</li>
 </ul>
-<ol>
-<li><strong>Cauchy 数列</strong><br>如果对任意 $\varepsilon&gt;0$，存在 $N$ 使得 $|a_n-a_m|&lt;\varepsilon$ 对所有 $m,n&gt;N$ 成立，则称数列为 Cauchy 数列。在实数范围内，数列收敛当且仅当它是 Cauchy 数列。</li>
-</ol>
+<p>解的情况：</p>
+<ul>
+<li>唯一解  </li>
+<li>无穷多解  </li>
+<li>无解</li>
+</ul>
 </div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comments</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Joey</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/14/%E5%85%B3%E4%BA%8E%E5%85%B6%E4%BB%96/" title="关于其他">关于其他</a><time datetime="2026-03-14T15:07:19.000Z" title="Created 2026-03-14 15:07:19">2026-03-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/13/3-13-2026/" title="3.13.2026">3.13.2026</a><time datetime="2026-03-13T22:01:55.000Z" title="Created 2026-03-13 22:01:55">2026-03-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/12/3.12.2026/" title="3.12.2026">3.12.2026</a><time datetime="2026-03-12T00:00:00.000Z" title="Created 2026-03-12 00:00:00">2026-03-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/12/%E5%8E%9F%E7%A5%9E%E4%B8%8E%E4%BA%8C%E6%B8%B8%E7%A4%BE%E5%8C%BA/" title="原神与二游社区">原神与二游社区</a><time datetime="2026-03-12T00:00:00.000Z" title="Created 2026-03-12 00:00:00">2026-03-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/11/%E6%9D%82%E8%B0%88/" title="关于测试">关于测试</a><time datetime="2026-03-11T11:54:18.000Z" title="Created 2026-03-11 11:54:18">2026-03-11</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
             <i class="fas fa-folder-open"></i>
             <span>Categories</span>
