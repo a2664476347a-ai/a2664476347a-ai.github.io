@@ -1,17 +1,17 @@
-<!DOCTYPE html><html lang="cn" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>series | 私家菜的个人博客</title><meta name="author" content="Joey"><meta name="copyright" content="Joey"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="级数（Series）简介在研究数列时，我们关注数列 $ (a_n) $ 在 $ n \to \infty $ 时的行为。 在许多数学问题中，我们不仅关心数列的各项，还希望研究无限多个数的和，例如   $ a_1 + a_2 + a_3 + \cdots $ 这样的表达式称为 无穷级数（infinite series）。 本章将研究无穷级数，以及如何判断级数是否收敛。  级数的基本信息定义设 $ (">
+<!DOCTYPE html><html lang="cn" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>vector | 私家菜的个人博客</title><meta name="author" content="Joey"><meta name="copyright" content="Joey"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Vector（向量）向量的定义（Definition）在 $\mathbb{R}^n$ 中，一个向量可以表示为 $a &#x3D;\begin{bmatrix}a_1 \a_2 \\vdots \a_n\end{bmatrix}$ 几何上可以理解为 从原点指向某个点的箭头。 例如在 $\mathbb{R}^2$ 中 $a&#x3D;\begin{bmatrix}3 \1\end{bmatrix}$">
 <meta property="og:type" content="website">
-<meta property="og:title" content="series">
-<meta property="og:url" content="https://a2664476347a-ai.github.io/series/index.html">
+<meta property="og:title" content="vector">
+<meta property="og:url" content="https://a2664476347a-ai.github.io/vector/index.html">
 <meta property="og:site_name" content="私家菜的个人博客">
-<meta property="og:description" content="级数（Series）简介在研究数列时，我们关注数列 $ (a_n) $ 在 $ n \to \infty $ 时的行为。 在许多数学问题中，我们不仅关心数列的各项，还希望研究无限多个数的和，例如   $ a_1 + a_2 + a_3 + \cdots $ 这样的表达式称为 无穷级数（infinite series）。 本章将研究无穷级数，以及如何判断级数是否收敛。  级数的基本信息定义设 $ (">
+<meta property="og:description" content="Vector（向量）向量的定义（Definition）在 $\mathbb{R}^n$ 中，一个向量可以表示为 $a &#x3D;\begin{bmatrix}a_1 \a_2 \\vdots \a_n\end{bmatrix}$ 几何上可以理解为 从原点指向某个点的箭头。 例如在 $\mathbb{R}^2$ 中 $a&#x3D;\begin{bmatrix}3 \1\end{bmatrix}$">
 <meta property="og:locale">
 <meta property="og:image" content="https://a2664476347a-ai.github.io/img/avatar.jpg">
-<meta property="article:published_time" content="2026-03-13T18:24:47.000Z">
-<meta property="article:modified_time" content="2026-03-14T14:25:16.530Z">
+<meta property="article:published_time" content="2026-03-14T19:30:07.000Z">
+<meta property="article:modified_time" content="2026-03-14T19:50:37.223Z">
 <meta property="article:author" content="Joey">
-<meta property="article:tag" content="analyse">
+<meta property="article:tag" content="linear-algebra">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://a2664476347a-ai.github.io/img/avatar.jpg"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://a2664476347a-ai.github.io/series/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+<meta name="twitter:image" content="https://a2664476347a-ai.github.io/img/avatar.jpg"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://a2664476347a-ai.github.io/vector/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
     (() => {
       
     const saveToLocal = {
@@ -140,93 +140,81 @@
   },
   autoDarkmode: false
 }</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: 'series',
+  title: 'vector',
   isHighlightShrink: false,
   isToc: false,
   pageType: 'page'
-}</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">11</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><span> 学习</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/analyse/"><i class="fa-fw fas fa-square-root-alt"></i><span> 数学分析</span></a></li><li><a class="site-page child" href="/categories/linear-algebra/"><i class="fa-fw fas fa-th"></i><span> 线性代数</span></a></li><li><a class="site-page child" href="/categories/logic/"><i class="fa-fw fas fa-project-diagram"></i><span> 逻辑学</span></a></li><li><a class="site-page child" href="/categories/philosophy/"><i class="fa-fw fas fa-brain"></i><span> 普通哲学</span></a></li><li><a class="site-page child" href="/categories/other/"><i class="fa-fw fas fa-folder"></i><span> 其他</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/categories/reading/"><i class="fa-fw fas fa-book-open"></i><span> 阅读</span></a></div><div class="menus_item"><span class="site-page group"><span> 兴趣</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/anime/"><i class="fa-fw fas fa-tv"></i><span> 动漫</span></a></li><li><a class="site-page child" href="/categories/game/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/categories/travel/"><i class="fa-fw fas fa-plane"></i><span> 旅行</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%97%A5%E8%AE%B0/"><i class="fa-fw fas fa-pen"></i><span> 日记</span></a></li><li><a class="site-page child" href="/categories/%E6%9D%82%E8%B0%88/"><i class="fa-fw fas fa-comment"></i><span> 杂谈</span></a></li></ul></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(/img/math.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">私家菜的个人博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><span> 学习</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/analyse/"><i class="fa-fw fas fa-square-root-alt"></i><span> 数学分析</span></a></li><li><a class="site-page child" href="/categories/linear-algebra/"><i class="fa-fw fas fa-th"></i><span> 线性代数</span></a></li><li><a class="site-page child" href="/categories/logic/"><i class="fa-fw fas fa-project-diagram"></i><span> 逻辑学</span></a></li><li><a class="site-page child" href="/categories/philosophy/"><i class="fa-fw fas fa-brain"></i><span> 普通哲学</span></a></li><li><a class="site-page child" href="/categories/other/"><i class="fa-fw fas fa-folder"></i><span> 其他</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/categories/reading/"><i class="fa-fw fas fa-book-open"></i><span> 阅读</span></a></div><div class="menus_item"><span class="site-page group"><span> 兴趣</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/anime/"><i class="fa-fw fas fa-tv"></i><span> 动漫</span></a></li><li><a class="site-page child" href="/categories/game/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/categories/travel/"><i class="fa-fw fas fa-plane"></i><span> 旅行</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%97%A5%E8%AE%B0/"><i class="fa-fw fas fa-pen"></i><span> 日记</span></a></li><li><a class="site-page child" href="/categories/%E6%9D%82%E8%B0%88/"><i class="fa-fw fas fa-comment"></i><span> 杂谈</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title">series</h1></div></header><main class="layout" id="content-inner"><div id="page"><div class="container" id="article-container"><h1 id="级数（Series）"><a href="#级数（Series）" class="headerlink" title="级数（Series）"></a>级数（Series）</h1><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>在研究数列时，我们关注数列 $ (a_n) $ 在 $ n \to \infty $ 时的行为。</p>
-<p>在许多数学问题中，我们不仅关心数列的各项，还希望研究无限多个数的和，例如  </p>
-<p>$ a_1 + a_2 + a_3 + \cdots $</p>
-<p>这样的表达式称为 <strong>无穷级数（infinite series）</strong>。</p>
-<p>本章将研究<strong>无穷级数</strong>，以及如何判断级数是否收敛。</p>
+}</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">11</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><span> 学习</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/analyse/"><i class="fa-fw fas fa-square-root-alt"></i><span> 数学分析</span></a></li><li><a class="site-page child" href="/categories/linear-algebra/"><i class="fa-fw fas fa-th"></i><span> 线性代数</span></a></li><li><a class="site-page child" href="/categories/logic/"><i class="fa-fw fas fa-project-diagram"></i><span> 逻辑学</span></a></li><li><a class="site-page child" href="/categories/philosophy/"><i class="fa-fw fas fa-brain"></i><span> 普通哲学</span></a></li><li><a class="site-page child" href="/categories/other/"><i class="fa-fw fas fa-folder"></i><span> 其他</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/categories/reading/"><i class="fa-fw fas fa-book-open"></i><span> 阅读</span></a></div><div class="menus_item"><span class="site-page group"><span> 兴趣</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/anime/"><i class="fa-fw fas fa-tv"></i><span> 动漫</span></a></li><li><a class="site-page child" href="/categories/game/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/categories/travel/"><i class="fa-fw fas fa-plane"></i><span> 旅行</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%97%A5%E8%AE%B0/"><i class="fa-fw fas fa-pen"></i><span> 日记</span></a></li><li><a class="site-page child" href="/categories/%E6%9D%82%E8%B0%88/"><i class="fa-fw fas fa-comment"></i><span> 杂谈</span></a></li></ul></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(/img/linear.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">私家菜的个人博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><span> 学习</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/analyse/"><i class="fa-fw fas fa-square-root-alt"></i><span> 数学分析</span></a></li><li><a class="site-page child" href="/categories/linear-algebra/"><i class="fa-fw fas fa-th"></i><span> 线性代数</span></a></li><li><a class="site-page child" href="/categories/logic/"><i class="fa-fw fas fa-project-diagram"></i><span> 逻辑学</span></a></li><li><a class="site-page child" href="/categories/philosophy/"><i class="fa-fw fas fa-brain"></i><span> 普通哲学</span></a></li><li><a class="site-page child" href="/categories/other/"><i class="fa-fw fas fa-folder"></i><span> 其他</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/categories/reading/"><i class="fa-fw fas fa-book-open"></i><span> 阅读</span></a></div><div class="menus_item"><span class="site-page group"><span> 兴趣</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/anime/"><i class="fa-fw fas fa-tv"></i><span> 动漫</span></a></li><li><a class="site-page child" href="/categories/game/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/categories/travel/"><i class="fa-fw fas fa-plane"></i><span> 旅行</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%97%A5%E8%AE%B0/"><i class="fa-fw fas fa-pen"></i><span> 日记</span></a></li><li><a class="site-page child" href="/categories/%E6%9D%82%E8%B0%88/"><i class="fa-fw fas fa-comment"></i><span> 杂谈</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title">vector</h1></div></header><main class="layout" id="content-inner"><div id="page"><div class="container" id="article-container"><h1 id="Vector（向量）"><a href="#Vector（向量）" class="headerlink" title="Vector（向量）"></a>Vector（向量）</h1><h2 id="向量的定义（Definition）"><a href="#向量的定义（Definition）" class="headerlink" title="向量的定义（Definition）"></a>向量的定义（Definition）</h2><p>在 $\mathbb{R}^n$ 中，一个向量可以表示为</p>
+<p>$a &#x3D;<br>\begin{bmatrix}<br>a_1 \<br>a_2 \<br>\vdots \<br>a_n<br>\end{bmatrix}$</p>
+<p>几何上可以理解为 <strong>从原点指向某个点的箭头</strong>。</p>
+<p>例如在 $\mathbb{R}^2$ 中</p>
+<p>$a&#x3D;<br>\begin{bmatrix}<br>3 \<br>1<br>\end{bmatrix}$</p>
+<p>表示从 $(0,0)$ 指向 $(3,1)$ 的向量。</p>
 <hr>
-<h3 id="级数的基本信息"><a href="#级数的基本信息" class="headerlink" title="级数的基本信息"></a>级数的基本信息</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>设 $ (a_k)_{k\in\mathbb{N}} $ 为一个实数序列。</p>
-<p>我们称 $ (s_n)_{n\in\mathbb{N}} $ 为 <strong>部分和序列</strong>，其中</p>
-<p>$$<br>s_n :&#x3D; \sum_{k&#x3D;1}^{n} a_k<br>$$</p>
-<p>对所有 $ n\in\mathbb{N} $。</p>
-<h4 id="极限"><a href="#极限" class="headerlink" title="极限"></a>极限</h4><p>如果部分和序列 $ (s_n) $ 收敛（或发散），称级数 $ \sum_{k&#x3D;1}^{\infty} a_k $ <strong>收敛</strong>（或 <strong>发散</strong>）。</p>
-<p>如果级数收敛，则定义</p>
-<p>$$<br>\sum_{k&#x3D;1}^{\infty} a_k &#x3D; \lim_{n\to\infty} s_n<br>$$</p>
-<p>并称该值为 <strong>级数的极限</strong>。</p>
+<h2 id="向量运算（Vector-Operations）"><a href="#向量运算（Vector-Operations）" class="headerlink" title="向量运算（Vector Operations）"></a>向量运算（Vector Operations）</h2><h3 id="向量加法"><a href="#向量加法" class="headerlink" title="向量加法"></a>向量加法</h3><p>设</p>
+<p>$a&#x3D;<br>\begin{bmatrix}<br>1 \<br>2<br>\end{bmatrix},\quad<br>b&#x3D;<br>\begin{bmatrix}<br>3 \<br>4<br>\end{bmatrix}$</p>
+<p>则</p>
+<p>$a+b&#x3D;<br>\begin{bmatrix}<br>4 \<br>6<br>\end{bmatrix}$</p>
+<p>几何上表示 <strong>平行四边形法则</strong>。</p>
 <hr>
-<h3 id="常见级数"><a href="#常见级数" class="headerlink" title="常见级数"></a>常见级数</h3><p>很多数学对象可以表示为级数。</p>
-<h4 id="几何级数"><a href="#几何级数" class="headerlink" title="几何级数"></a>几何级数</h4><p>给定 $ a,r\in\mathbb{R} $，级数 $ \sum_{k&#x3D;1}^{\infty} ar^k $ 称为 <strong>几何级数</strong>。</p>
-<h4 id="小数展开"><a href="#小数展开" class="headerlink" title="小数展开"></a>小数展开</h4><p>设 $ x\in[0,1] $，并设序列 $ (d_k)_{k\in\mathbb{N}} $ 满足<br>$ d_k\in{0,1,\dots,9} $，且 $ x &#x3D; 0.d_1d_2d_3\dots $</p>
-<p>记作</p>
-<p>$$<br>x &#x3D; \sum_{k&#x3D;1}^{\infty} \frac{d_k}{10^k}.<br>$$</p>
-<h4 id="裂项和级数"><a href="#裂项和级数" class="headerlink" title="裂项和级数"></a><strong>裂项和</strong>级数</h4><p>称级数 $ \sum_{k&#x3D;1}^{\infty} a_k $ 为 <strong>裂项和级数</strong>，如果存在序列 $ (b_k) $ 使得  </p>
-<p>$ a_k &#x3D; b_k - b_{k+1} $ 对所有 $ k\in\mathbb{N} $ 成立。</p>
+<h3 id="数乘（Scalar-Multiplication）"><a href="#数乘（Scalar-Multiplication）" class="headerlink" title="数乘（Scalar Multiplication）"></a>数乘（Scalar Multiplication）</h3><p>若</p>
+<p>$a&#x3D;<br>\begin{bmatrix}<br>2 \<br>1<br>\end{bmatrix}$</p>
+<p>则</p>
+<p>$3a&#x3D;<br>\begin{bmatrix}<br>6 \<br>3<br>\end{bmatrix}$</p>
+<p>数乘会改变向量长度，但方向保持不变（若标量为负则方向相反）。</p>
 <hr>
-<h2 id="级数的收敛性"><a href="#级数的收敛性" class="headerlink" title="级数的收敛性"></a>级数的收敛性</h2><h3 id="通用定理"><a href="#通用定理" class="headerlink" title="通用定理"></a>通用定理</h3><h4 id="k项判别法"><a href="#k项判别法" class="headerlink" title="k项判别法"></a>k项判别法</h4><p>设 $ (a_k) $ 为实数序列。</p>
-<p>如果级数 $ \sum_{k&#x3D;1}^{\infty} a_k $ 收敛，则 $ a_k \to 0 $ 当 $ k\to\infty $。</p>
-<h4 id="尾项"><a href="#尾项" class="headerlink" title="尾项"></a>尾项</h4><p>对于级数 $ \sum_{k&#x3D;1}^{\infty} a_k $，可以考虑其 <strong>尾项</strong></p>
-<p>$$<br>\sum_{k&#x3D;m+1}^{\infty} a_k<br>$$</p>
-<p>其中 $ m\in\mathbb{N} $。</p>
-<p>尾项的部分和为</p>
-<p>$$<br>t_n :&#x3D; \sum_{k&#x3D;m+1}^{m+n} a_k &#x3D; s_{m+n} - s_m.<br>$$</p>
-<p>如果原级数收敛到 $ s $，则 $ t_n \to s - s_m $。</p>
-<p>因此</p>
-<p>$$<br>\sum_{k&#x3D;m+1}^{\infty} a_k &#x3D; s - s_m.<br>$$</p>
-<p>并且</p>
-<p>$$<br>\sum_{k&#x3D;1}^{\infty} a_k &#x3D; \sum_{k&#x3D;1}^{m} a_k + \sum_{k&#x3D;m+1}^{\infty} a_k.<br>$$</p>
+<h3 id="内积（Inner-Product）"><a href="#内积（Inner-Product）" class="headerlink" title="内积（Inner Product）"></a>内积（Inner Product）</h3><p>$a^T b &#x3D; a_1 b_1 + a_2 b_2 + \cdots + a_n b_n$</p>
+<p>例：</p>
+<p>$a&#x3D;<br>\begin{bmatrix}<br>1 \<br>2<br>\end{bmatrix},\quad<br>b&#x3D;<br>\begin{bmatrix}<br>3 \<br>4<br>\end{bmatrix}$</p>
+<p>$a^T b &#x3D; 1\cdot3 + 2\cdot4 &#x3D; 11$</p>
 <hr>
-<h3 id="非负项级数定理"><a href="#非负项级数定理" class="headerlink" title="非负项级数定理"></a>非负项级数定理</h3><h4 id="有界性判别-（boundedness-test）"><a href="#有界性判别-（boundedness-test）" class="headerlink" title="有界性判别 （boundedness test）"></a>有界性判别 （boundedness test）</h4><p>设 $ (a_k) $ 为 <strong>非负序列</strong>。</p>
-<p>则级数 $ \sum_{k&#x3D;1}^{\infty} a_k $ 收敛 <strong>当且仅当</strong> 部分和序列 $ (s_n) $ 有界。</p>
-<h4 id="比较判别法-comparison-test"><a href="#比较判别法-comparison-test" class="headerlink" title="比较判别法 (comparison test)"></a>比较判别法 (comparison test)</h4><p>设 $ (a_k) $ 与 $ (b_k) $ 满足 $ 0\le a_k\le b_k $。</p>
-<ul>
-<li>若 $ \sum b_k $ 收敛，则 $ \sum a_k $ 收敛  </li>
-<li>若 $ \sum a_k $ 发散，则 $ \sum b_k $ 发散</li>
+<h2 id="向量性质（Vector-Properties）"><a href="#向量性质（Vector-Properties）" class="headerlink" title="向量性质（Vector Properties）"></a>向量性质（Vector Properties）</h2><h3 id="单位向量（Norm）"><a href="#单位向量（Norm）" class="headerlink" title="单位向量（Norm）"></a>单位向量（Norm）</h3><p>$|a| &#x3D; \sqrt{a_1^2 + a_2^2 + \cdots + a_n^2}$</p>
+<p>例：</p>
+<p>$a&#x3D;<br>\begin{bmatrix}<br>3 \<br>4<br>\end{bmatrix}$</p>
+<p>则</p>
+<p>$|a| &#x3D; \sqrt{3^2+4^2}&#x3D;5$</p>
+<hr>
+<h3 id="向量夹角"><a href="#向量夹角" class="headerlink" title="向量夹角"></a>向量夹角</h3><p>$\cos\theta &#x3D;<br>\frac{a^T b}{|a||b|}$</p>
+<p>例：</p>
+<p>$a&#x3D;<br>\begin{bmatrix}<br>1 \<br>0<br>\end{bmatrix},\quad<br>b&#x3D;<br>\begin{bmatrix}<br>0 \<br>1<br>\end{bmatrix}$</p>
+<p>$a^Tb&#x3D;0$，因此 $\theta&#x3D;90^\circ$。</p>
+<hr>
+<h3 id="垂直（Orthogonality）"><a href="#垂直（Orthogonality）" class="headerlink" title="垂直（Orthogonality）"></a>垂直（Orthogonality）</h3><p>若</p>
+<p>$a^T b &#x3D; 0$</p>
+<p>则向量 $a,b$ <strong>正交（垂直）</strong>。</p>
+<p>例：</p>
+<p>$<br>a&#x3D;<br>\begin{bmatrix}<br>1\<br>2<br>\end{bmatrix},\quad<br>b&#x3D;<br>\begin{bmatrix}<br>2\<br>-1<br>\end{bmatrix}<br>$</p>
+<p>$a^Tb &#x3D; 1\cdot2 + 2(-1) &#x3D; 0$</p>
+<p>因此 $a,b$ 正交。</p>
+<hr>
+<h3 id="向量投影（Projection）"><a href="#向量投影（Projection）" class="headerlink" title="向量投影（Projection）"></a>向量投影（Projection）</h3><p>向量 $a$ 在 $b$ 上的投影：</p>
+<p>$\text{proj}_b(a)&#x3D;<br>\frac{a^Tb}{b^Tb}b$</p>
+<p>例：</p>
+<p>$<br>a&#x3D;<br>\begin{bmatrix}<br>2\<br>3<br>\end{bmatrix},\quad<br>b&#x3D;<br>\begin{bmatrix}<br>1\<br>0<br>\end{bmatrix}<br>$</p>
+<p>则</p>
+<h1 id="text-proj-b-a-frac-2-1-begin-bmatrix-1-0-end-bmatrix"><a href="#text-proj-b-a-frac-2-1-begin-bmatrix-1-0-end-bmatrix" class="headerlink" title="$\text{proj}_b(a)&#x3D;\frac{2}{1}\begin{bmatrix}1\0\end{bmatrix}"></a>$\text{proj}_b(a)&#x3D;<br>\frac{2}{1}<br>\begin{bmatrix}<br>1\<br>0<br>\end{bmatrix}</h1><p>\begin{bmatrix}<br>2\<br>0<br>\end{bmatrix}$</p>
+<hr>
+<h3 id="线性无关（Linear-Independence）"><a href="#线性无关（Linear-Independence）" class="headerlink" title="线性无关（Linear Independence）"></a>线性无关（Linear Independence）</h3><p>若</p>
+<p>$c_1 a_1 + c_2 a_2 &#x3D;0$</p>
+<p>仅有</p>
+<p>$c_1&#x3D;c_2&#x3D;0$</p>
+<p>则 $a_1,a_2$ 线性无关。</p>
+<p>例：</p>
+<p>$<br>a_1&#x3D;<br>\begin{bmatrix}<br>1\<br>0<br>\end{bmatrix},\quad<br>a_2&#x3D;<br>\begin{bmatrix}<br>0\<br>1<br>\end{bmatrix}<br>$</p>
+<p>这两个向量线性无关，因为任何线性组合为零时系数必须为零。</p>
+<hr>
+<h3 id="平行四边形面积"><a href="#平行四边形面积" class="headerlink" title="平行四边形面积"></a>平行四边形面积</h3><p>由 $a,b$ 张成的平行四边形面积：</p>
+<p>$\text{Area}&#x3D;|a||b|\sin\theta$</p>
+<p>例：</p>
+<p>$<br>a&#x3D;<br>\begin{bmatrix}<br>1\<br>0<br>\end{bmatrix},\quad<br>b&#x3D;<br>\begin{bmatrix}<br>0\<br>2<br>\end{bmatrix}<br>$</p>
+<p>面积为</p>
+<p>$1\times2\times1&#x3D;2$</p>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>向量可以看作空间中的 <strong>箭头</strong>  </li>
+<li>内积连接了 <strong>代数计算与几何关系</strong></li>
+<li>正交、投影等概念在后续的 <strong>最小二乘、正交分解、特征值问题</strong> 中都会出现</li>
 </ul>
-<h4 id="比值判别法（ratio-test）"><a href="#比值判别法（ratio-test）" class="headerlink" title="比值判别法（ratio test）"></a>比值判别法（ratio test）</h4><p>设 $ (a_k) $ 为正项序列，并且</p>
-<p>$$<br>r :&#x3D; \lim_{k\to\infty}\frac{a_{k+1}}{a_k}<br>$$</p>
-<p>存在。</p>
-<ul>
-<li>若 $ 0\le r &lt; 1 $，则 $ \sum a_k $ 收敛  </li>
-<li>若 $ r&gt;1 $，则 $ \sum a_k $ 发散</li>
-</ul>
-<h4 id="调和级数（harmonic-series）"><a href="#调和级数（harmonic-series）" class="headerlink" title="调和级数（harmonic series）"></a>调和级数（harmonic series）</h4><p>调和级数 $ \sum_{k&#x3D;1}^{\infty} \frac{1}{k} $ <strong>发散</strong>。</p>
-<h4 id="稠密判定法（condensation-test）"><a href="#稠密判定法（condensation-test）" class="headerlink" title="稠密判定法（condensation test）"></a>稠密判定法（condensation test）</h4><p>设 $ (a_k) $ 为 <strong>单调不增的非负序列</strong>。</p>
-<p>则以下等价：</p>
-<ul>
-<li>$ \sum_{k&#x3D;1}^{\infty} a_k $ 收敛  </li>
-<li>$ \sum_{k&#x3D;0}^{\infty} 2^k a_{2^k} $ 收敛</li>
-</ul>
-<h4 id="p级数（p-series-test"><a href="#p级数（p-series-test" class="headerlink" title="p级数（p-series test)"></a>p级数（p-series test)</h4><p>级数 $ \sum_{k&#x3D;1}^{\infty} \frac{1}{k^p} $ 收敛 <strong>当且仅当</strong> $ p&gt;1 $。</p>
-<h3 id="Cauchy-判别法"><a href="#Cauchy-判别法" class="headerlink" title="Cauchy 判别法"></a>Cauchy 判别法</h3><p>级数 $ \sum_{k&#x3D;1}^{\infty} a_k $ 收敛 <strong>当且仅当</strong></p>
-<p>对于任意 $ \varepsilon&gt;0 $，存在 $ N $ 使得</p>
-<p>$$<br>\left|\sum_{k&#x3D;m+1}^{n} a_k\right| &lt; \varepsilon<br>$$</p>
-<p>对所有 $ n&gt;m&gt;N $ 成立。</p>
-<hr>
-<h3 id="交错级数"><a href="#交错级数" class="headerlink" title="交错级数"></a>交错级数</h3><h3 id="交错级数判别-alternating-test"><a href="#交错级数判别-alternating-test" class="headerlink" title="交错级数判别(alternating test)"></a>交错级数判别(alternating test)</h3><p>设 $ (a_k) $ 为 <strong>单调不增的非负序列</strong> 且 $ a_k\to0 $。</p>
-<p>则级数 $ \sum_{k&#x3D;1}^{\infty} (-1)^k a_k $ 收敛。</p>
-<h4 id="绝对收敛-absolutely-test"><a href="#绝对收敛-absolutely-test" class="headerlink" title="绝对收敛(absolutely test)"></a>绝对收敛(absolutely test)</h4><p>如果 $ \sum_{k&#x3D;1}^{\infty} |a_k| $ 收敛，则称 $ \sum_{k&#x3D;1}^{\infty} a_k $ <strong>绝对收敛</strong>。</p>
-<p>如果级数收敛但 $ \sum |a_k| $ 发散，则称其 <strong>条件收敛</strong>。</p>
-<p>推出</p>
-<p>如果 $ \sum_{k&#x3D;1}^{\infty} |a_k| $ 收敛，则 $ \sum_{k&#x3D;1}^{\infty} a_k $ 收敛。</p>
-<hr>
-<h2 id="Riemann-重排定理"><a href="#Riemann-重排定理" class="headerlink" title="Riemann 重排定理"></a>Riemann 重排定理</h2><p>设级数 $ \sum_{k&#x3D;1}^{\infty} a_k $ <strong>条件收敛</strong>。</p>
-<p>则对于任意 $ s\in\mathbb{R} $，存在双射 $ \sigma:\mathbb{N}\to\mathbb{N} $，使得</p>
-<p>$$<br>\sum_{i&#x3D;1}^{\infty} a_{\sigma(i)}<br>$$</p>
-<p>收敛到 $ s $。</p>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>判断级数 $\sum a_n$ 收敛性的思路：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/a2664476347a-ai/blog-images/img/image-20260313201706620.png" alt="image-20260313201706620"></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本章引入了 <strong>无穷级数</strong></p>
-<p>$$<br>\sum_{k&#x3D;1}^{\infty} a_k<br>$$</p>
-<p>并通过 <strong>部分和序列</strong> $s_n&#x3D;\sum_{k&#x3D;1}^{n} a_k$ 定义了级数的收敛。</p>
-<p>我们首先介绍了一些基本例子，例如 <strong>几何级数、小数展开和望远镜级数</strong>。<br>随后研究了级数收敛的基本性质，包括 <strong>k-th term test、尾项（tail）以及非负项级数的有界性判别</strong>。</p>
-<p>接着建立了一些重要的 <strong>收敛判别方法</strong>，如 <strong>比较判别法、比值判别法和凝聚判别法</strong>，并讨论了重要例子，例如 <strong>调和级数和 p 级数</strong>。</p>
-<p>在一般情形下，我们给出了 <strong>Cauchy 判别法</strong> 来刻画级数收敛。<br>随后研究了 <strong>交错级数、绝对收敛与条件收敛</strong>，并以 <strong>Riemann 重排定理</strong> 说明条件收敛级数对项的顺序具有敏感性。</p>
-<p>在接下来的章节中，我们将把这些工具应用到 <strong>函数级数和幂级数（power series）</strong> 的研究中。</p>
 </div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comments</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Joey</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/14/%E5%85%B3%E4%BA%8E%E5%85%B6%E4%BB%96/" title="关于其他">关于其他</a><time datetime="2026-03-14T15:07:19.000Z" title="Created 2026-03-14 15:07:19">2026-03-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/13/3-13-2026/" title="3.13.2026">3.13.2026</a><time datetime="2026-03-13T22:01:55.000Z" title="Created 2026-03-13 22:01:55">2026-03-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/12/3.12.2026/" title="3.12.2026">3.12.2026</a><time datetime="2026-03-12T00:00:00.000Z" title="Created 2026-03-12 00:00:00">2026-03-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/12/%E5%8E%9F%E7%A5%9E%E4%B8%8E%E4%BA%8C%E6%B8%B8%E7%A4%BE%E5%8C%BA/" title="原神与二游社区">原神与二游社区</a><time datetime="2026-03-12T00:00:00.000Z" title="Created 2026-03-12 00:00:00">2026-03-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/11/%E6%9D%82%E8%B0%88/" title="关于测试">关于测试</a><time datetime="2026-03-11T11:54:18.000Z" title="Created 2026-03-11 11:54:18">2026-03-11</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
             <i class="fas fa-folder-open"></i>
             <span>Categories</span>
