@@ -1,17 +1,16 @@
-<!DOCTYPE html><html lang="cn" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>linear-system | 私家菜的个人博客</title><meta name="author" content="Joey"><meta name="copyright" content="Joey"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Linear System（线性方程组）定义（Definition）线性方程组是形如 $\begin{cases}a_{11}x_1 + a_{12}x_2 + \dots + a_{1n}x_n &#x3D; b_1 \a_{21}x_1 + a_{22}x_2 + \dots + a_{2n}x_n &#x3D; b_2 \\vdots \a_{m1}x_1 + a_{m2}x_2 + \do">
+<!DOCTYPE html><html lang="cn" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>least-squares | 私家菜的个人博客</title><meta name="author" content="Joey"><meta name="copyright" content="Joey"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="最小二乘与矩阵几何（Least Squares and Matrix Geometry）总览mindmap   root((Least Squares and Matrix Geometry))      Span       linear combinations      Column Space       column space of A       Ax in column space">
 <meta property="og:type" content="website">
-<meta property="og:title" content="linear-system">
-<meta property="og:url" content="https://a2664476347a-ai.github.io/linear-system/index.html">
+<meta property="og:title" content="least-squares">
+<meta property="og:url" content="https://a2664476347a-ai.github.io/least-squares/index.html">
 <meta property="og:site_name" content="私家菜的个人博客">
-<meta property="og:description" content="Linear System（线性方程组）定义（Definition）线性方程组是形如 $\begin{cases}a_{11}x_1 + a_{12}x_2 + \dots + a_{1n}x_n &#x3D; b_1 \a_{21}x_1 + a_{22}x_2 + \dots + a_{2n}x_n &#x3D; b_2 \\vdots \a_{m1}x_1 + a_{m2}x_2 + \do">
+<meta property="og:description" content="最小二乘与矩阵几何（Least Squares and Matrix Geometry）总览mindmap   root((Least Squares and Matrix Geometry))      Span       linear combinations      Column Space       column space of A       Ax in column space">
 <meta property="og:locale">
 <meta property="og:image" content="https://a2664476347a-ai.github.io/img/avatar.jpg">
-<meta property="article:published_time" content="2026-03-14T20:06:51.000Z">
-<meta property="article:modified_time" content="2026-03-14T20:16:15.905Z">
+<meta property="article:published_time" content="2026-03-14T20:40:31.000Z">
+<meta property="article:modified_time" content="2026-03-14T22:10:07.913Z">
 <meta property="article:author" content="Joey">
-<meta property="article:tag" content="linear-algebra">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://a2664476347a-ai.github.io/img/avatar.jpg"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://a2664476347a-ai.github.io/linear-system/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+<meta name="twitter:image" content="https://a2664476347a-ai.github.io/img/avatar.jpg"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://a2664476347a-ai.github.io/least-squares/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
     (() => {
       
     const saveToLocal = {
@@ -140,103 +139,234 @@
   },
   autoDarkmode: false
 }</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: 'linear-system',
+  title: 'least-squares',
   isHighlightShrink: false,
   isToc: false,
   pageType: 'page'
-}</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">11</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><span> 学习</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/analyse/"><i class="fa-fw fas fa-square-root-alt"></i><span> 数学分析</span></a></li><li><a class="site-page child" href="/categories/linear-algebra/"><i class="fa-fw fas fa-th"></i><span> 线性代数</span></a></li><li><a class="site-page child" href="/categories/logic/"><i class="fa-fw fas fa-project-diagram"></i><span> 逻辑学</span></a></li><li><a class="site-page child" href="/categories/philosophy/"><i class="fa-fw fas fa-brain"></i><span> 普通哲学</span></a></li><li><a class="site-page child" href="/categories/other/"><i class="fa-fw fas fa-folder"></i><span> 其他</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/categories/reading/"><i class="fa-fw fas fa-book-open"></i><span> 阅读</span></a></div><div class="menus_item"><span class="site-page group"><span> 兴趣</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/anime/"><i class="fa-fw fas fa-tv"></i><span> 动漫</span></a></li><li><a class="site-page child" href="/categories/game/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/categories/travel/"><i class="fa-fw fas fa-plane"></i><span> 旅行</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%97%A5%E8%AE%B0/"><i class="fa-fw fas fa-pen"></i><span> 日记</span></a></li><li><a class="site-page child" href="/categories/%E6%9D%82%E8%B0%88/"><i class="fa-fw fas fa-comment"></i><span> 杂谈</span></a></li></ul></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(/img/linear.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">私家菜的个人博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><span> 学习</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/analyse/"><i class="fa-fw fas fa-square-root-alt"></i><span> 数学分析</span></a></li><li><a class="site-page child" href="/categories/linear-algebra/"><i class="fa-fw fas fa-th"></i><span> 线性代数</span></a></li><li><a class="site-page child" href="/categories/logic/"><i class="fa-fw fas fa-project-diagram"></i><span> 逻辑学</span></a></li><li><a class="site-page child" href="/categories/philosophy/"><i class="fa-fw fas fa-brain"></i><span> 普通哲学</span></a></li><li><a class="site-page child" href="/categories/other/"><i class="fa-fw fas fa-folder"></i><span> 其他</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/categories/reading/"><i class="fa-fw fas fa-book-open"></i><span> 阅读</span></a></div><div class="menus_item"><span class="site-page group"><span> 兴趣</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/anime/"><i class="fa-fw fas fa-tv"></i><span> 动漫</span></a></li><li><a class="site-page child" href="/categories/game/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/categories/travel/"><i class="fa-fw fas fa-plane"></i><span> 旅行</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%97%A5%E8%AE%B0/"><i class="fa-fw fas fa-pen"></i><span> 日记</span></a></li><li><a class="site-page child" href="/categories/%E6%9D%82%E8%B0%88/"><i class="fa-fw fas fa-comment"></i><span> 杂谈</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title">linear-system</h1></div></header><main class="layout" id="content-inner"><div id="page"><div class="container" id="article-container"><h1 id="Linear-System（线性方程组）"><a href="#Linear-System（线性方程组）" class="headerlink" title="Linear System（线性方程组）"></a>Linear System（线性方程组）</h1><h3 id="定义（Definition）"><a href="#定义（Definition）" class="headerlink" title="定义（Definition）"></a>定义（Definition）</h3><p>线性方程组是形如</p>
-<p>$<br>\begin{cases}<br>a_{11}x_1 + a_{12}x_2 + \dots + a_{1n}x_n &#x3D; b_1 \<br>a_{21}x_1 + a_{22}x_2 + \dots + a_{2n}x_n &#x3D; b_2 \<br>\vdots \<br>a_{m1}x_1 + a_{m2}x_2 + \dots + a_{mn}x_n &#x3D; b_m<br>\end{cases}<br>$</p>
-<p>的一组方程。</p>
-<p>其中</p>
-<ul>
-<li>$x_1,\dots,x_n$ 为未知数  </li>
-<li>$a_{ij}$ 为系数  </li>
-<li>$b_i$ 为常数项</li>
-</ul>
+}</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">11</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><span> 学习</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/analyse/"><i class="fa-fw fas fa-square-root-alt"></i><span> 数学分析</span></a></li><li><a class="site-page child" href="/categories/linear-algebra/"><i class="fa-fw fas fa-th"></i><span> 线性代数</span></a></li><li><a class="site-page child" href="/categories/logic/"><i class="fa-fw fas fa-project-diagram"></i><span> 逻辑学</span></a></li><li><a class="site-page child" href="/categories/philosophy/"><i class="fa-fw fas fa-brain"></i><span> 普通哲学</span></a></li><li><a class="site-page child" href="/categories/other/"><i class="fa-fw fas fa-folder"></i><span> 其他</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/categories/reading/"><i class="fa-fw fas fa-book-open"></i><span> 阅读</span></a></div><div class="menus_item"><span class="site-page group"><span> 兴趣</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/anime/"><i class="fa-fw fas fa-tv"></i><span> 动漫</span></a></li><li><a class="site-page child" href="/categories/game/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/categories/travel/"><i class="fa-fw fas fa-plane"></i><span> 旅行</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%97%A5%E8%AE%B0/"><i class="fa-fw fas fa-pen"></i><span> 日记</span></a></li><li><a class="site-page child" href="/categories/%E6%9D%82%E8%B0%88/"><i class="fa-fw fas fa-comment"></i><span> 杂谈</span></a></li></ul></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(/img/index.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">私家菜的个人博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><span> 学习</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/analyse/"><i class="fa-fw fas fa-square-root-alt"></i><span> 数学分析</span></a></li><li><a class="site-page child" href="/categories/linear-algebra/"><i class="fa-fw fas fa-th"></i><span> 线性代数</span></a></li><li><a class="site-page child" href="/categories/logic/"><i class="fa-fw fas fa-project-diagram"></i><span> 逻辑学</span></a></li><li><a class="site-page child" href="/categories/philosophy/"><i class="fa-fw fas fa-brain"></i><span> 普通哲学</span></a></li><li><a class="site-page child" href="/categories/other/"><i class="fa-fw fas fa-folder"></i><span> 其他</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/categories/reading/"><i class="fa-fw fas fa-book-open"></i><span> 阅读</span></a></div><div class="menus_item"><span class="site-page group"><span> 兴趣</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/anime/"><i class="fa-fw fas fa-tv"></i><span> 动漫</span></a></li><li><a class="site-page child" href="/categories/game/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/categories/travel/"><i class="fa-fw fas fa-plane"></i><span> 旅行</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%97%A5%E8%AE%B0/"><i class="fa-fw fas fa-pen"></i><span> 日记</span></a></li><li><a class="site-page child" href="/categories/%E6%9D%82%E8%B0%88/"><i class="fa-fw fas fa-comment"></i><span> 杂谈</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title">least-squares</h1></div></header><main class="layout" id="content-inner"><div id="page"><div class="container" id="article-container"><h2 id="最小二乘与矩阵几何（Least-Squares-and-Matrix-Geometry）"><a href="#最小二乘与矩阵几何（Least-Squares-and-Matrix-Geometry）" class="headerlink" title="最小二乘与矩阵几何（Least Squares and Matrix Geometry）"></a>最小二乘与矩阵几何（Least Squares and Matrix Geometry）</h2><h3 id="总览"><a href="#总览" class="headerlink" title="总览"></a>总览</h3><pre class="mermaid">mindmap
+  root((Least Squares and Matrix Geometry))
+
+    Span
+      linear combinations
+
+    Column Space
+      column space of A
+      Ax in column space
+
+    Subspace
+      contains zero
+      closed under addition
+      closed under scalar multiplication
+
+    Linear Transformation
+      matrix transformation
+      preserves addition
+      preserves scalar multiplication
+
+    Range and Nullspace
+      range equals column space
+      nullspace
+
+    Four Fundamental Subspaces
+      column space of A
+      nullspace of A
+      column space of A transpose
+      nullspace of A transpose
+
+    Least Squares
+      Ax approx b
+      residual r = b minus Ax
+      residual orthogonal to column space
+
+      Normal Equation
+        ATAx equals ATb
+
+      Solution
+        x equals inverse ATA times ATb</pre>
+
+<h3 id="张成（Span）"><a href="#张成（Span）" class="headerlink" title="张成（Span）"></a>张成（Span）</h3><h4 id="定义（Definition）"><a href="#定义（Definition）" class="headerlink" title="定义（Definition）"></a>定义（Definition）</h4><p>设向量</p>
+<p>$<br>v_1,v_2,\dots,v_k \in \mathbb{R}^n<br>$</p>
+<p>它们的 <strong>span</strong> 定义为</p>
+<h1 id="text-span-v-1-dots-v-k"><a href="#text-span-v-1-dots-v-k" class="headerlink" title="$\text{span}{v_1,\dots,v_k}"></a>$<br>\text{span}{v_1,\dots,v_k}</h1><p>{c_1v_1+\dots+c_kv_k \mid c_i\in\mathbb{R}}<br>$</p>
+<p>即所有线性组合的集合。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/a2664476347a-ai/blog-images/img/image-20260314220511816.png" alt="image-20260314220511816"></p>
 <hr>
-<h3 id="矩阵形式（Matrix-Form）"><a href="#矩阵形式（Matrix-Form）" class="headerlink" title="矩阵形式（Matrix Form）"></a>矩阵形式（Matrix Form）</h3><p>线性方程组可以写成矩阵形式</p>
-<p>$<br>Ax&#x3D;b<br>$</p>
-<p>其中</p>
-<p>$<br>A&#x3D;<br>\begin{bmatrix}<br>a_{11}&amp;a_{12}&amp;\dots&amp;a_{1n}\<br>a_{21}&amp;a_{22}&amp;\dots&amp;a_{2n}\<br>\vdots&amp;\vdots&amp;\ddots&amp;\vdots\<br>a_{m1}&amp;a_{m2}&amp;\dots&amp;a_{mn}<br>\end{bmatrix},<br>\quad<br>x&#x3D;<br>\begin{bmatrix}<br>x_1\<br>x_2\<br>\vdots\<br>x_n<br>\end{bmatrix},<br>\quad<br>b&#x3D;<br>\begin{bmatrix}<br>b_1\<br>b_2\<br>\vdots\<br>b_m<br>\end{bmatrix}<br>$</p>
+<h4 id="例子（Example）"><a href="#例子（Example）" class="headerlink" title="例子（Example）"></a>例子（Example）</h4><p>设</p>
+<p>$<br>v_1&#x3D;<br>\begin{bmatrix}<br>1\0<br>\end{bmatrix},<br>\quad<br>v_2&#x3D;<br>\begin{bmatrix}<br>0\1<br>\end{bmatrix}<br>$</p>
+<p>则</p>
+<p>$<br>\text{span}{v_1,v_2}&#x3D;\mathbb{R}^2<br>$</p>
 <hr>
-<h3 id="解的类型（Types-of-Solutions）"><a href="#解的类型（Types-of-Solutions）" class="headerlink" title="解的类型（Types of Solutions）"></a>解的类型（Types of Solutions）</h3><p>线性方程组可能有三种情况：</p>
+<h3 id="列空间（Column-Space）"><a href="#列空间（Column-Space）" class="headerlink" title="列空间（Column Space）"></a>列空间（Column Space）</h3><h4 id="定义（Definition）-1"><a href="#定义（Definition）-1" class="headerlink" title="定义（Definition）"></a>定义（Definition）</h4><p>设矩阵</p>
+<p>$<br>A&#x3D;[a_1\ a_2\ \dots\ a_n]<br>$</p>
+<p>列空间定义为</p>
+<p>$<br>\text{Col}(A)&#x3D;\text{span}{a_1,a_2,\dots,a_n}<br>$</p>
+<p>矩阵乘法</p>
+<p>$<br>Ax&#x3D;x_1a_1+\dots+x_na_n<br>$</p>
+<p>因此</p>
+<p>$<br>Ax \in \text{Col}(A)<br>$</p>
+<hr>
+<h4 id="例子（Example）-1"><a href="#例子（Example）-1" class="headerlink" title="例子（Example）"></a>例子（Example）</h4><p>设</p>
+<p>$<br>A&#x3D;<br>\begin{bmatrix}<br>1&amp;0\<br>0&amp;1\<br>1&amp;1<br>\end{bmatrix}<br>$</p>
+<p>列空间为</p>
+<p>$<br>\text{span}<br>\left{<br>\begin{bmatrix}1\0\1\end{bmatrix},<br>\begin{bmatrix}0\1\1\end{bmatrix}<br>\right}<br>$</p>
+<hr>
+<h3 id="子空间（Subspace）"><a href="#子空间（Subspace）" class="headerlink" title="子空间（Subspace）"></a>子空间（Subspace）</h3><h4 id="定义（Definition）-2"><a href="#定义（Definition）-2" class="headerlink" title="定义（Definition）"></a>定义（Definition）</h4><p>集合 $U\subset \mathbb{R}^n$ 是子空间若满足：</p>
 <ol>
-<li><strong>唯一解（Unique Solution）</strong></li>
+<li>$0\in U$</li>
+<li>$u,v\in U \Rightarrow u+v\in U$</li>
+<li>$c\in\mathbb{R},u\in U \Rightarrow cu\in U$</li>
 </ol>
-<p>$<br>x &#x3D; A^{-1}b<br>$</p>
-<p>（当 $A$ 可逆）</p>
+<hr>
+<h4 id="例子（Example）-2"><a href="#例子（Example）-2" class="headerlink" title="例子（Example）"></a>例子（Example）</h4><p>集合</p>
+<p>$<br>U&#x3D;{(x,y,0)\mid x,y\in\mathbb{R}}<br>$</p>
+<p>是 $\mathbb{R}^3$ 的子空间。</p>
+<hr>
+<h3 id="线性变换（Linear-Transformation）"><a href="#线性变换（Linear-Transformation）" class="headerlink" title="线性变换（Linear Transformation）"></a>线性变换（Linear Transformation）</h3><h4 id="定义（Definition）-3"><a href="#定义（Definition）-3" class="headerlink" title="定义（Definition）"></a>定义（Definition）</h4><p>矩阵 $A$ 定义线性变换</p>
+<p>$<br>T(x)&#x3D;Ax<br>$</p>
+<p>满足</p>
+<p>$<br>T(u+v)&#x3D;T(u)+T(v)<br>$</p>
+<p>$<br>T(cu)&#x3D;cT(u)<br>$</p>
+<hr>
+<h4 id="变换复合（Composition）"><a href="#变换复合（Composition）" class="headerlink" title="变换复合（Composition）"></a>变换复合（Composition）</h4><p>若</p>
+<p>$<br>T(x)&#x3D;Ax<br>$</p>
+<p>并且</p>
+<p>$<br>S(x)&#x3D;Bx<br>$</p>
+<p>则</p>
+<p>$<br>S(T(x))&#x3D;B(Ax)&#x3D;(BA)x<br>$</p>
+<hr>
+<h3 id="值域（Range）"><a href="#值域（Range）" class="headerlink" title="值域（Range）"></a>值域（Range）</h3><h4 id="定义（Definition）-4"><a href="#定义（Definition）-4" class="headerlink" title="定义（Definition）"></a>定义（Definition）</h4><p>线性变换的值域为</p>
+<p>$<br>\text{Range}(T)&#x3D;{Ax}<br>$</p>
+<p>因此</p>
+<p>$<br>\text{Range}(T)&#x3D;\text{Col}(A)<br>$</p>
+<hr>
+<h3 id="零空间（Nullspace）"><a href="#零空间（Nullspace）" class="headerlink" title="零空间（Nullspace）"></a>零空间（Nullspace）</h3><h4 id="定义（Definition）-5"><a href="#定义（Definition）-5" class="headerlink" title="定义（Definition）"></a>定义（Definition）</h4><p>零空间定义为</p>
+<p>$<br>\text{Null}(A)&#x3D;{x:Ax&#x3D;0}<br>$</p>
+<hr>
+<h4 id="例子（Example）-3"><a href="#例子（Example）-3" class="headerlink" title="例子（Example）"></a>例子（Example）</h4><p>设</p>
+<p>$<br>A&#x3D;<br>\begin{bmatrix}<br>1&amp;2\<br>2&amp;4<br>\end{bmatrix}<br>$</p>
+<p>求</p>
+<p>$<br>Ax&#x3D;0<br>$</p>
+<p>得到</p>
+<p>$<br>x&#x3D;<br>\begin{bmatrix}<br>-2t\<br>t<br>\end{bmatrix}<br>$</p>
+<p>因此</p>
+<p>$<br>\text{Null}(A)&#x3D;<br>\text{span}<br>\left{<br>\begin{bmatrix}<br>-2\1<br>\end{bmatrix}<br>\right}<br>$</p>
+<hr>
+<h3 id="单射（Injective）"><a href="#单射（Injective）" class="headerlink" title="单射（Injective）"></a>单射（Injective）</h3><p>若</p>
+<p>$<br>T(v)&#x3D;T(w) \Rightarrow v&#x3D;w<br>$</p>
+<p>则 $T$ 为 one-to-one。</p>
+<p>等价条件</p>
+<p>$<br>\text{Null}(A)&#x3D;{0}<br>$</p>
+<hr>
+<h3 id="满射（Surjective）"><a href="#满射（Surjective）" class="headerlink" title="满射（Surjective）"></a>满射（Surjective）</h3><p>若</p>
+<p>$<br>\text{Range}(T)&#x3D;\mathbb{R}^m<br>$</p>
+<p>则 $T$ 为 onto。</p>
+<p>等价条件</p>
+<p>$<br>\text{rank}(A)&#x3D;m<br>$</p>
+<hr>
+<h3 id="双射（Bijective）"><a href="#双射（Bijective）" class="headerlink" title="双射（Bijective）"></a>双射（Bijective）</h3><p>若同时</p>
+<ul>
+<li>injective</li>
+<li>surjective</li>
+</ul>
+<p>则</p>
+<p>$<br>m&#x3D;n<br>$</p>
+<p>并且矩阵 $A$ 可逆。</p>
+<hr>
+<h3 id="四个基本子空间（Four-Fundamental-Subspaces）"><a href="#四个基本子空间（Four-Fundamental-Subspaces）" class="headerlink" title="四个基本子空间（Four Fundamental Subspaces）"></a>四个基本子空间（Four Fundamental Subspaces）</h3><h4 id="定义（Definition）-6"><a href="#定义（Definition）-6" class="headerlink" title="定义（Definition）"></a>定义（Definition）</h4><p>对于矩阵 $A_{m\times n}$，存在线性代数中的四个重要子空间：</p>
+<ol>
+<li>列空间（Column Space）</li>
+</ol>
+<p>$<br>\text{Col}(A)<br>$</p>
+<p>由矩阵列向量张成。</p>
 <hr>
 <ol start="2">
-<li><strong>无穷多解（Infinitely Many Solutions）</strong></li>
+<li>零空间（Null Space）</li>
 </ol>
-<p>当存在自由变量时。</p>
+<p>$<br>\text{Null}(A)&#x3D;{x:Ax&#x3D;0}<br>$</p>
 <hr>
 <ol start="3">
-<li><strong>无解（No Solution）</strong></li>
+<li>行空间（Row Space）</li>
 </ol>
-<p>当方程组矛盾时。</p>
+<p>$<br>\text{Row}(A)&#x3D;\text{Col}(A^T)<br>$</p>
+<p>由矩阵行向量张成。</p>
 <hr>
-<h3 id="行变换（Row-Reduction）"><a href="#行变换（Row-Reduction）" class="headerlink" title="行变换（Row Reduction）"></a>行变换（Row Reduction）</h3><p>通过 <strong>初等行变换</strong> 可以化简矩阵：</p>
-<ol>
-<li>交换两行  </li>
-<li>某行乘以非零常数  </li>
-<li>一行加到另一行</li>
+<ol start="4">
+<li>左零空间（Left Null Space）</li>
 </ol>
-<p>通过这些操作可以得到 <strong>Row Echelon Form</strong>。</p>
+<p>$<br>\text{Null}(A^T)<br>$</p>
+<p>满足</p>
+<p>$<br>A^Ty&#x3D;0<br>$</p>
+<p>的向量集合。</p>
 <hr>
-<h4 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h4><p>解方程组</p>
-<p>$<br>\begin{cases}<br>x+y&#x3D;2\<br>x-y&#x3D;0<br>\end{cases}<br>$</p>
-<p>对应矩阵</p>
-<p>$<br>\begin{bmatrix}<br>1&amp;1&amp;|&amp;2\<br>1&amp;-1&amp;|&amp;0<br>\end{bmatrix}<br>$</p>
-<p>行变换：</p>
-<p>$<br>R_2 \leftarrow R_2-R_1<br>$</p>
+<h4 id="定理（Rank–Nullity-Theorem）"><a href="#定理（Rank–Nullity-Theorem）" class="headerlink" title="定理（Rank–Nullity Theorem）"></a>定理（Rank–Nullity Theorem）</h4><p>设 $A$ 为 $m\times n$ 矩阵，则</p>
+<p>$<br>\text{rank}(A)+\text{nullity}(A)&#x3D;n<br>$</p>
+<p>其中</p>
+<ul>
+<li>rank(A) &#x3D; 列空间维数</li>
+<li>nullity(A) &#x3D; Null(A) 的维数</li>
+</ul>
+<hr>
+<h4 id="正交关系（Orthogonality）"><a href="#正交关系（Orthogonality）" class="headerlink" title="正交关系（Orthogonality）"></a>正交关系（Orthogonality）</h4><p>四个子空间之间存在正交关系：</p>
+<p>$<br>\text{Null}(A) \perp \text{Col}(A^T)<br>$</p>
+<p>$<br>\text{Null}(A^T) \perp \text{Col}(A)<br>$</p>
+<hr>
+<h4 id="例子（Example）-4"><a href="#例子（Example）-4" class="headerlink" title="例子（Example）"></a>例子（Example）</h4><p>设</p>
+<p>$<br>A&#x3D;<br>\begin{bmatrix}<br>1&amp;2\<br>2&amp;4<br>\end{bmatrix}<br>$</p>
+<p>求</p>
+<p>$<br>Ax&#x3D;0<br>$</p>
 <p>得到</p>
-<p>$<br>\begin{bmatrix}<br>1&amp;1&amp;|&amp;2\<br>0&amp;-2&amp;|&amp;-2<br>\end{bmatrix}<br>$</p>
-<p>解得</p>
-<p>$<br>x&#x3D;1,\quad y&#x3D;1<br>$</p>
-<hr>
-<h3 id="Row-Echelon-Form（REF）"><a href="#Row-Echelon-Form（REF）" class="headerlink" title="Row Echelon Form（REF）"></a>Row Echelon Form（REF）</h3><p>一个矩阵称为 <strong>Row Echelon Form</strong>，如果满足：</p>
-<ol>
-<li>所有零行在矩阵底部</li>
-<li>每一行的第一个非零元素（pivot）在上一行 pivot 的右侧</li>
-<li>pivot 下方元素为 0</li>
-</ol>
-<p>例：</p>
-<p>$<br>\begin{bmatrix}<br>1&amp;2&amp;1&amp;|&amp;4\<br>0&amp;3&amp;2&amp;|&amp;5\<br>0&amp;0&amp;1&amp;|&amp;2<br>\end{bmatrix}<br>$</p>
-<hr>
-<h3 id="Reduced-Row-Echelon-Form（RREF）"><a href="#Reduced-Row-Echelon-Form（RREF）" class="headerlink" title="Reduced Row Echelon Form（RREF）"></a>Reduced Row Echelon Form（RREF）</h3><p>RREF 在 REF 基础上进一步要求：</p>
-<ol>
-<li>每个 pivot 等于 1</li>
-<li>pivot 所在列的其他元素为 0</li>
-</ol>
-<p>例：</p>
-<p>$<br>\begin{bmatrix}<br>1&amp;0&amp;0&amp;|&amp;1\<br>0&amp;1&amp;0&amp;|&amp;2\<br>0&amp;0&amp;1&amp;|&amp;3<br>\end{bmatrix}<br>$</p>
-<hr>
-<h3 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h3><p>求矩阵的 RREF：</p>
-<p>$<br>\begin{bmatrix}<br>1&amp;1&amp;|&amp;2\<br>1&amp;-1&amp;|&amp;0<br>\end{bmatrix}<br>$</p>
-<p>行变换：</p>
-<p>$<br>R_2 \leftarrow R_2 - R_1<br>$</p>
-<p>$<br>\begin{bmatrix}<br>1&amp;1&amp;|&amp;2\<br>0&amp;-2&amp;|&amp;-2<br>\end{bmatrix}<br>$</p>
-<p>$R_2 \leftarrow -\frac{1}{2}R_2<br>$</p>
-<p>$\begin{bmatrix}<br>1&amp;1&amp;|&amp;2\<br>0&amp;1&amp;|&amp;1<br>\end{bmatrix}$</p>
-<p>$R_1 \leftarrow R_1 - R_2<br>$</p>
-<p>$\begin{bmatrix}<br>1&amp;0&amp;|&amp;1\<br>0&amp;1&amp;|&amp;1<br>\end{bmatrix}$</p>
+<p>$<br>x&#x3D;<br>\begin{bmatrix}<br>-2t\<br>t<br>\end{bmatrix}<br>$</p>
 <p>因此</p>
-<p>$<br>x&#x3D;1,\quad y&#x3D;1<br>$</p>
+<p>$<br>\text{Null}(A)&#x3D;<br>\text{span}<br>\left{<br>\begin{bmatrix}<br>-2\1<br>\end{bmatrix}<br>\right}<br>$</p>
+<p>列空间为</p>
+<p>$<br>\text{span}<br>\left{<br>\begin{bmatrix}<br>1\2<br>\end{bmatrix}<br>\right}<br>$</p>
 <hr>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>线性方程组可以表示为</p>
+<h3 id="最小二乘（Least-Squares）"><a href="#最小二乘（Least-Squares）" class="headerlink" title="最小二乘（Least Squares）"></a>最小二乘（Least Squares）</h3><h4 id="定义（Definition）-7"><a href="#定义（Definition）-7" class="headerlink" title="定义（Definition）"></a>定义（Definition）</h4><p>当方程</p>
 <p>$<br>Ax&#x3D;b<br>$</p>
-<p>求解方法包括：</p>
-<ul>
-<li>逆矩阵法  </li>
-<li>行化简（Gaussian elimination）</li>
-</ul>
-<p>解的情况：</p>
-<ul>
-<li>唯一解  </li>
-<li>无穷多解  </li>
-<li>无解</li>
-</ul>
+<p>没有解时，寻找 $x$ 使</p>
+<p>$<br>|Ax-b|<br>$</p>
+<p>最小。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/a2664476347a-ai/blog-images/img/image-20260314220952750.png" alt="image-20260314220952750"></p>
+<hr>
+<h3 id="最小二乘的几何条件（Geometric-Condition）"><a href="#最小二乘的几何条件（Geometric-Condition）" class="headerlink" title="最小二乘的几何条件（Geometric Condition）"></a>最小二乘的几何条件（Geometric Condition）</h3><p>设</p>
+<p>$<br>Ax&#x3D;b<br>$</p>
+<p>没有精确解。</p>
+<p>最小二乘解对应</p>
+<p>$<br>\hat b &#x3D; A\hat x<br>$</p>
+<p>其中</p>
+<p>$<br>\hat b<br>$</p>
+<p>是 $b$ 在列空间上的投影。</p>
+<p>因此残差</p>
+<p>$<br>r&#x3D;b-\hat b<br>$</p>
+<p>满足</p>
+<p>$<br>r \perp \text{Col}(A)<br>$</p>
+<hr>
+<h3 id="正交条件（Orthogonality-Condition）"><a href="#正交条件（Orthogonality-Condition）" class="headerlink" title="正交条件（Orthogonality Condition）"></a>正交条件（Orthogonality Condition）</h3><p>由于列空间由</p>
+<p>$<br>a_1,\dots,a_n<br>$</p>
+<p>张成，因此</p>
+<p>$<br>a_i^T(A\hat x-b)&#x3D;0<br>$</p>
+<p>对所有 $i$ 成立。</p>
+<p>写成矩阵形式：</p>
+<p>$<br>A^T(A\hat x-b)&#x3D;0<br>$</p>
+<p>整理得到</p>
+<p>$<br>A^TA\hat x&#x3D;A^Tb<br>$</p>
+<hr>
+<h3 id="正规方程（Normal-Equation）"><a href="#正规方程（Normal-Equation）" class="headerlink" title="正规方程（Normal Equation）"></a>正规方程（Normal Equation）</h3><p>最小二乘解满足</p>
+<p>$<br>A^TAx&#x3D;A^Tb<br>$</p>
+<p>若 $A^TA$ 可逆</p>
+<p>$<br>x&#x3D;(A^TA)^{-1}A^Tb<br>$</p>
+<hr>
+<h3 id="几何解释（Geometric-Interpretation）"><a href="#几何解释（Geometric-Interpretation）" class="headerlink" title="几何解释（Geometric Interpretation）"></a>几何解释（Geometric Interpretation）</h3><p>最小二乘解对应</p>
+<p>将 $b$ 投影到列空间</p>
+<p>$<br>Ax&#x3D;\text{proj}_{\text{Col}(A)}(b)<br>$</p>
+<hr>
+<h2 id="本章总结（Summary）"><a href="#本章总结（Summary）" class="headerlink" title="本章总结（Summary）"></a>本章总结（Summary）</h2><p>本章从几何角度理解矩阵和线性方程组的结构。</p>
+<p>首先介绍了 <strong>span</strong> 的概念，用来描述一组向量所有线性组合形成的集合。由此引出 <strong>列空间（column space）</strong>，说明矩阵乘法 $Ax$ 的结果一定属于矩阵的列空间。</p>
+<p>随后讨论了 <strong>子空间（subspace）</strong> 的定义，以及列空间和零空间都是向量空间中的子空间。接着介绍 <strong>线性变换（linear transformation）</strong>，说明矩阵可以看作从一个向量空间到另一个向量空间的映射。</p>
+<p>在此基础上定义了 <strong>值域（range）</strong> 和 <strong>零空间（nullspace）</strong>，并介绍了矩阵的 <strong>四个基本子空间（four fundamental subspaces）</strong> 以及它们之间的正交关系。</p>
+<p>最后讨论 <strong>最小二乘问题（least squares）</strong>：当方程 $Ax&#x3D;b$ 没有精确解时，通过最小化误差 $|Ax-b|$ 来寻找最优解，并得到 <strong>正规方程（normal equation）</strong></p>
+<p>$<br>A^TAx&#x3D;A^Tb<br>$</p>
+<p>从而得到最小二乘解。</p>
 </div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comments</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Joey</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/14/%E5%85%B3%E4%BA%8E%E5%85%B6%E4%BB%96/" title="关于其他">关于其他</a><time datetime="2026-03-14T15:07:19.000Z" title="Created 2026-03-14 15:07:19">2026-03-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/13/3-13-2026/" title="3.13.2026">3.13.2026</a><time datetime="2026-03-13T22:01:55.000Z" title="Created 2026-03-13 22:01:55">2026-03-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/12/3.12.2026/" title="3.12.2026">3.12.2026</a><time datetime="2026-03-12T00:00:00.000Z" title="Created 2026-03-12 00:00:00">2026-03-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/12/%E5%8E%9F%E7%A5%9E%E4%B8%8E%E4%BA%8C%E6%B8%B8%E7%A4%BE%E5%8C%BA/" title="原神与二游社区">原神与二游社区</a><time datetime="2026-03-12T00:00:00.000Z" title="Created 2026-03-12 00:00:00">2026-03-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/11/%E6%9D%82%E8%B0%88/" title="关于测试">关于测试</a><time datetime="2026-03-11T11:54:18.000Z" title="Created 2026-03-11 11:54:18">2026-03-11</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
             <i class="fas fa-folder-open"></i>
             <span>Categories</span>
