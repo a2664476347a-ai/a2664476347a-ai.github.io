@@ -1,0 +1,102 @@
+<div id="map"></div>
+
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet/dist/leaflet.css"
+/>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<style>
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+#map {
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const map = L.map("map", {
+  worldCopyJump: true,
+  maxBoundsViscosity: 1.0
+}).setView([30, 10], 2);
+
+
+  L.tileLayer(
+  "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+  {
+    noWrap: true
+  }
+).addTo(map);
+
+  const marker = L.marker([23.13378419523784,113.26522746857374]).addTo(map);
+
+marker.bindPopup(`
+  <a href="/posts/zhongshanjiniantang " 
+     style="
+       text-decoration:none;
+       color:black;
+       display:block;
+       width:220px;
+     ">
+
+      <img 
+       src="/img/zhongshanjiniantang.jpg"
+       style="
+        width:100%;
+        border-radius:8px;
+        display:block;
+      "
+      />
+
+    <div style="
+      margin-top:8px;
+      font-size:16px;
+      font-weight:600;
+      text-align:center;
+    ">
+      zhongshanjiniantang
+    </div>
+
+  </a >
+`);
+
+const marker2 = L.marker([31.2304,121.4737]).addTo(map);
+
+marker2.bindPopup(`
+<a href="/posts/shanghai"
+   style="
+   text-decoration:none;
+   color:black;
+   display:block;
+   width:220px;
+">
+
+<img
+  src="/img/shanghai.jpg"
+  style="
+  width:100%;
+  border-radius:8px;
+  display:block;
+"
+/>
+
+<div style="
+  margin-top:8px;
+  font-size:16px;
+  font-weight:600;
+  text-align:center;
+">
+  Shanghai
+</div>
+
+</a>
+`);
+});
+</script>
