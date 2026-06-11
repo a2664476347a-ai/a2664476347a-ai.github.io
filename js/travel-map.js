@@ -1,8 +1,11 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
+console.log("西湖测试");
+
   const map = L.map("map", {
-  worldCopyJump: true,
+  worldCopyJump: false,
+  minZoom: 2,
   maxBoundsViscosity: 1.0
 }).setView([35, 105], 4)
 
@@ -12,9 +15,19 @@ document.addEventListener("DOMContentLoaded", function () {
   {
     attribution: '&copy; OpenStreetMap & CartoDB',
     subdomains: 'abcd',
-    maxZoom: 20
+    maxZoom: 20,
+    noWrap: true
   }
+
+  
 ).addTo(map);
+
+const bounds = [
+  [-85, -180],
+  [85, 180]
+];
+
+map.setMaxBounds(bounds);
 
 const markers = L.markerClusterGroup();
 const places = [
@@ -74,6 +87,14 @@ const places = [
     image: "/img/yuejuyishubowuguan.jpg",
     url: "/2026/06/11/yuejuyishubowuguan"
   },
+  {
+    name: "西湖",
+    lat: 30.2431,
+    lng: 120.1500,
+    image: "/img/yuejuyishubowuguan.jpg",
+    url: "/2026/06/11/yuejuyishubowuguan"
+  },
+  
 ]
 places.forEach(place => {
 
