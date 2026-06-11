@@ -28,6 +28,13 @@ const places = [
     image: "/img/shanghai.jpg",
     url: "/posts/shanghai"
   }
+  {
+  name: "爱丁堡",
+  lat: 55.9533,
+  lng: -3.1883,
+  image: "/img/edinburgh.jpg",
+  url: "/posts/edinburgh"
+  }
 ]
 places.forEach(place => {
 
