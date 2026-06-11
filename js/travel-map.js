@@ -29,11 +29,11 @@ const places = [
     url: "/posts/shanghai"
   }
   {
-  name: "爱丁堡",
-  lat: 55.9533,
-  lng: -3.1883,
-  image: "/img/edinburgh.jpg",
-  url: "/posts/edinburgh"
+    name: "爱丁堡",
+    lat: 55.9533,
+    lng: -3.1883,
+    image: "/img/shanghai.jpg",
+    url: "/posts/shanghai"
   }
 ]
 places.forEach(place => {
