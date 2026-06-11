@@ -19,56 +19,56 @@ const places = [
     lat: 23.1337,
     lng: 113.2652,
     image: "/img/zhongshanjiniantang.jpg",
-    url: "/posts/zhongshanjiniantang"
+    url: "/2026/06/11/zhongshanjiniantang"
   },
   {
     name: "Guangdong Museum",
     lat: 23.114847696238858,
     lng: 113.32730659053918,
     image: "/img/guangdongshengbowuguan.jpg",
-    url: "/posts/guangdongshengbowuguan"
+    url: "/2026/06/11/guangdongshengbowuguan"
   },
   {
     name: "Republic of China Military Academy",
     lat: 23.08432666555117,
     lng: 113.41669902575146,
     image: "/img/huangpujunxiao.jpg",
-    url: "/posts/huangpujunxiao"
+    url: "/2026/06/11/huangpujunxiao"
   },
   {
     name: "Mausoleum of the Nanyue King Wen",
     lat: 23.13772459665257,
     lng: 113.26148615922843,
     image: "/img/nanyuewenwangmu.jpg",
-    url: "/posts/nanyuewenwangmu"
+    url: "/2026/06/11/nanyuewenwangmu"
   },
   {
     name: "Huanghuagang Seventy Two Martyrs Cemetery",
     lat: 23.140712971061816,
     lng: 113.29448794541977,
     image: "/img/huanghuagang.jpg",
-    url: "/posts/huanghuagang"
+    url: "/2026/06/11/huanghuagang"
   },
   {
     name: "The Memorial Museum of Generalissimo Sun Yat-sen's Mansion",
     lat: 23.109903251806614,
     lng: 113.27901629512736,
     image: "/img/dayuanshuaifu.jpg",
-    url: "/posts/dayuanshuaifu"
+    url: "/2026/06/11/dayuanshuaifu"
   },
   {
     name: "Guangdong Museum of Revolutionary History",
     lat: 23.128534866276713,
     lng: 113.28331220316481,
     image: "/img/guangdonggeminglishibowuguan.jpg",
-    url: "/posts/guangdonggeminglishibowuguan"
+    url: "/2026/06/11/guangdonggeminglishibowuguan"
   },
   {
     name: "Cantonese Opera Art Museum",
     lat: 23.11542028641857,
     lng: 113.23814737155588,
     image: "/img/yuejuyishubowuguan.jpg",
-    url: "/posts/yuejuyishubowuguan"
+    url: "/2026/06/11/yuejuyishubowuguan"
   },
 ]
 places.forEach(place => {
