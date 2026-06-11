@@ -6,13 +6,17 @@ document.addEventListener("DOMContentLoaded", function () {
   maxBoundsViscosity: 1.0
 }).setView([35, 105], 4)
 
-  L.tileLayer(
-  "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+ L.tileLayer(
+  'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
+
   {
-    noWrap: true
+    attribution: '&copy; OpenStreetMap & CartoDB',
+    subdomains: 'abcd',
+    maxZoom: 20
   }
 ).addTo(map);
 
+const markers = L.markerClusterGroup();
 const places = [
   {
     name: "Sun Yat-sen Memorial Hall",
@@ -73,7 +77,17 @@ const places = [
 ]
 places.forEach(place => {
 
-  const marker = L.marker([place.lat, place.lng]).addTo(map);
+  const marker = L.circleMarker(
+  [place.lat, place.lng],
+  {
+    radius: 12,
+    fillColor: "#ff4d4f",
+    color: "#ffffff",
+    weight: 2,
+    fillOpacity: 1
+  }
+);
+  markers.addLayer(marker);
 
   marker.bindPopup(`
     <a href="${place.url}"
@@ -106,4 +120,7 @@ places.forEach(place => {
   `);
 
 });
+
+map.addLayer(markers);
+
 });
