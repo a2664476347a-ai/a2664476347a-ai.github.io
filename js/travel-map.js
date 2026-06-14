@@ -85,6 +85,13 @@ const places = [
     image: "/img/yuejuyishubowuguan.jpg",
     url: "/2026/06/11/yuejuyishubowuguan"
   },
+  {
+    name: "\u94b1\u5cb8\u516c\u56ed", // 钱岗公园
+    lat: 30.289992217300146,
+    lng: 120.26732139262145,
+    image: "/img/qianganggongyuan.jpg",
+    url: "/2026/06/11/qianganggongyuan"
+  },
   
 ]
 places.forEach(place => {
