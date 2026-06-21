@@ -85,7 +85,48 @@ const places = [
     image: "/img/yuejuyishubowuguan.jpg",
     url: "/2026/06/11/yuejuyishubowuguan"
   },
-  
+  {
+    name: "\u94b1\u5cb8\u516c\u56ed", // 钱岗公园
+    lat: 30.29040296132113,
+    lng: 120.26866124336975,
+    image: "/img/qianangongyuan.jpg",
+    url: "/2026/06/14/qianangongyuan"
+  },
+  {
+    name: "\u676d\u5dde\u8427\u5c71\u56fd\u9645\u673a\u573a", // 杭州西湖国际机场
+    lat: 30.235873257603455,
+    lng: 120.43531221563542,
+    image: "/img/xiaoshanjichang.jpg",
+    url: "/2026/06/19/xiaoshanjichang"
+  },
+  {
+    name: "\u4e07\u4f5b\u5854", // 万佛塔
+    lat: 29.10191431195529,
+    lng: 119.66869022351717,
+    image: "/img/wanfota.jpg",
+    url: "/2026/06/19/wanfota"
+  },
+  {
+    name: "\u516b\u548f\u697c", // 八咏楼
+    lat: 29.099582519333936,
+    lng: 119.66336221239253,
+    image: "/img/bayonglou.jpg",
+    url: "/2026/06/19/bayonglou"
+  },
+  {
+    name: "\u91d1\u534e\u5e9c\u6587\u5e99", //  金华府文庙
+    lat: 29.10043404818205,
+    lng: 119.66382294789342,
+    image: "/img/jinhuafuwenmiao.jpg",
+    url: "/2026/06/19/jinhuafuwenmiao"
+  },
+  {
+    name: "\u59d1\u852b\u535a\u7269\u9986", //  姑蔑博物馆
+    lat: 28.998526536251603,
+    lng: 118.96393860969461,
+    image: "/img/gumiebowuguan.jpg",
+    url: "/2026/06/21/gumiebowuguan"
+  },
 ]
 places.forEach(place => {
 
