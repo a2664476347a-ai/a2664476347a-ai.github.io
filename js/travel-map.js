@@ -127,6 +127,13 @@ const places = [
     image: "/img/gumiebowuguan.jpg",
     url: "/2026/06/21/gumiebowuguan"
   },
+  {
+    name: "\u5b64\u5c71", //  孤山
+    lat: 30.25166748046319,
+    lng: 120.14255969183114,
+    image: "/img/gushan.jpg",
+    url: "/2026/06/26/gushan"
+  },
 ]
 places.forEach(place => {
 
