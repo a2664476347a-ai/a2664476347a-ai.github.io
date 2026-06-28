@@ -134,6 +134,27 @@ const places = [
     image: "/img/gushan.jpg",
     url: "/2026/06/26/gushan"
   },
+  {
+    name: "\u4eac\u676d\u5927\u8fd0\u6cb3\u535a\u7269\u9986", //  京杭大运河博物馆
+    lat: 30.31740598361796,
+    lng: 120.14150789401431,
+    image: "/img/jinghangdayunhebowuguan.jpg",
+    url: "/2026/06/27/jinghangdayunhebowuguan"
+  },
+  {
+    name: "\u6247\u535a\u7269\u9986", //  扇博物馆
+    lat: 30.318670848882174,
+    lng: 120.13806635638336,
+    image: "/img/shan.jpg",
+    url: "/2026/06/27/shan"
+  },
+  {
+    name: "\u5200\u526a\u5251\u4f1e\u535a\u7269\u9986", //  刀剪剑伞博物馆
+    lat: 30.31551170682301,
+    lng: 120.13708839268904,
+    image: "/img/daojianjiansan.jpg",
+    url: "/2026/06/27/daojianjiansan"
+  },
 ]
 places.forEach(place => {
 
