@@ -150,10 +150,66 @@ const places = [
   },
   {
     name: "\u5200\u526a\u5251\u4f1e\u535a\u7269\u9986", //  刀剪剑伞博物馆
-    lat: 30.31551170682301,
-    lng: 120.13708839268904,
+    lat: 30.316103,
+    lng: 120.136527,
     image: "/img/daojianjiansan.jpg",
     url: "/2026/06/27/daojianjiansan"
+  },
+  {
+    name: "\u5357\u5b8b\u5b98\u7a91\u535a\u7269\u9986", //  南宋官窑博物馆
+    lat: 30.2100663,
+    lng: 120.1538687,
+    image: "/img/nansongguanyao.jpg",
+    url: "/2026/06/29/nansongguanyao"
+  },
+  {
+    name: "\u8bf8\u845b\u516b\u5366\u7530", //  诸葛八卦田
+    lat: 30.2109354,
+    lng: 120.1513188,
+    image: "/img/baguatian.jpg",
+    url: "/2026/06/29/baguatian"
+  },
+  {
+    name: "\u897f\u6e56\u535a\u7269\u9986", //  西湖博物馆
+    lat: 30.2426211,
+    lng: 120.1575036,
+    image: "/img/xihubowuguan.jpg",
+    url: "/2026/06/29/xihubowuguan"
+  },
+  {
+    name: "\u516d\u548c\u5854", //  六和塔
+    lat: 30.196783,
+    lng: 120.131213,
+    image: "/img/liuheta.jpg",
+    url: "/2026/06/29/liuheta"
+  },
+  {
+    name: "\u94b1\u738b\u7960", //  钱王祠
+    lat: 30.2425353,
+    lng: 120.1568311,
+    image: "/img/qianwangci.jpg",
+    url: "/2026/06/29/qianwangci"
+  },
+  {
+    name: "\u65e0\u9521\u535a\u7269\u9986", //  无锡博物馆
+    lat: 31.5575462,
+    lng: 120.3063651,
+    image: "/img/wuxibowuguan.jpg",
+    url: "/2026/07/04/wuxibowuguan"
+  },
+  {
+    name: "\u4e1c\u6797\u4e66\u9662", //  东林书院
+    lat: 31.5777118,
+    lng: 120.295972,
+    image: "/img/donglinshuyuan.jpg",
+    url: "/2026/07/04/donglinshuyuan"
+  },
+  {
+    name: "\u60e0\u5c71\u53e4\u9547", //  惠山古镇
+    lat: 31.5807229,
+    lng: 120.2745603,
+    image: "/img/huishanguzhen.jpg",
+    url: "/2026/07/04/huishanguzhen"
   },
 ]
 places.forEach(place => {
