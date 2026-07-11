@@ -211,6 +211,13 @@ const places = [
     image: "/img/huishanguzhen.jpg",
     url: "/2026/07/04/huishanguzhen"
   },
+  {
+    name: "\u6d59\u6c5f\u7701\u535a\u7269\u9986\uff08\u4e4b\u6c5f\u9986\u533a\uff09", //  浙江省博物馆之江
+    lat: 30.159823108500564,
+    lng: 120.10165259142815,
+    image: "/img/zhejiangbowuguanzhijiang.jpg",
+    url: "/2026/07/11/zhejiangbowuguanzhijiang"
+  },
 ]
 places.forEach(place => {
 
