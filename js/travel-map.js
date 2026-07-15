@@ -218,6 +218,20 @@ const places = [
     image: "/img/zhejiangbowuguanzhijiang.jpg",
     url: "/2026/07/11/zhejiangbowuguanzhijiang"
   },
+  {
+    name: "\u826f\u6e1a\u535a\u7269\u9662", //  良渚博物院
+    lat: 30.3759193,
+    lng: 120.0269478,
+    image: "/img/liangzhubowuyuan.jpg",
+    url: "/2026/07/15/liangzhubowuyuan"
+  },
+  {
+    name: "\u676d\u5dde\u56fd\u5bb6\u7248\u672c\u9986", //  杭州国家版本馆
+    lat: 30.382272977894242,
+    lng: 120.01595162827815,
+    image: "/img/hangzhoubanbenguan.jpg",
+    url: "/2026/07/15/hangzhoubanbenguan"
+  },
 ]
 places.forEach(place => {
 
