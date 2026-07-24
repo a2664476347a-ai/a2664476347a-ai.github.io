@@ -232,6 +232,97 @@ const places = [
     image: "/img/hangzhoubanbenguan.jpg",
     url: "/2026/07/15/hangzhoubanbenguan"
   },
+  {
+    name: "\u661f\u6d77\u5e7f\u573a", //  星海广场
+    lat: 38.88168641412761,
+    lng: 121.58789502197561,
+    image: "/img/xinghaiguangchang.jpg",
+    url: "/2026/07/24/xinghaiguangchang"
+  },
+  {
+    name: "\u8001\u65c5\u987a\u7ad9", //  老旅顺站
+    lat: 38.80772859286005,
+    lng: 121.25236034983628,
+    image: "/img/laolvshunzhan1.jpg",
+    url: "/2026/07/24/laolvshunzhan"
+  },
+  {
+    name: "\u65e5\u4fc4\u6218\u4e89\u53f2\u6599\u9986", //  日俄史料馆
+    lat: 38.80951366095014,
+    lng: 121.23959424827872,
+    image: "/img/rieshiliaoguan.jpg",
+    url: "/2026/07/24/riezhanzhengshiliaoguan"
+  },
+  {
+    name: "\u65c5\u987a\u535a\u7269\u9986", //  旅顺博物馆
+    lat: 38.80841612122239,
+    lng: 121.23488738417,
+    image: "/img/lvshunbowuguan.jpg",
+    url: "/2026/07/24/lvshunbowuguan"
+  },
+  {
+    name: "\u767d\u7389\u5c71", //  白玉山
+    lat: 38.81027996051729,
+    lng: 121.25725127152566,
+    image: "/img/baiyushan.jpg",
+    url: "/2026/07/24/baiyushan"
+  },
+  {
+    name: "\u65e5\u4fc4\u65c5\u987a\u76d1\u72f1\u9057\u5740\u535a\u7269\u9986", //  日俄旅顺监狱遗址博物馆
+    lat: 38.8255698927158,
+    lng: 121.26486626239071,
+    image: "/img/rielvshunjianyuyizhibowuguan.jpg",
+    url: "/2026/07/24/rielvshunjianyuyizhibowuguan"
+  },
+  {
+    name: "\u65c5\u987a\u6f5c\u8247\u535a\u7269\u9986", //  旅顺潜艇博物馆
+    lat: 38.794937965746485,
+    lng: 121.27255879959469,
+    image: "/img/lvshunqiantingbowuguan.jpg",
+    url: "/2026/07/24/lvshunqiantingbowuguan"
+  },
+  {
+    name: "\u519b\u8230\u5c9b", //  军舰岛
+    lat: 38.80406690412054,
+    lng: 121.25861094187361,
+    image: "/img/junjiandao.jpg",
+    url: "/2026/07/24/junjiandao"
+  },
+  {
+    name: "\u5927\u8fde\u535a\u7269\u9986", //  大连博物馆
+    lat: 38.888791647262906,
+    lng: 121.5862176566125,
+    image: "/img/dalianbowuguan.jpg",
+    url: "/2026/07/24/dalianbowuguan"
+  },
+  {
+    name: "\u5927\u8fde\u81ea\u7136\u535a\u7269\u9986", //  大连自然博物馆
+    lat: 38.870272579270534,
+    lng: 121.56140097556126,
+    image: "/img/dalianziranbowuguan.jpg",
+    url: "/2026/07/24/dalianziranbowuguan"
+  },
+  {
+    name: "\u4e5d\u6eaa\u5341\u516b\u6da7", //  九溪十八涧
+    lat: 30.189430100660577,
+    lng: 120.11711686948973,
+    image: "/img/jiuxishibajian.jpg",
+    url: "/2026/07/24/jiuxishibajian"
+  },
+  {
+    name: "\u4e2d\u56fd\u8336\u53f6\u535a\u7269\u9986", //  中国茶叶博物馆
+    lat: 30.232320594523575,
+    lng: 120.12016559632109,
+    image: "/img/zhongguochayebowuguan.jpg",
+    url: "/2026/07/24/zhongguochayebowuguan"
+  },
+   {
+    name: "\u6797\u5f6a\u884c\u5bab", //  林彪行宫
+    lat: 30.233266517020038,
+    lng: 120.12530646682553,
+    image: "/img/linbiaoxinggong.jpg",
+    url: "/2026/07/24/linbiaoxinggong"
+  },
 ]
 places.forEach(place => {
 
