@@ -316,12 +316,19 @@ const places = [
     image: "/img/zhongguochayebowuguan.jpg",
     url: "/2026/07/24/zhongguochayebowuguan"
   },
-   {
+  {
     name: "\u6797\u5f6a\u884c\u5bab", //  林彪行宫
     lat: 30.233266517020038,
     lng: 120.12530646682553,
     image: "/img/linbiaoxinggong.jpg",
     url: "/2026/07/24/linbiaoxinggong"
+  },
+  {
+    name: "\u4e2d\u56fd\u6e7f\u5730\u535a\u7269\u9986", //  中国湿地博物馆
+    lat: 30.264633369173115,
+    lng: 120.08665777661156,
+    image: "/img/shidibowuguan.jpg",
+    url: "/2026/07/29/shidibowuguan"
   },
 ]
 places.forEach(place => {
