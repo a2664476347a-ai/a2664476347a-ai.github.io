@@ -337,14 +337,14 @@ const places = [
     image: "/img/yuhuatai.jpg",
     url: "/2026/08/03/yuhuatai"
   },
-   {
+  {
     name: "\u5927\u62a5\u6069\u5bfa", //  大报恩寺
     lat: 32.0095800518374,
     lng: 118.78245696217577,
     image: "/img/dabaoensi.jpg",
     url: "/2026/08/03/dabaoensi"
   },
-  1{
+  {
     name: "\u4e2d\u534e\u95e8" //  中华门
     lat: 32.0128900184264,
     lng: 118.78169808067271,
