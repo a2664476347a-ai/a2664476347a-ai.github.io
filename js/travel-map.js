@@ -330,6 +330,36 @@ const places = [
     image: "/img/shidibowuguan.jpg",
     url: "/2026/07/29/shidibowuguan"
   },
+  {
+    name: "\u96e8\u82b1\u53f0", //  雨花台
+    lat: 31.997165138044164,
+    lng: 118.78006829843069,
+    image: "/img/yuhuatai.jpg",
+    url: "/2026/08/03/yuhuatai"
+  },
+   {
+    name: "\u5927\u62a5\u6069\u5bfa", //  大报恩寺
+    lat: 32.0095800518374,
+    lng: 118.78245696217577,
+    image: "/img/dabaoensi.jpg",
+    url: "/2026/08/03/dabaoensi"
+  },
+  1{
+    name: "\u4e2d\u534e\u95e8" //  中华门
+    lat: 32.0128900184264,
+    lng: 118.78169808067271,
+    image: "/img/zhonghuamen.jpg",
+    url: "/2026/08/03/zhonghuamen"
+  },
+  {
+    name: "\u5357\u4eac\u592b\u5b50\u5e99", //  夫子庙
+    lat: 32.02098921707993,
+    lng: 118.78999879485265,
+    image: "/img/nanjingfuzimiao.jpg",
+    url: "/2026/08/03/nanjingfuzimiao"
+  },
+
+
 ]
 places.forEach(place => {
 
