@@ -345,7 +345,7 @@ const places = [
     url: "/2026/08/03/dabaoensi"
   },
   {
-    name: "\u4e2d\u534e\u95e8" //  中华门
+    name: "\u4e2d\u534e\u95e8", //  中华门
     lat: 32.0128900184264,
     lng: 118.78169808067271,
     image: "/img/zhonghuamen.jpg",
@@ -358,6 +358,98 @@ const places = [
     image: "/img/nanjingfuzimiao.jpg",
     url: "/2026/08/03/nanjingfuzimiao"
   },
+  {
+    name: "\u660e\u5b5d\u9675", //  明孝陵
+    lat: 32.058127177358564,
+    lng: 118.83971754058791,
+    image: "/img/mingxiaoling.jpg",
+    url: "/2026/08/06/mingxiaoling"
+  },
+  {
+    name: "\u660e\u5b5d\u9675\u535a\u7269\u9986", //  明孝陵博物馆
+    lat: 32.044705007850446,
+    lng: 118.84248050016569,
+    image: "/img/mingxiaolingbowuguan.jpg",
+    url: "/2026/08/06/mingxiaolingbowuguan"
+  },
+  {
+    name: "\u4e2d\u5c71\u9675", //  中山陵
+    lat: 32.06201179663324,
+    lng: 118.8532502662546,
+    image: "/img/zhongshanling.jpg",
+    url: "/2026/08/06/zhongshanling"
+  },
+  {
+    name: "\u7f8e\u9f84\u5bab", //  美龄宫
+    lat: 32.045567407454925,
+    lng: 118.84651222840809,
+    image: "/img/meilinggong.jpg",
+    url: "/2026/08/06/meilinggong"
+  },
+  {
+    name: "\u660e\u6545\u5bab\u9057\u5740", //  明故宫遗址
+    lat: 32.040922046991874,
+    lng: 118.81770240783618,
+    image: "/img/minggugongyizhi.jpg",
+    url: "/2026/08/06/minggugongyizhi"
+  },
+  {
+    name: "\u603b\u7edf\u5e9c", //  总统府
+    lat: 32.04445395161314,
+    lng: 118.79758973987443,
+    image: "/img/zongtongfu.jpg",
+    url: "/2026/08/06/zongtongfu"
+  },
+  {
+    name: "\u9e21\u9e23\u5bfa", //  鸡鸣寺
+    lat: 32.061043434409655,
+    lng: 118.79530484133002,
+    image: "/img/jimingsi.jpg",
+    url: "/2026/08/06/jimingsi"
+  },
+  {
+    name: "\u5357\u4eac\u53e4\u751f\u7269\u535a\u7269\u9986", //  南京古生物博物馆
+    lat: 32.05956402910992,
+    lng: 118.79510500912734,
+    image: "/img/nanjinggushengwubowuguan.jpg",
+    url: "/2026/08/06/nanjinggushengwubowuguan"
+  },
+  {
+    name: "\u7384\u6b66\u6e56", //  玄武湖
+    lat: 32.07030099637961,
+    lng: 118.79561522192878,
+    image: "/img/xuanwuhu.jpg",
+    url: "/2026/08/06/xuanwuhu"
+  },
+  {
+    name: "\u6ed5\u738b\u9601", //  滕王阁
+    lat: 28.682606613496848,
+    lng: 115.88292353322292,
+    image: "/img/tengwangge.jpg",
+    url: "/2026/08/08/tengwangge"
+  },
+  {
+    name: "\u4e07\u5bff\u5bab", //  万寿宫
+    lat: 28.6743768730633,
+    lng: 115.88863486228479,
+    image: "/img/wanshougong.jpg",
+    url: "/2026/08/08/wanshougong"
+  },
+  {
+    name: "\u6c5f\u897f\u7701\u535a\u7269\u9986", //  江西省博物馆
+    lat: 28.706062184184248,
+    lng: 115.8816972584114,
+    image: "/img/jiangxi.jpg",
+    url: "/2026/08/08/jiangxi"
+  },
+  {
+    name: "\u7ef3\u91d1\u5854", //  绳金塔
+    lat: 28.6615835787655,
+    lng: 115.8998822308464,
+    image: "/img/shengjinta.jpg",
+    url: "/2026/08/08/shengjinta"
+  },
+ 
 
 
 ]
