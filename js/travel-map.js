@@ -449,6 +449,13 @@ const places = [
     image: "/img/shengjinta.jpg",
     url: "/2026/08/08/shengjinta"
   },
+  {
+    name: "\u9676\u9633\u91cc", //  陶阳里
+    lat: 29.295479148140263,
+    lng: 117.20507570151298,
+    image: "/img/taoyangli.jpg",
+    url: "/2026/08/10/taoyangli"
+  },
  
 
 
