@@ -456,6 +456,13 @@ const places = [
     image: "/img/taoyangli.jpg",
     url: "/2026/08/10/taoyangli"
   },
+  {
+    name: "\u4e2d\u56fd\u6c34\u5229\u535a\u7269\u9986", //  中国水利博物馆
+    lat: 30.259293960304316,
+    lng: 120.31259979475402,
+    image: "/img/hzshuili.jpg",
+    url: "/2026/08/10/hzshuili"
+  },
  
 
 
