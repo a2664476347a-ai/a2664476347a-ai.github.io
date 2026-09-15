@@ -461,7 +461,7 @@ const places = [
     lat: 30.259293960304316,
     lng: 120.31259979475402,
     image: "/img/hzshuili.jpg",
-    url: "/2026/08/10/hzshuili"
+    url: "/2026/09/10/hzshuili"
   },
  
 
