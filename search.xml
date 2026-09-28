@@ -4,18 +4,39 @@
   
     
     <entry>
-      <title>导航</title>
-      <link href="/2026/09/28/%E5%AF%BC%E8%88%AA/"/>
-      <url>/2026/09/28/%E5%AF%BC%E8%88%AA/</url>
+      <title>爱丁堡公交，罢工，牙龈出血，新增笔记板块</title>
+      <link href="/2026/09/28/%E7%88%B1%E4%B8%81%E5%A0%A1%E5%85%AC%E4%BA%A4%EF%BC%8C%E7%BD%A2%E5%B7%A5%EF%BC%8C%E7%89%99%E9%BE%88%E5%87%BA%E8%A1%80%EF%BC%8C%E6%96%B0%E5%A2%9E%E7%AC%94%E8%AE%B0%E6%9D%BF%E5%9D%97/"/>
+      <url>/2026/09/28/%E7%88%B1%E4%B8%81%E5%A0%A1%E5%85%AC%E4%BA%A4%EF%BC%8C%E7%BD%A2%E5%B7%A5%EF%BC%8C%E7%89%99%E9%BE%88%E5%87%BA%E8%A1%80%EF%BC%8C%E6%96%B0%E5%A2%9E%E7%AC%94%E8%AE%B0%E6%9D%BF%E5%9D%97/</url>
       
-        <content type="html"><![CDATA[<a href="" title="" target="">Linear Algebra, Week 1–12 notes, &#x2F;notes&#x2F;linear-algebra&#x2F;</a>]]></content>
+        <content type="html"><![CDATA[<p>今天是周一，又是要学习的一天，但是其实对我来说我每天都在学习，就连周日我都得抽出半天时间来看文献。</p><p>然后我觉得爱丁堡的公交效率太低了，我本来下午上课准备坐公交去的，但是我我一查地图，发现直接延误20分钟，所以我只好走路去了。</p><p>今天是罢工的第一天，但是我的课程都没怎么受到影响，而且King‘s building那边连一个举罢工牌的人都没看到，可能是学校比较重视理科吧，但也确实理科现在就是爱丁堡的招牌啊。</p><p>然后我今天牙龈出血了，应该是因为爱丁堡的天气太干燥了，我几天喝了快3杯水，和大大小小的饮料可是嘴唇还是很干，早知道就弄点唇膏了。</p><p>然后我今天晚上一直在捣鼓我的网站，现在新增了笔记板块，里面是我上课和看材料的一些笔记，为的是避免有的人如果要看，就只能等到期末复习的时候看，我自己的笔记比较粗糙，但还是挺有用的。</p>]]></content>
       
       
       <categories>
           
-          <category> Note </category>
+          <category> 日记 </category>
           
       </categories>
+      
+      
+        <tags>
+            
+            <tag> 日记 </tag>
+            
+            <tag> 爱丁堡生活 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>导航</title>
+      <link href="/2026/09/28/%E5%AF%BC%E8%88%AA/"/>
+      <url>/2026/09/28/%E5%AF%BC%E8%88%AA/</url>
+      
+        <content type="html"><![CDATA[<div class="course-grid"><a class="course-card" href="/Note/la/"><h2>🧮 线性代数</h2></a><a class="course-card" href="/Note/mml/"><h2>🧠 心灵，感受&语言</h2></a><a class="course-card" href="/Note/ids/"><h2>📊 数据科学</h2></a></div>]]></content>
+      
       
       
     </entry>
@@ -3499,9 +3520,9 @@
             
             <tag> 日记 </tag>
             
-            <tag> galgame </tag>
-            
             <tag> LPL </tag>
+            
+            <tag> galgame </tag>
             
             <tag> 行程规划 </tag>
             

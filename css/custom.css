@@ -44,8 +44,37 @@ pre.mermaid {
 }
 
 /* 如果 Mermaid 图仍然太窄，可以启用下面这一条 */
-/*
+
 pre.mermaid > svg {
   min-width: 600px;
 }
 
+.course-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:20px;
+}
+
+.course-card{
+  display:block;
+  padding:25px;
+  border-radius:16px;
+  background:var(--card-bg);
+  box-shadow:var(--card-box-shadow);
+  text-decoration:none !important;
+  transition:all .3s;
+}
+
+.course-card:hover{
+  transform:translateY(-6px);
+}
+
+.course-card h2{
+  margin:0 0 10px;
+}
+
+.course-card p{
+  margin:0;
+  color:var(--font-color);
+  opacity:.8;
+}
