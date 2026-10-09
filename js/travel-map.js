@@ -463,11 +463,18 @@ const places = [
     image: "/img/hzshuili.jpg",
     url: "/2026/09/10/hzshuili"
   },
+  {
+    name: "Arthur's Seat", //  亚瑟王座
+    lat: 55.943537,
+    lng: -3.1596593,
+    image: "/img/arthurs-seat.jpg",
+    url: "/2026/10/10/arthurs-seat"
+  },
  
 
 
 ]
-places.forEach(place => {
+places.forEach(place => { 
 
   const marker = L.circleMarker(
   [place.lat, place.lng],
