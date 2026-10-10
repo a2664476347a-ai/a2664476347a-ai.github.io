@@ -1,0 +1,1123 @@
+<!DOCTYPE html><html lang="cn" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>私家菜的个人博客 | 私家菜的个人博客</title><meta name="author" content="Joey"><meta name="copyright" content="Joey"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《A Recipe for Thought》If You Can&#39;t Make One, You Don&#39;t Know How It Works在作者看来：  如果你不知道如何制造某种东西，你就没有真正理解它是如何运作的。  假设你有一台电视机，你知道按下电源键，电视就会打开；知道遥控器可以切换频道；你甚至能按照说明书把电视机组装起来。 但是如果你完全不理解电路、电信号以及各个零件">
+<meta property="og:type" content="website">
+<meta property="og:title" content="私家菜的个人博客">
+<meta property="og:url" content="https://a2664476347a-ai.github.io/Note/mml/week4.html">
+<meta property="og:site_name" content="私家菜的个人博客">
+<meta property="og:description" content="《A Recipe for Thought》If You Can&#39;t Make One, You Don&#39;t Know How It Works在作者看来：  如果你不知道如何制造某种东西，你就没有真正理解它是如何运作的。  假设你有一台电视机，你知道按下电源键，电视就会打开；知道遥控器可以切换频道；你甚至能按照说明书把电视机组装起来。 但是如果你完全不理解电路、电信号以及各个零件">
+<meta property="og:locale">
+<meta property="og:image" content="https://a2664476347a-ai.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2026-10-10T21:37:38.252Z">
+<meta property="article:modified_time" content="2026-10-10T21:37:38.252Z">
+<meta property="article:author" content="Joey">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://a2664476347a-ai.github.io/img/avatar.jpg"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://a2664476347a-ai.github.io/Note/mml/week4.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//www.clarity.ms"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="-SA3Essa91Y2Ep02I_lVO46k18Im4ofqJesBiGXFTVA"/><meta name="msvalidate.01" content="C5E544DDD197A5A1F65FF3CC2EAA5B30"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.9/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-K3J40ZJ1S7"></script><script>window.dataLayer = window.dataLayer || []
+function gtag(){dataLayer.push(arguments)}
+gtag('js', new Date())
+gtag('config', 'G-K3J40ZJ1S7')
+btf.addGlobalFn('pjaxComplete', () => {
+  gtag('config', 'G-K3J40ZJ1S7', {'page_path': window.location.pathname})
+}, 'google_analytics')
+</script><script>(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "w4agonpixo");
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":3,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"You have switched to Traditional Chinese","cht_to_chs":"You have switched to Simplified Chinese","day_to_night":"You have switched to Dark Mode","night_to_day":"You have switched to Light Mode","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-right"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '私家菜的个人博客',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="/css/custom.css"><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/ loading='lazy'></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">280</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">51</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">11</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><span> 学习</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/analyse/"><i class="fa-fw fas fa-square-root-alt"></i><span> 数学分析</span></a></li><li><a class="site-page child" href="/categories/linear-algebra/"><i class="fa-fw fas fa-th"></i><span> 线性代数</span></a></li><li><a class="site-page child" href="/categories/logic/"><i class="fa-fw fas fa-project-diagram"></i><span> 逻辑学</span></a></li><li><a class="site-page child" href="/categories/philosophy/"><i class="fa-fw fas fa-brain"></i><span> 普通哲学</span></a></li><li><a class="site-page child" href="/2026/09/28/%E5%AF%BC%E8%88%AA/"><i class="fa-fw fas fa-pencil-alt"></i><span> 笔记</span></a></li><li><a class="site-page child" href="/categories/other/"><i class="fa-fw fas fa-folder"></i><span> 其他</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/categories/reading/"><i class="fa-fw fas fa-book-open"></i><span> 阅读</span></a></div><div class="menus_item"><span class="site-page group"><span> 兴趣</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/anime/"><i class="fa-fw fas fa-tv"></i><span> 动漫</span></a></li><li><a class="site-page child" href="/categories/game/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/map/"><i class="fa-fw fas fa-plane"></i><span> 旅行</span></a></li><li><a class="site-page child" href="/categories/film/"><i class="fa-fw fas fa-film"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%97%A5%E8%AE%B0/"><i class="fa-fw fas fa-pen"></i><span> 日记</span></a></li><li><a class="site-page child" href="/categories/%E6%9D%82%E8%B0%88/"><i class="fa-fw fas fa-comment"></i><span> 杂谈</span></a></li></ul></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(/img/index.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">私家菜的个人博客</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><span> 学习</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/analyse/"><i class="fa-fw fas fa-square-root-alt"></i><span> 数学分析</span></a></li><li><a class="site-page child" href="/categories/linear-algebra/"><i class="fa-fw fas fa-th"></i><span> 线性代数</span></a></li><li><a class="site-page child" href="/categories/logic/"><i class="fa-fw fas fa-project-diagram"></i><span> 逻辑学</span></a></li><li><a class="site-page child" href="/categories/philosophy/"><i class="fa-fw fas fa-brain"></i><span> 普通哲学</span></a></li><li><a class="site-page child" href="/2026/09/28/%E5%AF%BC%E8%88%AA/"><i class="fa-fw fas fa-pencil-alt"></i><span> 笔记</span></a></li><li><a class="site-page child" href="/categories/other/"><i class="fa-fw fas fa-folder"></i><span> 其他</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/categories/reading/"><i class="fa-fw fas fa-book-open"></i><span> 阅读</span></a></div><div class="menus_item"><span class="site-page group"><span> 兴趣</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/anime/"><i class="fa-fw fas fa-tv"></i><span> 动漫</span></a></li><li><a class="site-page child" href="/categories/game/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/map/"><i class="fa-fw fas fa-plane"></i><span> 旅行</span></a></li><li><a class="site-page child" href="/categories/film/"><i class="fa-fw fas fa-film"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%97%A5%E8%AE%B0/"><i class="fa-fw fas fa-pen"></i><span> 日记</span></a></li><li><a class="site-page child" href="/categories/%E6%9D%82%E8%B0%88/"><i class="fa-fw fas fa-comment"></i><span> 杂谈</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title"></h1></div></header><main class="layout" id="content-inner"><div id="page"><div class="container" id="article-container"><h1 id="《A-Recipe-for-Thought》"><a href="#《A-Recipe-for-Thought》" class="headerlink" title="《A Recipe for Thought》"></a>《A Recipe for Thought》</h1><h2 id="If-You-Can-t-Make-One-You-Don-t-Know-How-It-Works"><a href="#If-You-Can-t-Make-One-You-Don-t-Know-How-It-Works" class="headerlink" title="If You Can&#39;t Make One, You Don&#39;t Know How It Works"></a>If You Can&#39;t Make One, You Don&#39;t Know How It Works</h2><p>在作者看来：</p>
+<blockquote>
+<p>如果你不知道如何制造某种东西，你就没有真正理解它是如何运作的。</p>
+</blockquote>
+<p>假设你有一台电视机，你知道按下电源键，电视就会打开；知道遥控器可以切换频道；你甚至能按照说明书把电视机组装起来。</p>
+<p>但是如果你完全不理解电路、电信号以及各个零件之间的关系，那么你仍然没有真正理解电视机是如何工作的。</p>
+<h3 id="constructive-model-of-understanding"><a href="#constructive-model-of-understanding" class="headerlink" title="constructive model of understanding"></a>constructive model of understanding</h3><p>类比到“thinking”上，我们如果想理解人类的思维，那么我们就应该探究<strong>思想的构成</strong>，<strong>构成物的相互作用</strong>，以及<strong>它们如何产生思想</strong>。</p>
+<hr>
+<h2 id="Information-and-Intentionality"><a href="#Information-and-Intentionality" class="headerlink" title="Information and Intentionality"></a>Information and Intentionality</h2><h3 id="什么是-Intentionality（意向性）"><a href="#什么是-Intentionality（意向性）" class="headerlink" title="什么是 Intentionality（意向性）"></a>什么是 Intentionality（意向性）</h3><p>在心灵哲学中，intentionality 指心灵状态具有关于某个对象或事物的内容，也就是“指向某物”或“关于某物”的性质。</p>
+<p>例如：</p>
+<p>我相信今天会下雨。</p>
+<p>我希望考试通过。</p>
+<p>我认为那是一头牛。</p>
+<p>这些思想都有一个指向对象或事实的内容。</p>
+<p>但是意向性并不是人类独有的，生活中的其他东西也有意向性。</p>
+<p>比如指南针，指南针的指针会随着磁场的变化而改变方向。正常工作时，它能够指示北方的方向。</p>
+<p>Dretske 认为，指南针可以携带有关外部世界的信息，而且这种信息关系不一定依赖于人类是否知道它的存在。</p>
+<p>但是当我们想探究北极熊的住所时，我们虽然可以用指南针找到大概方向，但无法找到具体位置。</p>
+<h3 id="Aspectual-Shape：意向性的“方面性”"><a href="#Aspectual-Shape：意向性的“方面性”" class="headerlink" title="Aspectual Shape：意向性的“方面性”"></a>Aspectual Shape：意向性的“方面性”</h3><p>举个例子，假设你出生在A城，那么现在考虑两个命题：</p>
+<ol>
+<li><p>你出生的地方是A</p>
+</li>
+<li><p>我出生的地方是A</p>
+</li>
+</ol>
+<p>即使两句话提到的是同一个城市，它们表达的内容也不相同，因为它们从不同的角度指向这个地方。</p>
+<p>Note：</p>
+<p>原文还讨论了两个哲学术语：</p>
+<ul>
+<li>Intensionality（内涵性）：某些语境下，即使两个表达指向同一个对象，也不能随意互换而保持句子含义不变。</li>
+<li>Intentionality（意向性）：思想或其他系统具有关于某个对象或事实的内容。</li>
+</ul>
+<p>两者拼写很像，但不是同一个概念。</p>
+<h2 id="Misrepresentation（错误表征）"><a href="#Misrepresentation（错误表征）" class="headerlink" title="Misrepresentation（错误表征）"></a>Misrepresentation（错误表征）</h2><p>到这里，我们已经知道指南针可以携带信息，也可以在一定意义上具有意向性。但作者认为，这还不足以解释人类思想。</p>
+<p>因为指南针所携带的信息，与思想能够表达错误内容的能力，并不是一回事。</p>
+<p>例如，正常情况下，指南针的指针会指示北方。但如果它因为<em>故障</em>而指向错误方向，我们可以说它出现了<em>错误</em>。</p>
+<p>Dretske 要问的是：<strong>一个系统如何能够真正具有某种内容，即使现实并不符合该内容？</strong></p>
+<p>这就是 misrepresentation，也就是“错误表征”，它不仅仅是系统接收了错误的信息，而是系统具有某种内容，而现实与该内容不符。</p>
+<p>例如：</p>
+<ul>
+<li>你认为桌上有一头牛。</li>
+<li>实际上，桌上什么都没有。</li>
+</ul>
+<p>你的思想仍然具有“桌上有一头牛”这个内容，只不过它是错误的。</p>
+<p>这正是人类思想非常重要的特征：思想的内容不必与现实情况一致。</p>
+<h3 id="content-and-truth-or-falsity"><a href="#content-and-truth-or-falsity" class="headerlink" title="content and truth or falsity"></a>content and truth or falsity</h3><p>Dretske 认为，思想的内容必须与思想是否正确区分开来。</p>
+<p>例如：</p>
+<table>
+<thead>
+<tr>
+<th>思想内容</th>
+<th>实际情况</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>那是一头牛</td>
+<td>实际是一头牛</td>
+<td>正确</td>
+</tr>
+<tr>
+<td>那是一头牛</td>
+<td>实际是一匹马</td>
+<td>错误</td>
+</tr>
+<tr>
+<td>桌上有一把伞</td>
+<td>桌上没有伞</td>
+<td>错误</td>
+</tr>
+</tbody></table>
+<p>无论思想正确还是错误，它都具有一个可以被评价的内容。</p>
+<p>因此：</p>
+<ul>
+<li>Content（内容）：思想表达了什么。</li>
+<li>Truth or falsity（真假）：现实是否符合思想表达的内容。</li>
+</ul>
+<p>如果一个理论只能解释为什么某个内部状态通常由牛引起，却无法解释为什么这个状态即使由马引起，仍然可以表示“牛”，那么它就没有完整解释思想的内容。</p>
+<p>Dretske 认为，解释错误表征，就是解释思想意义如何能够独立于实际引发它的原因。</p>
+<h3 id="Fodor-的-Disjunction-Problem（二难析取问题）"><a href="#Fodor-的-Disjunction-Problem（二难析取问题）" class="headerlink" title="Fodor 的 Disjunction Problem（二难析取问题）"></a>Fodor 的 Disjunction Problem（二难析取问题）</h3><p>假设大脑里存在一个内部状态 (R)。</p>
+<p>正常情况下，当你看到一头牛时，(R) 就会出现。</p>
+<p>我们希望说：</p>
+<p>[ R&#x3D;\text{“牛”的表征} ]</p>
+<p>但是，假设你在光线很暗的地方看见一匹马，也产生了同样的内部状态 (R)。</p>
+<p>那么，单纯根据什么东西能够引起 (R)，我们就很难解释为什么 (R) 表示的是牛。</p>
+<p>这就是所谓的 disjunction problem：</p>
+<blockquote>
+<p>如果一个内部状态可能由多种不同的情况引起，我们如何确定它真正代表哪一种情况？</p>
+</blockquote>
+<p>随后作者拿温度计举了个例子：</p>
+<p>总所周知，温度计中的水银会随着温度变化而膨胀或收缩，因此它能够携带温度信息。</p>
+<p>如果温度计显示 30°C，而实际温度是 20°C，我们可以说它<em>错误</em>地显示了温度。</p>
+<p>但作者认为，这种仪器的<em>错误表征能力</em>与<em>思想的错误表征能力</em>仍然存在关键区别。</p>
+<p>因为温度计之所以被看作一个“告诉我们温度”的装置，是因为我们<em>赋予</em>了它这样的功能。</p>
+<p>如果没有人类赋予它测量温度的任务，那么它就只是一个会随温度变化而膨胀、收缩的物理系统。</p>
+<p>它本身并不会独立地告诉我们什么，也不会独立地误导我们。</p>
+<p>因此，温度计的表征能力是<em>派生</em>的（derived）：它依赖于人类的目的、态度和使用方式。</p>
+<hr>
+<h2 id="Natural-Functions（自然功能）"><a href="#Natural-Functions（自然功能）" class="headerlink" title="Natural Functions（自然功能）"></a>Natural Functions（自然功能）</h2><p>Dretske 认为，如果要解决上述问题，我们要找到一种不依赖人类意图的自然功能。</p>
+<p>因为如果某个系统能够自行获得一种功能，让它负责提供特定的信息，那么即使它在某些情况下提供了错误的信息，我们仍然可以解释它原本代表什么。</p>
+<p>作者认为，这样就有可能让<em>意义</em>与<em>实际</em>引起某个状态的原因<em>分离</em>。</p>
+<p>例如，脏具有泵血的自然功能，并<em>不是因为人类决定</em>把它叫作泵血器官，而是因为它的<em>进化历史</em>使它承担了这一功能。</p>
+<p>假设一个人的心脏出现故障，无法正常泵血。</p>
+<p>心脏依然具有泵血的<em>功能</em>，只不过它没有成功履行这一功能。</p>
+<p>因此，功能不等于某个时刻实际发生的结果。</p>
+<p>这个区别对理解表征特别重要。</p>
+<p>如果某个内部状态的自然功能是提供关于牛的信息，那么即使它在某一次被马触发，它也不必因此改变自己的表征内容。</p>
+<h3 id="自然功能有哪两种来源？"><a href="#自然功能有哪两种来源？" class="headerlink" title="自然功能有哪两种来源？"></a>自然功能有哪两种来源？</h3><p>Dretske 提出两种可能的来源：Phylogenic 和 Ontogenic</p>
+<h4 id="1-Phylogenic：通过进化获得功能"><a href="#1-Phylogenic：通过进化获得功能" class="headerlink" title="1. Phylogenic：通过进化获得功能"></a>1. Phylogenic：通过进化获得功能</h4><p>假设某种动物的祖先生活在一个环境中。</p>
+<p>那些能够更准确地识别食物的动物更容易存活和繁殖，而不能识别食物的动物更容易死亡。</p>
+<p>经过许多代自然选择，这种动物逐渐形成了能够检测食物的感官机制。</p>
+<p>在这种情况下，感官机制之所以具有某种功能，是因为它在<em>进化过程</em>中发挥了作用。</p>
+<p>作者进一步提出，动物的感觉系统也可能具有这样的自然功能，为动物提供有关视觉、声音和化学环境的信息。</p>
+<h4 id="2-Ontogenic：通过个体学习获得功能"><a href="#2-Ontogenic：通过个体学习获得功能" class="headerlink" title="2. Ontogenic：通过个体学习获得功能"></a>2. Ontogenic：通过个体学习获得功能</h4><p>Dretske 举了一个动物识别有毒蘑菇的例子。</p>
+<p>假设某种动物能够通过视觉识别蘑菇，却不知道这种蘑菇有毒。</p>
+<p>它能够检测到蘑菇的存在，但还没有学会避开它。
+$$
+不认识-&gt; 识别 -&gt; 学会应对
+$$
+Dretske 的重点不是蘑菇本身，而是动物如何通过学习获得新的信息使用方式。</p>
+<p>动物原本就有检测蘑菇的能力，但这个内部信号还没有被恰当地接入行为控制过程。</p>
+<p><em>学习</em>改变了这种关系：检测到蘑菇的信息，开始在适当条件下引发回避行为。</p>
+<p>于是，这个内部信号获得了一种功能——为动物提供与回避有毒蘑菇有关的信息。</p>
+<p>这就是作者所说的个体发生的自然功能。</p>
+<p>在作者看来，关键是内部信号不只是被动地记录环境。</p>
+<p>它还进入了一个能够调整自身行为的系统，并在其中发挥实际作用。</p>
+<p>这就为解释表征内容提供了一个自然主义的方向：内部信号之所以具有某种功能，是因为它通过进化或学习的历史，在系统的生存和行为协调中发挥了作用。</p>
+<h3 id="我们不能随便制造这种功能"><a href="#我们不能随便制造这种功能" class="headerlink" title="我们不能随便制造这种功能"></a>我们不能随便制造这种功能</h3><p>Dretske 认为，问题在于：自然功能不是一种可以直接涂在零件上的属性。</p>
+<p>例如，你可以制造一个能够随着温度变化而膨胀的装置。</p>
+<p>但是，仅仅制造出这个装置，并不意味着它就拥有了与自然功能相关的历史。</p>
+<p>这也是他对自然主义解释的一个重要限制。</p>
+<p>他并不是说实验室绝对不可能制造任何能够表征的系统，而是说：如果某种表征功能必须通过特定的进化或学习历史获得，那么仅靠直接组装零件，就不能保证得到这种功能。</p>
+<hr>
+<h2 id="Back-to-disjunction-problem"><a href="#Back-to-disjunction-problem" class="headerlink" title="Back to disjunction problem"></a>Back to disjunction problem</h2><p>根据自然功能，Dretske 觉得能解决这个问题。</p>
+<p>但他在这一部分作出了一个重要区分：</p>
+<p>一个信号<em>实际携带哪些信息</em>，与它通过<em>特定历史获得了什么功能</em>，是两回事。</p>
+<p>让我们重新看泽西奶牛的例子。</p>
+<p>假设一个内部信号 (R) 在进化或学习过程中，因为能够指示奶牛并帮助动物作出适当反应，而获得了指示奶牛的功能。</p>
+<p>那么，即使泽西奶牛同时也是一种动物，(R) 也不必因此同时代表所有这些类别。</p>
+<p>它可能携带关于“动物”的信息，但其表征功能仍然是指示“奶牛”。</p>
+<p>Dretske 的思路是：我们应该研究这个信号究竟因为什么信息而被选中，进而获得影响系统行为的功能。</p>
+<p>这就需要考察它的形成历史，以及相关的反事实条件。</p>
+<h3 id="Counterfactuals（反事实条件）"><a href="#Counterfactuals（反事实条件）" class="headerlink" title="Counterfactuals（反事实条件）"></a>Counterfactuals（反事实条件）</h3><p>反事实推理讨论的是：如果某种情况不同，结果会不会改变？</p>
+<p>例如，我们可以问：</p>
+<ul>
+<li>如果当时出现的是一头普通的奶牛，而不是泽西奶牛，这个信号是否仍会发挥相同的功能？</li>
+<li>如果某种动物不是奶牛，而只是外形相似的马，这个信号是否仍会被系统用来作出相同的反应？</li>
+</ul>
+<p>Dretske 认为，回答这些问题有助于确定信号究竟具有哪一种表征内容。</p>
+<p>原文的重点是：</p>
+<blockquote>
+<p>信号携带了多种信息，并不意味着这些信息都决定了它的表征内容。</p>
+</blockquote>
+<p>究竟哪个内容是正确的，要看哪个信息与该信号获得功能的历史存在相关联系。</p>
+<hr>
+<h2 id="The-Recipe"><a href="#The-Recipe" class="headerlink" title="The Recipe"></a>The Recipe</h2><p>Dretske 认为，要让一个系统获得类似思想的表征能力，需要以下几个条件。</p>
+<h3 id="第一步：系统必须有某种需求（Need）"><a href="#第一步：系统必须有某种需求（Need）" class="headerlink" title="第一步：系统必须有某种需求（Need）"></a>第一步：系统必须有某种需求（Need）</h3><p>作者首先要求，这个系统必须有某种需求。</p>
+<p>例如，一只动物为了生存，需要避开有毒的蘑菇。</p>
+<p>假设我们把相关环境条件记作 (F)，把动物需要执行的行为记作 (A)。</p>
+<p>那么，系统的生存或福祉就依赖于：在 (F) 出现时，它能够执行 (A)。</p>
+<p>可以用下面的结构表示：</p>
+<p>[ \text{条件 }F \quad\longrightarrow\quad \text{需要执行行为 }A ]</p>
+<p>这里的 need 不一定意味着动物有意识地感到饥饿、恐惧或渴望。</p>
+<h3 id="第二步：系统必须能够检测条件-F"><a href="#第二步：系统必须能够检测条件-F" class="headerlink" title="第二步：系统必须能够检测条件 (F)"></a>第二步：系统必须能够检测条件 (F)</h3><p>光有需求还不够。</p>
+<p>动物需要避开有毒蘑菇，但如果它完全无法检测蘑菇的存在，就很难根据蘑菇出现这一情况调整行为。</p>
+<p>因此，作者要求系统拥有某种检测机制。</p>
+<p>例如：</p>
+<ul>
+<li>环境中出现蘑菇；</li>
+<li>动物的感官系统检测到蘑菇；</li>
+<li>内部产生一个与该环境条件有关的信号。</li>
+</ul>
+<p>我们可以把这个内部信号记为 (R)。</p>
+<p>[ F\longrightarrow R ]</p>
+<p>这里的 (R) 最初只需要能够携带关于 (F) 的信息，还不必已经是一种真正的思想。</p>
+<h3 id="第三步：通过自然过程赋予信号功能"><a href="#第三步：通过自然过程赋予信号功能" class="headerlink" title="第三步：通过自然过程赋予信号功能"></a>第三步：通过自然过程赋予信号功能</h3><p>假设动物可以检测到蘑菇，但它还不知道应该避开蘑菇。</p>
+<p>这时，内部信号 (R) 虽然存在，却还没有在行为控制中发挥我们需要的作用。</p>
+<p>Dretske 认为，系统必须具有一种能够重新组织自身控制机制的能力，使 (R) 能够参与引发适当行为。</p>
+<p>例如：</p>
+<p>[ \text{检测到蘑菇} \longrightarrow R \longrightarrow \text{回避行为} ]</p>
+<p>如果经过学习，动物逐渐形成了在适当条件下根据这个信号避开蘑菇的机制，那么这个信号就获得了相应的功能。</p>
+<p>作者把这种机制视为自然功能形成的一种途径。</p>
+<h3 id="为什么这能够产生思想内容？"><a href="#为什么这能够产生思想内容？" class="headerlink" title="为什么这能够产生思想内容？"></a>为什么这能够产生思想内容？</h3><p>这是整个配方最重要的一环。</p>
+<p>假设一个内部信号 (R) 已经获得了提供关于蘑菇的信息、并参与调节相关行为的功能。</p>
+<p>现在出现了一种特殊情况：动物看到的不是蘑菇，而是一个外形相似的物体。</p>
+<p>这个物体仍然可能触发 (R)。</p>
+<p>但由于 (R) 的表征功能已经形成，它不必因此自动改为表示“蘑菇或相似物体”。</p>
+<p>它仍然可以表示蘑菇，即使这次表征是错误的。</p>
+<p>这就是作者希望通过自然功能解释的现象：</p>
+<ul>
+<li>内部信号具有特定的表征内容；</li>
+<li>这个内容不完全由当前的实际原因决定；</li>
+<li>因此，信号能够错误地表征现实。</li>
+</ul>
+<hr>
+<h2 id="Rationality-—-The-Functional-Role-of-Thought"><a href="#Rationality-—-The-Functional-Role-of-Thought" class="headerlink" title="Rationality — The Functional Role of Thought"></a>Rationality — The Functional Role of Thought</h2><h3 id="拥有表征，不等于拥有完整的思想"><a href="#拥有表征，不等于拥有完整的思想" class="headerlink" title="拥有表征，不等于拥有完整的思想"></a>拥有表征，不等于拥有完整的思想</h3><p>Dretske 他承认，这个配方的产物可能令人失望。</p>
+<p>因为一个系统可能拥有某种关于牛的内部表征，却没有真正像我们一样思考牛。</p>
+<p>例如，我们假设一个系统内部存在一个能够检测牛的信号 (R)。</p>
+<p>这个信号能够代表牛，但它只是孤立地存在于系统中：</p>
+<ul>
+<li>它不会参与推理；</li>
+<li>它不会与其他信念发生联系；</li>
+<li>它也不会与有关牛的欲望共同解释系统的行为。</li>
+</ul>
+<p>那么，我们有充分理由称 (R) 为一个真正的<strong>思想</strong>吗？</p>
+<p>Dretske 认为，这值得怀疑。</p>
+<p>他在原文中提出：</p>
+<blockquote>
+<p>如果我们想制造思想，就不仅希望结果具有思想的某些特征，还希望它的表现和行为也像思想。</p>
+</blockquote>
+<h3 id="思想必须参与推理和行动"><a href="#思想必须参与推理和行动" class="headerlink" title="思想必须参与推理和行动"></a>思想必须参与推理和行动</h3><p>作者用关于牛的思想举例。</p>
+<p>假设一个人具有以下两种心理状态：</p>
+<ul>
+<li>信念：前面有一头牛。</li>
+<li>欲望：我想接近那头牛。</li>
+</ul>
+<p>这两种状态共同影响他的行为，使他向牛走去。</p>
+<p>在这个例子中，关于牛的信念不是一个孤立的内部信号。</p>
+<p>它与欲望相互作用，并参与产生行为。</p>
+<p>更重要的是，我们不仅可以说这个人因为大脑中存在某种信号而行动，还可以说：他之所以这样行动，是因为他相信前面有一头牛。</p>
+<h3 id="Rationality（理性）"><a href="#Rationality（理性）" class="headerlink" title="Rationality（理性）"></a>Rationality（理性）</h3><p>在这里，Dretske 讨论的是行为与系统的需求、欲望之间的关系。</p>
+<p>例如：</p>
+<p>一个动物需要避开有毒蘑菇。当它检测到蘑菇时，内部表征促使它回避。</p>
+<p>从动物自身的生存需求来看，这种反应是合理的。</p>
+<p>相反，如果动物在同样的条件下反复采取对自身有害的行为，那么我们就会质疑，这个系统是否正常地发挥了相关功能。</p>
+<p>不过，作者并不是说系统必须始终表现得理性。他明确承认，按照他的配方形成的系统也可能做出愚蠢的行为。</p>
+<p>关键在于：这个内部表征在正常发挥其功能时，应当参与产生有助于满足系统需求和欲望的行为。</p>
+<h3 id="为什么表征的内容能够解释行为"><a href="#为什么表征的内容能够解释行为" class="headerlink" title="为什么表征的内容能够解释行为"></a>为什么表征的内容能够解释行为</h3><p>Dretske 不满足于这样的解释：</p>
+<blockquote>
+<p>内部信号 (R) 引起了行为 (A)。</p>
+</blockquote>
+<p>他希望得到更进一步的解释：</p>
+<blockquote>
+<p>(R) 之所以引起行为 (A)，是因为 (R) 表示了条件 (F)，而在这种条件下，行为 (A) 有助于满足系统的需求。</p>
+</blockquote>
+<p>例如：
+$$
+动物需要避开有毒蘑菇 -&gt; 内部信号表示蘑菇出现 -&gt; 
+这个信号参与引发回避行为 -&gt; 回避行为在相关情况下有助于动物的生存。
+$$
+按照 Dretske 的理论，这个内部信号之所以成为关于蘑菇的表征，不只是因为蘑菇能引起它，还因为它在相关过程中获得了提供这种信息、并参与协调行为的功能。</p>
+<p>因此，表征内容与行为之间不是毫无关系的两个事实,内容本身就参与解释为什么系统会以某种方式行动。</p>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Dretske 的目标不是简单地说“思想就是大脑中的某种物理状态”。</p>
+<p>他试图建立的是一条更具体的解释路线：</p>
+<p>自然系统能够检测环境，内部信号能够携带信息；通过进化或学习，这些信号可以获得自然功能；这种功能使信号能够具有特定内容，并且能够错误地表征现实；当这些表征进一步参与推理和行为时，我们就得到了更接近思想的系统。</p>
+<p>这套理论的优势，是它尝试解释意义、错误和理性如何在自然世界中形成，而不是把它们当作无法解释的额外属性。</p>
+<hr>
+<hr>
+<h1 id="《True-Believers-The-Intentional-Strategy-and-Why-It-Works》"><a href="#《True-Believers-The-Intentional-Strategy-and-Why-It-Works》" class="headerlink" title="《True Believers: The Intentional Strategy and Why It Works》"></a>《True Believers: The Intentional Strategy and Why It Works》</h1><h2 id="Death-Speaks"><a href="#Death-Speaks" class="headerlink" title="Death Speaks"></a>Death Speaks</h2><p>文章开头讲了一个故事。</p>
+<pre><code>仆人请求主人借给他一匹马，让他赶快逃到萨马拉，因为他相信只要逃得够远，就能避开死亡。
+
+商人答应了。
+
+仆人离开后，商人来到市场，遇见死神，质问它为什么要威胁自己的仆人。
+
+死神回答说：那不是威胁，而是因为惊讶。
+
+它惊讶的是，自己明明约好了当晚在萨马拉见到这个仆人，却没想到会在巴格达提前遇见他。
+</code></pre>
+<p>这个故事的讽刺之处在于：仆人为了逃避死亡而逃往萨马拉，结果恰恰是他的逃跑让他前往了死亡原本等待他的地方。</p>
+<p>这个故事引出了一个与本文密切相关的问题：</p>
+<blockquote>
+<p>我们如何根据一个人的信念和欲望，解释并预测他的行为？</p>
+</blockquote>
+<p>我们可以这样重建仆人的思考过程：仆人首先<strong>相信</strong>死神会杀他，其次他的<strong>欲望</strong>迫使他不想死，然后他通过<strong>推理</strong>得出：只要逃走就好，最后他执行了<strong>行动</strong>。</p>
+<p>如果我们从仆人的角度来看，这一系列行为是有道理的。即使他的推理最终没有帮助他逃脱命运，我们仍然能够理解他为什么这样做。</p>
+<h3 id="哲学部分"><a href="#哲学部分" class="headerlink" title="哲学部分"></a>哲学部分</h3><p>丹尼特接下来指出，在社会科学中，我们经常谈论人们的信念。</p>
+<p>例如：他相信今天会下雨；她认为这家公司值得投资；这个人相信兔子是鸟类。</p>
+<p>然后他举了一个例子：</p>
+<pre><code>有人打电话问一位生物学家，兔子是不是鸟类。生物学家回答不是，对方随即挂断电话，懊恼自己打赌输了。
+</code></pre>
+<p>作者便由此提出了一个问题：</p>
+<blockquote>
+<p>我们真的应该把“相信兔子是鸟类”这种信念归属于这个人吗？</p>
+</blockquote>
+<p>这个答案很难回答，也许他真的相信，亦或是他在反串，他误解了问题，或者根本不知道自己在说什么。</p>
+<p><strong>因此，我们不能只看一句话，就轻易确定一个人究竟相信什么</strong>。</p>
+<h3 id="实在论和解释主义"><a href="#实在论和解释主义" class="headerlink" title="实在论和解释主义"></a>实在论和解释主义</h3><p>丹尼特接着介绍了两种看似对立的观点。</p>
+<p>1.<strong>实在论（Realism）</strong></p>
+<p>信念是<strong>客观存在</strong>的事实。</p>
+<p>如果你相信冰箱里有牛奶，那么你的大脑应该处于某种特定的物理状态。原则上，只要我们足够了解你的大脑，就能确定你是否拥有这个信念，而不必完全依赖你说了什么或做了什么。</p>
+<p>2.<strong>解释主义（Interpretationism）</strong></p>
+<p>判断一个人有什么信念，需要看我们如何解释他。</p>
+<p>类似于判断一个人有没有风格、天赋，或者是不是一个好伴侣，答案可能<strong>取决于我们关注什么</strong>，以及采用什么标准。</p>
+<p>丹尼特认为，我们不应该简单地在这两种观点之间二选一。</p>
+<blockquote>
+<p>他认同信念是客观现象，但是我们只能通过某种预测策略来识别信念，而信念归属是否成功，要看这种策略的预测效果。</p>
+</blockquote>
+<hr>
+<h2 id="The-Intentional-Strategy-and-How-It-Works"><a href="#The-Intentional-Strategy-and-How-It-Works" class="headerlink" title="The Intentional Strategy and How It Works"></a>The Intentional Strategy and How It Works</h2><p>丹尼特指出，预测一个系统的行为，可以采用不同的策略。有些策略很有效，有些则没有。</p>
+<p>他先举了一个反例：占星术。</p>
+<p>假设你想预测一个人的未来，于是你查询他的出生日期和出生时间，再根据星象预测他将会做什么。</p>
+<p>如果这些预测碰巧成功了，并不意味着占星术真的有效。可能只是运气好，也可能是预测内容太模糊，以至于几乎什么结果都能被解释成预测成功。</p>
+<p>丹尼特甚至提出一个假设：如果占星术真的能够可靠地预测某些人的行为，那么我们就应该认真研究它究竟是如何做到的。</p>
+<p>但据他所知，占星术并没有这样的可靠性。</p>
+<p>这个例子引出一个重要原则：</p>
+<blockquote>
+<p>一种预测方法是否值得相信，要看它实际的预测表现，而不能只看它讲出来的故事是否听起来合理。</p>
+</blockquote>
+<h3 id="三种立场"><a href="#三种立场" class="headerlink" title="三种立场"></a>三种立场</h3><h4 id="物理立场（Physical-Stance）"><a href="#物理立场（Physical-Stance）" class="headerlink" title="物理立场（Physical Stance）"></a>物理立场（Physical Stance）</h4><p>物理立场的思路是：</p>
+<p>弄清楚一个系统的物理构成、它受到的外部作用，以及相关的物理规律，然后预测它会发生什么。</p>
+<p>例如，你想知道一壶水什么时候会沸腾，可以研究：</p>
+<ul>
+<li>壶和水的物理性质；</li>
+<li>加热器输入了多少能量；</li>
+<li>热量如何传递；</li>
+<li>水温如何随时间变化。</li>
+</ul>
+<p>你不需要假设这壶水有什么信念或欲望。</p>
+<p>丹尼特还提到了拉普拉斯式的理想：如果能够完全掌握宇宙的物理状态及其规律，原则上就可以通过物理方法预测未来。</p>
+<p>当然，现实中的科学家通常只能使用这种方法的局部版本，因为彻底计算一个复杂系统的所有物理细节往往不切实际。</p>
+<h4 id="设计立场（Design-Stance）"><a href="#设计立场（Design-Stance）" class="headerlink" title="设计立场（Design Stance）"></a>设计立场（Design Stance）</h4><p>设计立场与物理立场不同。</p>
+<p>它不要求你彻底弄清楚系统的物理构成，而是让你根据系统的设计功能来预测它的行为。</p>
+<p>比如，你想知道一个闹钟什么时候响。</p>
+<p>你通常不需要拆开它，研究内部的齿轮、电路或电池。你只需要知道：</p>
+<ul>
+<li>闹钟被设定在几点响；</li>
+<li>它正常工作；</li>
+<li>现在的时间是多少。</li>
+</ul>
+<p>因此，你就能预测它什么时候会响。</p>
+<h4 id="意向立场（Intentional-Stance）"><a href="#意向立场（Intentional-Stance）" class="headerlink" title="意向立场（Intentional Stance）"></a>意向立场（Intentional Stance）</h4><p>丹尼特认为，当物理立场和设计立场在实际预测中不够方便时，我们还可以采取另一种策略：把系统当作一个具有信念和欲望、能够理性行动的主体。</p>
+<p>他把这种方法称为 意向立场（Intentional Stance）。</p>
+<p>原文给出了一个很清晰的步骤。我们可以把它整理成下面的流程。</p>
+<p>第一步：把系统视为理性行动者</p>
+<p>假设它会根据自己掌握的信息和目标采取行动</p>
+<p>第二步：推断它应该具有的信念</p>
+<p>考虑它所处的环境、经历和所能获得的信息</p>
+<p>第三步：推断它应该具有的欲望</p>
+<p>考虑它的目标、利益和基本需求</p>
+<p>第四步：根据这些信念和欲望预测行动</p>
+<p>推断什么行动最有可能帮助它实现目标</p>
+<p><em>例子</em></p>
+<p>假设你看到一位同学走进图书馆，拿出电脑，开始复习数学。</p>
+<p>我们可以这样解释他的行为：</p>
+<ul>
+<li>信念： 他认为下周有数学考试。</li>
+<li>欲望： 他想在考试中取得好成绩。</li>
+<li>推理： 如果现在复习，就能更好地准备考试。</li>
+<li>预测： 他很可能继续复习，而不是马上离开图书馆去玩。</li>
+</ul>
+<p>这里不需要我们检查他的大脑，也不需要弄清楚他每个神经元的活动。</p>
+<p>我们只需要根据他的环境、目标和可能的信念，就能对他的行为作出相当合理的预测。</p>
+<p>当然，这不意味着预测一定正确。他可能突然收到一条消息，需要马上离开。但意向立场本来就不保证每一次预测都准确。</p>
+<h3 id="我们应该把什么信念归属于一个人"><a href="#我们应该把什么信念归属于一个人" class="headerlink" title="我们应该把什么信念归属于一个人"></a>我们应该把什么信念归属于一个人</h3><p>接下来，丹尼特进一步解释：当我们采取意向立场时，究竟应该怎样推断一个系统的信念？</p>
+<p>他的第一个原则是：</p>
+<blockquote>
+<p>把系统的经历使它能够了解到、并且与它的利益或欲望相关的事实，归属于它的信念。</p>
+</blockquote>
+<p>假设你在教室里坐了一小时。你一直看着老师讲课，也听到了老师说的话。</p>
+<p>按照正常情况，我们会认为你知道老师讲了什么重要内容。</p>
+<p>如果你事后说自己完全不知道老师有没有来过，别人就可能怀疑你的说法是否可信。</p>
+<p>因为在通常情况下，一个人持续接触某件事情，就应该能够了解其中与自己有关的重要事实。</p>
+<p>不过，这不代表一个人会知道自己接触过的所有事实。</p>
+<p>比如，你坐在教室里一小时，可能知道老师穿着什么颜色的衣服，却完全不知道教室里戴眼镜的人占多少比例。</p>
+<p>即使你有能力数清楚这些人，如果这件事与你没有任何关系，你也没有理由特别关注它。</p>
+<h3 id="那错误的信念又是怎么产生的"><a href="#那错误的信念又是怎么产生的" class="headerlink" title="那错误的信念又是怎么产生的"></a>那错误的信念又是怎么产生的</h3><p>丹尼特认为，我们需要解释这个错误信念是如何形成的。</p>
+<p>这个人的信念可能是：</p>
+<pre><code>朋友告诉我，明天不上课 -&gt;
+
+我认为这个朋友很可靠 -&gt;
+
+我认为他没有理由欺骗我 -&gt;
+
+所以，我相信明天不上课。
+</code></pre>
+<p>前三项信念可以都是真的，但最终得出的结论仍然可能是假的。</p>
+<p>丹尼特想表达的是：</p>
+<blockquote>
+<p>错误的信念并不一定意味着整个认知系统都是混乱的。错误往往产生于一系列通常合理的信念和推理之中。</p>
+</blockquote>
+<h3 id="欲望又该如何判断"><a href="#欲望又该如何判断" class="headerlink" title="欲望又该如何判断"></a>欲望又该如何判断</h3><p>丹尼特提出，我们通常会把一些基本欲望归属于人，例如：生存,避免疼痛,娱乐。</p>
+<p>例如，一个人相信冰箱里有食物，同时希望填饱肚子。那么，我们就可以预测他可能会打开冰箱。</p>
+<p>这里有两个不同的要素：</p>
+<ul>
+<li>信念告诉我们，他认为世界是什么样的。</li>
+<li>欲望告诉我们，他希望世界变成什么样，或者希望获得什么。</li>
+</ul>
+<p>把二者结合起来，我们才能更好地预测他的行动。</p>
+<p>丹尼特还指出，我们会根据一个系统认为哪些东西对自己有益，来推断它可能想要什么；也会根据它已经拥有的欲望，推断它认为哪些手段能够帮助它实现目标。</p>
+<p>例如：</p>
+<pre><code>我想通过考试 -&gt; 我认为复习能够提高成绩 -&gt; 因此，我可能想要抽出时间复习。
+</code></pre>
+<h3 id="语言会不会让我们误解信念和欲望"><a href="#语言会不会让我们误解信念和欲望" class="headerlink" title="语言会不会让我们误解信念和欲望"></a>语言会不会让我们误解信念和欲望</h3><p>丹尼特提醒我们，不要因为人们能够用语言表达信念和欲望，就认为所有信念和欲望都像句子一样储存在大脑中。</p>
+<p>例如，一个人说：</p>
+<p>“我想要一份双蛋蘑菇煎蛋卷、法式面包和黄油，再加半瓶冰镇白葡萄酒。”</p>
+<p>这句话让我们能够非常精确地了解他的欲望。</p>
+<p>但语言也会迫使我们把原本比较模糊的想法说得很具体。</p>
+<p>比如，你原本只是想吃一点烤豆子。服务员问你要多少，你就必须给出一个更明确的答案。</p>
+<p>一旦你说出了具体数量，你可能就会开始按照自己说过的话行事。</p>
+<p>因此，语言既帮助我们表达思想，也可能让思想显得比原本更加明确、精确。</p>
+<hr>
+<h2 id="True-Believers-as-Intentional-Systems"><a href="#True-Believers-as-Intentional-Systems" class="headerlink" title="True Believers as Intentional Systems"></a>True Believers as Intentional Systems</h2><h3 id="讲台也有信念吗"><a href="#讲台也有信念吗" class="headerlink" title="讲台也有信念吗"></a>讲台也有信念吗</h3><p>丹尼特首先承认，意向立场可以产生各种各样的信念归属。有些很合理，有些值得怀疑，有些只是比喻，还有些甚至可能是欺骗。</p>
+<p>那么，我们能不能制定一套规则，把真正拥有信念的系统与仅仅适合用信念来描述的系统区分开来？</p>
+<p>丹尼特认为，这项工作可能根本没有我们想象得那么容易。</p>
+<p>他提出了一个有趣的例子：教室里的讲台。</p>
+<p>假设我们把讲台描述成一个理性行动者，并赋予它以下信念和欲望：</p>
+<ul>
+<li>信念：我现在位于文明世界的中心。</li>
+<li>欲望：我最希望继续留在文明世界的中心。</li>
+<li>推理：如果我要实现这个目标，就应该待在原地。</li>
+<li>行动：保持不动。</li>
+</ul>
+<p>结果是讲台确实留在了原地。</p>
+<p>如果我们只看预测结果，那么这套解释似乎成功了。</p>
+<p>但问题是，我们根本没有获得任何新的预测能力。我们本来就知道讲台不会自己移动，只是事后编造了一套信念和欲望，来解释它为什么不动。</p>
+<p>这与我们解释一个人的行为很不一样。</p>
+<p>假设我们想预测一位同学会不会去图书馆。如果我们知道他相信明天有考试，而且希望取得好成绩，那么这些信息可能帮助我们判断他接下来会做什么。</p>
+<p>我们获得了原本不知道的信息，因此预测具有实际价值。</p>
+<p>但对于讲台，我们只是把已经知道的结果重新描述了一遍。</p>
+<p>丹尼特由此指出：</p>
+<blockquote>
+<p>不能因为我们能够给一个东西编造一套信念和欲望，就断定它真的属于我们所关心的那种意向系统。</p>
+</blockquote>
+<h3 id="为什么人类、动物和计算机不一样"><a href="#为什么人类、动物和计算机不一样" class="headerlink" title="为什么人类、动物和计算机不一样"></a>为什么人类、动物和计算机不一样</h3><p>讲台的例子提出了一个难题：如果意向立场对任何东西都能使用，我们是不是就应该认为所有东西都有信念？</p>
+<p>丹尼特的回答是：关键不在于我们能否给一个东西编造信念，而在于这种解释是否真正提供了预测能力。</p>
+<p>为此他举了一个国际象棋的例子，当程序不吃掉对手的棋子时，我们可以解释说，它知道这样做会导致自己的车被吃掉，而且它不希望失去自己的车。这种解释可以帮助我们从大量合法走法中，筛选出少数更可能出现的走法。它提供了真正的预测价值。</p>
+<h3 id="如果物理学足够发达，还需要意向立场吗"><a href="#如果物理学足够发达，还需要意向立场吗" class="headerlink" title="如果物理学足够发达，还需要意向立场吗"></a>如果物理学足够发达，还需要意向立场吗</h3><p>作者承认，在理想化的物理预测图景中，我们可以设想一个全知的物理学家，不需要使用信念和欲望的概念，就能预测人类或计算机的行为。但是，他认为这并不意味着意向立场所揭示的东西不真实。</p>
+<p>回到国际象棋的例子，一盘棋有许多合法走法，但其中只有少数几步在当前局势下具有较好的战略价值。通过意向立场，我们可以考虑棋手知道什么、希望实现什么，以及哪些走法符合他的目标。即使我们不能确定棋手一定会走哪一步，也能大幅缩小可能的选择范围。如果改用物理描述，我们可能需要追踪棋手的大脑活动、手指运动和大量其他物理过程。</p>
+<p>丹尼特认为，意向立场的价值就在于，它能够抓住与预测相关的规律，而不必描述所有物理细节。</p>
+<h3 id="火星上的超级科学家：一个思想实验"><a href="#火星上的超级科学家：一个思想实验" class="headerlink" title="火星上的超级科学家：一个思想实验"></a>火星上的超级科学家：一个思想实验</h3><p>假设有一群来自火星的超级智慧生物来到地球。它们的物理学知识极其先进，能够从微观物理层面预测人类的行为。对它们而言，人类就像简单的恒温器之于熟悉机器内部结构的工程师。</p>
+<p>假设其中一位火星科学家观察一位股票经纪人，准确预测了他将买入500股通用汽车的股票。火星科学家能够精确预测经纪人的手指怎样运动、电话里会发出什么声音，以及交易最终会怎样完成。</p>
+<p>但丹尼特要求我们进一步思考：人类观察者也可能预测同一笔交易，却完全不需要追踪这些微观细节。例如，我们只需要知道经纪人认为这笔投资有利可图，并且希望获得利润，就可能预测他会下单。甚至，当我们听到一位妻子打电话告诉丈夫早点回家、带一瓶葡萄酒时，我们就可能预测，一小时之内丈夫会开车回家，并带着葡萄酒。人类观察者并没有计算沿途每个路口的交通情况，也没有追踪汽车的每一次运动，但预测仍然可能相当准确。</p>
+<p>那么哪一种是对的呢？</p>
+<p>丹尼特觉得：如果火星科学家只看到了微观粒子的运动，却没有识别出信念、欲望和目标所构成的行为模式，那么它仍然可能遗漏了世界中一种客观存在的规律。</p>
+<p>因为一个股票经纪人可以用许多不同的手指动作、不同的说话方式，完成同一笔交易。具体的物理过程可以改变，但从意向立场看，行为仍然具有相同的意义。</p>
+<h3 id="那么，信念到底是客观存在，还是取决于观察者"><a href="#那么，信念到底是客观存在，还是取决于观察者" class="headerlink" title="那么，信念到底是客观存在，还是取决于观察者"></a>那么，信念到底是客观存在，还是取决于观察者</h3><p>丹尼特认为，我们采用意向立场的决定当然可以是自由的。你可以选择从物理立场解释一个人，也可以选择从意向立场解释他。但这不意味着意向立场的成功与否完全由个人喜好决定。</p>
+<p>例如，如果一种解释能够准确预测一个人的行为，而另一种解释总是失败，那么这两种解释的效果存在客观差异。此外，不同的意向解释有时也可能同样有效。例如，同一个人的行为，可以分别从他的短期目标和长期目标来解释。两种解释可能都能揭示真实的行为规律，只是关注的层次不同。</p>
+<p>丹尼特因此采取一种温和的实在论立场：</p>
+<ul>
+<li>信念并非纯粹由观察者随意创造。</li>
+<li>意向立场的预测成功与失败具有客观性。</li>
+<li>我们不必假设每一个情形下，都存在唯一一套明确、完整的信念和欲望，等待我们把它们发现出来。</li>
+</ul>
+<hr>
+<h2 id="恒温器与信念——真正的信念者有什么特殊之处"><a href="#恒温器与信念——真正的信念者有什么特殊之处" class="headerlink" title="恒温器与信念——真正的信念者有什么特殊之处"></a>恒温器与信念——真正的信念者有什么特殊之处</h2><p>恒温器可以被描述成这样：</p>
+<p>它相信房间太冷了-&gt;它希望房间变暖-&gt;它认为打开锅炉能够让房间变暖-&gt;所以，它打开锅炉。</p>
+<p>丹尼特提醒我们，这样的描述可能赋予恒温器过多的理解能力,恒温器真的拥有“温度”“房间”和“锅炉”这些概念吗？</p>
+<p>我们之所以这样描述它，是因为它的行为可以通过这套信念和欲望得到解释，而不是因为我们已经证明它理解这些概念。更重要的是，恒温器的内部状态很容易被重新解释。</p>
+<p>假设我们把同一套控制装置连接到一辆列车的速度控制系统上，或者连接到调节水箱水量的装置上。原本被我们称为“房间太冷”的状态，现在可能对应着“列车速度太慢”，或者“水箱里的水太少”。相同的控制结构，可以被用于不同的任务；如果它与外界的联系过于简单，那么内部状态的含义就很容易随着我们的解释而改变。</p>
+<h3 id="让恒温器变得更复杂：信念的意义如何丰富"><a href="#让恒温器变得更复杂：信念的意义如何丰富" class="headerlink" title="让恒温器变得更复杂：信念的意义如何丰富"></a>让恒温器变得更复杂：信念的意义如何丰富</h3><p>丹尼特后来想了三种恒温器，每一种都在前人的基础上加了功能。</p>
+<p>第一个是普通恒温器，就如上文所述。</p>
+<p>第二个是具有更多感知能力的恒温器，它不仅能够测量温度，还能通过视觉识别房间里的人是否在发抖，并通过声音接收人们对室温的反馈。</p>
+<p>第三个是功能丰富的机器人，它还能查询天气、判断自己身处什么地区、选择锅炉燃料、寻找价格合适的供应商，并检查房间的保温状况。</p>
+<p>然而，如果一个系统能够通过多种传感器判断室温、观察房间里的人、查阅天气，并据此调整锅炉，那么我们就很难在不改变系统整体组织的情况下，随意把它的内部状态解释成与温度完全无关的东西。它的感知、推理和行动逐渐相互制约，使得某些解释比其他解释更合适。</p>
+<p>丹尼特认为，这就是信念的意义逐渐变得丰富的过程。</p>
+<h3 id="什么让一个内部状态成为表征"><a href="#什么让一个内部状态成为表征" class="headerlink" title="什么让一个内部状态成为表征"></a>什么让一个内部状态成为表征</h3><p>表征就是系统内部某种状态或过程，它在系统与环境的互动中发挥着代表外部事物或情况的作用。</p>
+<p>例如，我们可以把一个恒温器的内部状态解释成对室温的表征，因为这个状态会受到温度变化的影响，并进一步影响锅炉的运行。</p>
+<p>但丹尼特强调：一个内部状态之所以具有表征意义，要看它在整个意向系统中发挥什么作用。</p>
+<p>如果某种内部状态会根据环境变化而改变，并在系统的推理和行为调节中发挥作用，那么我们就有理由尝试将它解释成某种表征。而系统与环境的联系越丰富，内部状态的意义通常也越受到约束。</p>
+<p>丹尼特认为，两者之间不存在一个神奇的瞬间，使得系统突然从“没有任何表征”变成“真正拥有表征”。更合理的理解是：表征能力可以随着系统的感知、行为和环境联系逐渐丰富。</p>
+<h3 id="双生地球：信念究竟关于什么"><a href="#双生地球：信念究竟关于什么" class="headerlink" title="双生地球：信念究竟关于什么"></a>双生地球：信念究竟关于什么</h3><p>假设存在一颗与地球极其相似的行星。那里的人、建筑和日常生活都与地球几乎完全一样，甚至每个人都有一个与地球居民相对应的复制品。但有一个重要区别：双生地球上的“水”在化学组成上与地球上的水不同。假设这种差异小到普通人无法通过日常感官辨别。那么，如果你突然被带到双生地球，并被一个与你完全相同的复制品替换，你可能根本不会察觉。</p>
+<p>丹尼特借这个例子强调：</p>
+<blockquote>
+<p>信念的意义不仅取决于人的内部状态，也取决于这个人实际上处于怎样的环境，以及他与外部世界之间存在什么联系。</p>
+</blockquote>
+<hr>
+<h2 id="Why-Does-the-Intentional-Strategy-Work"><a href="#Why-Does-the-Intentional-Strategy-Work" class="headerlink" title="Why Does the Intentional Strategy Work"></a>Why Does the Intentional Strategy Work</h2><p>现在，我们已经知道丹尼特的核心主张：</p>
+<blockquote>
+<p>当我们把一个系统当作具有信念、欲望并能够理性行动的主体时，往往能够有效预测它的行为。</p>
+</blockquote>
+<p>但为什么这种方法能够奏效？人类为什么真的能够按照信念、欲望和理性推理来行动？</p>
+<h3 id="第一种回答：因为系统本来就是这样设计的"><a href="#第一种回答：因为系统本来就是这样设计的" class="headerlink" title="第一种回答：因为系统本来就是这样设计的"></a>第一种回答：因为系统本来就是这样设计的</h3><p>丹尼特给出的第一种回答是：因为它本身就是按照某种设计制造出来的，能够被这种方式理解和操控。</p>
+<p>例如：</p>
+<ul>
+<li>当它检测到室温低于设定值时，会启动锅炉。</li>
+<li>当它检测到室温达到设定值时，会关闭锅炉。</li>
+</ul>
+<p>因此，我们可以把它解释成：它相信房间太冷了-&gt;它希望房间变暖-&gt;它认为打开锅炉能够让房间变暖-&gt;所以，它打开锅炉。</p>
+<p>这种解释之所以有效，是因为恒温器的设计确实使它按照这样的规律运行。</p>
+<h3 id="第二种回答：为什么人类也适用意向策略"><a href="#第二种回答：为什么人类也适用意向策略" class="headerlink" title="第二种回答：为什么人类也适用意向策略"></a>第二种回答：为什么人类也适用意向策略</h3><p>丹尼特觉得：进化塑造了人类，使我们通常能够根据自己掌握的信息和目标作出相对理性的行动。</p>
+<p>例如，如果你知道某位同学非常重视考试成绩，也知道他相信认真复习有助于取得好成绩，那么你就有理由预测，他可能会花时间复习。这种预测不需要你了解他大脑中的每一个神经元。</p>
+<h3 id="丹尼特讨论的两种心智理论"><a href="#丹尼特讨论的两种心智理论" class="headerlink" title="丹尼特讨论的两种心智理论"></a>丹尼特讨论的两种心智理论</h3><h4 id="行为主义"><a href="#行为主义" class="headerlink" title="行为主义"></a>行为主义</h4><p>行为主义者可能会认为，我们说一个人“想吃冰淇淋”，实际上是在用简短的说法描述他过去的经历，以及这些经历如何影响他现在的行为。</p>
+<p>例如，一个人过去吃冰淇淋时经常感到愉快，于是他逐渐形成了想要再次获得冰淇淋的倾向。当我们说“他想吃冰淇淋”时，就可以把它理解成一种简化描述：在特定条件下，他倾向于采取能够获得冰淇淋的行动。这种解释强调过去的经验、行为和强化过程。</p>
+<p>但丹尼特指出，即使这种行为主义解释是正确的，它仍然没有充分说明：这些倾向究竟是如何由系统内部的机制调节的。</p>
+<h4 id="信念与大脑内部状态相对应"><a href="#信念与大脑内部状态相对应" class="headerlink" title="信念与大脑内部状态相对应"></a>信念与大脑内部状态相对应</h4><p>另一种更受欢迎的解释认为，意向策略的解释与大脑内部的工作机制，在很大程度上可能是相互对应的。</p>
+<p>具体来说就是：我们能够归属于一个人的信念，可能对应大脑中具有特定功能的内部状态。</p>
+<h3 id="“思维语言”假说"><a href="#“思维语言”假说" class="headerlink" title="“思维语言”假说"></a>“思维语言”假说</h3><p>“思维语言”假说觉得：人类大脑可能存在一种类似语言的表征系统，通常被称为“思维语言”（language of thought）</p>
+<p>丹尼特的理由与一个技术难题有关：组合爆炸（combinatorial explosion），</p>
+<p>假设我们设计一个机器人，希望它能够识别更多物体、理解更多词语、处理更多输入，并执行更多种类的行为。随着这些能力不断增加，系统需要处理的可能组合可能会急剧增长，导致内部结构和计算需求变得极其庞大。然而，人类大脑虽然由大量神经细胞组成，却依然能够以相对有限的物理资源，学习新的行为、词汇和理论。</p>
+<p>丹尼特认为，这种能力值得我们认真研究。也许，大脑使用了某种能够灵活组合和扩展的表征原则。由于人类语言是我们熟悉的一种具有组合能力的表征系统，他认为，可以把思维语言假说作为一个值得探索的研究方向。</p>
+<hr>
+<h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><p>丹尼特认为：通过信念和欲望解释一个系统的行为，可以揭示客观存在的规律；但这种解释不等于我们已经完全理解了系统的内部机制。</p>
+</div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comments</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/ loading='lazy'></div><div class="author-info-name">Joey</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">280</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">51</div></a></div><div class="follow-links segmented"> <a href="https://github.com/a2664476347a-ai" target="_blank"><i class="fab fa-github"></i>GitHub</a><a href="https://space.bilibili.com/59101931?spm_id_from=333.1007.0.0" target="_blank"><i class="fas fa-tv"></i>Bilibili</a><a href="mailto:a2664476347@gmail.com"><i class="fas fa-envelope"></i>Gmail</a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/10/10/%E6%B5%B7%E8%BE%B9%E8%A1%8C%E8%B5%B0/" title="海边行走">海边行走</a><time datetime="2026-10-10T21:32:29.000Z" title="Created 2026-10-10 22:32:29">2026-10-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/10/09/%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%97%B7%E8%AF%BE/" title="第一次旷课">第一次旷课</a><time datetime="2026-10-09T20:35:02.000Z" title="Created 2026-10-09 21:35:02">2026-10-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/10/08/%E9%80%89%E4%B8%BE%EF%BC%8C%E6%8A%95%E7%A5%A8%EF%BC%8C%E8%B5%8C%E5%8D%9A%EF%BC%8C%E8%80%83%E8%AF%95/" title="选举，投票，赌博，考试">选举，投票，赌博，考试</a><time datetime="2026-10-08T20:58:06.000Z" title="Created 2026-10-08 21:58:06">2026-10-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/10/07/%E5%B0%B1%E4%B8%9A%E5%B1%95/" title="就业展，罢工仍在继续">就业展，罢工仍在继续</a><time datetime="2026-10-07T21:08:52.000Z" title="Created 2026-10-07 22:08:52">2026-10-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/10/06/%E6%97%A0%E8%AF%BE%E7%9A%84%E5%91%A8%E4%BA%8C%EF%BC%8C%E6%96%87%E6%98%8E%E5%85%AD/" title="无课的周二，文明六">无课的周二，文明六</a><time datetime="2026-10-06T21:50:10.000Z" title="Created 2026-10-06 22:50:10">2026-10-06</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/%E8%80%83%E8%AF%95/" style="font-size: 1.1em; color: #999">考试</a> <a href="/tags/%E4%BA%92%E8%81%94%E7%BD%91/" style="font-size: 1.37em; color: #99a4b2">互联网</a> <a href="/tags/%E5%93%88%E4%BC%AF%EF%BC%88%E5%BE%B7%E5%9B%BD%E7%8A%B9%E5%A4%AA%E8%A3%94%E5%8C%96%E5%AD%A6%E5%AE%B6%EF%BC%89/" style="font-size: 1.1em; color: #999">哈伯（德国犹太裔化学家）</a> <a href="/tags/%E5%8E%86%E5%8F%B2/" style="font-size: 1.28em; color: #99a0aa">历史</a> <a href="/tags/%E7%BD%91%E7%AB%99/" style="font-size: 1.1em; color: #999">网站</a> <a href="/tags/%E7%88%B1%E4%B8%81%E5%A0%A1%E7%94%9F%E6%B4%BB/" style="font-size: 1.41em; color: #99a5b7">爱丁堡生活</a> <a href="/tags/%E8%8A%82%E6%97%A5/" style="font-size: 1.14em; color: #999b9d">节日</a> <a href="/tags/%E7%90%89%E7%92%83%E7%9A%84%E5%AE%9D%E7%9F%B3/" style="font-size: 1.19em; color: #999da1">琉璃的宝石</a> <a href="/tags/%E5%8E%9F%E7%A5%9E/" style="font-size: 1.1em; color: #999">原神</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 1.5em; color: #99a9bf">游戏</a> <a href="/tags/%E9%80%BB%E8%BE%91%E5%AD%A6/" style="font-size: 1.14em; color: #999b9d">逻辑学</a> <a href="/tags/%E7%94%B7%E5%A5%B3%E5%AF%B9%E7%AB%8B/" style="font-size: 1.19em; color: #999da1">男女对立</a> <a href="/tags/%E7%A7%91%E5%AD%A6%E5%AE%B6/" style="font-size: 1.1em; color: #999">科学家</a> <a href="/tags/%E5%96%9C%E5%A5%BD%E4%B8%8E%E5%B0%B1%E4%B8%9A/" style="font-size: 1.19em; color: #999da1">喜好与就业</a> <a href="/tags/LPL/" style="font-size: 1.23em; color: #999ea6">LPL</a> <a href="/tags/%E8%83%A1%E9%80%82/" style="font-size: 1.1em; color: #999">胡适</a> <a href="/tags/%E6%B1%89%E5%AD%97%E7%BC%A9%E5%86%99/" style="font-size: 1.1em; color: #999">汉字缩写</a> <a href="/tags/%E4%B8%AD%E4%B8%9C/" style="font-size: 1.14em; color: #999b9d">中东</a> <a href="/tags/%E9%92%A2%E9%93%81%E9%9B%84%E5%BF%834/" style="font-size: 1.1em; color: #999">钢铁雄心4</a> <a href="/tags/%E7%88%B1%E5%9B%A0%E6%96%AF%E5%9D%A6/" style="font-size: 1.1em; color: #999">爱因斯坦</a> <a href="/tags/%E8%A1%8C%E7%A8%8B%E8%AE%A1%E5%88%92/" style="font-size: 1.14em; color: #999b9d">行程计划</a> <a href="/tags/%E6%97%85%E8%A1%8C/" style="font-size: 1.1em; color: #999">旅行</a> <a href="/tags/%E5%8A%A8%E6%BC%AB/" style="font-size: 1.1em; color: #999">动漫</a> <a href="/tags/%E8%AF%95%E7%AE%A1%E5%A9%B4%E5%84%BF/" style="font-size: 1.1em; color: #999">试管婴儿</a> <a href="/tags/%E6%8E%A8%E7%90%86/" style="font-size: 1.1em; color: #999">推理</a> <a href="/tags/%E5%8F%B0%E6%B5%B7/" style="font-size: 1.14em; color: #999b9d">台海</a> <a href="/tags/%E5%B0%BC%E9%87%87/" style="font-size: 1.1em; color: #999">尼采</a> <a href="/tags/galgame/" style="font-size: 1.19em; color: #999da1">galgame</a> <a href="/tags/%E7%BD%A2%E5%B7%A5/" style="font-size: 1.1em; color: #999">罢工</a> <a href="/tags/%E8%B6%B3%E7%90%83/" style="font-size: 1.23em; color: #999ea6">足球</a> <a href="/tags/%E8%A1%8C%E7%A8%8B%E8%A7%84%E5%88%92/" style="font-size: 1.32em; color: #99a2ae">行程规划</a> <a href="/tags/%E9%97%B2%E6%9D%A5%E6%97%A0%E4%BA%8B/" style="font-size: 1.46em; color: #99a7bb">闲来无事</a> <a href="/tags/%E7%82%89%E7%9F%B3%E4%BC%A0%E8%AF%B4/" style="font-size: 1.14em; color: #999b9d">炉石传说</a> <a href="/tags/%E8%AF%BB%E4%B9%A6/" style="font-size: 1.14em; color: #999b9d">读书</a> <a href="/tags/%E6%97%A0%E7%A5%9E%E8%AE%BA/" style="font-size: 1.1em; color: #999">无神论</a> <a href="/tags/SAOP/" style="font-size: 1.1em; color: #999">SAOP</a> <a href="/tags/%E6%94%BF%E6%B2%BB/" style="font-size: 1.1em; color: #999">政治</a> <a href="/tags/%E8%A1%8C%E7%A8%8B%E5%AE%89%E6%8E%92/" style="font-size: 1.19em; color: #999da1">行程安排</a> <a href="/tags/%E5%85%AC%E5%BC%8F/" style="font-size: 1.14em; color: #999b9d">公式</a> <a href="/tags/Pudding/" style="font-size: 1.19em; color: #999da1">Pudding</a></div></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Website Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article Count :</div><div class="item-count">280</div></div><div class="webinfo-item"><div class="item-name">Total Word Count :</div><div class="item-count">112.1k</div></div><div class="webinfo-item"><div class="item-name">Unique Visitors :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Page Views :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Update :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-10-10T21:37:54.271Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Joey</span><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="Scroll to Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.9/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        loader: {
+          load: [
+            // Four font extension packages (optional)
+            //- '[tex]/bbm',
+            //- '[tex]/bboldx',
+            //- '[tex]/dsfont',
+            '[tex]/mhchem'
+          ],
+          paths: {
+            'mathjax-newcm': '[mathjax]/../@mathjax/mathjax-newcm-font',
+
+            //- // Four font extension packages (optional)
+            //- 'mathjax-bbm-extension': '[mathjax]/../@mathjax/mathjax-bbm-font-extension',
+            //- 'mathjax-bboldx-extension': '[mathjax]/../@mathjax/mathjax-bboldx-font-extension',
+            //- 'mathjax-dsfont-extension': '[mathjax]/../@mathjax/mathjax-dsfont-font-extension',
+            'mathjax-mhchem-extension': '[mathjax]/../@mathjax/mathjax-mhchem-font-extension'
+          }
+        },
+        output: {
+          font: 'mathjax-newcm',
+        },
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'ams',
+          packages: {
+            '[+]': [
+              'mhchem'
+            ]
+          }
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          menuOptions: {
+            settings: {
+              enrich: false  // Turn off Braille and voice narration text automatic generation
+            }
+          },
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@4.1.0/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script><script>(() => {
+  const parseViewBox = viewBox => {
+    if (!viewBox) return null
+    const parts = viewBox.trim().split(/[\s,]+/).map(n => Number(n))
+    if (parts.length !== 4 || parts.some(n => Number.isNaN(n))) return null
+    return parts
+  }
+
+  const getSvgViewBox = svg => {
+    const attr = parseViewBox(svg.getAttribute('viewBox'))
+    if (attr) return attr
+
+    // Fallback: use bbox to build a viewBox
+    try {
+      const bbox = svg.getBBox()
+      if (bbox && bbox.width && bbox.height) return [bbox.x, bbox.y, bbox.width, bbox.height]
+    } catch (e) {
+      // getBBox may fail on some edge cases; ignore
+    }
+
+    const w = Number(svg.getAttribute('width')) || 0
+    const h = Number(svg.getAttribute('height')) || 0
+    if (w > 0 && h > 0) return [0, 0, w, h]
+    return [0, 0, 100, 100]
+  }
+
+  const setSvgViewBox = (svg, vb) => {
+    svg.setAttribute('viewBox', `${vb[0]} ${vb[1]} ${vb[2]} ${vb[3]}`)
+  }
+
+  const clamp = (v, min, max) => Math.max(min, Math.min(max, v))
+
+  const openSvgInNewTab = ({ source, initViewBox }) => {
+    const getClonedSvg = () => {
+      if (typeof source === 'string') {
+        const template = document.createElement('template')
+        template.innerHTML = source.trim()
+        const svg = template.content.querySelector('svg')
+        return svg ? svg.cloneNode(true) : null
+      }
+      if (source && typeof source.cloneNode === 'function') {
+        return source.cloneNode(true)
+      }
+      return null
+    }
+
+    const clone = getClonedSvg()
+    if (!clone) return
+    if (initViewBox && initViewBox.length === 4) {
+      clone.setAttribute('viewBox', initViewBox.join(' '))
+    }
+    if (!clone.getAttribute('xmlns')) clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg')
+    if (!clone.getAttribute('xmlns:xlink') && clone.outerHTML.includes('xlink:')) {
+      clone.setAttribute('xmlns:xlink', 'http://www.w3.org/1999/xlink')
+    }
+    // inject background to match current theme
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark'
+    const bg = getComputedStyle(document.body).backgroundColor || (isDark ? '#1e1e1e' : '#ffffff')
+    if (!clone.style.background) clone.style.background = bg
+
+    const serializer = new XMLSerializer()
+    const svgSource = serializer.serializeToString(clone)
+    const htmlSource = `<!doctype html><html><head><meta charset="utf-8" />
+      <style>
+        html, body { width: 100%; height: 100%; margin: 0; display: flex; align-items: center; justify-content: center; background: ${bg}; }
+        svg { max-width: 100%; max-height: 100%; height: auto; width: auto; }
+      </style>
+      </head><body>${svgSource}</body></html>`
+    const blob = new Blob([htmlSource], { type: 'text/html;charset=utf-8' })
+    const url = URL.createObjectURL(blob)
+    window.open(url, '_blank', 'noopener')
+    setTimeout(() => URL.revokeObjectURL(url), 30000)
+  }
+
+  const attachMermaidViewerButton = wrap => {
+    let btn = wrap.querySelector('.mermaid-open-btn')
+    if (!btn) {
+      btn = document.createElement('button')
+      btn.type = 'button'
+      btn.className = 'mermaid-open-btn'
+      wrap.appendChild(btn)
+    }
+
+    btn.innerHTML = '<i class="fa fa-search fa-fw" aria-hidden="true"></i>'
+
+    if (!btn.__mermaidViewerBound) {
+      btn.addEventListener('click', e => {
+        e.preventDefault()
+        e.stopPropagation()
+        const svg = wrap.__mermaidOriginalSvg || wrap.querySelector('svg')
+        if (!svg) return
+        const initViewBox = wrap.__mermaidInitViewBox
+        if (typeof svg === 'string') {
+          openSvgInNewTab({ source: svg, initViewBox })
+          return
+        }
+        openSvgInNewTab({ source: svg, initViewBox })
+      })
+      btn.__mermaidViewerBound = true
+    }
+  }
+
+  // Zoom around a point (px, py) in the SVG viewport (in viewBox coordinates)
+  const zoomAtPoint = (vb, factor, px, py) => {
+    const w = vb[2] * factor
+    const h = vb[3] * factor
+    const nx = px - (px - vb[0]) * factor
+    const ny = py - (py - vb[1]) * factor
+    return [nx, ny, w, h]
+  }
+
+  const initMermaidGestures = wrap => {
+    const svg = wrap.querySelector('svg')
+    if (!svg) return
+
+    // Ensure viewBox exists so gestures always work
+    const initVb = getSvgViewBox(svg)
+    wrap.__mermaidInitViewBox = initVb
+    wrap.__mermaidCurViewBox = initVb.slice()
+    setSvgViewBox(svg, initVb)
+
+    // Avoid binding multiple times on themeChange/pjax
+    if (wrap.__mermaidGestureBound) return
+    wrap.__mermaidGestureBound = true
+
+    // Helper: map client (viewport) coordinate -> viewBox coordinate
+    const clientToViewBox = (clientX, clientY) => {
+      const rect = svg.getBoundingClientRect()
+      const vb = wrap.__mermaidCurViewBox || getSvgViewBox(svg)
+      const x = vb[0] + (clientX - rect.left) * (vb[2] / rect.width)
+      const y = vb[1] + (clientY - rect.top) * (vb[3] / rect.height)
+      return { x, y, rect, vb }
+    }
+
+    const state = {
+      pointers: new Map(),
+      startVb: null,
+      startDist: 0,
+      startCenter: null
+    }
+
+    const clampVb = vb => {
+      const init = wrap.__mermaidInitViewBox || vb
+      const minW = init[2] * 0.1
+      const maxW = init[2] * 10
+      const minH = init[3] * 0.1
+      const maxH = init[3] * 10
+      vb[2] = clamp(vb[2], minW, maxW)
+      vb[3] = clamp(vb[3], minH, maxH)
+      return vb
+    }
+
+    const setCurVb = vb => {
+      vb = clampVb(vb)
+      wrap.__mermaidCurViewBox = vb
+      setSvgViewBox(svg, vb)
+    }
+
+    const onPointerDown = e => {
+      // Allow only primary button for mouse
+      if (e.pointerType === 'mouse' && e.button !== 0) return
+      svg.setPointerCapture(e.pointerId)
+      state.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY })
+
+      if (state.pointers.size === 1) {
+        state.startVb = (wrap.__mermaidCurViewBox || getSvgViewBox(svg)).slice()
+      } else if (state.pointers.size === 2) {
+        const pts = [...state.pointers.values()]
+        const dx = pts[0].x - pts[1].x
+        const dy = pts[0].y - pts[1].y
+        state.startDist = Math.hypot(dx, dy)
+        state.startVb = (wrap.__mermaidCurViewBox || getSvgViewBox(svg)).slice()
+        state.startCenter = { x: (pts[0].x + pts[1].x) / 2, y: (pts[0].y + pts[1].y) / 2 }
+      }
+    }
+
+    const onPointerMove = e => {
+      if (!state.pointers.has(e.pointerId)) return
+      state.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY })
+
+      // Pan with 1 pointer
+      if (state.pointers.size === 1 && state.startVb) {
+        const p = [...state.pointers.values()][0]
+        const prev = { x: e.clientX - e.movementX, y: e.clientY - e.movementY }
+        // movementX/Y unreliable on touch, compute from stored last position
+        const last = wrap.__mermaidLastSinglePointer || p
+        const dxClient = p.x - last.x
+        const dyClient = p.y - last.y
+        wrap.__mermaidLastSinglePointer = p
+
+        const { rect } = clientToViewBox(p.x, p.y)
+        const vb = (wrap.__mermaidCurViewBox || getSvgViewBox(svg)).slice()
+        const dx = dxClient * (vb[2] / rect.width)
+        const dy = dyClient * (vb[3] / rect.height)
+        setCurVb([vb[0] - dx, vb[1] - dy, vb[2], vb[3]])
+        return
+      }
+
+      // Pinch zoom with 2 pointers
+      if (state.pointers.size === 2 && state.startVb && state.startDist > 0) {
+        const pts = [...state.pointers.values()]
+        const dx = pts[0].x - pts[1].x
+        const dy = pts[0].y - pts[1].y
+        const dist = Math.hypot(dx, dy)
+        if (!dist) return
+        const factor = state.startDist / dist // dist bigger => zoom in (viewBox smaller)
+
+        const cx = (pts[0].x + pts[1].x) / 2
+        const cy = (pts[0].y + pts[1].y) / 2
+        const centerClient = { x: cx, y: cy }
+
+        const pxy = clientToViewBox(centerClient.x, centerClient.y)
+        const cpx = pxy.x
+        const cpy = pxy.y
+
+        const vb = zoomAtPoint(state.startVb, factor, cpx, cpy)
+        setCurVb(vb)
+      }
+    }
+
+    const onPointerUpOrCancel = e => {
+      state.pointers.delete(e.pointerId)
+      if (state.pointers.size === 0) {
+        state.startVb = null
+        state.startDist = 0
+        state.startCenter = null
+        wrap.__mermaidLastSinglePointer = null
+      } else if (state.pointers.size === 1) {
+        // reset single pointer baseline to avoid jump
+        wrap.__mermaidLastSinglePointer = [...state.pointers.values()][0]
+      }
+    }
+
+    // Wheel zoom (mouse/trackpad)
+    const onWheel = e => {
+      // ctrlKey on mac trackpad pinch; we treat both as zoom
+      e.preventDefault()
+      const delta = e.deltaY
+      const zoomFactor = delta > 0 ? 1.1 : 0.9
+      const { x, y } = clientToViewBox(e.clientX, e.clientY)
+      const vb = (wrap.__mermaidCurViewBox || getSvgViewBox(svg)).slice()
+      setCurVb(zoomAtPoint(vb, zoomFactor, x, y))
+    }
+
+    const onDblClick = () => {
+      const init = wrap.__mermaidInitViewBox
+      if (!init) return
+      wrap.__mermaidCurViewBox = init.slice()
+      setSvgViewBox(svg, init)
+    }
+
+    svg.addEventListener('pointerdown', onPointerDown)
+    svg.addEventListener('pointermove', onPointerMove)
+    svg.addEventListener('pointerup', onPointerUpOrCancel)
+    svg.addEventListener('pointercancel', onPointerUpOrCancel)
+    svg.addEventListener('wheel', onWheel, { passive: false })
+    svg.addEventListener('dblclick', onDblClick)
+  }
+
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+
+      // Clear old render (themeChange/pjax will rerun)
+      const oldSvg = item.querySelector('svg')
+      if (oldSvg) oldSvg.remove()
+      item.__mermaidGestureBound = false
+
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+        if (true) initMermaidGestures(item)
+        item.__mermaidOriginalSvg = svg
+        if (true) attachMermaidViewerButton(item)
+      }
+
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (true) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.2/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'a2664476347a-ai/blog-comments',
+      'data-repo-id': 'R_kgDORkgtKg',
+      'data-category-id': 'DIC_kwDORkgtKs4C4LUQ',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !false) {
+    if (false) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script><script>
+mermaid.initialize({
+  startOnLoad: true,
+  securityLevel: 'loose',
+  flowchart: { useMaxWidth: true }
+});
+</script>
+<script src="/js/random-tag-bg.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="local-search-input"><input placeholder="Search for Posts" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.4"></script></div></div></body></html>
