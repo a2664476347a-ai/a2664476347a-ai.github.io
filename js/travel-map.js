@@ -7,17 +7,15 @@ document.addEventListener("DOMContentLoaded", function () {
   maxBoundsViscosity: 1.0
 }).setView([35, 105], 4)
 
- L.tileLayer(
-  'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
 
+L.tileLayer(
+  'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_4h3z_1_39510914369fefb8af1ad48a',
   {
     attribution: '&copy; OpenStreetMap & CartoDB',
     subdomains: 'abcd',
     maxZoom: 20,
     noWrap: true
   }
-
-  
 ).addTo(map);
 
 const bounds = [
@@ -473,7 +471,7 @@ const places = [
   {
     name: "Portobello Beach", //  海岸沙滩爱丁堡
     lat: 55.9546124,
-    lng: --3.1101113,
+    lng: -3.1101113,
     image: "/img/portobello-beach.jpg",
     url: "/2026/10/11/portobello-beach"
   },
