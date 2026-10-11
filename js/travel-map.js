@@ -468,7 +468,14 @@ const places = [
     lat: 55.943537,
     lng: -3.1596593,
     image: "/img/arthurs-seat.jpg",
-    url: "/2026/10/10/arthurs-seat"
+    url: "/2026/10/11/arthurs-seat"
+  },
+  {
+    name: "Portobello Beach", //  海岸沙滩爱丁堡
+    lat: 55.9546124,
+    lng: --3.1101113,
+    image: "/img/portobello-beach.jpg",
+    url: "/2026/10/11/portobello-beach"
   },
  
 
