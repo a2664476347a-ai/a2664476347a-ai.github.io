@@ -31,448 +31,448 @@ const places = [
     name: "\u4e2d\u5c71\u7eaa\u5ff5\u5802", // 中山纪念堂
     lat: 23.1337,
     lng: 113.2652,
-    image: "/img/zhongshanjiniantang.jpg",
+    image: "/img/Guangdong/zhongshanjiniantang.jpg",
     url: "/2026/06/11/zhongshanjiniantang"
   },
   {
-    name: "\u5e7f\u4e1c\u7701\u535a\u7269\u9986", // 广东省博物馆
+    name: "\u5e7f\u4e1c\u7701\u535a\u7269\u9986", // Guangdong省博物馆
     lat: 23.114847696238858,
     lng: 113.32730659053918,
-    image: "/img/guangdongshengbowuguan.jpg",
+    image: "/img/Guangdong/guangdongshengbowuguan.jpg",
     url: "/2026/06/11/guangdongshengbowuguan"
   },
   {
     name: "\u9ec4\u57d4\u519b\u6821", // 黄埔军校
     lat: 23.08432666555117,
     lng: 113.41669902575146,
-    image: "/img/huangpujunxiao.jpg",
+    image: "/img/Guangdong/huangpujunxiao.jpg",
     url: "/2026/06/11/huangpujunxiao"
   },
   {
     name: "\u5357\u8d8a\u6587\u738b\u5893", // 南越文王墓
     lat: 23.13772459665257,
     lng: 113.26148615922843,
-    image: "/img/nanyuewenwangmu.jpg",
+    image: "/img/Guangdong/nanyuewenwangmu.jpg",
     url: "/2026/06/11/nanyuewenwangmu"
   },
   {
    name: "\u9ec4\u82b1\u5c97\u4e03\u5341\u4e8c\u70c8\u58eb\u7eaa\u5ff5\u516c\u56ed", // 黄花岗七十二烈士纪念公园
     lat: 23.140712971061816,
     lng: 113.29448794541977,
-    image: "/img/huanghuagang.jpg",
+    image: "/img/Guangdong/huanghuagang.jpg",
     url: "/2026/06/11/huanghuagang"
   },
   {
     name: "\u5b59\u4e2d\u5c71\u5927\u603b\u7edf\u5e9c\u7eaa\u5ff5\u9986", // 孙中山大总统府纪念馆
     lat: 23.109903251806614,
     lng: 113.27901629512736,
-    image: "/img/dayuanshuaifu.jpg",
+    image: "/img/Guangdong/dayuanshuaifu.jpg",
     url: "/2026/06/11/dayuanshuaifu"
   },
   {
-   name: "\u5e7f\u4e1c\u9769\u547d\u5386\u53f2\u535a\u7269\u9986", // 广东革命历史博物馆
+   name: "\u5e7f\u4e1c\u9769\u547d\u5386\u53f2\u535a\u7269\u9986", // Guangdong革命历史博物馆
     lat: 23.128534866276713,
     lng: 113.28331220316481,
-    image: "/img/guangdonggeminglishibowuguan.jpg",
+    image: "/img/Guangdong/guangdonggeminglishibowuguan.jpg",
     url: "/2026/06/11/guangdonggeminglishibowuguan"
   },
   {
     name: "\u7ca4\u5267\u827a\u672f\u535a\u7269\u9986", // 粤剧艺术博物馆
     lat: 23.11542028641857,
     lng: 113.23814737155588,
-    image: "/img/yuejuyishubowuguan.jpg",
+    image: "/img/Guangdong/yuejuyishubowuguan.jpg",
     url: "/2026/06/11/yuejuyishubowuguan"
   },
   {
     name: "\u94b1\u5cb8\u516c\u56ed", // 钱岗公园
     lat: 30.29040296132113,
     lng: 120.26866124336975,
-    image: "/img/qianangongyuan.jpg",
+    image: "/img/Zhejiang/qianangongyuan.jpg",
     url: "/2026/06/14/qianangongyuan"
   },
   {
     name: "\u676d\u5dde\u8427\u5c71\u56fd\u9645\u673a\u573a", // 杭州西湖国际机场
     lat: 30.235873257603455,
     lng: 120.43531221563542,
-    image: "/img/xiaoshanjichang.jpg",
+    image: "/img/Zhejiang/xiaoshanjichang.jpg",
     url: "/2026/06/19/xiaoshanjichang"
   },
   {
     name: "\u4e07\u4f5b\u5854", // 万佛塔
     lat: 29.10191431195529,
     lng: 119.66869022351717,
-    image: "/img/wanfota.jpg",
+    image: "/img/Zhejiang/wanfota.jpg",
     url: "/2026/06/19/wanfota"
   },
   {
     name: "\u516b\u548f\u697c", // 八咏楼
     lat: 29.099582519333936,
     lng: 119.66336221239253,
-    image: "/img/bayonglou.jpg",
+    image: "/img/Zhejiang/bayonglou.jpg",
     url: "/2026/06/19/bayonglou"
   },
   {
     name: "\u91d1\u534e\u5e9c\u6587\u5e99", //  金华府文庙
     lat: 29.10043404818205,
     lng: 119.66382294789342,
-    image: "/img/jinhuafuwenmiao.jpg",
+    image: "/img/Zhejiang/jinhuafuwenmiao.jpg",
     url: "/2026/06/19/jinhuafuwenmiao"
   },
   {
     name: "\u59d1\u852b\u535a\u7269\u9986", //  姑蔑博物馆
     lat: 28.998526536251603,
     lng: 118.96393860969461,
-    image: "/img/gumiebowuguan.jpg",
+    image: "/img/Zhejiang/gumiebowuguan.jpg",
     url: "/2026/06/21/gumiebowuguan"
   },
   {
     name: "\u5b64\u5c71", //  孤山
     lat: 30.25166748046319,
     lng: 120.14255969183114,
-    image: "/img/gushan.jpg",
+    image: "/img/Zhejiang/gushan.jpg",
     url: "/2026/06/26/gushan"
   },
   {
     name: "\u4eac\u676d\u5927\u8fd0\u6cb3\u535a\u7269\u9986", //  京杭大运河博物馆
     lat: 30.31740598361796,
     lng: 120.14150789401431,
-    image: "/img/jinghangdayunhebowuguan.jpg",
+    image: "/img/Zhejiang/jinghangdayunhebowuguan.jpg",
     url: "/2026/06/27/jinghangdayunhebowuguan"
   },
   {
     name: "\u6247\u535a\u7269\u9986", //  扇博物馆
     lat: 30.318670848882174,
     lng: 120.13806635638336,
-    image: "/img/shan.jpg",
+    image: "/img/Zhejiang/shan.jpg",
     url: "/2026/06/27/shan"
   },
   {
     name: "\u5200\u526a\u5251\u4f1e\u535a\u7269\u9986", //  刀剪剑伞博物馆
     lat: 30.316103,
     lng: 120.136527,
-    image: "/img/daojianjiansan.jpg",
+    image: "/img/Zhejiang/daojianjiansan.jpg",
     url: "/2026/06/27/daojianjiansan"
   },
   {
     name: "\u5357\u5b8b\u5b98\u7a91\u535a\u7269\u9986", //  南宋官窑博物馆
     lat: 30.2100663,
     lng: 120.1538687,
-    image: "/img/nansongguanyao.jpg",
+    image: "/img/Zhejiang/nansongguanyao.jpg",
     url: "/2026/06/29/nansongguanyao"
   },
   {
     name: "\u8bf8\u845b\u516b\u5366\u7530", //  诸葛八卦田
     lat: 30.2109354,
     lng: 120.1513188,
-    image: "/img/baguatian.jpg",
+    image: "/img/Zhejiang/baguatian.jpg",
     url: "/2026/06/29/baguatian"
   },
   {
     name: "\u897f\u6e56\u535a\u7269\u9986", //  西湖博物馆
     lat: 30.2426211,
     lng: 120.1575036,
-    image: "/img/xihubowuguan.jpg",
+    image: "/img/Zhejiang/xihubowuguan.jpg",
     url: "/2026/06/29/xihubowuguan"
   },
   {
     name: "\u516d\u548c\u5854", //  六和塔
     lat: 30.196783,
     lng: 120.131213,
-    image: "/img/liuheta.jpg",
+    image: "/img/Zhejiang/liuheta.jpg",
     url: "/2026/06/29/liuheta"
   },
   {
     name: "\u94b1\u738b\u7960", //  钱王祠
     lat: 30.2425353,
     lng: 120.1568311,
-    image: "/img/qianwangci.jpg",
+    image: "/img/Zhejiang/qianwangci.jpg",
     url: "/2026/06/29/qianwangci"
   },
   {
     name: "\u65e0\u9521\u535a\u7269\u9986", //  无锡博物馆
     lat: 31.5575462,
     lng: 120.3063651,
-    image: "/img/wuxibowuguan.jpg",
+    image: "/img/Jiangsu/wuxibowuguan.jpg",
     url: "/2026/07/04/wuxibowuguan"
   },
   {
     name: "\u4e1c\u6797\u4e66\u9662", //  东林书院
     lat: 31.5777118,
     lng: 120.295972,
-    image: "/img/donglinshuyuan.jpg",
+    image: "/img/Jiangsu/donglinshuyuan.jpg",
     url: "/2026/07/04/donglinshuyuan"
   },
   {
     name: "\u60e0\u5c71\u53e4\u9547", //  惠山古镇
     lat: 31.5807229,
     lng: 120.2745603,
-    image: "/img/huishanguzhen.jpg",
+    image: "/img/Jiangsu/huishanguzhen.jpg",
     url: "/2026/07/04/huishanguzhen"
   },
   {
-    name: "\u6d59\u6c5f\u7701\u535a\u7269\u9986\uff08\u4e4b\u6c5f\u9986\u533a\uff09", //  浙江省博物馆之江
+    name: "\u6d59\u6c5f\u7701\u535a\u7269\u9986\uff08\u4e4b\u6c5f\u9986\u533a\uff09", //  Zhejiang省博物馆之江
     lat: 30.159823108500564,
     lng: 120.10165259142815,
-    image: "/img/zhejiangbowuguanzhijiang.jpg",
+    image: "/img/Zhejiang/zhejiangbowuguanzhijiang.jpg",
     url: "/2026/07/11/zhejiangbowuguanzhijiang"
   },
   {
     name: "\u826f\u6e1a\u535a\u7269\u9662", //  良渚博物院
     lat: 30.3759193,
     lng: 120.0269478,
-    image: "/img/liangzhubowuyuan.jpg",
+    image: "/img/Zhejiang/liangzhubowuyuan.jpg",
     url: "/2026/07/15/liangzhubowuyuan"
   },
   {
     name: "\u676d\u5dde\u56fd\u5bb6\u7248\u672c\u9986", //  杭州国家版本馆
     lat: 30.382272977894242,
     lng: 120.01595162827815,
-    image: "/img/hangzhoubanbenguan.jpg",
+    image: "/img/Zhejiang/hangzhoubanbenguan.jpg",
     url: "/2026/07/15/hangzhoubanbenguan"
   },
   {
     name: "\u661f\u6d77\u5e7f\u573a", //  星海广场
     lat: 38.88168641412761,
     lng: 121.58789502197561,
-    image: "/img/xinghaiguangchang.jpg",
+    image: "/img/Dalian/xinghaiguangchang.jpg",
     url: "/2026/07/24/xinghaiguangchang"
   },
   {
     name: "\u8001\u65c5\u987a\u7ad9", //  老旅顺站
     lat: 38.80772859286005,
     lng: 121.25236034983628,
-    image: "/img/laolvshunzhan1.jpg",
+    image: "/img/Dalian/laolvshunzhan1.jpg",
     url: "/2026/07/24/laolvshunzhan"
   },
   {
     name: "\u65e5\u4fc4\u6218\u4e89\u53f2\u6599\u9986", //  日俄史料馆
     lat: 38.80951366095014,
     lng: 121.23959424827872,
-    image: "/img/rieshiliaoguan.jpg",
+    image: "/img/Dalian/rieshiliaoguan.jpg",
     url: "/2026/07/24/riezhanzhengshiliaoguan"
   },
   {
     name: "\u65c5\u987a\u535a\u7269\u9986", //  旅顺博物馆
     lat: 38.80841612122239,
     lng: 121.23488738417,
-    image: "/img/lvshunbowuguan.jpg",
+    image: "/img/Dalian/lvshunbowuguan.jpg",
     url: "/2026/07/24/lvshunbowuguan"
   },
   {
     name: "\u767d\u7389\u5c71", //  白玉山
     lat: 38.81027996051729,
     lng: 121.25725127152566,
-    image: "/img/baiyushan.jpg",
+    image: "/img/Dalian/baiyushan.jpg",
     url: "/2026/07/24/baiyushan"
   },
   {
     name: "\u65e5\u4fc4\u65c5\u987a\u76d1\u72f1\u9057\u5740\u535a\u7269\u9986", //  日俄旅顺监狱遗址博物馆
     lat: 38.8255698927158,
     lng: 121.26486626239071,
-    image: "/img/rielvshunjianyuyizhibowuguan.jpg",
+    image: "/img/Dalian/rielvshunjianyuyizhibowuguan.jpg",
     url: "/2026/07/24/rielvshunjianyuyizhibowuguan"
   },
   {
     name: "\u65c5\u987a\u6f5c\u8247\u535a\u7269\u9986", //  旅顺潜艇博物馆
     lat: 38.794937965746485,
     lng: 121.27255879959469,
-    image: "/img/lvshunqiantingbowuguan.jpg",
+    image: "/img/Dalian/lvshunqiantingbowuguan.jpg",
     url: "/2026/07/24/lvshunqiantingbowuguan"
   },
   {
     name: "\u519b\u8230\u5c9b", //  军舰岛
     lat: 38.80406690412054,
     lng: 121.25861094187361,
-    image: "/img/junjiandao.jpg",
+    image: "/img/Dalian/junjiandao.jpg",
     url: "/2026/07/24/junjiandao"
   },
   {
-    name: "\u5927\u8fde\u535a\u7269\u9986", //  大连博物馆
+    name: "\u5927\u8fde\u535a\u7269\u9986", //  Dalian博物馆
     lat: 38.888791647262906,
     lng: 121.5862176566125,
-    image: "/img/dalianbowuguan.jpg",
+    image: "/img/Dalian/dalianbowuguan.jpg",
     url: "/2026/07/24/dalianbowuguan"
   },
   {
-    name: "\u5927\u8fde\u81ea\u7136\u535a\u7269\u9986", //  大连自然博物馆
+    name: "\u5927\u8fde\u81ea\u7136\u535a\u7269\u9986", //  Dalian自然博物馆
     lat: 38.870272579270534,
     lng: 121.56140097556126,
-    image: "/img/dalianziranbowuguan.jpg",
+    image: "/img/Dalian/dalianziranbowuguan.jpg",
     url: "/2026/07/24/dalianziranbowuguan"
   },
   {
     name: "\u4e5d\u6eaa\u5341\u516b\u6da7", //  九溪十八涧
     lat: 30.189430100660577,
     lng: 120.11711686948973,
-    image: "/img/jiuxishibajian.jpg",
+    image: "/img/Zhejiang/jiuxishibajian.jpg",
     url: "/2026/07/24/jiuxishibajian"
   },
   {
     name: "\u4e2d\u56fd\u8336\u53f6\u535a\u7269\u9986", //  中国茶叶博物馆
     lat: 30.232320594523575,
     lng: 120.12016559632109,
-    image: "/img/zhongguochayebowuguan.jpg",
+    image: "/img/Zhejiang/zhongguochayebowuguan.jpg",
     url: "/2026/07/24/zhongguochayebowuguan"
   },
   {
     name: "\u6797\u5f6a\u884c\u5bab", //  林彪行宫
     lat: 30.233266517020038,
     lng: 120.12530646682553,
-    image: "/img/linbiaoxinggong.jpg",
+    image: "/img/Zhejiang/linbiaoxinggong.jpg",
     url: "/2026/07/24/linbiaoxinggong"
   },
   {
     name: "\u4e2d\u56fd\u6e7f\u5730\u535a\u7269\u9986", //  中国湿地博物馆
     lat: 30.264633369173115,
     lng: 120.08665777661156,
-    image: "/img/shidibowuguan.jpg",
+    image: "/img/Zhejiang/shidibowuguan.jpg",
     url: "/2026/07/29/shidibowuguan"
   },
   {
     name: "\u96e8\u82b1\u53f0", //  雨花台
     lat: 31.997165138044164,
     lng: 118.78006829843069,
-    image: "/img/yuhuatai.jpg",
+    image: "/img/Jiangsu/yuhuatai.jpg",
     url: "/2026/08/03/yuhuatai"
   },
   {
     name: "\u5927\u62a5\u6069\u5bfa", //  大报恩寺
     lat: 32.0095800518374,
     lng: 118.78245696217577,
-    image: "/img/dabaoensi.jpg",
+    image: "/img/Jiangsu/dabaoensi.jpg",
     url: "/2026/08/03/dabaoensi"
   },
   {
     name: "\u4e2d\u534e\u95e8", //  中华门
     lat: 32.0128900184264,
     lng: 118.78169808067271,
-    image: "/img/zhonghuamen.jpg",
+    image: "/img/Jiangsu/zhonghuamen.jpg",
     url: "/2026/08/03/zhonghuamen"
   },
   {
     name: "\u5357\u4eac\u592b\u5b50\u5e99", //  夫子庙
     lat: 32.02098921707993,
     lng: 118.78999879485265,
-    image: "/img/nanjingfuzimiao.jpg",
+    image: "/img/Jiangsu/nanjingfuzimiao.jpg",
     url: "/2026/08/03/nanjingfuzimiao"
   },
   {
     name: "\u660e\u5b5d\u9675", //  明孝陵
     lat: 32.058127177358564,
     lng: 118.83971754058791,
-    image: "/img/mingxiaoling.jpg",
+    image: "/img/Jiangsu/mingxiaoling.jpg",
     url: "/2026/08/06/mingxiaoling"
   },
   {
     name: "\u660e\u5b5d\u9675\u535a\u7269\u9986", //  明孝陵博物馆
     lat: 32.044705007850446,
     lng: 118.84248050016569,
-    image: "/img/mingxiaolingbowuguan.jpg",
+    image: "/img/Jiangsu/mingxiaolingbowuguan.jpg",
     url: "/2026/08/06/mingxiaolingbowuguan"
   },
   {
     name: "\u4e2d\u5c71\u9675", //  中山陵
     lat: 32.06201179663324,
     lng: 118.8532502662546,
-    image: "/img/zhongshanling.jpg",
+    image: "/img/Jiangsu/zhongshanling.jpg",
     url: "/2026/08/06/zhongshanling"
   },
   {
     name: "\u7f8e\u9f84\u5bab", //  美龄宫
     lat: 32.045567407454925,
     lng: 118.84651222840809,
-    image: "/img/meilinggong.jpg",
+    image: "/img/Jiangsu/meilinggong.jpg",
     url: "/2026/08/06/meilinggong"
   },
   {
     name: "\u660e\u6545\u5bab\u9057\u5740", //  明故宫遗址
     lat: 32.040922046991874,
     lng: 118.81770240783618,
-    image: "/img/minggugongyizhi.jpg",
+    image: "/img/Jiangsu/minggugongyizhi.jpg",
     url: "/2026/08/06/minggugongyizhi"
   },
   {
     name: "\u603b\u7edf\u5e9c", //  总统府
     lat: 32.04445395161314,
     lng: 118.79758973987443,
-    image: "/img/zongtongfu.jpg",
+    image: "/img/Jiangsu/zongtongfu.jpg",
     url: "/2026/08/06/zongtongfu"
   },
   {
     name: "\u9e21\u9e23\u5bfa", //  鸡鸣寺
     lat: 32.061043434409655,
     lng: 118.79530484133002,
-    image: "/img/jimingsi.jpg",
+    image: "/img/Jiangsu/jimingsi.jpg",
     url: "/2026/08/06/jimingsi"
   },
   {
     name: "\u5357\u4eac\u53e4\u751f\u7269\u535a\u7269\u9986", //  南京古生物博物馆
     lat: 32.05956402910992,
     lng: 118.79510500912734,
-    image: "/img/nanjinggushengwubowuguan.jpg",
+    image: "/img/Jiangsu/nanjinggushengwubowuguan.jpg",
     url: "/2026/08/06/nanjinggushengwubowuguan"
   },
   {
     name: "\u7384\u6b66\u6e56", //  玄武湖
     lat: 32.07030099637961,
     lng: 118.79561522192878,
-    image: "/img/xuanwuhu.jpg",
+    image: "/img/Jiangsu/xuanwuhu.jpg",
     url: "/2026/08/06/xuanwuhu"
   },
   {
     name: "\u6ed5\u738b\u9601", //  滕王阁
     lat: 28.682606613496848,
     lng: 115.88292353322292,
-    image: "/img/tengwangge.jpg",
+    image: "/img/Jiangxi/tengwangge.jpg",
     url: "/2026/08/08/tengwangge"
   },
   {
     name: "\u4e07\u5bff\u5bab", //  万寿宫
     lat: 28.6743768730633,
     lng: 115.88863486228479,
-    image: "/img/wanshougong.jpg",
+    image: "/img/Jiangxi/wanshougong.jpg",
     url: "/2026/08/08/wanshougong"
   },
   {
-    name: "\u6c5f\u897f\u7701\u535a\u7269\u9986", //  江西省博物馆
+    name: "\u6c5f\u897f\u7701\u535a\u7269\u9986", //  Jiangxi省博物馆
     lat: 28.706062184184248,
     lng: 115.8816972584114,
-    image: "/img/jiangxi.jpg",
+    image: "/img/Jiangxi/jiangxi.jpg",
     url: "/2026/08/08/jiangxi"
   },
   {
     name: "\u7ef3\u91d1\u5854", //  绳金塔
     lat: 28.6615835787655,
     lng: 115.8998822308464,
-    image: "/img/shengjinta.jpg",
+    image: "/img/Jiangxi/shengjinta.jpg",
     url: "/2026/08/08/shengjinta"
   },
   {
     name: "\u9676\u9633\u91cc", //  陶阳里
     lat: 29.295479148140263,
     lng: 117.20507570151298,
-    image: "/img/taoyangli.jpg",
+    image: "/img/Jiangxi/taoyangli.jpg",
     url: "/2026/08/10/taoyangli"
   },
   {
     name: "\u4e2d\u56fd\u6c34\u5229\u535a\u7269\u9986", //  中国水利博物馆
     lat: 30.259293960304316,
     lng: 120.31259979475402,
-    image: "/img/hzshuili.jpg",
+    image: "/img/Zhejiang/hzshuili.jpg",
     url: "/2026/09/10/hzshuili"
   },
   {
     name: "Arthur's Seat", //  亚瑟王座
     lat: 55.943537,
     lng: -3.1596593,
-    image: "/img/arthurs-seat.jpg",
+    image: "/img/Edinburgh/arthurs-seat.jpg",
     url: "/2026/10/14/arthurs-seat"
   },
   {
     name: "Portobello Beach", //  海岸沙滩爱丁堡
     lat: 55.9546124,
     lng: -3.1101113,
-    image: "/img/portobello-beach.jpg",
+    image: "/img/Edinburgh/portobello-beach.jpg",
     url: "/2026/10/11/portobello-beach"
   },
  
