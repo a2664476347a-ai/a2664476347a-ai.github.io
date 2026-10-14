@@ -370,3 +370,65 @@ pre.mermaid > svg {
     font-size: 27px;
   }
 }
+
+
+
+/* Gallery：固定并放大左右切换按钮 */
+.gallery-viewer .gallery-prev,
+.gallery-viewer .gallery-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 56px;
+  height: 56px;
+  padding: 0;
+
+  font-size: 38px;
+  line-height: 1;
+  color: #fff;
+
+  background: rgba(30, 30, 30, 0.65);
+  border-radius: 50%;
+  cursor: pointer;
+
+  transition: background 0.2s ease,
+              transform 0.2s ease;
+}
+
+.gallery-viewer .gallery-prev {
+  left: 24px;
+}
+
+.gallery-viewer .gallery-next {
+  right: 24px;
+}
+
+.gallery-viewer .gallery-prev:hover,
+.gallery-viewer .gallery-next:hover {
+  background: rgba(80, 80, 80, 0.9);
+  transform: translateY(-50%) scale(1.08);
+}
+
+/* 手机屏幕适配 */
+@media (max-width: 600px) {
+  .gallery-viewer .gallery-prev,
+  .gallery-viewer .gallery-next {
+    width: 44px;
+    height: 44px;
+    font-size: 30px;
+  }
+
+  .gallery-viewer .gallery-prev {
+    left: 8px;
+  }
+
+  .gallery-viewer .gallery-next {
+    right: 8px;
+  }
+}
