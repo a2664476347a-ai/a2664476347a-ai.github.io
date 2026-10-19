@@ -475,6 +475,13 @@ const places = [
     image: "/img/Edinburgh/portobello-beach.jpg",
     url: "/2026/10/11/portobello-beach"
   },
+  {
+    name: "Royal Botanic Garden Edinburgh", //  皇家植物园
+    lat: 55.9656884,
+    lng: -3.219236,
+    image: "/img/Edinburgh/botan.jpg",
+    url: "/2026/10/19/botan"
+  },
  
 
 
