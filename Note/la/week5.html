@@ -1,0 +1,802 @@
+<!DOCTYPE html><html lang="cn" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>私家菜的个人博客 | 私家菜的个人博客</title><meta name="author" content="Joey"><meta name="copyright" content="Joey"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="tittle：eigenvalue，eigenvector，upper-triangular，diagonalizableEigenvalues and eigenvectorsdefinitionDefinition 5.5 — Eigenvalue（特征值）设 (T\in\mathcal L(V))。如果存在 (v\in V)，满足 [ v\ne0,\qquad Tv&#x3D;\lambd">
+<meta property="og:type" content="website">
+<meta property="og:title" content="私家菜的个人博客">
+<meta property="og:url" content="https://a2664476347a-ai.github.io/Note/la/week5.html">
+<meta property="og:site_name" content="私家菜的个人博客">
+<meta property="og:description" content="tittle：eigenvalue，eigenvector，upper-triangular，diagonalizableEigenvalues and eigenvectorsdefinitionDefinition 5.5 — Eigenvalue（特征值）设 (T\in\mathcal L(V))。如果存在 (v\in V)，满足 [ v\ne0,\qquad Tv&#x3D;\lambd">
+<meta property="og:locale">
+<meta property="og:image" content="https://a2664476347a-ai.github.io/img/important/avatar.jpg">
+<meta property="article:published_time" content="2026-10-19T20:44:44.359Z">
+<meta property="article:modified_time" content="2026-10-19T20:44:44.359Z">
+<meta property="article:author" content="Joey">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://a2664476347a-ai.github.io/img/important/avatar.jpg"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://a2664476347a-ai.github.io/Note/la/week5.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//www.clarity.ms"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="-SA3Essa91Y2Ep02I_lVO46k18Im4ofqJesBiGXFTVA"/><meta name="msvalidate.01" content="C5E544DDD197A5A1F65FF3CC2EAA5B30"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.9/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-K3J40ZJ1S7"></script><script>window.dataLayer = window.dataLayer || []
+function gtag(){dataLayer.push(arguments)}
+gtag('js', new Date())
+gtag('config', 'G-K3J40ZJ1S7')
+btf.addGlobalFn('pjaxComplete', () => {
+  gtag('config', 'G-K3J40ZJ1S7', {'page_path': window.location.pathname})
+}, 'google_analytics')
+</script><script>(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "w4agonpixo");
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":3,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"You have switched to Traditional Chinese","cht_to_chs":"You have switched to Simplified Chinese","day_to_night":"You have switched to Dark Mode","night_to_day":"You have switched to Light Mode","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-right"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '私家菜的个人博客',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="/css/custom.css"><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/important/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/ loading='lazy'></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">293</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">51</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">11</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><span> 学习</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/analyse/"><i class="fa-fw fas fa-square-root-alt"></i><span> 数学分析</span></a></li><li><a class="site-page child" href="/categories/linear-algebra/"><i class="fa-fw fas fa-th"></i><span> 线性代数</span></a></li><li><a class="site-page child" href="/categories/logic/"><i class="fa-fw fas fa-project-diagram"></i><span> 逻辑学</span></a></li><li><a class="site-page child" href="/categories/philosophy/"><i class="fa-fw fas fa-brain"></i><span> 普通哲学</span></a></li><li><a class="site-page child" href="/2026/09/28/%E5%AF%BC%E8%88%AA/"><i class="fa-fw fas fa-pencil-alt"></i><span> 笔记</span></a></li><li><a class="site-page child" href="/categories/other/"><i class="fa-fw fas fa-folder"></i><span> 其他</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 图集</span></a></div><div class="menus_item"><span class="site-page group"><span> 兴趣</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/anime/"><i class="fa-fw fas fa-tv"></i><span> 动漫</span></a></li><li><a class="site-page child" href="/categories/game/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/map/"><i class="fa-fw fas fa-plane"></i><span> 旅行</span></a></li><li><a class="site-page child" href="/categories/film/"><i class="fa-fw fas fa-film"></i><span> 影视</span></a></li><li><a class="site-page child" href="/categories/reading/"><i class="fa-fw fas fa-book-open"></i><span> 阅读</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%97%A5%E8%AE%B0/"><i class="fa-fw fas fa-pen"></i><span> 日记</span></a></li><li><a class="site-page child" href="/categories/%E6%9D%82%E8%B0%88/"><i class="fa-fw fas fa-comment"></i><span> 杂谈</span></a></li></ul></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(/img/important/index.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">私家菜的个人博客</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><span> 学习</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/analyse/"><i class="fa-fw fas fa-square-root-alt"></i><span> 数学分析</span></a></li><li><a class="site-page child" href="/categories/linear-algebra/"><i class="fa-fw fas fa-th"></i><span> 线性代数</span></a></li><li><a class="site-page child" href="/categories/logic/"><i class="fa-fw fas fa-project-diagram"></i><span> 逻辑学</span></a></li><li><a class="site-page child" href="/categories/philosophy/"><i class="fa-fw fas fa-brain"></i><span> 普通哲学</span></a></li><li><a class="site-page child" href="/2026/09/28/%E5%AF%BC%E8%88%AA/"><i class="fa-fw fas fa-pencil-alt"></i><span> 笔记</span></a></li><li><a class="site-page child" href="/categories/other/"><i class="fa-fw fas fa-folder"></i><span> 其他</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 图集</span></a></div><div class="menus_item"><span class="site-page group"><span> 兴趣</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/anime/"><i class="fa-fw fas fa-tv"></i><span> 动漫</span></a></li><li><a class="site-page child" href="/categories/game/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/map/"><i class="fa-fw fas fa-plane"></i><span> 旅行</span></a></li><li><a class="site-page child" href="/categories/film/"><i class="fa-fw fas fa-film"></i><span> 影视</span></a></li><li><a class="site-page child" href="/categories/reading/"><i class="fa-fw fas fa-book-open"></i><span> 阅读</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%97%A5%E8%AE%B0/"><i class="fa-fw fas fa-pen"></i><span> 日记</span></a></li><li><a class="site-page child" href="/categories/%E6%9D%82%E8%B0%88/"><i class="fa-fw fas fa-comment"></i><span> 杂谈</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title"></h1></div></header><main class="layout" id="content-inner"><div id="page"><div class="container" id="article-container"><hr>
+<h2 id="tittle：eigenvalue，eigenvector，upper-triangular，diagonalizable"><a href="#tittle：eigenvalue，eigenvector，upper-triangular，diagonalizable" class="headerlink" title="tittle：eigenvalue，eigenvector，upper-triangular，diagonalizable"></a>tittle：eigenvalue，eigenvector，upper-triangular，diagonalizable</h2><h2 id="Eigenvalues-and-eigenvectors"><a href="#Eigenvalues-and-eigenvectors" class="headerlink" title="Eigenvalues and eigenvectors"></a>Eigenvalues and eigenvectors</h2><h3 id="definition"><a href="#definition" class="headerlink" title="definition"></a>definition</h3><h4 id="Definition-5-5-—-Eigenvalue（特征值）"><a href="#Definition-5-5-—-Eigenvalue（特征值）" class="headerlink" title="Definition 5.5 — Eigenvalue（特征值）"></a>Definition 5.5 — <em>Eigenvalue</em>（特征值）</h4><p>设 (T\in\mathcal L(V))。如果存在 (v\in V)，满足</p>
+<p>[ v\ne0,\qquad Tv&#x3D;\lambda v, ]</p>
+<p>那么 (\lambda\in\mathbf F) 称为 (T) 的特征值。</p>
+<h4 id="Definition-5-8-—-Eigenvector（特征向量）"><a href="#Definition-5-8-—-Eigenvector（特征向量）" class="headerlink" title="Definition 5.8 — Eigenvector（特征向量）"></a>Definition 5.8 — <em>Eigenvector</em>（特征向量）</h4><p>若 (\lambda) 是 (T) 的特征值，且</p>
+<p>[ v\ne0,\qquad Tv&#x3D;\lambda v, ]</p>
+<p>则称 (v) 是对应于 (\lambda) 的特征向量。</p>
+<p>这两个定义看起来相似，但重点不同：</p>
+<ul>
+<li>定义特征值时，重点是：是否存在一个非零向量满足等式。</li>
+<li>定义特征向量时，重点是：给定的非零向量是否满足等式。</li>
+</ul>
+<p>为什么必须要求 (v\ne0)？因为 (T0&#x3D;\lambda0) 对任意 (\lambda) 都成立。如果不排除零向量，任何数都会成为特征值。</p>
+<h4 id="Definition-5-13-—-算子的幂"><a href="#Definition-5-13-—-算子的幂" class="headerlink" title="Definition 5.13 — 算子的幂"></a>Definition 5.13 — 算子的幂</h4><p>设 (T\in\mathcal L(V))​。 当 (m) 是正整数时，[ T^m&#x3D;\underbrace{T\cdots T}_{m\text{ 次}}. ]</p>
+<p>(T^0&#x3D;I)，其中 (I) 是 (V) 上的 identity operator。</p>
+<p>如果 (T) 可逆，则对正整数 (m)，[ T^{-m}&#x3D;(T^{-1})^m. ]</p>
+<h4 id="Definition-5-14-—-多项式作用于算子-p-T"><a href="#Definition-5-14-—-多项式作用于算子-p-T" class="headerlink" title="Definition 5.14 — 多项式作用于算子 (p(T))"></a>Definition 5.14 — 多项式作用于算子 (p(T))</h4><p>假设 (T\in\mathcal L(V))，且多项式</p>
+<p>[ p(z)&#x3D;a_0+a_1z+a_2z^2+\cdots+a_mz^m. ]</p>
+<p>Axler 定义：</p>
+<p>[ \boxed{ p(T)&#x3D;a_0I+a_1T+a_2T^2+\cdots+a_mT^m } ]</p>
+<h4 id="Definition-5-16：多项式的乘积"><a href="#Definition-5-16：多项式的乘积" class="headerlink" title="Definition 5.16：多项式的乘积"></a>Definition 5.16：多项式的乘积</h4><p>设 (p,q\in\mathcal P(\mathbf F))，它们的乘积定义为[ (pq)(z)&#x3D;p(z)q(z). ]</p>
+<h3 id="Theorem"><a href="#Theorem" class="headerlink" title="Theorem"></a>Theorem</h3><h4 id="定理-5-7"><a href="#定理-5-7" class="headerlink" title="定理 5.7"></a>定理 5.7</h4><p>设 (V) 是<em>有限维</em>向量空间，(T\in\mathcal L(V))，(\lambda\in\mathbf F)。以下条件等价：</p>
+<ol>
+<li>(\lambda) 是 (T) 的特征值。</li>
+<li>(T-\lambda I) 不是单射。</li>
+<li>(T-\lambda I) 不是满射。</li>
+<li>(T-\lambda I) 不可逆。</li>
+</ol>
+<p>proof：</p>
+<ol>
+<li><p>从[  \ Tv&#x3D;\lambda v ] 入手，移项得到[ (T-\lambda I)v&#x3D;0]，所以它不是单射</p>
+</li>
+<li><p>如果 (T-\lambda I) 不是单射，那么它的核中存在非零向量 (v)，满足[ (T-\lambda I)v&#x3D;0 ]。因此 (Tv&#x3D;\lambda v)，所以 (\lambda) 是特征值。</p>
+</li>
+</ol>
+<h4 id="定理-5-11"><a href="#定理-5-11" class="headerlink" title="定理 5.11"></a>定理 5.11</h4><p>设 (v_1,\ldots,v_m) 是 (T) 的特征向量，分别对应互不相同的特征值 (\lambda_1,\ldots,\lambda_m)。那么[ v_1,\ldots,v_m ]线性无关。</p>
+<p>proof：使用反证法，</p>
+<p>假设存在这样的线性相关组：[ a_1v_1+\cdots+a_mv_m&#x3D;0, ]，并且所有 (a_j\ne0)。</p>
+<p>对等式两边施加算子 (T-\lambda_m I)。由于[ (T-\lambda_m I)v_j&#x3D;(\lambda_j-\lambda_m)v_j, ]，而[ (T-\lambda_m I)v_m&#x3D;0, ]</p>
+<p>我们得到[ \sum_{j&#x3D;1}^{m-1} a_j(\lambda_j-\lambda_m)v_j&#x3D;0. ]</p>
+<p>由于特征值互不相同，(\lambda_j-\lambda_m\ne0)。所以前 (m-1) 个向量也构成线性相关组。</p>
+<p>这与我们选择了最短的线性相关组矛盾。因此，原来的特征向量组必须线性无关。</p>
+<h4 id="定理-5-12"><a href="#定理-5-12" class="headerlink" title="定理 5.12"></a>定理 5.12</h4><p>如果 (V) 是有限维向量空间，那么 (T) 的不同特征值最多有 (\dim V) 个。</p>
+<p>proof：假设 (T) 有 (m) 个不同的特征值，选择对应的特征向量。根据定理 5.11，这 (m) 个向量线性无关，因此[ m\leq \dim V. ]</p>
+<h4 id="定理5-17：Multiplicative-properties"><a href="#定理5-17：Multiplicative-properties" class="headerlink" title="定理5.17：Multiplicative properties"></a>定理5.17：Multiplicative properties</h4><p>对于 (p,q\in\mathcal P(\mathbf F)) 和 (T\in\mathcal L(V))，Axler 证明：</p>
+<p>[ \boxed{(pq)(T)&#x3D;p(T)q(T)} ] and[ \boxed{p(T)q(T)&#x3D;q(T)p(T)} ]</p>
+<p>proof：</p>
+<ol>
+<li><p>设[ p(z)&#x3D;\sum_{j&#x3D;0}^{m}a_jz^j,\qquad q(z)&#x3D;\sum_{k&#x3D;0}^{n}b_kz^k. ]</p>
+<p>先在普通多项式中相乘：</p>
+<p>[ (pq)(z)&#x3D; \sum_{j&#x3D;0}^{m}\sum_{k&#x3D;0}^{n} a_jb_kz^{j+k}. ]</p>
+<p>现在将 (z) 替换为 (T)：</p>
+<p>[ (pq)(T)&#x3D; \sum_{j&#x3D;0}^{m}\sum_{k&#x3D;0}^{n} a_jb_kT^{j+k}. ]</p>
+<p>由于算子幂满足</p>
+<p>[ T^{j+k}&#x3D;T^jT^k, ]</p>
+<p>所以</p>
+<p>[ \begin{aligned} (pq)(T) &amp;&#x3D;\sum_{j&#x3D;0}^{m}\sum_{k&#x3D;0}^{n} a_jb_kT^jT^k\ &amp;&#x3D;\left(\sum_{j&#x3D;0}^{m}a_jT^j\right)  \left(\sum_{k&#x3D;0}^{n}b_kT^k\right)\ &amp;&#x3D;p(T)q(T). \end{aligned} ]</p>
+</li>
+<li><p>[ p(T)q(T)&#x3D;(pq)(T). ]</p>
+<p>普通多项式的乘法满足交换律，所以[ pq&#x3D;qp. ]</p>
+<p>因此</p>
+<p>[ \begin{aligned} p(T)q(T) &amp;&#x3D;(pq)(T)\ &amp;&#x3D;(qp)(T)\ &amp;&#x3D;q(T)p(T). \end{aligned} ]</p>
+</li>
+</ol>
+<h4 id="Theorem-5-18"><a href="#Theorem-5-18" class="headerlink" title="Theorem 5.18"></a>Theorem 5.18</h4><p>对任意 (T\in\mathcal L(V)) 和多项式 (p\in\mathcal P(\mathbf F))，下面两个子空间都对 (T) 不变：</p>
+<ul>
+<li>(\operatorname{null}p(T))：被 (p(T)) 映射到零向量的所有向量组成的子空间。</li>
+<li>(\operatorname{range}p(T))：所有可以写成 (p(T)v) 的向量组成的子空间。</li>
+</ul>
+<p>proof：</p>
+<p>根据不变子空间的定义，我们任取</p>
+<p>[ u\in\operatorname{null}p(T). ]</p>
+<p>由 null space 的定义，</p>
+<p>[ p(T)u&#x3D;0. ]</p>
+<p>我们需要证明 (Tu) 也属于这个 null space，也就是证明</p>
+<p>[ p(T)(Tu)&#x3D;0. ]</p>
+<p>由于 Theorem 5.17(b) 告诉我们 (p(T)) 和 (T) 可以交换（这里 (T) 本身就是多项式 (z) 作用于 (T) 的结果），因此</p>
+<p>[ \begin{aligned} p(T)(Tu) &amp;&#x3D;T(p(T)u)\ &amp;&#x3D;T(0)\ &amp;&#x3D;0. \end{aligned} ]</p>
+<p>所以</p>
+<p>[ Tu\in\operatorname{null}p(T). ]</p>
+<p>--</p>
+<p>[ u\in\operatorname{range}p(T). ]</p>
+<p>根据 range 的定义，存在某个 (v\in V)，使得</p>
+<p>[ u&#x3D;p(T)v. ]</p>
+<p>我们要证明 (Tu) 仍然属于 (\operatorname{range}p(T))。</p>
+<p>代入 (u&#x3D;p(T)v)，得到</p>
+<p>[ Tu&#x3D;T(p(T)v). ]</p>
+<p>由 Theorem 5.17(b)，可以交换 (T) 与 (p(T)) 的顺序：</p>
+<p>[ \begin{aligned} Tu &amp;&#x3D;T(p(T)v)\ &amp;&#x3D;p(T)(Tv). \end{aligned} ]</p>
+<p>因为 (Tv\in V)，所以 (p(T)(Tv)) 本身就是 (p(T)) 作用于 (V) 中某个向量的结果。因此</p>
+<p>[ Tu\in\operatorname{range}p(T). ]</p>
+<hr>
+<h2 id="The-Minimal-Polynomial"><a href="#The-Minimal-Polynomial" class="headerlink" title="The Minimal Polynomial"></a>The Minimal Polynomial</h2><h3 id="definition-1"><a href="#definition-1" class="headerlink" title="definition"></a>definition</h3><h4 id="Definition-5-21-—-Monic-Polynomial"><a href="#Definition-5-21-—-Monic-Polynomial" class="headerlink" title="Definition 5.21 — Monic Polynomial"></a>Definition 5.21 — Monic Polynomial</h4><p>Monic polynomial（首一多项式）：最高次项的系数等于 (1)的多项式。</p>
+<h4 id="Definition-5-24-—-Minimal-Polynomial"><a href="#Definition-5-24-—-Minimal-Polynomial" class="headerlink" title="Definition 5.24 — Minimal Polynomial"></a>Definition 5.24 — Minimal Polynomial</h4><p>对于有限维向量空间上的算子 (T)，其 minimal polynomial 是满足 (p(T)&#x3D;0) 的、次数最低的唯一 monic polynomial。</p>
+<h3 id="theorem"><a href="#theorem" class="headerlink" title="theorem"></a>theorem</h3><h4 id="Theorem-5-19"><a href="#Theorem-5-19" class="headerlink" title="Theorem 5.19"></a>Theorem 5.19</h4><p>如果 (V) 是一个有限维、非零的复向量空间，那么每个算子 (T\in\mathcal L(V)) 至少有一个 eigenvalue。</p>
+<p>[ \boxed{ \dim V&lt;\infty,\quad V\ne{0},\quad \mathbf F&#x3D;\mathbf C \ \Longrightarrow\ T\text{ has an eigenvalue} } ]</p>
+<h4 id="Theorem-5-22"><a href="#Theorem-5-22" class="headerlink" title="Theorem 5.22"></a>Theorem 5.22</h4><p>假设 (V) 是有限维向量空间，(T\in\mathcal L(V))。那么存在唯一一个 monic polynomial (p)，满足：</p>
+<ol>
+<li>(p(T)&#x3D;0)，这里的 (0) 表示 zero operator（零算子）。</li>
+<li>在所有满足 (p(T)&#x3D;0) 的多项式中，(p) 的 degree 最小。</li>
+<li>它的次数满足[ \boxed{\deg p\leq \dim V} ]</li>
+</ol>
+<h4 id="Theorem-5-27"><a href="#Theorem-5-27" class="headerlink" title="Theorem 5.27"></a>Theorem 5.27</h4><p>设 (V) 是有限维向量空间，(T\in\mathcal L(V))，且 (p) 是 (T) 的 minimal polynomial。</p>
+<p>(a) (p) 的 zeros（零点）恰好是 (T) 的 eigenvalues（特征值）。</p>
+<p>换句话说：</p>
+<p>[ \boxed{p(\lambda)&#x3D;0 \iff \lambda\text{ 是 }T\text{ 的特征值}} ]</p>
+<p>(b) 如果 (V) 是复向量空间，那么 minimal polynomial 可以写成</p>
+<p>[ p(z)&#x3D;(z-\lambda_1)\cdots(z-\lambda_m), ]</p>
+<p>其中 (\lambda_1,\ldots,\lambda_m) 是 (T) 的全部不同特征值，允许重复出现。</p>
+<hr>
+<h2 id="Upper-triangular-matrix"><a href="#Upper-triangular-matrix" class="headerlink" title="Upper-triangular matrix"></a>Upper-triangular matrix</h2><h3 id="definition-2"><a href="#definition-2" class="headerlink" title="definition"></a>definition</h3><h4 id="Upper-Triangular-Matrix（上三角矩阵）"><a href="#Upper-Triangular-Matrix（上三角矩阵）" class="headerlink" title="Upper-Triangular Matrix（上三角矩阵）"></a>Upper-Triangular Matrix（上三角矩阵）</h4><p>一个方阵 (A) 称为 upper-triangular matrix，如果主对角线下方的所有元素都等于 (0)。</p>
+<p>例如：</p>
+<p>[ A&#x3D; \begin{pmatrix} 2&amp;1&amp;3\ 0&amp;4&amp;5\ 0&amp;0&amp;6 \end{pmatrix} ]</p>
+<p>这是一个上三角矩阵，因为主对角线下方的元素都是 (0)。</p>
+<h3 id="theorem-1"><a href="#theorem-1" class="headerlink" title="theorem"></a>theorem</h3><h4 id="Theorem-5-39"><a href="#Theorem-5-39" class="headerlink" title="Theorem 5.39"></a>Theorem 5.39</h4><p>设 (v_1,\ldots,v_n) 是 (V) 的一组 basis。</p>
+<p>以下三项等价：</p>
+<ol>
+<li>(T) 相对于这组 basis 的 matrix 是 upper triangular。</li>
+<li>对每个 (k&#x3D;1,\ldots,n)，子空间 (\operatorname{span}(v_1,\ldots,v_k)) 都是 (T)-invariant。</li>
+<li>对每个 (k&#x3D;1,\ldots,n)，都有[ Tv_k\in\operatorname{span}(v_1,\ldots,v_k). ]</li>
+</ol>
+<h4 id="Theorem-5-41"><a href="#Theorem-5-41" class="headerlink" title="Theorem 5.41"></a>Theorem 5.41</h4><p>如果 (T) 相对于某组 basis 的 matrix 是上三角矩阵，那么：</p>
+<p>[ \boxed{\text{Eigenvalues of }T &#x3D;\text{diagonal entries of the matrix}} ]</p>
+<h4 id="Theorem-5-47"><a href="#Theorem-5-47" class="headerlink" title="Theorem 5.47"></a>Theorem 5.47</h4><p>如果 (V) 是有限维复向量空间，那么每个 (T\in\mathcal L(V)) 都存在一组 basis，使得 (T) 的 matrix 为 upper triangular。</p>
+<hr>
+<h2 id="diagonalizable"><a href="#diagonalizable" class="headerlink" title="diagonalizable"></a>diagonalizable</h2><h3 id="definition-3"><a href="#definition-3" class="headerlink" title="definition"></a>definition</h3><p>Diagonal matrix（对角矩阵）：主对角线以外的所有元素都为零。</p>
+<h4 id="Definition-—-Diagonalizable-Operator"><a href="#Definition-—-Diagonalizable-Operator" class="headerlink" title="Definition — Diagonalizable Operator"></a>Definition — Diagonalizable Operator</h4><p>算子 (T) 称为 diagonalizable（可对角化），如果存在 (V) 的一组 basis，使得 (T) 相对于这组 basis 的 matrix 是 diagonal matrix。</p>
+<p>等价地说：[ \boxed{V\text{ 存在一组由 }T\text{ 的 eigenvectors 组成的 basis}} ]</p>
+<h4 id="Definition-5-66：Gershgorin-disks"><a href="#Definition-5-66：Gershgorin-disks" class="headerlink" title="Definition 5.66：Gershgorin disks"></a>Definition 5.66：Gershgorin disks</h4><p>设线性算子 (T) 在某个基下的矩阵为</p>
+<p>[ A&#x3D;(A_{j,k})_{n\times n}. ]</p>
+<p>对于矩阵的第 (j) 行，定义一个圆盘：</p>
+<p>[ \boxed{ |z-A_{j,j}| \leq \sum_{k\ne j}|A_{j,k}| } ]</p>
+<h3 id="theorem-2"><a href="#theorem-2" class="headerlink" title="theorem"></a>theorem</h3><h4 id="Theorem-5-55"><a href="#Theorem-5-55" class="headerlink" title="Theorem 5.55"></a>Theorem 5.55</h4><p>设 (V) 是有限维向量空间，(T\in\mathcal L(V))，而 (\lambda_1,\ldots,\lambda_m) 是 (T) 的所有不同特征值。</p>
+<p>以下条件等价：</p>
+<table>
+<thead>
+<tr>
+<th>条件</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>(a) (T) is diagonalizable</td>
+<td>(T) 可对角化</td>
+</tr>
+<tr>
+<td>(b) (V) has a basis consisting of eigenvectors</td>
+<td>(V) 有一组由特征向量构成的基</td>
+</tr>
+<tr>
+<td>(c) (V&#x3D;E(\lambda_1,T)\oplus\cdots\oplus E(\lambda_m,T))</td>
+<td>所有特征子空间的直和等于整个空间</td>
+</tr>
+<tr>
+<td>(d) (\dim V&#x3D;\sum_{k&#x3D;1}^{m}\dim E(\lambda_k,T))</td>
+<td>所有特征子空间的维数之和等于空间维数</td>
+</tr>
+</tbody></table>
+<h4 id="Theorem-5-58"><a href="#Theorem-5-58" class="headerlink" title="Theorem 5.58"></a>Theorem 5.58</h4><p>如果有限维空间 (V)上的算子 (T)有 (\dim V)个不同的特征值，那么 (T)可对角化。</p>
+<h4 id="Theorem-5-62"><a href="#Theorem-5-62" class="headerlink" title="Theorem 5.62"></a>Theorem 5.62</h4><p>设 (V) 是有限维向量空间，(T\in\mathcal L(V))。那么：</p>
+<p>[ \boxed{ T\text{ 可对角化} \iff p_T(z)&#x3D;\prod_{j&#x3D;1}^{m}(z-\lambda_j) } ]</p>
+<h4 id="Theorem-5-67：Gershgorin-disk-theorem"><a href="#Theorem-5-67：Gershgorin-disk-theorem" class="headerlink" title="Theorem 5.67：Gershgorin disk theorem"></a>Theorem 5.67：Gershgorin disk theorem</h4><p>矩阵的每一个特征值，都至少属于一个 Gershgorin disk</p>
+<h4 id="Theorem-5-65"><a href="#Theorem-5-65" class="headerlink" title="Theorem 5.65"></a>Theorem 5.65</h4><p>如果 (T) 是 diagonalizable operator，且子空间 (U) 对 (T) invariant，那么限制算子 (T|_U) 也 diagonalizable。</p>
+</div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comments</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/important/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/ loading='lazy'></div><div class="author-info-name">Joey</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">293</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">51</div></a></div><div class="follow-links segmented"> <a href="https://github.com/a2664476347a-ai" target="_blank"><i class="fab fa-github"></i>GitHub</a><a href="https://space.bilibili.com/59101931?spm_id_from=333.1007.0.0" target="_blank"><i class="fas fa-tv"></i>Bilibili</a><a href="mailto:a2664476347@gmail.com"><i class="fas fa-envelope"></i>Gmail</a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/10/19/%E4%B8%8D%E5%8F%AF%E4%BF%A1%E7%9A%84%E8%B0%B7%E6%AD%8C%E5%9C%B0%E5%9B%BE%EF%BC%8CLA%E7%9A%84%E7%BD%A2%E5%B7%A5/" title="不可信的谷歌地图，LA的罢工">不可信的谷歌地图，LA的罢工</a><time datetime="2026-10-19T21:15:18.000Z" title="Created 2026-10-19 22:15:18">2026-10-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/10/19/botan/" title="爱丁堡皇家植物园">爱丁堡皇家植物园</a><time datetime="2026-10-19T08:22:51.000Z" title="Created 2026-10-19 09:22:51">2026-10-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/10/18/%E7%9A%87%E5%AE%B6%E6%A4%8D%E7%89%A9%E5%9B%AD%EF%BC%8C%E4%BD%9C%E6%96%87%E5%88%86%E6%95%B0/" title="皇家植物园，作文分数">皇家植物园，作文分数</a><time datetime="2026-10-18T20:44:27.000Z" title="Created 2026-10-18 21:44:27">2026-10-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/10/17/calton%20hill%EF%BC%8CEssay%EF%BC%8C%E3%80%8A%E9%BB%91%E8%89%B2%E5%9B%9B%E5%8F%B6%E8%8D%89%E3%80%8B/" title="calton hill，Essay，《黑色四叶草》">calton hill，Essay，《黑色四叶草》</a><time datetime="2026-10-17T21:42:10.000Z" title="Created 2026-10-17 22:42:10">2026-10-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/10/16/%E7%B2%BE%E7%A5%9E%E6%81%8D%E6%83%9A%EF%BC%8C%E9%BB%91%E4%BA%BA%E6%9C%88%EF%BC%8C%E7%AC%AC%E4%B8%80%E6%AC%A1tutorial/" title="精神恍惚，黑人月，第一次tutorial，生日，罢工">精神恍惚，黑人月，第一次tutorial，生日，罢工</a><time datetime="2026-10-16T20:41:32.000Z" title="Created 2026-10-16 21:41:32">2026-10-16</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/%E6%97%85%E8%A1%8C/" style="font-size: 1.1em; color: #999">旅行</a> <a href="/tags/%E5%8E%86%E5%8F%B2/" style="font-size: 1.28em; color: #99a0aa">历史</a> <a href="/tags/%E8%B6%B3%E7%90%83/" style="font-size: 1.23em; color: #999ea6">足球</a> <a href="/tags/%E6%8E%A8%E7%90%86/" style="font-size: 1.1em; color: #999">推理</a> <a href="/tags/%E8%A1%8C%E7%A8%8B%E8%AE%A1%E5%88%92/" style="font-size: 1.14em; color: #999b9d">行程计划</a> <a href="/tags/%E4%B8%AD%E4%B8%9C/" style="font-size: 1.14em; color: #999b9d">中东</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 1.1em; color: #999">线性代数</a> <a href="/tags/Pudding/" style="font-size: 1.19em; color: #999da1">Pudding</a> <a href="/tags/%E7%BD%91%E7%AB%99/" style="font-size: 1.1em; color: #999">网站</a> <a href="/tags/%E8%A1%8C%E7%A8%8B%E8%A7%84%E5%88%92/" style="font-size: 1.37em; color: #99a4b2">行程规划</a> <a href="/tags/%E4%BA%9A%E6%89%98%E8%8E%89/" style="font-size: 1.14em; color: #999b9d">亚托莉</a> <a href="/tags/%E5%8F%B0%E6%B5%B7/" style="font-size: 1.14em; color: #999b9d">台海</a> <a href="/tags/%E7%94%B7%E5%A5%B3%E5%AF%B9%E7%AB%8B/" style="font-size: 1.19em; color: #999da1">男女对立</a> <a href="/tags/%E6%97%A5%E8%AE%B0/" style="font-size: 1.5em; color: #99a9bf">日记</a> <a href="/tags/galgame/" style="font-size: 1.19em; color: #999da1">galgame</a> <a href="/tags/%E9%80%BB%E8%BE%91%E5%AD%A6/" style="font-size: 1.14em; color: #999b9d">逻辑学</a> <a href="/tags/%E5%8E%9F%E7%A5%9E/" style="font-size: 1.1em; color: #999">原神</a> <a href="/tags/%E7%82%89%E7%9F%B3%E4%BC%A0%E8%AF%B4/" style="font-size: 1.14em; color: #999b9d">炉石传说</a> <a href="/tags/%E7%90%89%E7%92%83%E7%9A%84%E5%AE%9D%E7%9F%B3/" style="font-size: 1.19em; color: #999da1">琉璃的宝石</a> <a href="/tags/%E5%8A%A8%E6%BC%AB/" style="font-size: 1.14em; color: #999b9d">动漫</a> <a href="/tags/%E8%80%83%E8%AF%95/" style="font-size: 1.1em; color: #999">考试</a> <a href="/tags/%E4%BA%92%E8%81%94%E7%BD%91%E8%88%86%E8%AE%BA/" style="font-size: 1.32em; color: #99a2ae">互联网舆论</a> <a href="/tags/%E6%97%A0%E7%A5%9E%E8%AE%BA/" style="font-size: 1.1em; color: #999">无神论</a> <a href="/tags/%E7%BD%A2%E5%B7%A5/" style="font-size: 1.1em; color: #999">罢工</a> <a href="/tags/%E5%93%88%E4%BC%AF%EF%BC%88%E5%BE%B7%E5%9B%BD%E7%8A%B9%E5%A4%AA%E8%A3%94%E5%8C%96%E5%AD%A6%E5%AE%B6%EF%BC%89/" style="font-size: 1.1em; color: #999">哈伯（德国犹太裔化学家）</a> <a href="/tags/%E6%8B%89%E7%93%A6%E9%94%A1/" style="font-size: 1.1em; color: #999">拉瓦锡</a> <a href="/tags/svd/" style="font-size: 1.1em; color: #999">svd</a> <a href="/tags/%E7%88%B1%E4%B8%81%E5%A0%A1%E7%94%9F%E6%B4%BB/" style="font-size: 1.41em; color: #99a5b7">爱丁堡生活</a> <a href="/tags/LPL/" style="font-size: 1.23em; color: #999ea6">LPL</a> <a href="/tags/%E6%AD%BB%E4%BA%A1/" style="font-size: 1.1em; color: #999">死亡</a> <a href="/tags/%E7%88%B1%E5%9B%A0%E6%96%AF%E5%9D%A6/" style="font-size: 1.1em; color: #999">爱因斯坦</a> <a href="/tags/%E4%BB%BB%E5%A4%A9%E5%A0%82/" style="font-size: 1.14em; color: #999b9d">任天堂</a> <a href="/tags/%E8%AF%95%E7%AE%A1%E5%A9%B4%E5%84%BF/" style="font-size: 1.1em; color: #999">试管婴儿</a> <a href="/tags/%E5%85%AC%E5%BC%8F/" style="font-size: 1.14em; color: #999b9d">公式</a> <a href="/tags/cs2/" style="font-size: 1.19em; color: #999da1">cs2</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 1.46em; color: #99a7bb">游戏</a> <a href="/tags/%E7%A7%91%E6%99%AE%E7%95%AA/" style="font-size: 1.1em; color: #999">科普番</a> <a href="/tags/%E5%96%9C%E5%A5%BD%E4%B8%8E%E5%B0%B1%E4%B8%9A/" style="font-size: 1.19em; color: #999da1">喜好与就业</a> <a href="/tags/%E8%A1%8C%E7%A8%8B%E5%AE%89%E6%8E%92/" style="font-size: 1.19em; color: #999da1">行程安排</a> <a href="/tags/%E8%83%A1%E9%80%82/" style="font-size: 1.1em; color: #999">胡适</a></div></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Website Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article Count :</div><div class="item-count">293</div></div><div class="webinfo-item"><div class="item-name">Total Word Count :</div><div class="item-count">116.7k</div></div><div class="webinfo-item"><div class="item-name">Unique Visitors :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Page Views :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Update :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-10-19T21:22:43.490Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Joey</span><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="Scroll to Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.9/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        loader: {
+          load: [
+            // Four font extension packages (optional)
+            //- '[tex]/bbm',
+            //- '[tex]/bboldx',
+            //- '[tex]/dsfont',
+            '[tex]/mhchem'
+          ],
+          paths: {
+            'mathjax-newcm': '[mathjax]/../@mathjax/mathjax-newcm-font',
+
+            //- // Four font extension packages (optional)
+            //- 'mathjax-bbm-extension': '[mathjax]/../@mathjax/mathjax-bbm-font-extension',
+            //- 'mathjax-bboldx-extension': '[mathjax]/../@mathjax/mathjax-bboldx-font-extension',
+            //- 'mathjax-dsfont-extension': '[mathjax]/../@mathjax/mathjax-dsfont-font-extension',
+            'mathjax-mhchem-extension': '[mathjax]/../@mathjax/mathjax-mhchem-font-extension'
+          }
+        },
+        output: {
+          font: 'mathjax-newcm',
+        },
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'ams',
+          packages: {
+            '[+]': [
+              'mhchem'
+            ]
+          }
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          menuOptions: {
+            settings: {
+              enrich: false  // Turn off Braille and voice narration text automatic generation
+            }
+          },
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@4.1.0/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script><script>(() => {
+  const parseViewBox = viewBox => {
+    if (!viewBox) return null
+    const parts = viewBox.trim().split(/[\s,]+/).map(n => Number(n))
+    if (parts.length !== 4 || parts.some(n => Number.isNaN(n))) return null
+    return parts
+  }
+
+  const getSvgViewBox = svg => {
+    const attr = parseViewBox(svg.getAttribute('viewBox'))
+    if (attr) return attr
+
+    // Fallback: use bbox to build a viewBox
+    try {
+      const bbox = svg.getBBox()
+      if (bbox && bbox.width && bbox.height) return [bbox.x, bbox.y, bbox.width, bbox.height]
+    } catch (e) {
+      // getBBox may fail on some edge cases; ignore
+    }
+
+    const w = Number(svg.getAttribute('width')) || 0
+    const h = Number(svg.getAttribute('height')) || 0
+    if (w > 0 && h > 0) return [0, 0, w, h]
+    return [0, 0, 100, 100]
+  }
+
+  const setSvgViewBox = (svg, vb) => {
+    svg.setAttribute('viewBox', `${vb[0]} ${vb[1]} ${vb[2]} ${vb[3]}`)
+  }
+
+  const clamp = (v, min, max) => Math.max(min, Math.min(max, v))
+
+  const openSvgInNewTab = ({ source, initViewBox }) => {
+    const getClonedSvg = () => {
+      if (typeof source === 'string') {
+        const template = document.createElement('template')
+        template.innerHTML = source.trim()
+        const svg = template.content.querySelector('svg')
+        return svg ? svg.cloneNode(true) : null
+      }
+      if (source && typeof source.cloneNode === 'function') {
+        return source.cloneNode(true)
+      }
+      return null
+    }
+
+    const clone = getClonedSvg()
+    if (!clone) return
+    if (initViewBox && initViewBox.length === 4) {
+      clone.setAttribute('viewBox', initViewBox.join(' '))
+    }
+    if (!clone.getAttribute('xmlns')) clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg')
+    if (!clone.getAttribute('xmlns:xlink') && clone.outerHTML.includes('xlink:')) {
+      clone.setAttribute('xmlns:xlink', 'http://www.w3.org/1999/xlink')
+    }
+    // inject background to match current theme
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark'
+    const bg = getComputedStyle(document.body).backgroundColor || (isDark ? '#1e1e1e' : '#ffffff')
+    if (!clone.style.background) clone.style.background = bg
+
+    const serializer = new XMLSerializer()
+    const svgSource = serializer.serializeToString(clone)
+    const htmlSource = `<!doctype html><html><head><meta charset="utf-8" />
+      <style>
+        html, body { width: 100%; height: 100%; margin: 0; display: flex; align-items: center; justify-content: center; background: ${bg}; }
+        svg { max-width: 100%; max-height: 100%; height: auto; width: auto; }
+      </style>
+      </head><body>${svgSource}</body></html>`
+    const blob = new Blob([htmlSource], { type: 'text/html;charset=utf-8' })
+    const url = URL.createObjectURL(blob)
+    window.open(url, '_blank', 'noopener')
+    setTimeout(() => URL.revokeObjectURL(url), 30000)
+  }
+
+  const attachMermaidViewerButton = wrap => {
+    let btn = wrap.querySelector('.mermaid-open-btn')
+    if (!btn) {
+      btn = document.createElement('button')
+      btn.type = 'button'
+      btn.className = 'mermaid-open-btn'
+      wrap.appendChild(btn)
+    }
+
+    btn.innerHTML = '<i class="fa fa-search fa-fw" aria-hidden="true"></i>'
+
+    if (!btn.__mermaidViewerBound) {
+      btn.addEventListener('click', e => {
+        e.preventDefault()
+        e.stopPropagation()
+        const svg = wrap.__mermaidOriginalSvg || wrap.querySelector('svg')
+        if (!svg) return
+        const initViewBox = wrap.__mermaidInitViewBox
+        if (typeof svg === 'string') {
+          openSvgInNewTab({ source: svg, initViewBox })
+          return
+        }
+        openSvgInNewTab({ source: svg, initViewBox })
+      })
+      btn.__mermaidViewerBound = true
+    }
+  }
+
+  // Zoom around a point (px, py) in the SVG viewport (in viewBox coordinates)
+  const zoomAtPoint = (vb, factor, px, py) => {
+    const w = vb[2] * factor
+    const h = vb[3] * factor
+    const nx = px - (px - vb[0]) * factor
+    const ny = py - (py - vb[1]) * factor
+    return [nx, ny, w, h]
+  }
+
+  const initMermaidGestures = wrap => {
+    const svg = wrap.querySelector('svg')
+    if (!svg) return
+
+    // Ensure viewBox exists so gestures always work
+    const initVb = getSvgViewBox(svg)
+    wrap.__mermaidInitViewBox = initVb
+    wrap.__mermaidCurViewBox = initVb.slice()
+    setSvgViewBox(svg, initVb)
+
+    // Avoid binding multiple times on themeChange/pjax
+    if (wrap.__mermaidGestureBound) return
+    wrap.__mermaidGestureBound = true
+
+    // Helper: map client (viewport) coordinate -> viewBox coordinate
+    const clientToViewBox = (clientX, clientY) => {
+      const rect = svg.getBoundingClientRect()
+      const vb = wrap.__mermaidCurViewBox || getSvgViewBox(svg)
+      const x = vb[0] + (clientX - rect.left) * (vb[2] / rect.width)
+      const y = vb[1] + (clientY - rect.top) * (vb[3] / rect.height)
+      return { x, y, rect, vb }
+    }
+
+    const state = {
+      pointers: new Map(),
+      startVb: null,
+      startDist: 0,
+      startCenter: null
+    }
+
+    const clampVb = vb => {
+      const init = wrap.__mermaidInitViewBox || vb
+      const minW = init[2] * 0.1
+      const maxW = init[2] * 10
+      const minH = init[3] * 0.1
+      const maxH = init[3] * 10
+      vb[2] = clamp(vb[2], minW, maxW)
+      vb[3] = clamp(vb[3], minH, maxH)
+      return vb
+    }
+
+    const setCurVb = vb => {
+      vb = clampVb(vb)
+      wrap.__mermaidCurViewBox = vb
+      setSvgViewBox(svg, vb)
+    }
+
+    const onPointerDown = e => {
+      // Allow only primary button for mouse
+      if (e.pointerType === 'mouse' && e.button !== 0) return
+      svg.setPointerCapture(e.pointerId)
+      state.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY })
+
+      if (state.pointers.size === 1) {
+        state.startVb = (wrap.__mermaidCurViewBox || getSvgViewBox(svg)).slice()
+      } else if (state.pointers.size === 2) {
+        const pts = [...state.pointers.values()]
+        const dx = pts[0].x - pts[1].x
+        const dy = pts[0].y - pts[1].y
+        state.startDist = Math.hypot(dx, dy)
+        state.startVb = (wrap.__mermaidCurViewBox || getSvgViewBox(svg)).slice()
+        state.startCenter = { x: (pts[0].x + pts[1].x) / 2, y: (pts[0].y + pts[1].y) / 2 }
+      }
+    }
+
+    const onPointerMove = e => {
+      if (!state.pointers.has(e.pointerId)) return
+      state.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY })
+
+      // Pan with 1 pointer
+      if (state.pointers.size === 1 && state.startVb) {
+        const p = [...state.pointers.values()][0]
+        const prev = { x: e.clientX - e.movementX, y: e.clientY - e.movementY }
+        // movementX/Y unreliable on touch, compute from stored last position
+        const last = wrap.__mermaidLastSinglePointer || p
+        const dxClient = p.x - last.x
+        const dyClient = p.y - last.y
+        wrap.__mermaidLastSinglePointer = p
+
+        const { rect } = clientToViewBox(p.x, p.y)
+        const vb = (wrap.__mermaidCurViewBox || getSvgViewBox(svg)).slice()
+        const dx = dxClient * (vb[2] / rect.width)
+        const dy = dyClient * (vb[3] / rect.height)
+        setCurVb([vb[0] - dx, vb[1] - dy, vb[2], vb[3]])
+        return
+      }
+
+      // Pinch zoom with 2 pointers
+      if (state.pointers.size === 2 && state.startVb && state.startDist > 0) {
+        const pts = [...state.pointers.values()]
+        const dx = pts[0].x - pts[1].x
+        const dy = pts[0].y - pts[1].y
+        const dist = Math.hypot(dx, dy)
+        if (!dist) return
+        const factor = state.startDist / dist // dist bigger => zoom in (viewBox smaller)
+
+        const cx = (pts[0].x + pts[1].x) / 2
+        const cy = (pts[0].y + pts[1].y) / 2
+        const centerClient = { x: cx, y: cy }
+
+        const pxy = clientToViewBox(centerClient.x, centerClient.y)
+        const cpx = pxy.x
+        const cpy = pxy.y
+
+        const vb = zoomAtPoint(state.startVb, factor, cpx, cpy)
+        setCurVb(vb)
+      }
+    }
+
+    const onPointerUpOrCancel = e => {
+      state.pointers.delete(e.pointerId)
+      if (state.pointers.size === 0) {
+        state.startVb = null
+        state.startDist = 0
+        state.startCenter = null
+        wrap.__mermaidLastSinglePointer = null
+      } else if (state.pointers.size === 1) {
+        // reset single pointer baseline to avoid jump
+        wrap.__mermaidLastSinglePointer = [...state.pointers.values()][0]
+      }
+    }
+
+    // Wheel zoom (mouse/trackpad)
+    const onWheel = e => {
+      // ctrlKey on mac trackpad pinch; we treat both as zoom
+      e.preventDefault()
+      const delta = e.deltaY
+      const zoomFactor = delta > 0 ? 1.1 : 0.9
+      const { x, y } = clientToViewBox(e.clientX, e.clientY)
+      const vb = (wrap.__mermaidCurViewBox || getSvgViewBox(svg)).slice()
+      setCurVb(zoomAtPoint(vb, zoomFactor, x, y))
+    }
+
+    const onDblClick = () => {
+      const init = wrap.__mermaidInitViewBox
+      if (!init) return
+      wrap.__mermaidCurViewBox = init.slice()
+      setSvgViewBox(svg, init)
+    }
+
+    svg.addEventListener('pointerdown', onPointerDown)
+    svg.addEventListener('pointermove', onPointerMove)
+    svg.addEventListener('pointerup', onPointerUpOrCancel)
+    svg.addEventListener('pointercancel', onPointerUpOrCancel)
+    svg.addEventListener('wheel', onWheel, { passive: false })
+    svg.addEventListener('dblclick', onDblClick)
+  }
+
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+
+      // Clear old render (themeChange/pjax will rerun)
+      const oldSvg = item.querySelector('svg')
+      if (oldSvg) oldSvg.remove()
+      item.__mermaidGestureBound = false
+
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+        if (true) initMermaidGestures(item)
+        item.__mermaidOriginalSvg = svg
+        if (true) attachMermaidViewerButton(item)
+      }
+
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (true) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.2/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'a2664476347a-ai/blog-comments',
+      'data-repo-id': 'R_kgDORkgtKg',
+      'data-category-id': 'DIC_kwDORkgtKs4C4LUQ',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !false) {
+    if (false) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script><script>
+mermaid.initialize({
+  startOnLoad: true,
+  securityLevel: 'loose',
+  flowchart: { useMaxWidth: true }
+});
+</script>
+<script src="/js/random-tag-bg.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="local-search-input"><input placeholder="Search for Posts" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.4"></script></div></div></body></html>
