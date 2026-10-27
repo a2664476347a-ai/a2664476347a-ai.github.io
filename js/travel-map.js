@@ -482,6 +482,13 @@ const places = [
     image: "/img/Edinburgh/botan.jpg",
     url: "/2026/10/19/botan"
   },
+  {
+    name: "Royal Observatory", //  皇家天文台
+    lat: 55.9221597,
+    lng: -3.1896442,
+    image: "/img/Edinburgh/robe.jpg",
+    url: "/2026/10/27/robe"
+  },
  
 
 

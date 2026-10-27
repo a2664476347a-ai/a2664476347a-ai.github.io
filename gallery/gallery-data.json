@@ -206,6 +206,11 @@
       "category": "Edinburgh"
     },
     {
+      "src": "/img/Edinburgh/robe.jpg",
+      "title": "robe",
+      "category": "Edinburgh"
+    },
+    {
       "src": "/img/Guangdong/5b6401ddd1762bfe160812a2c8259cc6.jpg",
       "title": "5b6401ddd1762bfe160812a2c8259cc6",
       "category": "Guangdong"
@@ -523,6 +528,11 @@
     {
       "src": "/img/other/琉璃的宝石.jpg",
       "title": "琉璃的宝石",
+      "category": "other"
+    },
+    {
+      "src": "/img/other/正交投影.jpg",
+      "title": "正交投影",
       "category": "other"
     },
     {
