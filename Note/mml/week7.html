@@ -1,0 +1,1542 @@
+<!DOCTYPE html><html lang="cn" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>私家菜的个人博客 | 私家菜的个人博客</title><meta name="author" content="Joey"><meta name="copyright" content="Joey"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《Logic and Conversation》Implicature（会话含义）Grice 在文章开头讨论了一个语言哲学问题：  Natural language（自然语言）和 Formal language（形式语言）之间是否存在意义上的差异？  比如我们之前在Logic里学过，P&#x2F;\Q 的意思是 P and Q。在这个例子中，形式逻辑中的 &#x2F;\ 有明确的逻辑含义，但自然语">
+<meta property="og:type" content="website">
+<meta property="og:title" content="私家菜的个人博客">
+<meta property="og:url" content="https://a2664476347a-ai.github.io/Note/mml/week7.html">
+<meta property="og:site_name" content="私家菜的个人博客">
+<meta property="og:description" content="《Logic and Conversation》Implicature（会话含义）Grice 在文章开头讨论了一个语言哲学问题：  Natural language（自然语言）和 Formal language（形式语言）之间是否存在意义上的差异？  比如我们之前在Logic里学过，P&#x2F;\Q 的意思是 P and Q。在这个例子中，形式逻辑中的 &#x2F;\ 有明确的逻辑含义，但自然语">
+<meta property="og:locale">
+<meta property="og:image" content="https://a2664476347a-ai.github.io/img/important/avatar.jpg">
+<meta property="article:published_time" content="2026-11-01T16:24:39.427Z">
+<meta property="article:modified_time" content="2026-11-01T16:24:39.427Z">
+<meta property="article:author" content="Joey">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://a2664476347a-ai.github.io/img/important/avatar.jpg"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://a2664476347a-ai.github.io/Note/mml/week7.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//www.clarity.ms"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="-SA3Essa91Y2Ep02I_lVO46k18Im4ofqJesBiGXFTVA"/><meta name="msvalidate.01" content="C5E544DDD197A5A1F65FF3CC2EAA5B30"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.9/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-K3J40ZJ1S7"></script><script>window.dataLayer = window.dataLayer || []
+function gtag(){dataLayer.push(arguments)}
+gtag('js', new Date())
+gtag('config', 'G-K3J40ZJ1S7')
+btf.addGlobalFn('pjaxComplete', () => {
+  gtag('config', 'G-K3J40ZJ1S7', {'page_path': window.location.pathname})
+}, 'google_analytics')
+</script><script>(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "w4agonpixo");
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":3,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"You have switched to Traditional Chinese","cht_to_chs":"You have switched to Simplified Chinese","day_to_night":"You have switched to Dark Mode","night_to_day":"You have switched to Light Mode","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-right"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '私家菜的个人博客',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="/css/custom.css"><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/important/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/ loading='lazy'></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">307</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">51</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">11</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><span> 学习</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/analyse/"><i class="fa-fw fas fa-square-root-alt"></i><span> 数学分析</span></a></li><li><a class="site-page child" href="/categories/linear-algebra/"><i class="fa-fw fas fa-th"></i><span> 线性代数</span></a></li><li><a class="site-page child" href="/categories/logic/"><i class="fa-fw fas fa-project-diagram"></i><span> 逻辑学</span></a></li><li><a class="site-page child" href="/categories/philosophy/"><i class="fa-fw fas fa-brain"></i><span> 普通哲学</span></a></li><li><a class="site-page child" href="/2026/09/28/%E5%AF%BC%E8%88%AA/"><i class="fa-fw fas fa-pencil-alt"></i><span> 笔记</span></a></li><li><a class="site-page child" href="/categories/other/"><i class="fa-fw fas fa-folder"></i><span> 其他</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 图集</span></a></div><div class="menus_item"><span class="site-page group"><span> 兴趣</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/anime/"><i class="fa-fw fas fa-tv"></i><span> 动漫</span></a></li><li><a class="site-page child" href="/categories/game/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/map/"><i class="fa-fw fas fa-plane"></i><span> 旅行</span></a></li><li><a class="site-page child" href="/categories/film/"><i class="fa-fw fas fa-film"></i><span> 影视</span></a></li><li><a class="site-page child" href="/categories/reading/"><i class="fa-fw fas fa-book-open"></i><span> 阅读</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%97%A5%E8%AE%B0/"><i class="fa-fw fas fa-pen"></i><span> 日记</span></a></li><li><a class="site-page child" href="/categories/%E6%9D%82%E8%B0%88/"><i class="fa-fw fas fa-comment"></i><span> 杂谈</span></a></li></ul></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(/img/important/index.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">私家菜的个人博客</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><span> 学习</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/analyse/"><i class="fa-fw fas fa-square-root-alt"></i><span> 数学分析</span></a></li><li><a class="site-page child" href="/categories/linear-algebra/"><i class="fa-fw fas fa-th"></i><span> 线性代数</span></a></li><li><a class="site-page child" href="/categories/logic/"><i class="fa-fw fas fa-project-diagram"></i><span> 逻辑学</span></a></li><li><a class="site-page child" href="/categories/philosophy/"><i class="fa-fw fas fa-brain"></i><span> 普通哲学</span></a></li><li><a class="site-page child" href="/2026/09/28/%E5%AF%BC%E8%88%AA/"><i class="fa-fw fas fa-pencil-alt"></i><span> 笔记</span></a></li><li><a class="site-page child" href="/categories/other/"><i class="fa-fw fas fa-folder"></i><span> 其他</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 图集</span></a></div><div class="menus_item"><span class="site-page group"><span> 兴趣</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/anime/"><i class="fa-fw fas fa-tv"></i><span> 动漫</span></a></li><li><a class="site-page child" href="/categories/game/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/map/"><i class="fa-fw fas fa-plane"></i><span> 旅行</span></a></li><li><a class="site-page child" href="/categories/film/"><i class="fa-fw fas fa-film"></i><span> 影视</span></a></li><li><a class="site-page child" href="/categories/reading/"><i class="fa-fw fas fa-book-open"></i><span> 阅读</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%97%A5%E8%AE%B0/"><i class="fa-fw fas fa-pen"></i><span> 日记</span></a></li><li><a class="site-page child" href="/categories/%E6%9D%82%E8%B0%88/"><i class="fa-fw fas fa-comment"></i><span> 杂谈</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title"></h1></div></header><main class="layout" id="content-inner"><div id="page"><div class="container" id="article-container"><h1 id="《Logic-and-Conversation》"><a href="#《Logic-and-Conversation》" class="headerlink" title="《Logic and Conversation》"></a>《Logic and Conversation》</h1><h2 id="Implicature（会话含义）"><a href="#Implicature（会话含义）" class="headerlink" title="Implicature（会话含义）"></a>Implicature（会话含义）</h2><p>Grice 在文章开头讨论了一个语言哲学问题：</p>
+<blockquote>
+<p>Natural language（自然语言）和 Formal language（形式语言）之间是否存在<strong>意义上的差异</strong>？</p>
+</blockquote>
+<p>比如我们之前在Logic里学过，P&#x2F;\Q 的意思是 P and Q。在这个例子中，形式逻辑中的 &#x2F;\ 有<strong>明确的逻辑含义</strong>，但自然语言中的 and 在不同语境中可能<strong>表达更多东西</strong>，也就是说在日常沟通中会有更多的信息（语气，语调……）。</p>
+<p>所以Grice重点研究了Conversation。</p>
+<h3 id="What-is-Implicature"><a href="#What-is-Implicature" class="headerlink" title="What is Implicature?"></a>What is Implicature?</h3><p>Grice 举了一个例子：假设 A 和 B 正在谈论共同朋友 C。</p>
+<ul>
+<li><p>A：How is C getting on in his job?</p>
+</li>
+<li><p>B：Oh quite well, I think; he likes his colleagues, and he hasn&#39;t been to prison（监狱） yet.</p>
+</li>
+</ul>
+<p>在这句对于C的工作的谈论突然提及了他还没进监狱，那么在A看来C可能是一个会犯罪&#x2F;不诚实的人，但是B又没有明说，这就是<strong>Implicature（暗示）</strong>。</p>
+<h3 id="为什么我们能够理解-Implicature？"><a href="#为什么我们能够理解-Implicature？" class="headerlink" title="为什么我们能够理解 Implicature？"></a>为什么我们能够理解 Implicature？</h3><p>为什么 A 不会认为 B 只是随便说了一句 C 没有坐过牢？为什么 A 会进一步推断 C 可能不诚实？</p>
+<p>Grice 认为，我们的对话通常不是毫无联系的一系列句子。</p>
+<p>相反对话通常具有某种<strong>共同目的（Common Purpose）</strong>，使得对话参与者通常会以某种方式<strong>相互配合</strong>并且我们会<strong>假设</strong>对方的表达与当前<strong>对话有关</strong>。</p>
+<hr>
+<h2 id="The-Cooperative-Principle-and-Four-Maxims"><a href="#The-Cooperative-Principle-and-Four-Maxims" class="headerlink" title="The Cooperative Principle and Four Maxims"></a>The Cooperative Principle and Four Maxims</h2><p>Grice 正式提出：</p>
+<blockquote>
+<p>Make your conversational contribution such as is required, at the stage at which it occurs, by the accepted purpose or direction of the talk exchange in which you are engaged.</p>
+</blockquote>
+<p>也就是说<strong>在对话的每一个阶段，你所作出的贡献，都应该符合当前对话已经接受的目的或方向</strong>。</p>
+<p>比如：</p>
+<ul>
+<li><p>A：Where is the library?</p>
+</li>
+<li><p>B：It&#39;s next to the supermarket.</p>
+</li>
+</ul>
+<p>为什么 B 这样回答？</p>
+<p>因为双方正在进行一个寻找图书馆的对话，而且B 的回答与 A 的问题有关，能够帮助 A 达到目的。</p>
+<p>但如果 B 回答：&quot;Yesterday I bought a new computer.&quot;</p>
+<p>这句话本身可能完全正确，但它与当前对话的目的<strong>没有关系</strong>。</p>
+<p>因此，Grice 认为正常的对话需要某种<strong>合作基础</strong>。</p>
+<h3 id="Four-Conversational-Maxims（四大对话准则）"><a href="#Four-Conversational-Maxims（四大对话准则）" class="headerlink" title="Four Conversational Maxims（四大对话准则）"></a>Four Conversational Maxims（四大对话准则）</h3><p>Grice 进一步把合作原则划分为四个类别。</p>
+<ul>
+<li><p>Quantity（信息数量）</p>
+<p>Provide the <strong>right amount</strong> of information. </p>
+</li>
+<li><p>Quality（真实性）</p>
+<p>Try to make your contribution one that is <strong>true</strong>.</p>
+</li>
+<li><p>Relation（相关性）</p>
+<p>Be <strong>relevant</strong>.</p>
+</li>
+<li><p>Manner（表达方式）</p>
+<p>Be <strong>perspicuous</strong>.</p>
+</li>
+</ul>
+<p>接下来我们一个一个分析。</p>
+<p><strong>Maxim of Quantity（数量准则）</strong></p>
+<p>Grice觉得要满足这项需要两个条件:</p>
+<ul>
+<li><p>Make your contribution as informative as is required.</p>
+</li>
+<li><p>Do not make your contribution more informative than is required.</p>
+</li>
+</ul>
+<p>也就是要提供<strong>不多不少</strong>的信息。</p>
+<p>比如有人问你博物馆怎么去，但是你却回答博物馆里有什么，就会造成信息不足。</p>
+<p><strong>Maxim of Quality（质量准则）</strong></p>
+<p>同样也是两个要求：</p>
+<ul>
+<li>Do not say what you believe to be false.</li>
+<li>Do not say that for which you lack adequate evidence.</li>
+</ul>
+<p>即确保自己说的是<strong>真实</strong>且有<strong>足够证据证明</strong>的事（但其实我觉得这存在问题，万一就是有人决心骗人呢？）</p>
+<p>比如你问博物馆要门票吗，别人回答要，但他根本没去过，而且事实上是不需要的。</p>
+<p><strong>Maxim of Relation（关系准则）</strong></p>
+<p>满足此项只需要满足相关性，不需要答非所问即可。</p>
+<p>比如别人问你今天过的怎么样，你回答今晚月色真美。</p>
+<p><strong>Maxim of Manner（方式准则）</strong></p>
+<p>Manner要求表达清晰，避免歧义，简介，有逻辑。</p>
+<hr>
+<h2 id="Failure-to-Fulfil-Maxims（未能遵守会话准则）"><a href="#Failure-to-Fulfil-Maxims（未能遵守会话准则）" class="headerlink" title="Failure to Fulfil Maxims（未能遵守会话准则）"></a>Failure to Fulfil Maxims（未能遵守会话准则）</h2><p>当我们思考合作原则时，我们会发现：如果合作原则要求我们遵守四大准则，为什么有些人明明没有遵守准则，我们却仍然能够理解他们？</p>
+<p>对此Grice提出了四种不同的情况</p>
+<h3 id="Violate-a-Maxim（违反准则）"><a href="#Violate-a-Maxim（违反准则）" class="headerlink" title="Violate a Maxim（违反准则）"></a>Violate a Maxim（违反准则）</h3><p>原文：</p>
+<blockquote>
+<p>He may <strong>quietly and unostentatiously</strong> violate a maxim; if so, in some cases he will be liable to mislead.</p>
+</blockquote>
+<p>意思是：说话者可能在不明显的情况下违反某条准则，并且在某些情况下<strong>误导</strong>听者。</p>
+<p>比如父母问作业写完了吗，你回答写完了，但实际上没写完，也就造成了misleading。</p>
+<h3 id="Opting-Out（退出合作）"><a href="#Opting-Out（退出合作）" class="headerlink" title="Opting Out（退出合作）"></a>Opting Out（退出合作）</h3><p>原文：</p>
+<blockquote>
+<p>He may opt out from the operation both of the maxim and of the CP.</p>
+</blockquote>
+<p>意思是：说话者可以明确表示自己不愿意遵守某条准则，甚至不愿意参与合作原则所要求的交流。</p>
+<p>比如别人问你一些关于你的隐私信息的问题，你可以明确表示不提供。</p>
+<h3 id="Clash-between-Maxims（准则之间的冲突）"><a href="#Clash-between-Maxims（准则之间的冲突）" class="headerlink" title="Clash between Maxims（准则之间的冲突）"></a>Clash between Maxims（准则之间的冲突）</h3><p>原文：</p>
+<blockquote>
+<p>He may be faced by a clash.</p>
+</blockquote>
+<p>有时候，说话者并不是故意违反准则，而是因为两条准则之间发生冲突，导致他无法同时满足它们。</p>
+<p>比如别人问C住在哪里，你又不知道只能说在地球上的某个城市吧。</p>
+<p>在这个例子中，你不可以提供一个具体的城市名（quality）；也不可以不提供大致地区（quantity）。</p>
+<h3 id="Flout-a-Maxim（故意明显违反准则）"><a href="#Flout-a-Maxim（故意明显违反准则）" class="headerlink" title="Flout a Maxim（故意明显违反准则）"></a>Flout a Maxim（故意明显违反准则）</h3><p>原文：</p>
+<blockquote>
+<p>He may FLOUT a maxim; that is, he may BLATANTLY fail to fulfill it.</p>
+</blockquote>
+<p>Flouting 与前面三种情况有很大区别。</p>
+<p>说话者明明没有按照某条准则表达，但听者知道他不是无意犯错，也不是想单纯欺骗自己。</p>
+<p>因此，听者会进一步思考：为什么说话者要故意这样说？</p>
+<p>听者就会尝试推断说话者真正想表达的意思。</p>
+<p>比如别人问你C表现如何，你回答他按时上班且自己带笔，这里你的回答并不能构成一份评价，所以别人只能进一步推测这个人干得很好，因为按时上班&#x2F;这个人干得很差，因为你除了这些就没有别的优点了。</p>
+<h3 id="为什么-Flouting-能产生-Conversational-Implicature？"><a href="#为什么-Flouting-能产生-Conversational-Implicature？" class="headerlink" title="为什么 Flouting 能产生 Conversational Implicature？"></a>为什么 Flouting 能产生 Conversational Implicature？</h3><p>Grice指出当说话者明显违反某条准则时，听者会遇到一个小问题：</p>
+<p>如果说话者仍然在遵循整体的 Cooperative Principle，那么应该如何解释他说出的这句话？</p>
+<p>例如：</p>
+<p>A：How was the exam?</p>
+<p>B：Absolutely wonderful!</p>
+<p>although the exam was obviously terrible, and both understand the irony.</p>
+<p>听者知道：</p>
+<ol>
+<li>B 通常有能力正常回答。</li>
+<li>B 并没有退出对话。</li>
+<li>B 的表达明显不符合字面上的真实性。</li>
+<li>因此，听者需要寻找一个能够让 B 的表达重新变得合理的解释。</li>
+</ol>
+<p>最终，听者推断：B 实际上是在表达考试很糟糕。</p>
+<hr>
+<h2 id="Working-Out-Conversational-Implicatures（推导会话含义）"><a href="#Working-Out-Conversational-Implicatures（推导会话含义）" class="headerlink" title="Working Out Conversational Implicatures（推导会话含义）"></a>Working Out Conversational Implicatures（推导会话含义）</h2><p>Grice 在本部分描述了 conversational implicature 的成立条件。</p>
+<p>假设：</p>
+<ul>
+<li>(p)：说话者实际说出的内容。</li>
+<li>(q)：说话者暗示的内容。</li>
+</ul>
+<p>如果一个人通过说出 (p) 暗示了 (q)，需要满足三个条件。</p>
+<ol>
+<li>听者必须有理由假设，说话者仍然在遵守会话准则，或者至少遵守整体的合作原则。</li>
+<li>假设说话者想要继续遵守合作原则，那么就必须假设他说话时认为 (q) 成立。</li>
+<li>说话者认为听者有能力推导出这个隐含意思，而且说话者预期听者知道自己有能力理解这种暗示。</li>
+</ol>
+<p>回到哪个工作和监狱的例子，</p>
+<table>
+<thead>
+<tr>
+<th>条件</th>
+<th>在这个例子中的表现</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Condition 1</td>
+<td>A 假设 B 仍然在遵守合作原则</td>
+</tr>
+<tr>
+<td>Condition 2</td>
+<td>A 认为只有假设 B 暗示 C 可能不诚实，才能解释这句看似不相关的话</td>
+</tr>
+<tr>
+<td>Condition 3</td>
+<td>A 认为 B 知道自己能够推导出这个意思</td>
+</tr>
+</tbody></table>
+<h3 id="听者如何推导会话含义？"><a href="#听者如何推导会话含义？" class="headerlink" title="听者如何推导会话含义？"></a>听者如何推导会话含义？</h3><p>Grice 进一步指出，听者推导 conversational implicature 时，需要利用五类信息。</p>
+<table>
+<thead>
+<tr>
+<th>信息来源</th>
+<th>具体内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1. Conventional meaning</td>
+<td>说出词语的常规含义</td>
+</tr>
+<tr>
+<td>2. Cooperative Principle</td>
+<td>合作原则及四大准则</td>
+</tr>
+<tr>
+<td>3. Context</td>
+<td>语言环境及其他语境</td>
+</tr>
+<tr>
+<td>4. Background knowledge</td>
+<td>背景知识</td>
+</tr>
+<tr>
+<td>5. Mutual availability</td>
+<td>双方都能获得这些信息，并且知道对方也能获得</td>
+</tr>
+</tbody></table>
+<ol>
+<li><p>Conventional meaning of words 听者首先需要知道说话者使用的词语是什么意思。</p>
+<p>例如：&quot;He hasn&#39;t been to prison yet.&quot;必须先理解这句话的字面意义，才能继续推导。</p>
+</li>
+<li><p>Cooperative Principle and Maxims 听者需要考虑说话者是否仍然在遵守合作原则。</p>
+<p>例如，为什么 B 要提到 C 没有进过监狱？如果 B 仍然在遵守 Relation，那么这句话应该与 C 的工作表现有关。</p>
+</li>
+<li><p>Context 语境能够决定一句话究竟暗示什么，同样一句话，在不同场景下可能产生不同含义。</p>
+</li>
+<li><p>Background Knowledge 背景知识帮助听者理解话语中的隐含联系。</p>
+<p>例如，听者知道银行工作可能涉及资金管理，因此会进一步考虑 C 是否具有不诚实的倾向。</p>
+</li>
+<li><p>Mutual Availability 双方必须能够获得相关的信息，并且知道这些信息是双方都能够获得的。</p>
+<p>如果 B 使用一个只有自己知道的秘密作为暗示依据，A 就未必能够理解。</p>
+</li>
+</ol>
+<hr>
+<h2 id="Examples-of-Conversational-Implicatures（会话含义的具体案例）"><a href="#Examples-of-Conversational-Implicatures（会话含义的具体案例）" class="headerlink" title="Examples of Conversational Implicatures（会话含义的具体案例）"></a>Examples of Conversational Implicatures（会话含义的具体案例）</h2><p>Grice 将案例分成三个 Group：</p>
+<ul>
+<li>Group A：没有明显违反准则的情况。</li>
+<li>Group B：违反准则是因为与另一条准则发生冲突。</li>
+<li>Group C：通过 Flouting 来产生会话含义。</li>
+</ul>
+<h3 id="Group-A-—-No-Maxim-is-Violated"><a href="#Group-A-—-No-Maxim-is-Violated" class="headerlink" title="Group A — No Maxim is Violated"></a>Group A — No Maxim is Violated</h3><p>Grice 给出两个例子。</p>
+<p><strong>Example：Smith 的女朋友</strong></p>
+<p>A：Smith doesn&#39;t seem to have a girlfriend these days.</p>
+<p>B：He has been paying a lot of visits to New York lately.</p>
+<p>B 没有直接回答 Smith 是否有女朋友。</p>
+<p>但是 A 可以推断：Smith 可能在纽约有女朋友。</p>
+<p>这里涉及 Relation。</p>
+<p>B 的回答必须与 A 的问题相关，因此 A 会推断出两者之间存在某种联系。</p>
+<p>这个例子告诉我们：</p>
+<blockquote>
+<p>Conversational implicature 不一定需要明显违反某条准则才能产生。</p>
+<p>只要听者能够根据合作原则和语境推导出额外意义，就可能产生会话含义。</p>
+</blockquote>
+<h3 id="Group-B-—-Clash-between-Maxims"><a href="#Group-B-—-Clash-between-Maxims" class="headerlink" title="Group B — Clash between Maxims"></a>Group B — Clash between Maxims</h3><p><strong>Example：朋友住在哪里？</strong></p>
+<p>A：Where does C live?</p>
+<p>B：Somewhere in the South of France.</p>
+<p>B 显然没有提供足够的信息。</p>
+<p>A 需要知道具体城市，而 B 只告诉他 C 住在法国南部。</p>
+<p>因此，B 违反了 Quantity, 但如果 B 随便说一个具体城市，就可能违反 Quality</p>
+<p>所以A 最终推断：B does not know in which town C lives.</p>
+<p>这里的重点不是说话者故意通过模糊表达来暗示什么，而是：</p>
+<blockquote>
+<p>A violation of one maxim can be explained by a clash with another maxim.</p>
+</blockquote>
+<h2 id="Group-C-—-Exploitation-of-Maxims"><a href="#Group-C-—-Exploitation-of-Maxims" class="headerlink" title="Group C — Exploitation of Maxims"></a>Group C — Exploitation of Maxims</h2><p>Grice 对这一组的定义是：</p>
+<blockquote>
+<p>Examples that involve exploitation.</p>
+</blockquote>
+<p>也就是：说话者通过明显违反某条准则，故意产生额外的会话含义。</p>
+<p>包含：</p>
+<ul>
+<li>Flouting Quantity（违反数量准则）</li>
+<li>Tautology（同义反复）</li>
+<li>Flouting Quality（违反真实性准则）</li>
+<li>Flouting the Second Maxim of Quality</li>
+<li>Flouting Relation（违反相关性准则）</li>
+<li>Flouting Manner（违反表达方式准则）</li>
+</ul>
+<hr>
+<p><strong>推荐信</strong></p>
+<p>一位教授正在为自己的学生 Mr. X 写推荐信。</p>
+<p>Mr. X 正在申请哲学方面的工作。</p>
+<p>教授写道：</p>
+<blockquote>
+<p>Mr. X&#39;s command of English is excellent, and his attendance at tutorials has been regular.</p>
+</blockquote>
+<p>注意：</p>
+<p>教授只称赞了学生的英语能力和出勤情况，却完全没有提到他的哲学能力。</p>
+<p>这很奇怪，因为：</p>
+<ol>
+<li>教授是 Mr. X 的老师，应该了解他的能力。</li>
+<li>推荐信通常需要评价申请人的相关专业能力。</li>
+<li>教授知道对方需要更多信息。</li>
+<li>但教授只选择了两个与哲学能力不直接相关的优点。</li>
+</ol>
+<p>因此，读者可能推断：Mr. X 的哲学能力可能很差。</p>
+<p>这里违反的是 Quantity 的第一条准则。</p>
+<p>这个案例非常经典，因为教授没有直接说学生不适合哲学工作，而是通过提供过少的信息来传达负面评价。</p>
+<hr>
+<p><strong>Irony（反讽）</strong></p>
+<p>A 的朋友 X 把 A 的秘密泄露给了商业竞争对手。</p>
+<p>A 和听众都知道这件事。</p>
+<p>A 说：X is a <strong>fine</strong> friend.</p>
+<p>但 A 显然不相信自己说的话。</p>
+<p>因此听者推断：也就是 X 是一个糟糕的朋友。</p>
+<hr>
+<p><strong>Metaphor（隐喻）</strong></p>
+<p>Grice 给出的例子：You are the cream in my coffee.</p>
+<p>字面上，一个人不可能真的成为咖啡里的奶油。</p>
+<p>因此听者不会按照字面意义理解，而会寻找相似特征。</p>
+<hr>
+<p><strong>Meiosis（弱化表达／轻描淡写）</strong></p>
+<p>Grice 的例子：</p>
+<p>一个人已经把屋子里的家具全部砸坏了。</p>
+<p>有人评价: 即他只是有一点醉。</p>
+<p>显然，这种轻描淡写与实际情况不相称。</p>
+<p>听者能够理解说话者故意弱化了事实。</p>
+<hr>
+<p><strong>Hyperbole（夸张）</strong></p>
+<p>Grice 给出的例子：Every nice girl loves a sailor.</p>
+<p>这是一个明显的夸张表达。</p>
+<p>说话者并不是在提供一个严格适用于所有人的事实，而是在通过夸张传达某种观点。</p>
+<p>......</p>
+<hr>
+<h2 id="Properties-of-Conversational-Implicatures"><a href="#Properties-of-Conversational-Implicatures" class="headerlink" title="Properties of Conversational Implicatures"></a>Properties of Conversational Implicatures</h2><p>Grice 列出了五项性质</p>
+<h3 id="1-Cancellability（可取消性）"><a href="#1-Cancellability（可取消性）" class="headerlink" title="1. Cancellability（可取消性）"></a>1. Cancellability（可取消性）</h3><p>核心意思： 会话含义可以在特定语境中被取消，而不必改变原句的字面意思。</p>
+<p>Grice 区分两种取消方式：</p>
+<ul>
+<li>Explicit cancellation（明确取消）：说话者通过增加一个补充从句，明确表示自己不打算传达通常会产生的隐含意思。</li>
+<li>Contextual cancellation（语境取消）：即使没有明确补充，语境本身也能让听者知道，说话者没有表达那个通常的隐含意思。</li>
+</ul>
+<h3 id="2-Nondetachability（不可分离性）"><a href="#2-Nondetachability（不可分离性）" class="headerlink" title="2. Nondetachability（不可分离性）"></a>2. Nondetachability（不可分离性）</h3><p>核心意思： 如果某个会话含义是由说话内容及其语境推导出来的，那么单纯换一种表达相同内容的说法，通常不能消除这个含义。</p>
+<p>可以这样理解：</p>
+<ul>
+<li>如果隐含意思来自说话者表达的内容，而不是某个特定词语；</li>
+<li>那么换一种说法表达相同内容，通常仍然会产生相同的隐含意思。</li>
+</ul>
+<h3 id="3-Non-conventionality（非规约性）"><a href="#3-Non-conventionality（非规约性）" class="headerlink" title="3. Non-conventionality（非规约性）"></a>3. Non-conventionality（非规约性）</h3><p>核心意思： Conversational implicature 不属于表达式本身的 conventional meaning（规约意义）。</p>
+<p>Grice 的推理是：</p>
+<ol>
+<li>要推导会话含义，我们首先需要知道表达式本身的 conventional force。</li>
+<li>然后结合 Cooperative Principle、Maxims 和语境进行推导。</li>
+<li>因此，推导出来的 implicature 并不包含在表达式原本的规约意义之中。</li>
+</ol>
+<h3 id="4-Truth-independence（真值独立性）"><a href="#4-Truth-independence（真值独立性）" class="headerlink" title="4. Truth independence（真值独立性）"></a>4. Truth independence（真值独立性）</h3><p>核心意思： 说出来的内容为真，并不意味着它所暗示的内容也必须为真。</p>
+<p>也就是说：</p>
+<ul>
+<li>What is said：说话者实际说出的内容。</li>
+<li>What is implicated：听者推导出来的隐含内容。</li>
+</ul>
+<p>两者的真假可以不同。</p>
+<h3 id="5-Indeterminacy（不确定性）"><a href="#5-Indeterminacy（不确定性）" class="headerlink" title="5. Indeterminacy（不确定性）"></a>5. Indeterminacy（不确定性）</h3><p>核心意思： 一个会话含义有时并没有唯一、确定的具体解释。</p>
+<p>Grice 指出，为了维持 Cooperative Principle，我们需要推导出说话者为什么选择这样的表达。但可能存在多种具体解释。</p>
+<h3 id="五项性质对比"><a href="#五项性质对比" class="headerlink" title="五项性质对比"></a>五项性质对比</h3><table>
+<thead>
+<tr>
+<th>性质</th>
+<th>核心问题</th>
+<th>简单理解</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Cancellability</td>
+<td>能不能取消？</td>
+<td>可以通过补充内容或语境取消</td>
+</tr>
+<tr>
+<td>Nondetachability</td>
+<td>换一种说法能不能消除？</td>
+<td>通常不能，Manner 是例外</td>
+</tr>
+<tr>
+<td>Non-conventionality</td>
+<td>是否属于词语的规约意义？</td>
+<td>不属于</td>
+</tr>
+<tr>
+<td>Truth independence</td>
+<td>字面内容为真，隐含内容是否必然为真？</td>
+<td>不必然</td>
+</tr>
+<tr>
+<td>Indeterminacy</td>
+<td>是否只有一个具体解释？</td>
+<td>不一定，可能有多种解释</td>
+</tr>
+</tbody></table>
+<hr>
+<hr>
+<h1 id="《The-Grice-Is-Right》"><a href="#《The-Grice-Is-Right》" class="headerlink" title="《The Grice Is Right》"></a>《The Grice Is Right》</h1><h2 id="Introduction-—-Grice-的理论为什么遇到问题？"><a href="#Introduction-—-Grice-的理论为什么遇到问题？" class="headerlink" title="Introduction — Grice 的理论为什么遇到问题？"></a>Introduction — Grice 的理论为什么遇到问题？</h2><p>文章开头给出一个非常日常的例子：</p>
+<p>在一个酒馆里，</p>
+<p>Elena: What do you think of this place?</p>
+<p>Arthur: I&#39;m getting a headache.</p>
+<p>Arthur 字面上只说了：头疼</p>
+<p>但 Elena 推断出他实际上想表达：I don&#39;t like the bar because of the <em>loud music</em>, which is causing my headache.</p>
+<p>根据Grice的理论，Elena 知道她和 Arthur 正在合作交流信息。因此，她会假设 Arthur 遵循 Cooperative Principle，并根据语境推导他的隐含意思。</p>
+<h3 id="Grice-s-Non-Cooperation-Problem"><a href="#Grice-s-Non-Cooperation-Problem" class="headerlink" title="Grice&#39;s Non-Cooperation Problem"></a>Grice&#39;s Non-Cooperation Problem</h3><p>Berstler 接着提出一个挑战：<strong>现实中的说话者并不总是合作的</strong>。</p>
+<p>他们可能会：</p>
+<ul>
+<li>Purposefully lie：故意撒谎。</li>
+<li>Meander：漫无目的地绕圈子。</li>
+<li>Obfuscate：故意把事情说得模糊。</li>
+<li>Deflect：转移话题。</li>
+<li>Badger：纠缠、骚扰对方。</li>
+</ul>
+<p>但即使在这些非合作对话中，人们仍然能够产生和理解 conversational implicatures。</p>
+<p>这就形成了一个问题：</p>
+<blockquote>
+<p>如果 Grice 的理论依赖于说话者遵循 Cooperative Principle，那么当说话者根本不想合作时，我们怎么解释他们仍然能够产生 conversational implicatures？</p>
+</blockquote>
+<h3 id="The-Minimal-Pair：Sam-与-Rose-Sam-与-Yuna"><a href="#The-Minimal-Pair：Sam-与-Rose-Sam-与-Yuna" class="headerlink" title="The Minimal Pair：Sam 与 Rose &#x2F; Sam 与 Yuna"></a>The Minimal Pair：Sam 与 Rose &#x2F; Sam 与 Yuna</h3><p>Berstler 设计了两组几乎相同的对话，只改变了交谈双方的<em>关系</em>和<em>目标</em>。</p>
+<p><strong>Case 1：Bank Account 1</strong></p>
+<p>Sam 正在和自己的律师 Rose 谈话。Rose 需要了解 Sam 的真实财务状况。</p>
+<p>Rose: Have you ever had a bank account in Hong Kong?</p>
+<p>Sam: My company had one there for about six months.</p>
+<p>Rose 推断出：No, I never had a <strong>personal bank</strong> account in Hong Kong.</p>
+<p>因为 Rose 和 Sam 有共同目标：<strong>了解 Sam 的财务状况</strong>。</p>
+<p>Rose 相信 Sam 正在合作回答问题，所以她认为 Sam 的回答应该是相关的（Relevant）。</p>
+<p>于是，她推断 Sam 不仅是在说公司有账户，还在暗示自己没有个人账户。</p>
+<p><strong>Case 2：Bank Account 2</strong></p>
+<p>现在，Sam 面对的不是律师，而是一名调查记者 Yuna。</p>
+<p>Yuna 正在调查 Sam 的瑞士银行账户。她知道 Sam 实际上在苏黎世拥有个人账户，并利用这些账户进行洗钱。</p>
+<p>Yuna: Have you ever had a bank account in Switzerland?</p>
+<p>Sam: My company had one there for about six months.</p>
+<p>但是这一次，情况完全不同, Yuna 知道 Sam 正在隐瞒自己的个人账户，也知道他们并没有共同合作、交换真实财务信息的目标。</p>
+<p>因此，Yuna 没有理由认为 Sam 正在遵循 Cooperative Principle。</p>
+<p>那么，她为什么还要把 Sam 的回答解释成“我没有个人账户”呢？</p>
+<p>这就是 Non-Cooperation Problem 的关键：同样的表达、同样的隐含意思，但听者所处的合作关系不同。</p>
+<p>在 Rose 的案例中，传统 Grice 理论能够解释 Rose 为什么推导出隐含意思；在 Yuna 的案例中，传统解释似乎失效了。</p>
+<h3 id="作者到底想解决什么？"><a href="#作者到底想解决什么？" class="headerlink" title="作者到底想解决什么？"></a>作者到底想解决什么？</h3><p>Berstler 并不打算放弃 Grice 的理论，但他提出应该改成：</p>
+<blockquote>
+<p>Speakers <strong>aim to appear</strong> to aim to cooperatively exchange information with each other.</p>
+</blockquote>
+<h2 id="The-Basic-Problem（基本问题）"><a href="#The-Basic-Problem（基本问题）" class="headerlink" title="The Basic Problem（基本问题）"></a>The Basic Problem（基本问题）</h2><h3 id="Key-Assumption：关键假设"><a href="#Key-Assumption：关键假设" class="headerlink" title="Key Assumption：关键假设"></a>Key Assumption：关键假设</h3><p>Berstler 认为，Grice 理论真正需要的并不是“所有人始终合作”，而是下面这个假设：</p>
+<blockquote>
+<p>Whenever a speaker successfully makes a conversational implicature, the addressee reasonably believes that the speaker is conforming to the Cooperative Principle.</p>
+</blockquote>
+<p>即只要说话者成功产生了 conversational implicature，听者就有合理理由相信说话者正在遵循 Cooperative Principle。</p>
+<h3 id="什么才是真正的问题？"><a href="#什么才是真正的问题？" class="headerlink" title="什么才是真正的问题？"></a>什么才是真正的问题？</h3><p>Berstler 认为，要真正构成 Grice 的 Non-Cooperation Problem，需要同时满足两个条件：</p>
+<ol>
+<li>说话者确实成功地向听者传达了 conversational implicature。</li>
+<li>听者有合理理由相信说话者没有遵循 Cooperative Principle。</li>
+</ol>
+<p>这就是为什么前面 Sam 与 Yuna 的案例很重要。</p>
+<p>Sam 成功让 Yuna 推断出自己没有瑞士个人账户，但 Yuna 又知道 Sam 实际上有这样的账户，并且正在隐瞒事实。</p>
+<p>因此，Yuna 并没有理由相信 Sam 正在合作交换真实信息。</p>
+<h3 id="Objection-Sam-Is-Cooperative"><a href="#Objection-Sam-Is-Cooperative" class="headerlink" title="Objection: Sam Is Cooperative"></a>Objection: Sam Is Cooperative</h3><p>这里作者回应一个可能的反驳：Sam 和 Yuna 难道完全没有合作吗？</p>
+<p>Berstler 承认，他们确实在某些意义上合作。</p>
+<p>例如：他们共同参与一场新闻采访&#x2F;他们轮流发言，使用双方都能理解的语言。</p>
+<p>所以，他们至少有一些 joint goals（共同目标）。</p>
+<p>原来的 Key Assumption 过于宽泛，容易把任何形式的合作都当成充分解释。</p>
+<p>因此，Berstler 提出了更精确的版本：</p>
+<blockquote>
+<p>Whenever a speaker successfully makes a conversational implicature, the addressee reasonably believes that if the speaker had not made that conversational implicature, she would have violated the Cooperative Principle.</p>
+</blockquote>
+<p>换句话说<strong>当听者成功推导出会话含义时，听者应该有理由相信：如果说话者没有表达这个隐含意思，那么说话者就会违反合作原则</strong>。</p>
+<h3 id="Objection-This-Is-the-Wrong-Way-of-Interpreting-the-Cooperative-Principle"><a href="#Objection-This-Is-the-Wrong-Way-of-Interpreting-the-Cooperative-Principle" class="headerlink" title="Objection: This Is the Wrong Way of Interpreting the Cooperative Principle"></a>Objection: This Is the Wrong Way of Interpreting the Cooperative Principle</h3><p>作者接下来回应另一种反驳：</p>
+<p>也许前面的困难只是因为 Berstler 对 Cooperative Principle 的理解不正确？</p>
+<p><strong>作者首先给出自己偏好的解释</strong>：The Cooperative Principle is just a specific instance of a principle of instrumental rationality.</p>
+<p>简单来说就是选择能够实现自己目标的手段。</p>
+<p>Berstler 进一步推导：</p>
+<ol>
+<li>采取手段实现自己的目标。</li>
+<li>采取手段实现双方的共同目标。</li>
+<li>采取手段实现双方在当前对话中拥有的共同目标。</li>
+</ol>
+<p>第三条就是作者理解的 Cooperative Principle。</p>
+<p>因此，在他的解释下，合作原则不是要求我们必须主动与所有人建立共同目标，而是要求我们理性地追求已经拥有的共同对话目标。</p>
+<p><strong>作者也考虑另一种可能</strong>：</p>
+<p>Cooperative Principle 和 Four Maxims 不一定只是工具理性原则，也可能是：</p>
+<p><strong>Social Norms（社会规范）</strong>，甚至是 <strong>Constitutive Norms（构成性规范）</strong>。</p>
+<p>这种观点认为，我们遵循合作原则，是因为它们是对话活动本身所要求的规范。</p>
+<p>例如有人问你：Where is the train station?</p>
+<p>你可能会诚实回答，不只是因为你们有共同目标，也可能是因为你认为社会规范要求你配合对方。</p>
+<p>Berstler 并没有在这里彻底解决 Instrumental Rationality 和 Social Norms 哪一种解释更正确的问题。</p>
+<p>他认为，这个争论并不会改变本文的核心论证。无论我们采用哪一种解释，Sam 与 Yuna 的案例依然存在：</p>
+<p>Yuna 知道 Sam 的真实目标，因此没有理由相信 Sam 正在遵循要求他直接回答问题的规范。</p>
+<p>所以，改变 Cooperative Principle 的理论基础，并不能自动解决 Non-Cooperation Problem。</p>
+<h2 id="The-Mere-Appearance-of-Cooperation（仅仅表现出合作）"><a href="#The-Mere-Appearance-of-Cooperation（仅仅表现出合作）" class="headerlink" title="The Mere Appearance of Cooperation（仅仅表现出合作）"></a>The Mere Appearance of Cooperation（仅仅表现出合作）</h2><p>前面 Berstler 已经说明，Sam 与 Yuna 的案例确实给传统 Grice 理论带来了困难。现在他要提出自己的解决方案：说话者不一定真的想合作，但他可能希望听者认为自己想合作。</p>
+<p>作者并不是要抛弃 Cooperative Principle，而是要解释它如何在非合作对话中继续发挥作用。</p>
+<h3 id="Failed-Deceptive-Misleading（失败的欺骗性误导）"><a href="#Failed-Deceptive-Misleading（失败的欺骗性误导）" class="headerlink" title="Failed Deceptive Misleading（失败的欺骗性误导）"></a>Failed Deceptive Misleading（失败的欺骗性误导）</h3><p>作者重新回到 Bank Account 1，Sam 对律师 Rose 说：My company had one there for about six months.</p>
+<p>Rose 推断 Sam 没有香港个人银行账户。</p>
+<p>那么，Rose 是怎么推导出这个隐含意思的？</p>
+<p>Berstler 将传统 Grice 式推理整理为：</p>
+<ol>
+<li>Sam 和 Rose 想要合作交换有关 Sam 财务状况的信息。</li>
+<li>Sam 知道 Rose 的问题答案。</li>
+<li>在双方的共同目标下，Sam 有理性义务回答 Rose 的问题。</li>
+<li>如果 Sam 只表达字面意思，他就没有回答 Rose 的问题。</li>
+<li>因此，Rose 推断 Sam 还表达了其他意思。</li>
+</ol>
+<p>但作者认为，这个推理还缺少一个关键环节：Sam intends for me to infer what he meant through reasoning about the information in (2–4).</p>
+<p>也就是：说话者意图让听者通过特定的推理过程来理解自己</p>
+<p><strong>Inferential Pathway Intention（推理路径意图）</strong></p>
+<p>Grice 在后来的意义理论中提出，说话者不仅希望听者知道自己表达了什么，还希望听者通过某条特定的推理路径得到这个认识。</p>
+<p>Berstler 将这种意图称为：</p>
+<p>Inferential Pathway Intention（推理路径意图）</p>
+<p>可以区分：</p>
+<ul>
+<li>Meaning intention：说话者希望听者理解自己表达的意思。</li>
+<li>Inferential pathway intention：说话者希望听者通过特定的推理过程理解这个意思。</li>
+</ul>
+<p>为什么这很重要？</p>
+<p>因为有时候听者虽然最终猜对了说话者的意思，却没有按照说话者预期的方式理解。</p>
+<p>作者引用 Buchanan 的例子：</p>
+<p>一个人因为医疗程序无法说话。朋友问他晚上想看什么电影，于是他画了一顶牛仔帽。</p>
+<p>他希望朋友看到牛仔帽后，推断自己想看一部西部电影。</p>
+<p>但朋友误以为他画的是一座山，最后却碰巧猜到了他想看的电影。</p>
+<p>结果：</p>
+<ul>
+<li>最终答案猜对了。</li>
+<li>但朋友没有识别出说话者原本希望他识别的图画。</li>
+<li>所以，沟通计划并没有完全成功。</li>
+</ul>
+<p>这说明：正确猜出意思，不等于完整理解说话者的沟通意图。</p>
+<h3 id="Yuna-如何理解-Sam？——通过暂时接受错误假设"><a href="#Yuna-如何理解-Sam？——通过暂时接受错误假设" class="headerlink" title="Yuna 如何理解 Sam？——通过暂时接受错误假设"></a>Yuna 如何理解 Sam？——通过暂时接受错误假设</h3><p>现在回到 Bank Account 2。</p>
+<p>Sam 想欺骗 Yuna，让她相信自己没有瑞士个人银行账户。</p>
+<p>Berstler 设定一个情形：Sam 认为自己的金融犯罪隐藏得很好，而且 Yuna 还没有发现他在欺骗她。</p>
+<p>Sam 希望 Yuna 按照以下推理理解自己：</p>
+<ol>
+<li>Sam 和 Yuna 希望合作交换 Sam 的财务信息。</li>
+<li>Sam 知道问题的答案，而且在这种合作目标下，他有义务回答。</li>
+<li>如果 Sam 只表达字面意思，他就没有回答问题。</li>
+<li>因此，Sam 必须表达了额外的意思。</li>
+<li>这个额外意思就是：他没有瑞士个人银行账户。</li>
+</ol>
+<p>关键在于：Yuna 实际上知道第 1、2 条假设并不真实。</p>
+<p>她知道 Sam 并不打算诚实地交换财务信息。</p>
+<p>但她也知道 Sam 希望她按照这条推理路径理解自己。</p>
+<p>因此，她可以暂时采用这些错误假设进行推理，从而理解 Sam 想表达的隐含意思。</p>
+<p>这不是说 Yuna 相信 Sam 真的在合作，而是说她知道 Sam 希望她把对话当成合作交流来解释。</p>
+<p>作者特别强调：</p>
+<blockquote>
+<p>Yuna does not just infer that if Sam were cooperative, then he would have implicated (2c). She infers that Sam did implicate (2c).</p>
+</blockquote>
+<p>区别在于：</p>
+<ul>
+<li>不是：“假如 Sam 合作，他就会暗示自己没有个人账户。”</li>
+<li>而是：“Sam 实际上就是在暗示自己没有个人账户。”</li>
+</ul>
+<p>Yuna 明白 Sam 的意图，即使她知道 Sam 的合作姿态并不真诚。</p>
+<p>这就是作者解决 Non-Cooperation Problem 的关键。</p>
+<h3 id="University-Interview：一个相似的指称案例"><a href="#University-Interview：一个相似的指称案例" class="headerlink" title="University Interview：一个相似的指称案例"></a>University Interview：一个相似的指称案例</h3><p>作者接着用一个关于指称（reference）的例子帮助说明。</p>
+<p>Elena 是大学董事会成员。董事会已经决定用 Bob Smith 替换大学校长 Lizzie Jones，但这项决定尚未公开。</p>
+<p>Elena 接受记者 Arthur 的采访，并说：</p>
+<p>I think that the current university president&#39;s view on free speech is a good one.</p>
+<p>Elena 实际上希望表达的是：I think that Lizzie Jones&#39; view on free speech is a good one.</p>
+<p>但 Arthur 已经从董事会成员那里得知，校长已经换成 Bob Smith。</p>
+<p>所以 Arthur 知道 Elena 所说的“current university president”在现实中并不是 Lizzie Jones。</p>
+<p>然而，他也知道 Elena 以为自己不知道这项人事变动。</p>
+<p>于是 Arthur 可以暂时按照 Elena 的错误假设来理解她的指称：</p>
+<ol>
+<li>Elena 认为现任校长是 Lizzie Jones。</li>
+<li>因此，Elena 使用“现任校长”时，实际上是在指 Lizzie Jones。</li>
+</ol>
+<p>Arthur 最终正确理解了 Elena 的意思，尽管他知道自己采用了一个错误假设。</p>
+<p>这个案例与 Sam 和 Yuna 的情况相似：听者可以知道某个假设是假的，却仍然使用这个假设来识别说话者的意图。</p>
+<h3 id="Intelligibility（可理解性）"><a href="#Intelligibility（可理解性）" class="headerlink" title="Intelligibility（可理解性）"></a>Intelligibility（可理解性）</h3><p>作者把前面的现象联系到一个更一般的原则：Intelligibility</p>
+<blockquote>
+<p>If a speaker means p, she intends for the addressee to know that she means p.</p>
+</blockquote>
+<p>也就是说：如果说话者表达了 p，那么她意图让听者知道自己表达了 p。</p>
+<p>在 Sam 的案例中：</p>
+<ul>
+<li>Sam 意图让 Yuna 理解自己的隐含意思。</li>
+<li>Sam 希望 Yuna 通过特定的推理路径来理解。</li>
+<li>Yuna 知道 Sam 的真实目的，因此能够识别他的推理路径意图。</li>
+</ul>
+<p>于是，即使双方知道自己并没有真正合作，Yuna 仍然能够理解 Sam 的 conversational implicature。</p>
+<p>这里 Berstler 的重要结论是：</p>
+<p>Cooperative Principle 仍然可以作为解释和理解会话含义的工具，即使双方知道自己并不真正合作。</p>
+<p>这不是说他们真的合作，而是说他们能够利用合作原则来推导：如果说话者是在合作的情况下，他会想让听者得出什么结论。</p>
+<h3 id="The-Generalized-Account（一般化解释）"><a href="#The-Generalized-Account（一般化解释）" class="headerlink" title="The Generalized Account（一般化解释）"></a>The Generalized Account（一般化解释）</h3><p>前面主要讨论了 Sam 想欺骗 Yuna 的情况。作者现在要进一步扩大理论：</p>
+<p>一个人不一定想欺骗对方，也可能只是希望表现得像是在合作。</p>
+<p>Sam 想让 Yuna 相信：</p>
+<ul>
+<li>自己没有什么需要隐瞒的；</li>
+<li>自己是诚实的人；</li>
+<li>Yuna 可以相信自己在采访中的言行。</li>
+</ul>
+<p>所以，他会尽量表现得像是在合作交换信息。</p>
+<p>作者把这种行为概括为：</p>
+<p>Aim to appear to aim to cooperate</p>
+<p>注意这不等于真的合作。</p>
+<p>它意味着说话者希望给听者提供理由，让听者相信自己有合作的意图。</p>
+<p>Berstler 接着给出另一个案例。</p>
+<p>Don 是 Betty 的丈夫，但一直在与 Faye 发生婚外情。他几乎没有认真隐藏证据，甚至希望 Betty 知道自己对她的轻蔑。</p>
+<p>一天晚上，Betty 问：</p>
+<p>Betty: Have you seen Faye lately?</p>
+<p>Don: She&#39;s had Covid.</p>
+<p>Don 的字面意思是：</p>
+<blockquote>
+<p>Faye 得了新冠。</p>
+</blockquote>
+<p>但他暗示：</p>
+<blockquote>
+<p>I haven&#39;t seen Faye lately.</p>
+</blockquote>
+<p>Don 并不是真的想让 Betty 相信自己是诚实、合作的。</p>
+<p>相反，他希望 Betty 意识到：</p>
+<ul>
+<li>他知道自己正在暗示什么；</li>
+<li>他知道 Betty 能够识别这个隐含意思；</li>
+<li>他甚至希望 Betty 知道自己并没有真诚地合作。</li>
+</ul>
+<p>这是一种非常特殊的沟通：Don 既表现出合作的姿态，又希望 Betty 看出这种姿态并不真诚。</p>
+<p>作者认为，这种对话仍然可以利用 Grice 的理论来解释。</p>
+<p>为了把前面的解释推广到更多对话，Berstler 引入 Robert Stalnaker 的 Common Ground framework。</p>
+<p>这是理解 Section 3 后半部分的关键。</p>
+<p>Stalnaker 认为，对话参与者通常会把一部分信息当作共同接受的背景。</p>
+<p>这些信息构成：</p>
+<p>Common Ground（共同基础）</p>
+<p>在简单的对话中，它可以是双方共同知道的事实。随着对话进行，参与者轮流提供信息，共同基础也会不断变化。</p>
+<p>例如：</p>
+<p>A：Sharks are dangerous animals.</p>
+<p>B：Yes, some species can be dangerous to humans.</p>
+<p>双方可以把一些关于鲨鱼的信息作为共同基础，继续交流。</p>
+<p>但是，Berstler 强调：现实中的 common ground 不一定等于双方真正相信或知道的内容。</p>
+<p>这是作者特别强调的区别。</p>
+<p>Believing p：相信 p。</p>
+<p>Accepting p for the sake of the conversation：为了当前对话的目的，暂时把 p 当作成立。</p>
+<p>例如：</p>
+<ul>
+<li>你说：“I love your stew!”</li>
+<li>但你实际上不喜欢这道炖菜。</li>
+<li>你为了礼貌而假装喜欢。</li>
+</ul>
+<p>在这个例子中，你可能并不相信自己喜欢这道菜，但你仍然在对话中接受了这个命题。</p>
+<p>作者列举了几种接受命题的方式：</p>
+<ul>
+<li>Believe &#x2F; know：相信或知道。</li>
+<li>Assume &#x2F; hypothesize &#x2F; suppose：假设或设想。</li>
+<li>Pretend：假装。</li>
+</ul>
+<p>因此，一个命题可以成为 common ground，即使参与者并不真正相信它。</p>
+<p>Berstler 使用 Stalnaker 对 presupposition 的定义：</p>
+<blockquote>
+<p>A participant in a conversation c presupposes p for the purposes of c iff she accepts that p is common ground in c.</p>
+</blockquote>
+<p>简单来说：</p>
+<p>如果某个参与者把命题 p 当作当前对话的共同基础，那么他就在这场对话中预设了 p。</p>
+<p>例如：</p>
+<p>两个人明明都知道彼此不喜欢对方，但在公开场合仍然假装友好。</p>
+<p>他们可能为了维持礼貌而预设：</p>
+<blockquote>
+<p>We are happy to see each other.</p>
+</blockquote>
+<p>这句话可以成为对话中的 apparent common ground，即使双方都不相信它。</p>
+<p>现在我们可以把 common ground 应用到对话目标上。</p>
+<p>Berstler 指出，关于对话目标的命题，也可以被接受、假设或假装成立。</p>
+<p>例如：</p>
+<ul>
+<li>两个人可能预设自己正在进行轻松的闲聊。</li>
+<li>但他们实际上只是想在导师面前表现自己。</li>
+<li>他们仍然可以把“我们正在轻松闲聊”当作对话的共同背景。</li>
+</ul>
+<p>作者称这种目标为：</p>
+<p>Apparent Goal（表面目标）</p>
+<p>他给出两种定义：</p>
+<ul>
+<li>Apparent goal (presupposition)：如果说话者在对话中预设自己拥有目标 g，那么 g 就是她的表面目标。</li>
+<li>Apparent goal (common ground)：如果对话的 common ground 蕴含参与者拥有某个共同目标 g，那么 g 就是这场对话的表面目标。</li>
+</ul>
+<p>注意：apparent goal 不一定是虚假的。</p>
+<p>例如，两个人正常地讨论鲨鱼袭击事件，确实希望交换有关鲨鱼的信息。</p>
+<p>那么：</p>
+<ul>
+<li>他们的共同目标是真实的；</li>
+<li>这个目标也属于 apparent goal。</li>
+</ul>
+<p>所以：</p>
+<p>Apparent 不等于假装，也不等于虚假。它只表示这个目标在对话中被呈现为共同目标。</p>
+<p>有了 common ground 和 apparent goal，Berstler 终于提出了一个重要论题：</p>
+<blockquote>
+<p>Whenever a speaker makes a conversational implicature, she is presupposing that she aims to cooperatively exchange information with her interlocutor.</p>
+</blockquote>
+<p>翻译：</p>
+<p>每当说话者产生 conversational implicature 时，她都预设自己正在以合作交换信息为目标。</p>
+<p>这里最重要的是 presupposing。</p>
+<p>作者并不是说每个说话者真的想合作，而是说说话者在进行这种交流时，会把“自己想合作”呈现为对话的共同背景。</p>
+<p>这正是前面 Sam 的案例：</p>
+<ul>
+<li>Sam 不想让 Yuna 知道真实财务情况。</li>
+<li>但他希望 Yuna 认为他在诚实地回答问题。</li>
+<li>因此，他预设自己正在合作交换信息。</li>
+</ul>
+<p>作者进一步提出：</p>
+<blockquote>
+<p>Act so that the common ground entails that you have made your contribution such as is required, at the stage at which it occurs, by the apparent goal of the talk exchange in which you are engaged.</p>
+</blockquote>
+<p>可以理解为：</p>
+<p>采取行动，使对话的共同基础能够支持这样的判断：你的表达符合这场对话的表面目标。</p>
+<p>这就是 Apparent Cooperative Principle。</p>
+<p>它与 Grice 原来的 Cooperative Principle 不完全相同：</p>
+<table>
+<thead>
+<tr>
+<th>Grice 的 Cooperative Principle</th>
+<th>Berstler 的 Apparent Cooperative Principle</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>按照当前对话的实际共同目标作出贡献</td>
+<td>让共同基础呈现出自己符合表面目标</td>
+</tr>
+<tr>
+<td>关注实际合作</td>
+<td>关注合作在对话中的呈现</td>
+</tr>
+<tr>
+<td>合作原则</td>
+<td>表面合作原则</td>
+</tr>
+</tbody></table>
+<p>由于遵循合作原则通常意味着遵循四大准则，Berstler 认为，表面合作原则也会要求说话者在对话中表现得符合 Quality、Quantity、Relation 和 Manner。</p>
+<p>EBSCO-FullText-01_11_2026. </p>
+<h3 id="三种对话情况"><a href="#三种对话情况" class="headerlink" title="三种对话情况"></a>三种对话情况</h3><p>Berstler 最后把对话分成三种情况。</p>
+<p>Case 1：Simple and Cooperative Conversations（简单且真正合作的对话）</p>
+<p>双方真正拥有共同目标，也真正想合作交换信息。</p>
+<p>例如，正常讨论鲨鱼袭击事件：</p>
+<ul>
+<li>实际目标：交换知识。</li>
+<li>表面目标：交换知识。</li>
+<li>Common ground：双方共同知道或相信的内容。</li>
+</ul>
+<p>在这种情况下，Apparent Cooperative Principle 与原来的 Cooperative Principle 基本一致。</p>
+<p>Case 2：Deceptive Pretense（欺骗性假装）</p>
+<p>说话者想欺骗听者，让听者错误地认为双方正在合作。</p>
+<p>例如 Sam：</p>
+<ul>
+<li>Sam 不想透露真实财务信息。</li>
+<li>但他希望 Yuna 相信自己诚实、开放。</li>
+<li>因此，他需要让 common ground 呈现出双方正在合作交换信息。</li>
+</ul>
+<p>为了实现欺骗目的，Sam 反而有理由遵循 Apparent Cooperative Principle。</p>
+<p>Case 3：Non-deceptive Pretense（非欺骗性假装）</p>
+<p>说话者并不一定想欺骗听者，但仍然参与一种表面上的合作交流。</p>
+<p>例如 Don 与 Betty：</p>
+<ul>
+<li>Don 不打算真正合作。</li>
+<li>他也不打算隐瞒自己对 Betty 的轻蔑。</li>
+<li>但他仍然使用一种表面上的对话假装，借此表达自己的态度。</li>
+</ul>
+<p>这种假装可能是为了表达某种情感、立场，也可能只是为了遵循礼貌和社交规范。</p>
+<h3 id="Key-Assumption-3：最终版本"><a href="#Key-Assumption-3：最终版本" class="headerlink" title="Key Assumption 3：最终版本"></a>Key Assumption 3：最终版本</h3><p>作者最后将自己的理论与前面讨论的 Key Assumption 联系起来：</p>
+<blockquote>
+<p>Whenever a speaker successfully makes a conversational implicature, the addressee reasonably believes that if the speaker had not made that conversational implicature, she would have violated the Apparent Cooperative Principle.</p>
+</blockquote>
+<p>这就是 Key Assumption 3。</p>
+<p>与之前的 Key Assumption 2 相比，最重要的变化是：</p>
+<ul>
+<li>原来依据 Cooperative Principle 推导。</li>
+<li>现在依据 Apparent Cooperative Principle 推导。</li>
+</ul>
+<p>这样就可以同时解释真正合作的对话、欺骗性假装和非欺骗性假装。</p>
+<h2 id="“Protesting-My-Innocence”-Cases（坚持自己正在合作）"><a href="#“Protesting-My-Innocence”-Cases（坚持自己正在合作）" class="headerlink" title="“Protesting My Innocence” Cases（坚持自己正在合作）"></a>“Protesting My Innocence” Cases（坚持自己正在合作）</h2><h3 id="Bank-Account-3"><a href="#Bank-Account-3" class="headerlink" title="Bank Account 3"></a>Bank Account 3</h3><p>先看 Sam 和 Yuna 的对话：</p>
+<p>Yuna: So you&#39;re saying that you never had a Swiss bank account?</p>
+<p>Sam: Yes, exactly.</p>
+<p>Yuna: But that&#39;s not what these records show. I&#39;m afraid it&#39;s just obvious that you&#39;ve been lying to me this whole time.</p>
+<p>Sam: No, no, you&#39;ve got it all wrong. See, look at these documents here...</p>
+<p>Yuna: Now you&#39;re trying to distract me with this paperwork. Just admit that you once had a Swiss bank account.</p>
+<p>Sam: My company did!</p>
+<p>Sam 最后一句话：</p>
+<blockquote>
+<p>My company did!</p>
+</blockquote>
+<p>暗示：</p>
+<blockquote>
+<p>And I did not have a personal Swiss bank account.</p>
+</blockquote>
+<h3 id="这个案例有什么特殊之处？"><a href="#这个案例有什么特殊之处？" class="headerlink" title="这个案例有什么特殊之处？"></a>这个案例有什么特殊之处？</h3><p>前面 Bank Account 2 中，Yuna 虽然知道 Sam 在欺骗自己，但 Sam 仍然希望 Yuna 认为他正在合作。</p>
+<p>Bank Account 3 更进一步：</p>
+<ul>
+<li>Yuna 已经公开指责 Sam 撒谎。</li>
+<li>Yuna 拒绝接受 Sam 关于自己正在合作的预设。</li>
+<li>Sam 却继续坚持自己的说法，试图让 Yuna 接受他的解释。</li>
+</ul>
+<p>所以，这里甚至不存在双方共同接受“Sam 正在合作”的情况。</p>
+<p>这似乎对 Berstler 的理论构成挑战。</p>
+<h3 id="作者如何解决？"><a href="#作者如何解决？" class="headerlink" title="作者如何解决？"></a>作者如何解决？</h3><p>Berstler 的回答是：这其实是一种 conversational crisis（对话危机）。</p>
+<p>双方无法就对话应该如何继续达成一致：</p>
+<ul>
+<li>Sam 坚持自己的解释。</li>
+<li>Yuna 拒绝接受。</li>
+<li>双方无法达成共识，也不愿意简单地同意彼此存在分歧。</li>
+</ul>
+<p>但他们仍然能够理解对方。</p>
+<p>为什么？</p>
+<p>因为他们至少共同知道：</p>
+<ul>
+<li>目前正在争论什么；</li>
+<li>Sam 采取什么立场；</li>
+<li>Yuna 采取什么立场；</li>
+<li>Sam 正在预设自己与 Yuna 合作，而 Yuna 拒绝接受这一预设。</li>
+</ul>
+<p>作者用另一个例子说明：</p>
+<p>Royal Sighting</p>
+<p>Karen: I just saw the King of Iceland.</p>
+<p>Alexei: There is no King of Iceland. That was just Gunnar.</p>
+<p>Karen: Yeah, I was super surprised at how young the King is, actually.</p>
+<p>Alexei: What are you talking about?</p>
+<p>Karen 预设存在 Iceland 的国王，Alexei 则拒绝接受这个预设。</p>
+<p>但即使 Alexei 不接受这个命题，双方仍然知道 Karen 正在坚持这个预设。</p>
+<p>所以：</p>
+<ul>
+<li>“Gunnar 是 Iceland 国王”并不是双方共同接受的事实。</li>
+<li>“Karen 正在预设 Gunnar 是 Iceland 国王”却可以成为双方共同知道的事实。</li>
+</ul>
+<p>这就是作者想说明的区别：</p>
+<p>一个命题本身不需要成为 Common Ground；参与者正在预设这个命题这一事实，却可以成为 Common Ground。</p>
+<p>同样，Yuna 不需要相信 Sam 正在合作，只需要能够识别 Sam 正在预设自己合作。</p>
+<h2 id="4-2-“For-the-Sake-of-Audiences”-Cases（为了观众而合作）"><a href="#4-2-“For-the-Sake-of-Audiences”-Cases（为了观众而合作）" class="headerlink" title="4.2 “For the Sake of Audiences” Cases（为了观众而合作）"></a>4.2 “For the Sake of Audiences” Cases（为了观众而合作）</h2><h3 id="说话者不一定想说服听者"><a href="#说话者不一定想说服听者" class="headerlink" title="说话者不一定想说服听者"></a>说话者不一定想说服听者</h3><p>作者接下来讨论另一种情况：</p>
+<p>说话者的真正目标不是说服当前的对话对象，而是说服旁观者。</p>
+<p>例如：</p>
+<ul>
+<li>法庭上，被告面对检察官，但真正想影响的是陪审团。</li>
+<li>政治辩论中，候选人面对对手，但真正想说服的是选民。</li>
+<li>网络争论中，双方可能并不期待说服对方，而是希望影响围观者。</li>
+</ul>
+<h3 id="网络争论案例"><a href="#网络争论案例" class="headerlink" title="网络争论案例"></a>网络争论案例</h3><p>作者引用一位匿名网友对网络辩论的观察：</p>
+<p>参与网络辩论时，一个重要目标是说服那些默默观看的观众（silent lurkers）。</p>
+<p>假设 Henry 和 Charlotte 在社交媒体上争论某项政策：</p>
+<ul>
+<li>Charlotte 不断强调自己希望进行 good faith discussion。</li>
+<li>她声称自己只是在提出合理问题。</li>
+<li>她发布的数据看起来与讨论有关。</li>
+<li>但实际上，她故意把话题引向会激怒 Henry 的方向。</li>
+<li>她还发布虚假、无关的数据。</li>
+</ul>
+<p>Charlotte 并不关心 Henry 是否识破自己的真实目标。</p>
+<p>她只关心旁观者是否相信她在理性、合作地讨论。</p>
+<p>所以，这里需要区分：</p>
+<p>Addressee（直接听者） 与 Audience（观众）。</p>
+<p>Charlotte 的直接听者是 Henry，但她真正想影响的是旁观者。</p>
+<h3 id="Bank-Account-4：法庭上的-Sam"><a href="#Bank-Account-4：法庭上的-Sam" class="headerlink" title="Bank Account 4：法庭上的 Sam"></a>Bank Account 4：法庭上的 Sam</h3><p>作者进一步回到银行账户案例。</p>
+<p>这一次，Maya 是检察官，Sam 是站在证人席上的被告。</p>
+<p>Maya: Have you ever had a bank account in Switzerland?</p>
+<p>Sam: My company had one there for about six months.</p>
+<p>Sam 暗示：</p>
+<blockquote>
+<p>No, I never had a personal bank account in Switzerland.</p>
+</blockquote>
+<p>但这里 Sam 的主要目标不是说服 Maya，而是让陪审团相信：</p>
+<ul>
+<li>自己是无辜的；</li>
+<li>自己没有什么需要隐瞒；</li>
+<li>自己正在自然、主动地回答问题。</li>
+</ul>
+<p>为了实现这一目标，Sam 需要在与 Maya 的对话中预设自己正在合作。</p>
+<p>作者认为，Maya 能识别这种预设，也能识别 Sam 的 implicature，因为在这种情境中，被告希望影响陪审团是非常容易理解的。</p>
+<p>因此，听者识别说话者的合作姿态时，真正重要的受众不一定就是直接听者。</p>
+<p>EBSCO-FullText-01_11_2026. </p>
+<h2 id="4-3-Ritual-Conversations（仪式性对话）"><a href="#4-3-Ritual-Conversations（仪式性对话）" class="headerlink" title="4.3 Ritual Conversations（仪式性对话）"></a>4.3 Ritual Conversations（仪式性对话）</h2><p>这是整篇文章最后一个特别重要的概念，也是 Berstler 对现实社交交流的一个有意思的解释。</p>
+<h3 id="什么是-Ritual-Conversations？"><a href="#什么是-Ritual-Conversations？" class="headerlink" title="什么是 Ritual Conversations？"></a>什么是 Ritual Conversations？</h3><p>作者的定义是：</p>
+<blockquote>
+<p>Speakers and addressees actually work together to maintain the mere appearance that they aim to cooperatively exchange information with each other.</p>
+</blockquote>
+<p>翻译：</p>
+<p>说话者和听者实际上共同努力，维持一种表面上的合作交流。</p>
+<p>注意这里的特殊之处：</p>
+<p>前面 Sam 的案例中，说话者可能单方面假装合作。</p>
+<p>但在 Ritual Conversations 中：</p>
+<ul>
+<li>双方都知道这种合作只是表面上的；</li>
+<li>双方都参与维持这种表面；</li>
+<li>他们可能是为了遵守社会规范，也可能是为了间接表达某种态度。</li>
+</ul>
+<h3 id="Conference-Talk：学术会议上的客套话"><a href="#Conference-Talk：学术会议上的客套话" class="headerlink" title="Conference Talk：学术会议上的客套话"></a>Conference Talk：学术会议上的客套话</h3><p>作者举了一个非常日常的例子。</p>
+<p>两位哲学家 Kaz 和 Lucy 在学术会议上碰面：</p>
+<p>Kaz: Lucy, it&#39;s so great to run into you. I admired your latest article. Always so eye-opening.</p>
+<p>Lucy: I&#39;m flattered you read it. But I&#39;m really interested to know what you&#39;ve been thinking about recently. You should tell me sometime.</p>
+<p>表面上看：</p>
+<ul>
+<li>Kaz 很欣赏 Lucy 的论文。</li>
+<li>Lucy 很高兴 Kaz 阅读了自己的论文。</li>
+<li>Lucy 也希望了解 Kaz 最近的想法。</li>
+</ul>
+<p>但实际上，两个人可能都不相信对方说的话。</p>
+<p>他们甚至可能都知道彼此并不欣赏对方的研究。</p>
+<p>那么，他们为什么还要这样交流？</p>
+<p>作者提出两种可能的解释。</p>
+<p>解释 A：表达对同事的尊重</p>
+<p>双方不希望了解对方真正的研究意见，只想表达：</p>
+<ul>
+<li>我尊重你作为同事的身份。</li>
+<li>我们可以维持友好的专业关系。</li>
+</ul>
+<p>因此，Kaz 不应该真的开始长篇大论地介绍自己的研究，因为他并不知道 Lucy 是否真的想听。</p>
+<p>Lucy 也不应该追问 Kaz 到底觉得自己的论文哪里有启发性，因为 Kaz 可能根本说不出具体内容。</p>
+<p>如果他们直接说：</p>
+<blockquote>
+<p>Aww, I don&#39;t know what your views really are, because I know that we&#39;re doing a little social ritual thing, but I appreciate that you respect me!</p>
+</blockquote>
+<p>反而会破坏这种社交互动。</p>
+<p>解释 B：双方都知道彼此在假装</p>
+<p>另一种可能是：</p>
+<ul>
+<li>Kaz 知道 Lucy 并不真的欣赏自己的研究。</li>
+<li>Lucy 也知道 Kaz 并不真的欣赏自己的研究。</li>
+<li>双方都知道对方知道这一点。</li>
+</ul>
+<p>但他们仍然愿意维持这种表面上的友好。</p>
+<p>他们可能是为了遵守专业规范，也可能是为了间接表达：即使彼此不喜欢，也不会公开损害对方的职业利益。</p>
+<p>如果直接说：</p>
+<blockquote>
+<p>I know you&#39;re just pretending, but I&#39;m glad that we can talk like this, and that even though you hate me, you&#39;re not going to try to blackball me or anything.</p>
+</blockquote>
+<p>同样会破坏社交仪式。</p>
+<h3 id="为什么叫-Ritual-Conversations？"><a href="#为什么叫-Ritual-Conversations？" class="headerlink" title="为什么叫 Ritual Conversations？"></a>为什么叫 Ritual Conversations？</h3><p>因为双方共同参与了一种社会互动模式：</p>
+<ul>
+<li>他们知道彼此并不一定真诚。</li>
+<li>他们仍然共同维持礼貌、友好的表面。</li>
+<li>他们通过这种方式遵守社会规范，或者表达某种态度。</li>
+</ul>
+<p>作者特别强调：</p>
+<p>Apparent Goals 不一定意味着非合作。</p>
+<p>有时双方实际上正在共同完成一项重要的社会任务，而这个任务本身就是维持表面上的合作。</p>
+<p>例如，在学术会议中，双方真正共同追求的目标可能就是维持专业关系，而不是交换彼此真实的研究评价。</p>
+<p>这也是 Ritual Conversations 最值得注意的地方。</p>
+<h2 id="Part-5：Conclusion（结论）"><a href="#Part-5：Conclusion（结论）" class="headerlink" title="Part 5：Conclusion（结论）"></a>Part 5：Conclusion（结论）</h2><p>至此，Berstler 对整篇文章作出总结。</p>
+<h3 id="Grice-真的错了吗？"><a href="#Grice-真的错了吗？" class="headerlink" title="Grice 真的错了吗？"></a>Grice 真的错了吗？</h3><p>作者认为，Grice 确实遗漏了一个重要部分。</p>
+<p>Grice 在自己的 Retrospective Epilogue 中已经意识到，某些对话中的共同目标可能只是：</p>
+<blockquote>
+<p>spurious, apparent rather than real</p>
+</blockquote>
+<p>也就是说，共同目标可能只是表面上的，而不是真实存在的。</p>
+<p>Berstler 认为，自己所做的工作，就是把 Grice 已经注意到的现象发展成一个更加完整的理论。</p>
+<h3 id="Berstler-的最终主张"><a href="#Berstler-的最终主张" class="headerlink" title="Berstler 的最终主张"></a>Berstler 的最终主张</h3><p>可以把他的理论归纳为三点：</p>
+<ol>
+<li>产生 conversational implicature 的说话者，通常需要表现出自己有合作交换信息的意图。</li>
+<li>这种合作意图可以是真实的，也可以只是表面上的。</li>
+<li>即使双方知道自己并不真正合作，仍然可以利用 Cooperative Principle 来理解对方的 conversational implicature。</li>
+</ol>
+<p>因此，作者认为：</p>
+<p>Non-Cooperation Problem 并没有彻底推翻 Gricean project。</p>
+<p>不过，Berstler 也承认，非合作对话在某种意义上依赖于合作对话：</p>
+<p>因为我们要理解什么叫“表现得像是在合作”，首先必须知道真正合作是什么样的。</p>
+<p>所以非合作对话并不是理论上无关紧要的次要现象。它们仍然值得独立研究。</p>
+</div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comments</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/important/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/ loading='lazy'></div><div class="author-info-name">Joey</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">307</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">51</div></a></div><div class="follow-links segmented"> <a href="https://github.com/a2664476347a-ai" target="_blank"><i class="fab fa-github"></i>GitHub</a><a href="https://space.bilibili.com/59101931?spm_id_from=333.1007.0.0" target="_blank"><i class="fas fa-tv"></i>Bilibili</a><a href="mailto:a2664476347@gmail.com"><i class="fas fa-envelope"></i>Gmail</a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/11/01/%E5%9B%9E%E5%9B%BD%EF%BC%8C%E5%9B%9E%E5%BD%92%E6%AD%A3%E5%B8%B8%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%94%9F%E6%B4%BB%EF%BC%8Cns2/" title="回国，回归正常的学习生活，ns2">回国，回归正常的学习生活，ns2</a><time datetime="2026-11-01T22:35:38.000Z" title="Created 2026-11-01 22:35:38">2026-11-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/10/31/%E4%B8%87%E5%9C%A3%E8%8A%82%EF%BC%8C%E9%BB%91%E7%A5%9E%E8%AF%9D%E6%82%9F%E7%A9%BA/" title="万圣节，黑神话悟空">万圣节，黑神话悟空</a><time datetime="2026-10-31T20:10:19.000Z" title="Created 2026-10-31 20:10:19">2026-10-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/10/31/%E5%B0%8F%E7%BB%84%E4%BD%9C%E4%B8%9A%EF%BC%8C%E4%B8%87%E5%9C%A3%E8%8A%82%EF%BC%8CBLG%20VS%20HLE/" title="小组作业，万圣节，BLG VS HLE">小组作业，万圣节，BLG VS HLE</a><time datetime="2026-10-31T00:52:51.000Z" title="Created 2026-10-31 00:52:51">2026-10-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/10/29/%E6%98%8F%E7%9D%A1%E7%9A%84%E4%B8%80%E5%A4%A9%EF%BC%8Cmoody%E8%AE%B2%E5%BA%A7/" title="昏睡的一天，moody讲座">昏睡的一天，moody讲座</a><time datetime="2026-10-29T22:27:54.000Z" title="Created 2026-10-29 22:27:54">2026-10-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/10/28/%E5%B0%8F%E7%BB%84%E4%BD%9C%E4%B8%9A%E7%9A%84%E8%BF%9B%E5%B1%95/" title="小组作业的进展">小组作业的进展</a><time datetime="2026-10-28T21:02:59.000Z" title="Created 2026-10-28 21:02:59">2026-10-28</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/%E8%A1%8C%E7%A8%8B%E8%AE%A1%E5%88%92/" style="font-size: 1.14em; color: #999b9d">行程计划</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 1.1em; color: #999">线性代数</a> <a href="/tags/%E6%8B%89%E7%93%A6%E9%94%A1/" style="font-size: 1.1em; color: #999">拉瓦锡</a> <a href="/tags/%E4%B8%AD%E4%B8%9C/" style="font-size: 1.14em; color: #999b9d">中东</a> <a href="/tags/SAOP/" style="font-size: 1.1em; color: #999">SAOP</a> <a href="/tags/%E7%90%89%E7%92%83%E7%9A%84%E5%AE%9D%E7%9F%B3/" style="font-size: 1.18em; color: #999ca1">琉璃的宝石</a> <a href="/tags/%E8%A1%8C%E7%A8%8B%E5%AE%89%E6%8E%92/" style="font-size: 1.18em; color: #999ca1">行程安排</a> <a href="/tags/Pudding/" style="font-size: 1.18em; color: #999ca1">Pudding</a> <a href="/tags/%E7%A7%91%E6%99%AE%E7%95%AA/" style="font-size: 1.1em; color: #999">科普番</a> <a href="/tags/%E4%BA%92%E8%81%94%E7%BD%91/" style="font-size: 1.38em; color: #99a4b4">互联网</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 1.46em; color: #99a7bb">游戏</a> <a href="/tags/%E4%BB%BB%E5%A4%A9%E5%A0%82/" style="font-size: 1.14em; color: #999b9d">任天堂</a> <a href="/tags/svd/" style="font-size: 1.1em; color: #999">svd</a> <a href="/tags/cs2/" style="font-size: 1.18em; color: #999ca1">cs2</a> <a href="/tags/%E5%8E%86%E5%8F%B2/" style="font-size: 1.3em; color: #99a1ac">历史</a> <a href="/tags/%E5%8E%9F%E7%A5%9E/" style="font-size: 1.1em; color: #999">原神</a> <a href="/tags/%E8%AF%BB%E4%B9%A6/" style="font-size: 1.14em; color: #999b9d">读书</a> <a href="/tags/%E6%B1%89%E5%AD%97%E7%BC%A9%E5%86%99/" style="font-size: 1.1em; color: #999">汉字缩写</a> <a href="/tags/%E4%BA%BA%E4%B8%8E%E6%9C%BA%E5%99%A8%E4%BA%BA/" style="font-size: 1.14em; color: #999b9d">人与机器人</a> <a href="/tags/%E7%BD%91%E7%AB%99/" style="font-size: 1.1em; color: #999">网站</a> <a href="/tags/%E9%80%BB%E8%BE%91%E5%AD%A6/" style="font-size: 1.14em; color: #999b9d">逻辑学</a> <a href="/tags/%E7%88%B1%E5%9B%A0%E6%96%AF%E5%9D%A6/" style="font-size: 1.1em; color: #999">爱因斯坦</a> <a href="/tags/%E8%8A%82%E6%97%A5/" style="font-size: 1.14em; color: #999b9d">节日</a> <a href="/tags/%E4%BA%9A%E6%89%98%E8%8E%89/" style="font-size: 1.14em; color: #999b9d">亚托莉</a> <a href="/tags/%E6%8E%A8%E7%90%86/" style="font-size: 1.1em; color: #999">推理</a> <a href="/tags/%E5%B0%BC%E9%87%87/" style="font-size: 1.1em; color: #999">尼采</a> <a href="/tags/%E6%97%A0%E7%A5%9E%E8%AE%BA/" style="font-size: 1.1em; color: #999">无神论</a> <a href="/tags/%E6%94%BF%E6%B2%BB/" style="font-size: 1.22em; color: #999ea4">政治</a> <a href="/tags/%E8%83%A1%E9%80%82/" style="font-size: 1.1em; color: #999">胡适</a> <a href="/tags/%E5%8A%A8%E6%BC%AB/" style="font-size: 1.14em; color: #999b9d">动漫</a> <a href="/tags/%E5%93%88%E4%BC%AF%EF%BC%88%E5%BE%B7%E5%9B%BD%E7%8A%B9%E5%A4%AA%E8%A3%94%E5%8C%96%E5%AD%A6%E5%AE%B6%EF%BC%89/" style="font-size: 1.1em; color: #999">哈伯（德国犹太裔化学家）</a> <a href="/tags/%E8%A1%8C%E7%A8%8B%E8%A7%84%E5%88%92/" style="font-size: 1.34em; color: #99a3b0">行程规划</a> <a href="/tags/galgame/" style="font-size: 1.18em; color: #999ca1">galgame</a> <a href="/tags/%E6%97%A5%E8%AE%B0/" style="font-size: 1.5em; color: #99a9bf">日记</a> <a href="/tags/%E7%BD%A2%E5%B7%A5/" style="font-size: 1.1em; color: #999">罢工</a> <a href="/tags/%E7%A7%91%E5%AD%A6%E5%AE%B6/" style="font-size: 1.1em; color: #999">科学家</a> <a href="/tags/%E8%80%83%E8%AF%95/" style="font-size: 1.1em; color: #999">考试</a> <a href="/tags/%E6%97%85%E8%A1%8C/" style="font-size: 1.1em; color: #999">旅行</a> <a href="/tags/%E8%B6%B3%E7%90%83/" style="font-size: 1.26em; color: #999fa8">足球</a> <a href="/tags/%E7%88%B1%E4%B8%81%E5%A0%A1%E7%94%9F%E6%B4%BB/" style="font-size: 1.42em; color: #99a6b7">爱丁堡生活</a></div></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Website Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article Count :</div><div class="item-count">307</div></div><div class="webinfo-item"><div class="item-name">Total Word Count :</div><div class="item-count">120.9k</div></div><div class="webinfo-item"><div class="item-name">Unique Visitors :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Page Views :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Update :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-11-01T22:54:04.939Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Joey</span><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="Scroll to Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.9/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        loader: {
+          load: [
+            // Four font extension packages (optional)
+            //- '[tex]/bbm',
+            //- '[tex]/bboldx',
+            //- '[tex]/dsfont',
+            '[tex]/mhchem'
+          ],
+          paths: {
+            'mathjax-newcm': '[mathjax]/../@mathjax/mathjax-newcm-font',
+
+            //- // Four font extension packages (optional)
+            //- 'mathjax-bbm-extension': '[mathjax]/../@mathjax/mathjax-bbm-font-extension',
+            //- 'mathjax-bboldx-extension': '[mathjax]/../@mathjax/mathjax-bboldx-font-extension',
+            //- 'mathjax-dsfont-extension': '[mathjax]/../@mathjax/mathjax-dsfont-font-extension',
+            'mathjax-mhchem-extension': '[mathjax]/../@mathjax/mathjax-mhchem-font-extension'
+          }
+        },
+        output: {
+          font: 'mathjax-newcm',
+        },
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'ams',
+          packages: {
+            '[+]': [
+              'mhchem'
+            ]
+          }
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          menuOptions: {
+            settings: {
+              enrich: false  // Turn off Braille and voice narration text automatic generation
+            }
+          },
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@4.1.0/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script><script>(() => {
+  const parseViewBox = viewBox => {
+    if (!viewBox) return null
+    const parts = viewBox.trim().split(/[\s,]+/).map(n => Number(n))
+    if (parts.length !== 4 || parts.some(n => Number.isNaN(n))) return null
+    return parts
+  }
+
+  const getSvgViewBox = svg => {
+    const attr = parseViewBox(svg.getAttribute('viewBox'))
+    if (attr) return attr
+
+    // Fallback: use bbox to build a viewBox
+    try {
+      const bbox = svg.getBBox()
+      if (bbox && bbox.width && bbox.height) return [bbox.x, bbox.y, bbox.width, bbox.height]
+    } catch (e) {
+      // getBBox may fail on some edge cases; ignore
+    }
+
+    const w = Number(svg.getAttribute('width')) || 0
+    const h = Number(svg.getAttribute('height')) || 0
+    if (w > 0 && h > 0) return [0, 0, w, h]
+    return [0, 0, 100, 100]
+  }
+
+  const setSvgViewBox = (svg, vb) => {
+    svg.setAttribute('viewBox', `${vb[0]} ${vb[1]} ${vb[2]} ${vb[3]}`)
+  }
+
+  const clamp = (v, min, max) => Math.max(min, Math.min(max, v))
+
+  const openSvgInNewTab = ({ source, initViewBox }) => {
+    const getClonedSvg = () => {
+      if (typeof source === 'string') {
+        const template = document.createElement('template')
+        template.innerHTML = source.trim()
+        const svg = template.content.querySelector('svg')
+        return svg ? svg.cloneNode(true) : null
+      }
+      if (source && typeof source.cloneNode === 'function') {
+        return source.cloneNode(true)
+      }
+      return null
+    }
+
+    const clone = getClonedSvg()
+    if (!clone) return
+    if (initViewBox && initViewBox.length === 4) {
+      clone.setAttribute('viewBox', initViewBox.join(' '))
+    }
+    if (!clone.getAttribute('xmlns')) clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg')
+    if (!clone.getAttribute('xmlns:xlink') && clone.outerHTML.includes('xlink:')) {
+      clone.setAttribute('xmlns:xlink', 'http://www.w3.org/1999/xlink')
+    }
+    // inject background to match current theme
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark'
+    const bg = getComputedStyle(document.body).backgroundColor || (isDark ? '#1e1e1e' : '#ffffff')
+    if (!clone.style.background) clone.style.background = bg
+
+    const serializer = new XMLSerializer()
+    const svgSource = serializer.serializeToString(clone)
+    const htmlSource = `<!doctype html><html><head><meta charset="utf-8" />
+      <style>
+        html, body { width: 100%; height: 100%; margin: 0; display: flex; align-items: center; justify-content: center; background: ${bg}; }
+        svg { max-width: 100%; max-height: 100%; height: auto; width: auto; }
+      </style>
+      </head><body>${svgSource}</body></html>`
+    const blob = new Blob([htmlSource], { type: 'text/html;charset=utf-8' })
+    const url = URL.createObjectURL(blob)
+    window.open(url, '_blank', 'noopener')
+    setTimeout(() => URL.revokeObjectURL(url), 30000)
+  }
+
+  const attachMermaidViewerButton = wrap => {
+    let btn = wrap.querySelector('.mermaid-open-btn')
+    if (!btn) {
+      btn = document.createElement('button')
+      btn.type = 'button'
+      btn.className = 'mermaid-open-btn'
+      wrap.appendChild(btn)
+    }
+
+    btn.innerHTML = '<i class="fa fa-search fa-fw" aria-hidden="true"></i>'
+
+    if (!btn.__mermaidViewerBound) {
+      btn.addEventListener('click', e => {
+        e.preventDefault()
+        e.stopPropagation()
+        const svg = wrap.__mermaidOriginalSvg || wrap.querySelector('svg')
+        if (!svg) return
+        const initViewBox = wrap.__mermaidInitViewBox
+        if (typeof svg === 'string') {
+          openSvgInNewTab({ source: svg, initViewBox })
+          return
+        }
+        openSvgInNewTab({ source: svg, initViewBox })
+      })
+      btn.__mermaidViewerBound = true
+    }
+  }
+
+  // Zoom around a point (px, py) in the SVG viewport (in viewBox coordinates)
+  const zoomAtPoint = (vb, factor, px, py) => {
+    const w = vb[2] * factor
+    const h = vb[3] * factor
+    const nx = px - (px - vb[0]) * factor
+    const ny = py - (py - vb[1]) * factor
+    return [nx, ny, w, h]
+  }
+
+  const initMermaidGestures = wrap => {
+    const svg = wrap.querySelector('svg')
+    if (!svg) return
+
+    // Ensure viewBox exists so gestures always work
+    const initVb = getSvgViewBox(svg)
+    wrap.__mermaidInitViewBox = initVb
+    wrap.__mermaidCurViewBox = initVb.slice()
+    setSvgViewBox(svg, initVb)
+
+    // Avoid binding multiple times on themeChange/pjax
+    if (wrap.__mermaidGestureBound) return
+    wrap.__mermaidGestureBound = true
+
+    // Helper: map client (viewport) coordinate -> viewBox coordinate
+    const clientToViewBox = (clientX, clientY) => {
+      const rect = svg.getBoundingClientRect()
+      const vb = wrap.__mermaidCurViewBox || getSvgViewBox(svg)
+      const x = vb[0] + (clientX - rect.left) * (vb[2] / rect.width)
+      const y = vb[1] + (clientY - rect.top) * (vb[3] / rect.height)
+      return { x, y, rect, vb }
+    }
+
+    const state = {
+      pointers: new Map(),
+      startVb: null,
+      startDist: 0,
+      startCenter: null
+    }
+
+    const clampVb = vb => {
+      const init = wrap.__mermaidInitViewBox || vb
+      const minW = init[2] * 0.1
+      const maxW = init[2] * 10
+      const minH = init[3] * 0.1
+      const maxH = init[3] * 10
+      vb[2] = clamp(vb[2], minW, maxW)
+      vb[3] = clamp(vb[3], minH, maxH)
+      return vb
+    }
+
+    const setCurVb = vb => {
+      vb = clampVb(vb)
+      wrap.__mermaidCurViewBox = vb
+      setSvgViewBox(svg, vb)
+    }
+
+    const onPointerDown = e => {
+      // Allow only primary button for mouse
+      if (e.pointerType === 'mouse' && e.button !== 0) return
+      svg.setPointerCapture(e.pointerId)
+      state.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY })
+
+      if (state.pointers.size === 1) {
+        state.startVb = (wrap.__mermaidCurViewBox || getSvgViewBox(svg)).slice()
+      } else if (state.pointers.size === 2) {
+        const pts = [...state.pointers.values()]
+        const dx = pts[0].x - pts[1].x
+        const dy = pts[0].y - pts[1].y
+        state.startDist = Math.hypot(dx, dy)
+        state.startVb = (wrap.__mermaidCurViewBox || getSvgViewBox(svg)).slice()
+        state.startCenter = { x: (pts[0].x + pts[1].x) / 2, y: (pts[0].y + pts[1].y) / 2 }
+      }
+    }
+
+    const onPointerMove = e => {
+      if (!state.pointers.has(e.pointerId)) return
+      state.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY })
+
+      // Pan with 1 pointer
+      if (state.pointers.size === 1 && state.startVb) {
+        const p = [...state.pointers.values()][0]
+        const prev = { x: e.clientX - e.movementX, y: e.clientY - e.movementY }
+        // movementX/Y unreliable on touch, compute from stored last position
+        const last = wrap.__mermaidLastSinglePointer || p
+        const dxClient = p.x - last.x
+        const dyClient = p.y - last.y
+        wrap.__mermaidLastSinglePointer = p
+
+        const { rect } = clientToViewBox(p.x, p.y)
+        const vb = (wrap.__mermaidCurViewBox || getSvgViewBox(svg)).slice()
+        const dx = dxClient * (vb[2] / rect.width)
+        const dy = dyClient * (vb[3] / rect.height)
+        setCurVb([vb[0] - dx, vb[1] - dy, vb[2], vb[3]])
+        return
+      }
+
+      // Pinch zoom with 2 pointers
+      if (state.pointers.size === 2 && state.startVb && state.startDist > 0) {
+        const pts = [...state.pointers.values()]
+        const dx = pts[0].x - pts[1].x
+        const dy = pts[0].y - pts[1].y
+        const dist = Math.hypot(dx, dy)
+        if (!dist) return
+        const factor = state.startDist / dist // dist bigger => zoom in (viewBox smaller)
+
+        const cx = (pts[0].x + pts[1].x) / 2
+        const cy = (pts[0].y + pts[1].y) / 2
+        const centerClient = { x: cx, y: cy }
+
+        const pxy = clientToViewBox(centerClient.x, centerClient.y)
+        const cpx = pxy.x
+        const cpy = pxy.y
+
+        const vb = zoomAtPoint(state.startVb, factor, cpx, cpy)
+        setCurVb(vb)
+      }
+    }
+
+    const onPointerUpOrCancel = e => {
+      state.pointers.delete(e.pointerId)
+      if (state.pointers.size === 0) {
+        state.startVb = null
+        state.startDist = 0
+        state.startCenter = null
+        wrap.__mermaidLastSinglePointer = null
+      } else if (state.pointers.size === 1) {
+        // reset single pointer baseline to avoid jump
+        wrap.__mermaidLastSinglePointer = [...state.pointers.values()][0]
+      }
+    }
+
+    // Wheel zoom (mouse/trackpad)
+    const onWheel = e => {
+      // ctrlKey on mac trackpad pinch; we treat both as zoom
+      e.preventDefault()
+      const delta = e.deltaY
+      const zoomFactor = delta > 0 ? 1.1 : 0.9
+      const { x, y } = clientToViewBox(e.clientX, e.clientY)
+      const vb = (wrap.__mermaidCurViewBox || getSvgViewBox(svg)).slice()
+      setCurVb(zoomAtPoint(vb, zoomFactor, x, y))
+    }
+
+    const onDblClick = () => {
+      const init = wrap.__mermaidInitViewBox
+      if (!init) return
+      wrap.__mermaidCurViewBox = init.slice()
+      setSvgViewBox(svg, init)
+    }
+
+    svg.addEventListener('pointerdown', onPointerDown)
+    svg.addEventListener('pointermove', onPointerMove)
+    svg.addEventListener('pointerup', onPointerUpOrCancel)
+    svg.addEventListener('pointercancel', onPointerUpOrCancel)
+    svg.addEventListener('wheel', onWheel, { passive: false })
+    svg.addEventListener('dblclick', onDblClick)
+  }
+
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+
+      // Clear old render (themeChange/pjax will rerun)
+      const oldSvg = item.querySelector('svg')
+      if (oldSvg) oldSvg.remove()
+      item.__mermaidGestureBound = false
+
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+        if (true) initMermaidGestures(item)
+        item.__mermaidOriginalSvg = svg
+        if (true) attachMermaidViewerButton(item)
+      }
+
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (true) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.2/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'a2664476347a-ai/blog-comments',
+      'data-repo-id': 'R_kgDORkgtKg',
+      'data-category-id': 'DIC_kwDORkgtKs4C4LUQ',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !false) {
+    if (false) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script><script>
+mermaid.initialize({
+  startOnLoad: true,
+  securityLevel: 'loose',
+  flowchart: { useMaxWidth: true }
+});
+</script>
+<script src="/js/random-tag-bg.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="local-search-input"><input placeholder="Search for Posts" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.4"></script></div></div></body></html>
