@@ -489,6 +489,13 @@ const places = [
     image: "/img/Edinburgh/robe.jpg",
     url: "/2026/10/27/robe"
   },
+  {
+    name: "Princes Street", //  王子街
+    lat: 55.9517273,
+    lng: -3.2005417,
+    image: "/img/Edinburgh/princes-street.jpg",
+    url: "/2026/11/10/princes-street"
+  },
  
 
 
