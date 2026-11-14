@@ -1,0 +1,809 @@
+<!DOCTYPE html><html lang="cn" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Meaning and Reference | 私家菜的个人博客</title><meta name="author" content="Joey"><meta name="copyright" content="Joey"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="On Sinn and Bedeutung》Identity and Cognitive Valueintroduction从文章开头Frege提出了两个式子：  a &#x3D; a a &#x3D; b  在数学里，a和b没有区别，它们本身就是等价的。 但是Frege觉得，a和b的cognitive value是不同的。 比如，晨星和昏星的例子，我们知道他们其实都是指金星，但是却有不同的名字。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Meaning and Reference">
+<meta property="og:url" content="https://a2664476347a-ai.github.io/Note/mml/week9.html">
+<meta property="og:site_name" content="私家菜的个人博客">
+<meta property="og:description" content="On Sinn and Bedeutung》Identity and Cognitive Valueintroduction从文章开头Frege提出了两个式子：  a &#x3D; a a &#x3D; b  在数学里，a和b没有区别，它们本身就是等价的。 但是Frege觉得，a和b的cognitive value是不同的。 比如，晨星和昏星的例子，我们知道他们其实都是指金星，但是却有不同的名字。">
+<meta property="og:locale">
+<meta property="og:image" content="https://a2664476347a-ai.github.io/img/important/avatar.jpg">
+<meta property="article:published_time" content="2026-11-14T15:26:26.190Z">
+<meta property="article:modified_time" content="2026-11-14T15:26:26.190Z">
+<meta property="article:author" content="Joey">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://a2664476347a-ai.github.io/img/important/avatar.jpg"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://a2664476347a-ai.github.io/Note/mml/week9.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//www.clarity.ms"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="-SA3Essa91Y2Ep02I_lVO46k18Im4ofqJesBiGXFTVA"/><meta name="msvalidate.01" content="C5E544DDD197A5A1F65FF3CC2EAA5B30"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.9/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-K3J40ZJ1S7"></script><script>window.dataLayer = window.dataLayer || []
+function gtag(){dataLayer.push(arguments)}
+gtag('js', new Date())
+gtag('config', 'G-K3J40ZJ1S7')
+btf.addGlobalFn('pjaxComplete', () => {
+  gtag('config', 'G-K3J40ZJ1S7', {'page_path': window.location.pathname})
+}, 'google_analytics')
+</script><script>(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "w4agonpixo");
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":3,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"You have switched to Traditional Chinese","cht_to_chs":"You have switched to Simplified Chinese","day_to_night":"You have switched to Dark Mode","night_to_day":"You have switched to Light Mode","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-right"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Meaning and Reference',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="/css/custom.css"><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/important/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/ loading='lazy'></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">322</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">51</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">11</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><span> 学习</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/analyse/"><i class="fa-fw fas fa-square-root-alt"></i><span> 数学分析</span></a></li><li><a class="site-page child" href="/categories/linear-algebra/"><i class="fa-fw fas fa-th"></i><span> 线性代数</span></a></li><li><a class="site-page child" href="/categories/logic/"><i class="fa-fw fas fa-project-diagram"></i><span> 逻辑学</span></a></li><li><a class="site-page child" href="/categories/philosophy/"><i class="fa-fw fas fa-brain"></i><span> 普通哲学</span></a></li><li><a class="site-page child" href="/2026/09/28/%E5%AF%BC%E8%88%AA/"><i class="fa-fw fas fa-pencil-alt"></i><span> 笔记</span></a></li><li><a class="site-page child" href="/categories/other/"><i class="fa-fw fas fa-folder"></i><span> 其他</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 图集</span></a></div><div class="menus_item"><span class="site-page group"><span> 兴趣</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/anime/"><i class="fa-fw fas fa-tv"></i><span> 动漫</span></a></li><li><a class="site-page child" href="/categories/game/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/map/"><i class="fa-fw fas fa-plane"></i><span> 旅行</span></a></li><li><a class="site-page child" href="/categories/film/"><i class="fa-fw fas fa-film"></i><span> 影视</span></a></li><li><a class="site-page child" href="/categories/reading/"><i class="fa-fw fas fa-book-open"></i><span> 阅读</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%97%A5%E8%AE%B0/"><i class="fa-fw fas fa-pen"></i><span> 日记</span></a></li><li><a class="site-page child" href="/categories/%E6%9D%82%E8%B0%88/"><i class="fa-fw fas fa-comment"></i><span> 杂谈</span></a></li></ul></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(/img/important/index.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">私家菜的个人博客</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><span> 学习</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/analyse/"><i class="fa-fw fas fa-square-root-alt"></i><span> 数学分析</span></a></li><li><a class="site-page child" href="/categories/linear-algebra/"><i class="fa-fw fas fa-th"></i><span> 线性代数</span></a></li><li><a class="site-page child" href="/categories/logic/"><i class="fa-fw fas fa-project-diagram"></i><span> 逻辑学</span></a></li><li><a class="site-page child" href="/categories/philosophy/"><i class="fa-fw fas fa-brain"></i><span> 普通哲学</span></a></li><li><a class="site-page child" href="/2026/09/28/%E5%AF%BC%E8%88%AA/"><i class="fa-fw fas fa-pencil-alt"></i><span> 笔记</span></a></li><li><a class="site-page child" href="/categories/other/"><i class="fa-fw fas fa-folder"></i><span> 其他</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 图集</span></a></div><div class="menus_item"><span class="site-page group"><span> 兴趣</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/anime/"><i class="fa-fw fas fa-tv"></i><span> 动漫</span></a></li><li><a class="site-page child" href="/categories/game/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/map/"><i class="fa-fw fas fa-plane"></i><span> 旅行</span></a></li><li><a class="site-page child" href="/categories/film/"><i class="fa-fw fas fa-film"></i><span> 影视</span></a></li><li><a class="site-page child" href="/categories/reading/"><i class="fa-fw fas fa-book-open"></i><span> 阅读</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%97%A5%E8%AE%B0/"><i class="fa-fw fas fa-pen"></i><span> 日记</span></a></li><li><a class="site-page child" href="/categories/%E6%9D%82%E8%B0%88/"><i class="fa-fw fas fa-comment"></i><span> 杂谈</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title">Meaning and Reference</h1></div></header><main class="layout" id="content-inner"><div id="page"><div class="container" id="article-container"><h1 id="On-Sinn-and-Bedeutung》"><a href="#On-Sinn-and-Bedeutung》" class="headerlink" title="On Sinn and Bedeutung》"></a>On Sinn and Bedeutung》</h1><h2 id="Identity-and-Cognitive-Value"><a href="#Identity-and-Cognitive-Value" class="headerlink" title="Identity and Cognitive Value"></a>Identity and Cognitive Value</h2><h3 id="introduction"><a href="#introduction" class="headerlink" title="introduction"></a>introduction</h3><p>从文章开头Frege提出了两个式子：</p>
+<ul>
+<li>a &#x3D; a</li>
+<li>a &#x3D; b</li>
+</ul>
+<p>在数学里，a和b没有区别，它们本身就是等价的。</p>
+<p>但是Frege觉得，a和b的cognitive value是不同的。</p>
+<p>比如，晨星和昏星的例子，我们知道他们其实都是指金星，但是却有不同的名字。</p>
+<p>也就是：</p>
+<ul>
+<li>Morning star &#x3D; Morning star</li>
+<li>Morning star &#x3D; Evening star</li>
+</ul>
+<p>因此：</p>
+<ul>
+<li>第一个等式没有带来多少新知识。</li>
+<li>第二个等式能够<strong>扩展我们对世界的认识</strong>。</li>
+</ul>
+<p>这就是 Frege 所说的<strong>认知价值</strong>差异。</p>
+<hr>
+<h3 id="Frege-尝试解释这种差异"><a href="#Frege-尝试解释这种差异" class="headerlink" title="Frege 尝试解释这种差异"></a>Frege 尝试解释这种差异</h3><p>接下来，Frege 考虑了两种可能性。</p>
+<p><strong>第一种：Equality is a relation between objects.</strong></p>
+<p>如果等号表达的是两个对象之间的关系，那么 a&#x3D;b</p>
+<p>实际上就是一个对象与它自身之间的关系（因为两者指向同一个对象）。</p>
+<p>那么它和 a &#x3D; a 就没有本质区别。</p>
+<p>这无法解释为什么我们能够通过发现 a &#x3D; b <strong>获得新知识</strong>。</p>
+<p><strong>第二种：Equality is a relation between signs.</strong></p>
+<p>那么，是否可以认为：</p>
+<ul>
+<li>a 是一个符号。</li>
+<li>b 是另一个符号。</li>
+<li>a &#x3D; b 表示两个符号指向同一个对象。</li>
+</ul>
+<p>看似这个更符合实际情况，但是Frege觉得还不够完整，</p>
+<p>因为两个符号可以只是外形不同，例如一个写成 A，另一个写成 B。</p>
+<p>如果它们只是任意的符号，那么我们只是发现了两个符号指向同一个东西，并不能充分解释这种发现<strong>为什么具有认知价值</strong>。</p>
+<p>所以Frege觉得：</p>
+<blockquote>
+<p>The difference between signs must correspond to a difference in the mode of presentation of the object.</p>
+<p>两个符号的差异，必须对应它们呈现对象的方式（Mode of Presentation）的差异。</p>
+</blockquote>
+<hr>
+<h2 id="Two-Dimensions-of-Meaning"><a href="#Two-Dimensions-of-Meaning" class="headerlink" title="Two Dimensions of Meaning"></a>Two Dimensions of Meaning</h2><p>在本部分Frege提出：</p>
+<blockquote>
+<p>It is natural, now, to think of there being connected with a sign ... besides that which the sign designates ... also what I should like to call the sense of the sign.</p>
+<p>一个符号（Sign）除了指向某个对象之外，还具有一种 Sense。</p>
+</blockquote>
+<p>因此一个名字涉及了两个不同的层面：<strong>Sinn</strong>（含义） 和 <strong>Bedeutung</strong>（所指对象）</p>
+<h3 id="几何学例子"><a href="#几何学例子" class="headerlink" title="几何学例子"></a>几何学例子</h3><p>假设有一个三角形，三个顶点分别连接到对边的中点。</p>
+<p><img src="https://raw.githubusercontent.com/a2664476347a-ai/blog-images/main/img/e5JeHE4Sq8VHVTN5lO6MAFEkJ27mc7G4xoAm56amdO-knZyjOFC53A4Wq2nETwPxryCV5cznzZuluIyUK30iNlmtZIoWUHn5ZuI-9Dub3QrIKR2drtlJs8M2IYW2ymgvZIk8na5uXUQ8Yh7d7YZqYr-i6d6K9tCkE4DSYGyJPFrODZxrpNZfcC-Sro7M0Fpj" alt="Trikotnik za osnovno šolo :: OpenProf.com" loading='lazy'></p>
+<p>设三条中线为 (a,b,c)。</p>
+<p>那么：</p>
+<ul>
+<li>T1 是 a 与 b 的交点。</li>
+<li>T2 是 b 与 c 的交点。</li>
+</ul>
+<p>我们知道T1 &#x3D; T2，但是这两个表达式的描述方式不同。</p>
+<ul>
+<li><p>T1通过直线 (a,b) 来确定点。</p>
+</li>
+<li><p>T2通过直线 (b,c) 来确定点。</p>
+</li>
+</ul>
+<p>因此：</p>
+<p>[ Sinn(T1)\neq Sinn(T2) ]</p>
+<p>但是：</p>
+<p>[ Bedeutung(T1)&#x3D;Bedeutung(T2) ]</p>
+<h3 id="Sinn-和-Bedeutung-的关系"><a href="#Sinn-和-Bedeutung-的关系" class="headerlink" title="Sinn 和 Bedeutung 的关系"></a>Sinn 和 Bedeutung 的关系</h3><p>Frege 提出了一个重要规律：</p>
+<blockquote>
+<p>To the sign there corresponds a definite sense and to that in turn a definite Bedeutung.</p>
+<p>一个Sign对应一个确定的 Sinn，而这个 Sinn 又对应一个确定的 Bedeutung。</p>
+</blockquote>
+<p>但是他们的关系并不是一对一的，同一个 Bedeutung 可以对应不同的 Sign 和 Sinn，</p>
+<p>例如：</p>
+<table>
+<thead>
+<tr>
+<th>Sign</th>
+<th>Sinn</th>
+<th>Bedeutung</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Morning Star</td>
+<td>早晨出现的天体</td>
+<td>Venus</td>
+</tr>
+<tr>
+<td>Evening Star</td>
+<td>傍晚出现的天体</td>
+<td>Venus</td>
+</tr>
+</tbody></table>
+<p>且一个表达式可以具有 Sinn，却没有 Bedeutung。</p>
+<p>例如：</p>
+<p><strong>The least rapidly convergent series</strong>（收敛速度最慢的级数）</p>
+<p>我们能够理解这个表达式想要描述什么，因此它有 Sinn。</p>
+<p>但是 Frege 认为，<strong>不存在</strong>这样的最慢收敛级数。</p>
+<p>因为对于任何一个收敛级数，都可以找到另一个收敛得更慢的级数，所以它没有 Bedeutung。</p>
+<hr>
+<h2 id="Sinn-Bedeutung-and-Vorstellung"><a href="#Sinn-Bedeutung-and-Vorstellung" class="headerlink" title="Sinn, Bedeutung and Vorstellung"></a>Sinn, Bedeutung and Vorstellung</h2><h3 id="三个概念的区别"><a href="#三个概念的区别" class="headerlink" title="三个概念的区别"></a>三个概念的区别</h3><p>先看一个例子：你听到名字 “Bucephalus”（亚历山大的战马）。</p>
+<ul>
+<li><strong>Bedeutung（Reference）</strong>：Bucephalus 这匹马<strong>本身</strong>。</li>
+<li><strong>Sinn（Sense）</strong>：这个名字所<strong>呈现出来的对象</strong>，也就是我们通过什么方式理解、认识这匹马。</li>
+<li><strong>Vorstellung（Idea）</strong>：你个人脑海中浮现的<strong>画面</strong>、<strong>记忆</strong>和<strong>感受</strong>。</li>
+</ul>
+<p>Frege 特别强调：不同的人听到同一个名字，可能产生完全不同的心理印象。</p>
+<p>比如，对于画家，骑手和动物学家来说，战马的概念是完全不一样的。</p>
+<p>画家可能想到马的外形，骑手可能想到马的行动，动物学家可能想到马的生物特征。</p>
+<p>但他们仍然可以理解同一个 Sinn，指向同一个 Bedeutung。</p>
+<h3 id="为什么-Sinn-不能等同于-Vorstellung？"><a href="#为什么-Sinn-不能等同于-Vorstellung？" class="headerlink" title="为什么 Sinn 不能等同于 Vorstellung？"></a>为什么 Sinn 不能等同于 Vorstellung？</h3><p>Frege 的论证是：</p>
+<blockquote>
+<ol>
+<li>每个人的<strong>心理表象</strong>都与个人的<strong>记忆、感官经验和情绪</strong>有关。</li>
+<li>因此，<strong>同一个对象</strong>在<strong>不同人脑</strong>海中可能产生<strong>不同的 Vorstellung</strong>。</li>
+<li>但<strong>不同的人</strong>仍然可以<strong>理解同一个 Sinn</strong>。</li>
+<li>所以，<strong>Sinn 不</strong>可能<strong>只是</strong>某个人脑海中的<strong>心理表象</strong>。</li>
+</ol>
+</blockquote>
+<p>换句话说：</p>
+<ul>
+<li>Vorstellung：属于个人的心理世界。</li>
+<li>Sinn：不是某个人独有的心理内容，可以被<strong>许多人共同理解</strong>。</li>
+<li>Bedeutung：表达式实际指向的对象。</li>
+</ul>
+<p>紧接着Frege举了一个月亮和望远镜的例子：</p>
+<p><img src="https://raw.githubusercontent.com/a2664476347a-ai/blog-images/main/img/H7KyNDh7lpCoKGgELd2QvJnYEddA8oFxFz_o-XUOV_VMzc0RoW-Lf9nD-z-Hxgod1wWaCOyZuRiAVEBa8oF3Lv3cTeEnzQVKzSje-FLKz1b1792IPVaIUBI_EmI6JMo1hMn2bWyHxaMGXjkylwSMarzEuf5CoNu30132lqokr0qIfLRh5NZldQPR7kvCqLFu" alt="Convex lens use - Telescope" loading='lazy'></p>
+<p>在上图中，</p>
+<ul>
+<li>月亮本身是Bedeutung，也就是被观察的对象</li>
+<li>望远镜的成像是Sinn，客观存在的事物</li>
+<li>观察者脑子里的成像是Vorstellung，就是每个观察者的主观体验</li>
+</ul>
+<hr>
+<h2 id="从专有名称到完整句子"><a href="#从专有名称到完整句子" class="headerlink" title="从专有名称到完整句子"></a>从专有名称到完整句子</h2><h3 id="先明确名称与意义的关系"><a href="#先明确名称与意义的关系" class="headerlink" title="先明确名称与意义的关系"></a>先明确名称与意义的关系</h3><p>Frege 给出了一个简洁的定义：</p>
+<blockquote>
+<p>A proper name expresses its sense, stands for or designates its Bedeutung.</p>
+<p>一个名称表达自己的 Sinn，并指称自己的 Bedeutung。</p>
+</blockquote>
+<p>例如：</p>
+<ul>
+<li>“Morning Star” 表达一个 Sinn。</li>
+<li>它指称 Venus，即 Bedeutung。</li>
+</ul>
+<h3 id="整个句子也有-Sinn-和-Bedeutung-吗？"><a href="#整个句子也有-Sinn-和-Bedeutung-吗？" class="headerlink" title="整个句子也有 Sinn 和 Bedeutung 吗？"></a>整个句子也有 Sinn 和 Bedeutung 吗？</h3><p>假设我们有一个陈述句：</p>
+<blockquote>
+<p>The Morning Star is a body illuminated by the Sun.</p>
+</blockquote>
+<p>这个句子包含一个 <strong>thought（思想 &#x2F; 命题内容）</strong>。</p>
+<p>那么问题来了：</p>
+<p><strong>这个 thought 应该被视为句子的 Sinn，还是 Bedeutung？</strong></p>
+<p>比较这两个句子：</p>
+<p><strong>Sentence A</strong>：<strong>The Morning Star</strong> is a body illuminated by the Sun.</p>
+<p><strong>Sentence B</strong>：<strong>The Evening Star</strong> is a body illuminated by the Sun.</p>
+<p>我们已经知道：</p>
+<ul>
+<li>Morning Star 和 Evening Star 的 Bedeutung 相同：都是 Venus。</li>
+<li>但是它们的 Sinn 不同：呈现 Venus 的方式不同。</li>
+</ul>
+<p>现在进行替换：</p>
+<p>把 Sentence A 中的 Morning Star 替换成 Evening Star，得到 Sentence B。</p>
+<p>Frege 指出：</p>
+<ol>
+<li>被替换的两个名称具有相同的 Bedeutung。</li>
+<li>因此，替换不会改变整个句子的 Bedeutung（暂时假设句子有 Bedeutung）。</li>
+<li>但是，两个句子表达的 thought 不同。</li>
+<li>所以，thought 不可能是整个句子的 Bedeutung。</li>
+</ol>
+<p>所以<strong>Thought &#x3D; Sinn of a sentence</strong></p>
+<p>整个陈述句的 thought 是它的 Sinn，而不是 Bedeutung。</p>
+</div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comments</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/important/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/ loading='lazy'></div><div class="author-info-name">Joey</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">322</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">51</div></a></div><div class="follow-links segmented"> <a href="https://github.com/a2664476347a-ai" target="_blank"><i class="fab fa-github"></i>GitHub</a><a href="https://space.bilibili.com/59101931?spm_id_from=333.1007.0.0" target="_blank"><i class="fas fa-tv"></i>Bilibili</a><a href="mailto:a2664476347@gmail.com"><i class="fas fa-envelope"></i>Gmail</a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/11/13/%E8%BF%98%E6%9C%8924H%EF%BC%8C%E7%B9%81%E5%BF%99%E7%9A%84%E5%91%A8%E4%BA%94%EF%BC%8CMML%E7%9A%84%E4%BD%93%E9%AA%8C/" title="还有24H，繁忙的周五，MML的体验">还有24H，繁忙的周五，MML的体验</a><time datetime="2026-11-13T20:54:37.000Z" title="Created 2026-11-13 20:54:37">2026-11-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/11/12/%E7%BE%8E%E5%9B%BD%E8%82%A1%E5%B8%82%EF%BC%8C%E5%91%A8%E5%9B%9B%E6%97%A5%E5%B8%B8%EF%BC%8C%E8%87%AA%E5%8A%A8%E5%8C%96%E9%A1%B9%E7%9B%AE/" title="美国股市，周四日常，自动化项目">美国股市，周四日常，自动化项目</a><time datetime="2026-11-12T22:19:44.000Z" title="Created 2026-11-12 22:19:44">2026-11-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/11/11/%E5%86%B7%EF%BC%8C%E5%AD%A6%E4%B9%A0%E5%92%8Cgalgame/" title="冷，学习和galgame">冷，学习和galgame</a><time datetime="2026-11-11T21:51:59.000Z" title="Created 2026-11-11 21:51:59">2026-11-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/11/10/%E7%8E%8B%E5%AD%90%E8%A1%97%E7%9A%84%E5%81%9C%E6%88%98%E7%BA%AA%E5%BF%B5%E6%97%A5%EF%BC%8C%E5%8E%9F%E7%A5%9E7-2/" title="王子街的停战纪念日，原神7.2">王子街的停战纪念日，原神7.2</a><time datetime="2026-11-10T21:18:30.000Z" title="Created 2026-11-10 21:18:30">2026-11-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/11/10/princes-street/" title="王子街">王子街</a><time datetime="2026-11-10T14:38:21.000Z" title="Created 2026-11-10 14:38:21">2026-11-10</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/galgame/" style="font-size: 1.21em; color: #999da3">galgame</a> <a href="/tags/%E6%97%85%E8%A1%8C/" style="font-size: 1.1em; color: #999">旅行</a> <a href="/tags/%E5%8E%86%E5%8F%B2/" style="font-size: 1.28em; color: #99a0aa">历史</a> <a href="/tags/%E7%88%B1%E4%B8%81%E5%A0%A1%E7%94%9F%E6%B4%BB/" style="font-size: 1.39em; color: #99a5b5">爱丁堡生活</a> <a href="/tags/%E7%A7%91%E6%99%AE%E7%95%AA/" style="font-size: 1.1em; color: #999">科普番</a> <a href="/tags/%E7%94%B7%E5%A5%B3%E5%AF%B9%E7%AB%8B/" style="font-size: 1.17em; color: #999ca0">男女对立</a> <a href="/tags/%E6%B1%89%E5%AD%97%E7%BC%A9%E5%86%99/" style="font-size: 1.1em; color: #999">汉字缩写</a> <a href="/tags/%E4%BA%BA%E4%B8%8E%E6%9C%BA%E5%99%A8%E4%BA%BA/" style="font-size: 1.14em; color: #999a9c">人与机器人</a> <a href="/tags/%E7%A7%91%E5%AD%A6%E5%AE%B6/" style="font-size: 1.1em; color: #999">科学家</a> <a href="/tags/svd/" style="font-size: 1.1em; color: #999">svd</a> <a href="/tags/%E9%97%B2%E6%9D%A5%E6%97%A0%E4%BA%8B/" style="font-size: 1.43em; color: #99a6b8">闲来无事</a> <a href="/tags/%E7%88%B1%E5%9B%A0%E6%96%AF%E5%9D%A6/" style="font-size: 1.1em; color: #999">爱因斯坦</a> <a href="/tags/Pudding/" style="font-size: 1.17em; color: #999ca0">Pudding</a> <a href="/tags/%E5%8F%B0%E6%B5%B7/" style="font-size: 1.14em; color: #999a9c">台海</a> <a href="/tags/%E6%8E%A8%E7%90%86/" style="font-size: 1.1em; color: #999">推理</a> <a href="/tags/%E5%8E%9F%E7%A5%9E/" style="font-size: 1.1em; color: #999">原神</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 1.1em; color: #999">线性代数</a> <a href="/tags/%E5%96%9C%E5%A5%BD%E4%B8%8E%E5%B0%B1%E4%B8%9A/" style="font-size: 1.17em; color: #999ca0">喜好与就业</a> <a href="/tags/%E8%AF%95%E7%AE%A1%E5%A9%B4%E5%84%BF/" style="font-size: 1.1em; color: #999">试管婴儿</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 1.46em; color: #99a8bc">游戏</a> <a href="/tags/cs2/" style="font-size: 1.17em; color: #999ca0">cs2</a> <a href="/tags/%E8%80%83%E8%AF%95/" style="font-size: 1.1em; color: #999">考试</a> <a href="/tags/%E8%83%A1%E9%80%82/" style="font-size: 1.1em; color: #999">胡适</a> <a href="/tags/%E7%BD%A2%E5%B7%A5/" style="font-size: 1.1em; color: #999">罢工</a> <a href="/tags/%E8%A1%8C%E7%A8%8B%E5%AE%89%E6%8E%92/" style="font-size: 1.17em; color: #999ca0">行程安排</a> <a href="/tags/%E4%BB%BB%E5%A4%A9%E5%A0%82/" style="font-size: 1.14em; color: #999a9c">任天堂</a> <a href="/tags/%E6%8B%89%E7%93%A6%E9%94%A1/" style="font-size: 1.1em; color: #999">拉瓦锡</a> <a href="/tags/%E6%97%A0%E7%A5%9E%E8%AE%BA/" style="font-size: 1.1em; color: #999">无神论</a> <a href="/tags/%E9%80%BB%E8%BE%91%E5%AD%A6/" style="font-size: 1.14em; color: #999a9c">逻辑学</a> <a href="/tags/%E8%A1%8C%E7%A8%8B%E8%A7%84%E5%88%92/" style="font-size: 1.32em; color: #99a2ae">行程规划</a> <a href="/tags/%E5%93%88%E4%BC%AF%EF%BC%88%E5%BE%B7%E5%9B%BD%E7%8A%B9%E5%A4%AA%E8%A3%94%E5%8C%96%E5%AD%A6%E5%AE%B6%EF%BC%89/" style="font-size: 1.1em; color: #999">哈伯（德国犹太裔化学家）</a> <a href="/tags/%E5%B0%BC%E9%87%87/" style="font-size: 1.1em; color: #999">尼采</a> <a href="/tags/%E4%BA%92%E8%81%94%E7%BD%91/" style="font-size: 1.35em; color: #99a3b1">互联网</a> <a href="/tags/%E6%94%BF%E6%B2%BB/" style="font-size: 1.21em; color: #999da3">政治</a> <a href="/tags/LPL/" style="font-size: 1.25em; color: #999fa7">LPL</a> <a href="/tags/%E4%BA%92%E8%81%94%E7%BD%91%E8%88%86%E8%AE%BA/" style="font-size: 1.35em; color: #99a3b1">互联网舆论</a> <a href="/tags/%E7%82%89%E7%9F%B3%E4%BC%A0%E8%AF%B4/" style="font-size: 1.14em; color: #999a9c">炉石传说</a> <a href="/tags/%E8%8A%82%E6%97%A5/" style="font-size: 1.14em; color: #999a9c">节日</a> <a href="/tags/%E6%97%A5%E8%AE%B0/" style="font-size: 1.5em; color: #99a9bf">日记</a> <a href="/tags/SAOP/" style="font-size: 1.1em; color: #999">SAOP</a></div></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Website Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article Count :</div><div class="item-count">322</div></div><div class="webinfo-item"><div class="item-name">Total Word Count :</div><div class="item-count">128.3k</div></div><div class="webinfo-item"><div class="item-name">Unique Visitors :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Page Views :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Update :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-11-14T15:29:40.907Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Joey</span><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="Scroll to Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.9/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        loader: {
+          load: [
+            // Four font extension packages (optional)
+            //- '[tex]/bbm',
+            //- '[tex]/bboldx',
+            //- '[tex]/dsfont',
+            '[tex]/mhchem'
+          ],
+          paths: {
+            'mathjax-newcm': '[mathjax]/../@mathjax/mathjax-newcm-font',
+
+            //- // Four font extension packages (optional)
+            //- 'mathjax-bbm-extension': '[mathjax]/../@mathjax/mathjax-bbm-font-extension',
+            //- 'mathjax-bboldx-extension': '[mathjax]/../@mathjax/mathjax-bboldx-font-extension',
+            //- 'mathjax-dsfont-extension': '[mathjax]/../@mathjax/mathjax-dsfont-font-extension',
+            'mathjax-mhchem-extension': '[mathjax]/../@mathjax/mathjax-mhchem-font-extension'
+          }
+        },
+        output: {
+          font: 'mathjax-newcm',
+        },
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'ams',
+          packages: {
+            '[+]': [
+              'mhchem'
+            ]
+          }
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          menuOptions: {
+            settings: {
+              enrich: false  // Turn off Braille and voice narration text automatic generation
+            }
+          },
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@4.1.0/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script><script>(() => {
+  const parseViewBox = viewBox => {
+    if (!viewBox) return null
+    const parts = viewBox.trim().split(/[\s,]+/).map(n => Number(n))
+    if (parts.length !== 4 || parts.some(n => Number.isNaN(n))) return null
+    return parts
+  }
+
+  const getSvgViewBox = svg => {
+    const attr = parseViewBox(svg.getAttribute('viewBox'))
+    if (attr) return attr
+
+    // Fallback: use bbox to build a viewBox
+    try {
+      const bbox = svg.getBBox()
+      if (bbox && bbox.width && bbox.height) return [bbox.x, bbox.y, bbox.width, bbox.height]
+    } catch (e) {
+      // getBBox may fail on some edge cases; ignore
+    }
+
+    const w = Number(svg.getAttribute('width')) || 0
+    const h = Number(svg.getAttribute('height')) || 0
+    if (w > 0 && h > 0) return [0, 0, w, h]
+    return [0, 0, 100, 100]
+  }
+
+  const setSvgViewBox = (svg, vb) => {
+    svg.setAttribute('viewBox', `${vb[0]} ${vb[1]} ${vb[2]} ${vb[3]}`)
+  }
+
+  const clamp = (v, min, max) => Math.max(min, Math.min(max, v))
+
+  const openSvgInNewTab = ({ source, initViewBox }) => {
+    const getClonedSvg = () => {
+      if (typeof source === 'string') {
+        const template = document.createElement('template')
+        template.innerHTML = source.trim()
+        const svg = template.content.querySelector('svg')
+        return svg ? svg.cloneNode(true) : null
+      }
+      if (source && typeof source.cloneNode === 'function') {
+        return source.cloneNode(true)
+      }
+      return null
+    }
+
+    const clone = getClonedSvg()
+    if (!clone) return
+    if (initViewBox && initViewBox.length === 4) {
+      clone.setAttribute('viewBox', initViewBox.join(' '))
+    }
+    if (!clone.getAttribute('xmlns')) clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg')
+    if (!clone.getAttribute('xmlns:xlink') && clone.outerHTML.includes('xlink:')) {
+      clone.setAttribute('xmlns:xlink', 'http://www.w3.org/1999/xlink')
+    }
+    // inject background to match current theme
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark'
+    const bg = getComputedStyle(document.body).backgroundColor || (isDark ? '#1e1e1e' : '#ffffff')
+    if (!clone.style.background) clone.style.background = bg
+
+    const serializer = new XMLSerializer()
+    const svgSource = serializer.serializeToString(clone)
+    const htmlSource = `<!doctype html><html><head><meta charset="utf-8" />
+      <style>
+        html, body { width: 100%; height: 100%; margin: 0; display: flex; align-items: center; justify-content: center; background: ${bg}; }
+        svg { max-width: 100%; max-height: 100%; height: auto; width: auto; }
+      </style>
+      </head><body>${svgSource}</body></html>`
+    const blob = new Blob([htmlSource], { type: 'text/html;charset=utf-8' })
+    const url = URL.createObjectURL(blob)
+    window.open(url, '_blank', 'noopener')
+    setTimeout(() => URL.revokeObjectURL(url), 30000)
+  }
+
+  const attachMermaidViewerButton = wrap => {
+    let btn = wrap.querySelector('.mermaid-open-btn')
+    if (!btn) {
+      btn = document.createElement('button')
+      btn.type = 'button'
+      btn.className = 'mermaid-open-btn'
+      wrap.appendChild(btn)
+    }
+
+    btn.innerHTML = '<i class="fa fa-search fa-fw" aria-hidden="true"></i>'
+
+    if (!btn.__mermaidViewerBound) {
+      btn.addEventListener('click', e => {
+        e.preventDefault()
+        e.stopPropagation()
+        const svg = wrap.__mermaidOriginalSvg || wrap.querySelector('svg')
+        if (!svg) return
+        const initViewBox = wrap.__mermaidInitViewBox
+        if (typeof svg === 'string') {
+          openSvgInNewTab({ source: svg, initViewBox })
+          return
+        }
+        openSvgInNewTab({ source: svg, initViewBox })
+      })
+      btn.__mermaidViewerBound = true
+    }
+  }
+
+  // Zoom around a point (px, py) in the SVG viewport (in viewBox coordinates)
+  const zoomAtPoint = (vb, factor, px, py) => {
+    const w = vb[2] * factor
+    const h = vb[3] * factor
+    const nx = px - (px - vb[0]) * factor
+    const ny = py - (py - vb[1]) * factor
+    return [nx, ny, w, h]
+  }
+
+  const initMermaidGestures = wrap => {
+    const svg = wrap.querySelector('svg')
+    if (!svg) return
+
+    // Ensure viewBox exists so gestures always work
+    const initVb = getSvgViewBox(svg)
+    wrap.__mermaidInitViewBox = initVb
+    wrap.__mermaidCurViewBox = initVb.slice()
+    setSvgViewBox(svg, initVb)
+
+    // Avoid binding multiple times on themeChange/pjax
+    if (wrap.__mermaidGestureBound) return
+    wrap.__mermaidGestureBound = true
+
+    // Helper: map client (viewport) coordinate -> viewBox coordinate
+    const clientToViewBox = (clientX, clientY) => {
+      const rect = svg.getBoundingClientRect()
+      const vb = wrap.__mermaidCurViewBox || getSvgViewBox(svg)
+      const x = vb[0] + (clientX - rect.left) * (vb[2] / rect.width)
+      const y = vb[1] + (clientY - rect.top) * (vb[3] / rect.height)
+      return { x, y, rect, vb }
+    }
+
+    const state = {
+      pointers: new Map(),
+      startVb: null,
+      startDist: 0,
+      startCenter: null
+    }
+
+    const clampVb = vb => {
+      const init = wrap.__mermaidInitViewBox || vb
+      const minW = init[2] * 0.1
+      const maxW = init[2] * 10
+      const minH = init[3] * 0.1
+      const maxH = init[3] * 10
+      vb[2] = clamp(vb[2], minW, maxW)
+      vb[3] = clamp(vb[3], minH, maxH)
+      return vb
+    }
+
+    const setCurVb = vb => {
+      vb = clampVb(vb)
+      wrap.__mermaidCurViewBox = vb
+      setSvgViewBox(svg, vb)
+    }
+
+    const onPointerDown = e => {
+      // Allow only primary button for mouse
+      if (e.pointerType === 'mouse' && e.button !== 0) return
+      svg.setPointerCapture(e.pointerId)
+      state.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY })
+
+      if (state.pointers.size === 1) {
+        state.startVb = (wrap.__mermaidCurViewBox || getSvgViewBox(svg)).slice()
+      } else if (state.pointers.size === 2) {
+        const pts = [...state.pointers.values()]
+        const dx = pts[0].x - pts[1].x
+        const dy = pts[0].y - pts[1].y
+        state.startDist = Math.hypot(dx, dy)
+        state.startVb = (wrap.__mermaidCurViewBox || getSvgViewBox(svg)).slice()
+        state.startCenter = { x: (pts[0].x + pts[1].x) / 2, y: (pts[0].y + pts[1].y) / 2 }
+      }
+    }
+
+    const onPointerMove = e => {
+      if (!state.pointers.has(e.pointerId)) return
+      state.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY })
+
+      // Pan with 1 pointer
+      if (state.pointers.size === 1 && state.startVb) {
+        const p = [...state.pointers.values()][0]
+        const prev = { x: e.clientX - e.movementX, y: e.clientY - e.movementY }
+        // movementX/Y unreliable on touch, compute from stored last position
+        const last = wrap.__mermaidLastSinglePointer || p
+        const dxClient = p.x - last.x
+        const dyClient = p.y - last.y
+        wrap.__mermaidLastSinglePointer = p
+
+        const { rect } = clientToViewBox(p.x, p.y)
+        const vb = (wrap.__mermaidCurViewBox || getSvgViewBox(svg)).slice()
+        const dx = dxClient * (vb[2] / rect.width)
+        const dy = dyClient * (vb[3] / rect.height)
+        setCurVb([vb[0] - dx, vb[1] - dy, vb[2], vb[3]])
+        return
+      }
+
+      // Pinch zoom with 2 pointers
+      if (state.pointers.size === 2 && state.startVb && state.startDist > 0) {
+        const pts = [...state.pointers.values()]
+        const dx = pts[0].x - pts[1].x
+        const dy = pts[0].y - pts[1].y
+        const dist = Math.hypot(dx, dy)
+        if (!dist) return
+        const factor = state.startDist / dist // dist bigger => zoom in (viewBox smaller)
+
+        const cx = (pts[0].x + pts[1].x) / 2
+        const cy = (pts[0].y + pts[1].y) / 2
+        const centerClient = { x: cx, y: cy }
+
+        const pxy = clientToViewBox(centerClient.x, centerClient.y)
+        const cpx = pxy.x
+        const cpy = pxy.y
+
+        const vb = zoomAtPoint(state.startVb, factor, cpx, cpy)
+        setCurVb(vb)
+      }
+    }
+
+    const onPointerUpOrCancel = e => {
+      state.pointers.delete(e.pointerId)
+      if (state.pointers.size === 0) {
+        state.startVb = null
+        state.startDist = 0
+        state.startCenter = null
+        wrap.__mermaidLastSinglePointer = null
+      } else if (state.pointers.size === 1) {
+        // reset single pointer baseline to avoid jump
+        wrap.__mermaidLastSinglePointer = [...state.pointers.values()][0]
+      }
+    }
+
+    // Wheel zoom (mouse/trackpad)
+    const onWheel = e => {
+      // ctrlKey on mac trackpad pinch; we treat both as zoom
+      e.preventDefault()
+      const delta = e.deltaY
+      const zoomFactor = delta > 0 ? 1.1 : 0.9
+      const { x, y } = clientToViewBox(e.clientX, e.clientY)
+      const vb = (wrap.__mermaidCurViewBox || getSvgViewBox(svg)).slice()
+      setCurVb(zoomAtPoint(vb, zoomFactor, x, y))
+    }
+
+    const onDblClick = () => {
+      const init = wrap.__mermaidInitViewBox
+      if (!init) return
+      wrap.__mermaidCurViewBox = init.slice()
+      setSvgViewBox(svg, init)
+    }
+
+    svg.addEventListener('pointerdown', onPointerDown)
+    svg.addEventListener('pointermove', onPointerMove)
+    svg.addEventListener('pointerup', onPointerUpOrCancel)
+    svg.addEventListener('pointercancel', onPointerUpOrCancel)
+    svg.addEventListener('wheel', onWheel, { passive: false })
+    svg.addEventListener('dblclick', onDblClick)
+  }
+
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+
+      // Clear old render (themeChange/pjax will rerun)
+      const oldSvg = item.querySelector('svg')
+      if (oldSvg) oldSvg.remove()
+      item.__mermaidGestureBound = false
+
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+        if (true) initMermaidGestures(item)
+        item.__mermaidOriginalSvg = svg
+        if (true) attachMermaidViewerButton(item)
+      }
+
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (true) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.2/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'a2664476347a-ai/blog-comments',
+      'data-repo-id': 'R_kgDORkgtKg',
+      'data-category-id': 'DIC_kwDORkgtKs4C4LUQ',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !false) {
+    if (false) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script><script>
+mermaid.initialize({
+  startOnLoad: true,
+  securityLevel: 'loose',
+  flowchart: { useMaxWidth: true }
+});
+</script>
+<script src="/js/random-tag-bg.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="local-search-input"><input placeholder="Search for Posts" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.4"></script></div></div></body></html>
