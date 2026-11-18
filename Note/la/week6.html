@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="cn" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Inner product spaces. Orthonormal bases, Gram-Schmidt. | 私家菜的个人博客</title><meta name="author" content="Joey"><meta name="copyright" content="Joey"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Inner product spacesdefinitionInner product（内积） 内积是一个函数：[ \langle a, b\rangle:V\times V\to\mathbb F ]其中 (\mathbb F) 通常是 (\mathbb R) 或 (\mathbb C)。 它需要满足教材规定的内积公理，包括正定性、加法性、数乘性质和共轭对称性。  Norm（范数） 向量 (v)">
+<!DOCTYPE html><html lang="cn" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Inner product spaces. Orthonormal bases, Gram-Schmidt. | 私家菜的个人博客</title><meta name="author" content="Joey"><meta name="copyright" content="Joey"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Inner product spacesdefinitionInner product（内积） 内积是一个函数：$$ \langle a, b\rangle:V\times V\to\mathbb F $$其中 $\mathbb F$ 通常是 $\mathbb R$ 或 $\mathbb C$。 它需要满足教材规定的内积公理，包括正定性、加法性、数乘性质和共轭对称性。  example：   No">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Inner product spaces. Orthonormal bases, Gram-Schmidt.">
 <meta property="og:url" content="https://a2664476347a-ai.github.io/Note/la/week6.html">
 <meta property="og:site_name" content="私家菜的个人博客">
-<meta property="og:description" content="Inner product spacesdefinitionInner product（内积） 内积是一个函数：[ \langle a, b\rangle:V\times V\to\mathbb F ]其中 (\mathbb F) 通常是 (\mathbb R) 或 (\mathbb C)。 它需要满足教材规定的内积公理，包括正定性、加法性、数乘性质和共轭对称性。  Norm（范数） 向量 (v)">
+<meta property="og:description" content="Inner product spacesdefinitionInner product（内积） 内积是一个函数：$$ \langle a, b\rangle:V\times V\to\mathbb F $$其中 $\mathbb F$ 通常是 $\mathbb R$ 或 $\mathbb C$。 它需要满足教材规定的内积公理，包括正定性、加法性、数乘性质和共轭对称性。  example：   No">
 <meta property="og:locale">
 <meta property="og:image" content="https://a2664476347a-ai.github.io/img/important/avatar.jpg">
-<meta property="article:published_time" content="2026-11-03T12:50:06.214Z">
-<meta property="article:modified_time" content="2026-11-03T12:50:06.214Z">
+<meta property="article:published_time" content="2026-11-18T18:32:00.605Z">
+<meta property="article:modified_time" content="2026-11-18T18:32:00.605Z">
 <meta property="article:author" content="Joey">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://a2664476347a-ai.github.io/img/important/avatar.jpg"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://a2664476347a-ai.github.io/Note/la/week6.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//www.clarity.ms"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="-SA3Essa91Y2Ep02I_lVO46k18Im4ofqJesBiGXFTVA"/><meta name="msvalidate.01" content="C5E544DDD197A5A1F65FF3CC2EAA5B30"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.9/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
@@ -160,235 +160,239 @@ btf.addGlobalFn('pjaxComplete', () => {
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/important/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/ loading='lazy'></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">326</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">51</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">11</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><span> 学习</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/analyse/"><i class="fa-fw fas fa-square-root-alt"></i><span> 数学分析</span></a></li><li><a class="site-page child" href="/categories/linear-algebra/"><i class="fa-fw fas fa-th"></i><span> 线性代数</span></a></li><li><a class="site-page child" href="/categories/logic/"><i class="fa-fw fas fa-project-diagram"></i><span> 逻辑学</span></a></li><li><a class="site-page child" href="/categories/philosophy/"><i class="fa-fw fas fa-brain"></i><span> 普通哲学</span></a></li><li><a class="site-page child" href="/2026/09/28/%E5%AF%BC%E8%88%AA/"><i class="fa-fw fas fa-pencil-alt"></i><span> 笔记</span></a></li><li><a class="site-page child" href="/categories/other/"><i class="fa-fw fas fa-folder"></i><span> 其他</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 图集</span></a></div><div class="menus_item"><span class="site-page group"><span> 兴趣</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/anime/"><i class="fa-fw fas fa-tv"></i><span> 动漫</span></a></li><li><a class="site-page child" href="/categories/game/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/map/"><i class="fa-fw fas fa-plane"></i><span> 旅行</span></a></li><li><a class="site-page child" href="/categories/film/"><i class="fa-fw fas fa-film"></i><span> 影视</span></a></li><li><a class="site-page child" href="/categories/reading/"><i class="fa-fw fas fa-book-open"></i><span> 阅读</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%97%A5%E8%AE%B0/"><i class="fa-fw fas fa-pen"></i><span> 日记</span></a></li><li><a class="site-page child" href="/categories/%E6%9D%82%E8%B0%88/"><i class="fa-fw fas fa-comment"></i><span> 杂谈</span></a></li></ul></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(/img/important/index.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">私家菜的个人博客</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><span> 学习</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/analyse/"><i class="fa-fw fas fa-square-root-alt"></i><span> 数学分析</span></a></li><li><a class="site-page child" href="/categories/linear-algebra/"><i class="fa-fw fas fa-th"></i><span> 线性代数</span></a></li><li><a class="site-page child" href="/categories/logic/"><i class="fa-fw fas fa-project-diagram"></i><span> 逻辑学</span></a></li><li><a class="site-page child" href="/categories/philosophy/"><i class="fa-fw fas fa-brain"></i><span> 普通哲学</span></a></li><li><a class="site-page child" href="/2026/09/28/%E5%AF%BC%E8%88%AA/"><i class="fa-fw fas fa-pencil-alt"></i><span> 笔记</span></a></li><li><a class="site-page child" href="/categories/other/"><i class="fa-fw fas fa-folder"></i><span> 其他</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 图集</span></a></div><div class="menus_item"><span class="site-page group"><span> 兴趣</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/anime/"><i class="fa-fw fas fa-tv"></i><span> 动漫</span></a></li><li><a class="site-page child" href="/categories/game/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/map/"><i class="fa-fw fas fa-plane"></i><span> 旅行</span></a></li><li><a class="site-page child" href="/categories/film/"><i class="fa-fw fas fa-film"></i><span> 影视</span></a></li><li><a class="site-page child" href="/categories/reading/"><i class="fa-fw fas fa-book-open"></i><span> 阅读</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%97%A5%E8%AE%B0/"><i class="fa-fw fas fa-pen"></i><span> 日记</span></a></li><li><a class="site-page child" href="/categories/%E6%9D%82%E8%B0%88/"><i class="fa-fw fas fa-comment"></i><span> 杂谈</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title">Inner product spaces. Orthonormal bases, Gram-Schmidt.</h1></div></header><main class="layout" id="content-inner"><div id="page"><div class="container" id="article-container"><h1 id="Inner-product-spaces"><a href="#Inner-product-spaces" class="headerlink" title="Inner product spaces"></a>Inner product spaces</h1><h2 id="definition"><a href="#definition" class="headerlink" title="definition"></a>definition</h2><p><strong>Inner product（内积）</strong></p>
-<p>内积是一个函数：[ \langle a, b\rangle:V\times V\to\mathbb F ]其中 (\mathbb F) 通常是 (\mathbb R) 或 (\mathbb C)。</p>
+<p>内积是一个函数：$$ \langle a, b\rangle:V\times V\to\mathbb F $$其中 $\mathbb F$ 通常是 $\mathbb R$ 或 $\mathbb C$。</p>
 <p>它需要满足教材规定的内积公理，包括<strong>正定性</strong>、<strong>加法性</strong>、<strong>数乘</strong>性质和<strong>共轭对称</strong>性。</p>
+<p><img src="https://raw.githubusercontent.com/a2664476347a-ai/blog-images/main/img/image-20261118121841133.png" alt="image-20261118121841133" loading='lazy'></p>
+<p><strong>example</strong>：</p>
+<p><img src="https://raw.githubusercontent.com/a2664476347a-ai/blog-images/main/img/image-20261118122014998.png" alt="image-20261118122014998" loading='lazy'></p>
 <hr>
 <p><strong>Norm（范数）</strong></p>
-<p>向量 (v) 的范数定义为：[ |v|&#x3D;\sqrt{\langle v,v\rangle} ]</p>
+<p>向量 $v$ 的范数定义为：$$ |v|&#x3D;\sqrt{\langle v,v\rangle} $$</p>
 <p>范数表示向量的<strong>长度</strong>。</p>
+<p><strong>example</strong>：</p>
+<p><img src="https://raw.githubusercontent.com/a2664476347a-ai/blog-images/main/img/image-20261118123218399.png" alt="image-20261118123218399" loading='lazy'></p>
 <hr>
 <p><strong>Orthogonal vectors（正交向量）</strong></p>
-<p>如果[ \langle u,v\rangle&#x3D;0 ]</p>
-<p>就称 (u) 与 (v) 正交，记作 (u\perp v)。</p>
-<h2 id="Theorem"><a href="#Theorem" class="headerlink" title="Theorem"></a>Theorem</h2><h3 id="Theorem-6-6-—-Basic-properties-of-an-inner-product"><a href="#Theorem-6-6-—-Basic-properties-of-an-inner-product" class="headerlink" title="Theorem 6.6 — Basic properties of an inner product"></a>Theorem 6.6 — Basic properties of an inner product</h3><p>设 (V) 是一个内积空间，则：</p>
-<p>(a) 对固定的 (v\in V)，映射 (u\mapsto\langle u,v\rangle) 是线性映射。</p>
-<p>(b) (\langle 0,v\rangle&#x3D;0)。</p>
-<p>(c) (\langle v,0\rangle&#x3D;0)。</p>
-<p>(d) (\langle u,v+w\rangle&#x3D;\langle u,v\rangle+\langle u,w\rangle)。</p>
-<p>(e) (\langle u,\lambda v\rangle&#x3D;\overline{\lambda}\langle u,v\rangle)。</p>
+<p>如果$$ \langle u,v\rangle&#x3D;0 $$</p>
+<p>就称 $u$ 与 $v$ 正交，记作 $u\perp v$。</p>
+<h2 id="Theorem"><a href="#Theorem" class="headerlink" title="Theorem"></a>Theorem</h2><h3 id="Theorem-6-6-—-Basic-properties-of-an-inner-product"><a href="#Theorem-6-6-—-Basic-properties-of-an-inner-product" class="headerlink" title="Theorem 6.6 — Basic properties of an inner product"></a>Theorem 6.6 — Basic properties of an inner product</h3><p>设 $V$ 是一个内积空间，则：</p>
+<p>(a) 对固定的 $v\in V$，映射 $u\mapsto\langle u,v\rangle$ 是线性映射。</p>
+<p>(b) $\langle 0,v\rangle&#x3D;0$。</p>
+<p>(c) $\langle v,0\rangle&#x3D;0$。</p>
+<p>(d) $\langle u,v+w\rangle&#x3D;\langle u,v\rangle+\langle u,w\rangle$。</p>
+<p>(e) $\langle u,\lambda v\rangle&#x3D;\overline{\lambda}\langle u,v\rangle$。</p>
 <hr>
-<h3 id="Theorem-6-9-—-Basic-properties-of-the-norm"><a href="#Theorem-6-9-—-Basic-properties-of-the-norm" class="headerlink" title="Theorem 6.9 — Basic properties of the norm"></a>Theorem 6.9 — Basic properties of the norm</h3><p>对任意 (v\in V)：</p>
-<p>(a) (|v|&#x3D;0\iff v&#x3D;0)。</p>
-<p>(b) (|\lambda v|&#x3D;|\lambda||v|)。</p>
+<h3 id="Theorem-6-9-—-Basic-properties-of-the-norm"><a href="#Theorem-6-9-—-Basic-properties-of-the-norm" class="headerlink" title="Theorem 6.9 — Basic properties of the norm"></a>Theorem 6.9 — Basic properties of the norm</h3><p>对任意 $v\in V$：</p>
+<p>(a) $|v|&#x3D;0\iff v&#x3D;0$。</p>
+<p>(b) $|\lambda v|&#x3D;|\lambda||v|$。</p>
 <hr>
-<h3 id="Theorem-6-11-—-Orthogonality-and-0"><a href="#Theorem-6-11-—-Orthogonality-and-0" class="headerlink" title="Theorem 6.11 — Orthogonality and 0"></a>Theorem 6.11 — Orthogonality and 0</h3><p>(a) 零向量与 (V) 中每一个向量都正交。</p>
-<p>(b) 零向量是唯一与自身正交的向量。</p>
-<hr>
-<h3 id="Theorem-6-12-—-Pythagorean-theorem"><a href="#Theorem-6-12-—-Pythagorean-theorem" class="headerlink" title="Theorem 6.12 — Pythagorean theorem"></a>Theorem 6.12 — Pythagorean theorem</h3><p>若 (u,v\in V) 且 (u\perp v)，那么</p>
-<p>[ \boxed{|u+v|^2&#x3D;|u|^2+|v|^2} ]</p>
+<h3 id="Theorem-6-12-—-Pythagorean-theorem"><a href="#Theorem-6-12-—-Pythagorean-theorem" class="headerlink" title="Theorem 6.12 — Pythagorean theorem"></a>Theorem 6.12 — Pythagorean theorem</h3><p>若 $u,v\in V$ 且 $u\perp v$，那么</p>
+<p>$$ \boxed{|u+v|^2&#x3D;|u|^2+|v|^2} $$</p>
 <p><em>proof</em>：</p>
-<p>[ \begin{aligned} |u+v|^2 &amp;&#x3D;\langle u+v,u+v\rangle\ &amp;&#x3D;|u|^2+\langle u,v\rangle\ &amp;\quad+\langle v,u\rangle+|v|^2\ &amp;&#x3D;|u|^2+0 +0+|v|^2\&amp;&#x3D;|u|^2+|v|^2. \end{aligned} ]</p>
+<p>$$ \begin{aligned} |u+v|^2 &amp;&#x3D;\langle u+v,u+v\rangle\ &amp;&#x3D;|u|^2+\langle u,v\rangle\ &amp;\quad+\langle v,u\rangle+|v|^2\ &amp;&#x3D;|u|^2+0 +0+|v|^2\&amp;&#x3D;|u|^2+|v|^2. \end{aligned} $$</p>
 <hr>
-<h3 id="Theorem-6-13-—-An-orthogonal-decomposition"><a href="#Theorem-6-13-—-An-orthogonal-decomposition" class="headerlink" title="Theorem 6.13 — An orthogonal decomposition"></a>Theorem 6.13 — An orthogonal decomposition</h3><p>设 (u,v\in V)，且 (v\ne 0)。定义 [ c&#x3D;\frac{\langle u,v\rangle}{|v|^2} ]</p>
-<p>以及 [ w&#x3D;u-\frac{\langle u,v\rangle}{|v|^2}v. ]</p>
+<h3 id="Theorem-6-13-—-An-orthogonal-decomposition"><a href="#Theorem-6-13-—-An-orthogonal-decomposition" class="headerlink" title="Theorem 6.13 — An orthogonal decomposition"></a>Theorem 6.13 — An orthogonal decomposition</h3><p>设 $u,v\in V$，且 $v\ne 0$。定义 $$ c&#x3D;\frac{\langle u,v\rangle}{|v|^2} $$</p>
+<p>以及 $$ w&#x3D;u-\frac{\langle u,v\rangle}{|v|^2}v. $$</p>
 <p>那么</p>
-<p>[ \boxed{u&#x3D;cv+w,\qquad w\perp v} ]</p>
+<p>$$ \boxed{u&#x3D;cv+w,\qquad w\perp v} $$</p>
 <p>如下图所示：</p>
-<p><img src="https://raw.githubusercontent.com/a2664476347a-ai/blog-images/main/img/%E6%AD%A3%E4%BA%A4%E6%8A%95%E5%BD%B1.jpg" alt="正交投影" loading='lazy'></p>
+<p><img src="https://raw.githubusercontent.com/a2664476347a-ai/blog-images/main/img/image-20261118124008784.png" alt="image-20261118124008784" loading='lazy'></p>
 <p><em>proof</em>：</p>
 <p>根据定义，</p>
-<p>[ w&#x3D;u-\frac{\langle u,v\rangle}{|v|^2}v. ]</p>
-<p>对 (w) 与 (v) 求内积：</p>
-<p>[ \begin{aligned} \langle w,v\rangle &amp;&#x3D;\left\langle u-\frac{\langle u,v\rangle}{|v|^2}v,v \right\rangle\ &amp;&#x3D;\langle u,v\rangle -\frac{\langle u,v\rangle}{|v|^2} \langle v,v\rangle\ &amp;&#x3D;\langle u,v\rangle-\langle u,v\rangle\ &amp;&#x3D;0. \end{aligned} ]</p>
-<p>因此 (w\perp v)。同时，根据 (w) 的定义，</p>
-<p>[ u&#x3D;\frac{\langle u,v\rangle}{|v|^2}v+w&#x3D;cv+w. ]</p>
+<p>$$ w&#x3D;u-\frac{\langle u,v\rangle}{|v|^2}v. $$</p>
+<p>对 $w$ 与 $v$ 求内积：</p>
+<p>$$ \begin{aligned} \langle w,v\rangle &amp;&#x3D;\left\langle u-\frac{\langle u,v\rangle}{|v|^2}v,v \right\rangle\ &amp;&#x3D;\langle u,v\rangle -\frac{\langle u,v\rangle}{|v|^2} \langle v,v\rangle\ &amp;&#x3D;\langle u,v\rangle-\langle u,v\rangle\ &amp;&#x3D;0. \end{aligned} $$</p>
+<p>因此 $w\perp v$。同时，根据 $w$ 的定义，</p>
+<p>$$ u&#x3D;\frac{\langle u,v\rangle}{|v|^2}v+w&#x3D;cv+w. $$</p>
 <hr>
-<h3 id="Theorem-6-14（定理陈述）"><a href="#Theorem-6-14（定理陈述）" class="headerlink" title="Theorem 6.14（定理陈述）"></a>Theorem 6.14（定理陈述）</h3><p>对任意内积空间中的向量 (u,v)，都有</p>
-<p>[ \boxed{|\langle u,v\rangle| \leq |u||v|} ]</p>
+<h3 id="Theorem-6-14-Cauchy-Schwarz-inequality"><a href="#Theorem-6-14-Cauchy-Schwarz-inequality" class="headerlink" title="Theorem 6.14 Cauchy-Schwarz inequality"></a>Theorem 6.14 Cauchy-Schwarz inequality</h3><p>对任意内积空间中的向量 $u,v$，都有</p>
+<p>$$ \boxed{|\langle u,v\rangle| \leq |u||v|} $$</p>
 <p>这就是 Cauchy–Schwarz inequality。</p>
 <p><em>proof</em>：</p>
+<p>第一部分</p>
 <p>Step 1：先做正交分解。</p>
-<p>假设 (v\ne 0)。根据 Theorem 6.13，存在标量 (c) 和向量 (w)，使得</p>
-<p>[ u&#x3D;cv+w,\qquad w\perp v, ]</p>
+<p>假设 $v\ne 0$。根据 Theorem 6.13，存在标量 $c$ 和向量 $w$，使得</p>
+<p>$$ u&#x3D;cv+w,\qquad w\perp v, $$</p>
 <p>其中</p>
-<p>[ c&#x3D;\frac{\langle u,v\rangle}{|v|^2}. ]</p>
+<p>$$ c&#x3D;\frac{\langle u,v\rangle}{|v|^2}. $$</p>
 <p>Step 2：计算内积。</p>
-<p>因为 (w\perp v)，所以</p>
-<p>[ \begin{aligned} \langle u,v\rangle &amp;&#x3D;\langle cv+w,v\rangle\ &amp;&#x3D;c\langle v,v\rangle+\langle w,v\rangle\ &amp;&#x3D;c|v|^2. \end{aligned} ]</p>
+<p>因为 $w\perp v$，所以</p>
+<p>$$ \begin{aligned} \langle u,v\rangle &amp;&#x3D;\langle cv+w,v\rangle\ &amp;&#x3D;c\langle v,v\rangle+\langle w,v\rangle\ &amp;&#x3D;c|v|^2. \end{aligned} $$</p>
 <p>因此</p>
-<p>[ |\langle u,v\rangle|&#x3D;|c||v|^2. ]</p>
-<p>Step 3：利用勾股定理。</p>
-<p>因为 (cv\perp w)，根据 Theorem 6.12，</p>
-<p>[ |u|^2&#x3D;|cv|^2+|w|^2. ]</p>
-<p>又因为 (|cv|&#x3D;|c||v|)，所以</p>
-<p>[ |u|^2 &#x3D;|c|^2|v|^2+|w|^2 \geq |c|^2|v|^2. ]</p>
+<p>$$ |\langle u,v\rangle|&#x3D;|c||v|^2. $$</p>
+<p>Step 3：利用Pythagorean theorem。</p>
+<p>因为 $cv\perp w$，根据 Theorem 6.12，</p>
+<p>$$ |u|^2&#x3D;|cv|^2+|w|^2. $$</p>
+<p>又因为 $|cv|&#x3D;|c||v|$，所以</p>
+<p>$$ |u|^2 &#x3D;|c|^2|v|^2+|w|^2 \geq |c|^2|v|^2. $$</p>
 <p>开平方后得到</p>
-<p>[ |u|\geq |c||v|. ]</p>
-<p>两边乘以 (|v|)，就有</p>
-<p>[ |u||v|\geq |c||v|^2 &#x3D;|\langle u,v\rangle|. ]</p>
+<p>$$ |u|\geq |c||v|. $$</p>
+<p>两边乘以 $|v|$，就有</p>
+<p>$$ |u||v|\geq |c||v|^2 &#x3D;|\langle u,v\rangle|. $$</p>
 <p>因此，</p>
-<p>[ \boxed{|\langle u,v\rangle|\leq|u||v|}. ]</p>
-<p>如果 (v&#x3D;0)，不等式两边均为零，结论同样成立。</p>
+<p>$$ \boxed{|\langle u,v\rangle|\leq|u||v|}. $$</p>
+<p>第二部分</p>
+<p>如果 $v&#x3D;0$，then $\langle u,0\rangle&#x3D;0&#x3D;|u|\cdot 0$。</p>
 <hr>
-<h3 id="Theorem-6-17-—-Triangle-inequality（三角不等式）"><a href="#Theorem-6-17-—-Triangle-inequality（三角不等式）" class="headerlink" title="Theorem 6.17 — Triangle inequality（三角不等式）"></a>Theorem 6.17 — Triangle inequality（三角不等式）</h3><p>对任意 (u,v\in V)，都有</p>
-<p>[ \boxed{|u+v|\leq|u|+|v|}. ]</p>
+<h3 id="Theorem-6-17-—-Triangle-inequality（三角不等式）"><a href="#Theorem-6-17-—-Triangle-inequality（三角不等式）" class="headerlink" title="Theorem 6.17 — Triangle inequality（三角不等式）"></a>Theorem 6.17 — Triangle inequality（三角不等式）</h3><p>对任意 $u,v\in V$，都有</p>
+<p>$$ \boxed{|u+v|\leq|u|+|v|}. $$</p>
 <p>等号成立，当且仅当其中一个向量是另一个向量的非负实数倍。</p>
 <p><em>proof</em>:</p>
-<p>[ \begin{aligned} |u+v|^2 &amp;&#x3D;\langle u+v,u+v\rangle\ &amp;&#x3D;|u|^2+\langle u,v\rangle +\langle v,u\rangle+|v|^2\ &amp;&#x3D;|u|^2+|v|^2 +2\operatorname{Re}\langle u,v\rangle. \end{aligned} ]</p>
-<p>这里 (\operatorname{Re}) 表示复数的实部；如果向量空间定义在 (\mathbb R) 上，就直接取普通实数内积。</p>
+<p>$$ \begin{aligned} |u+v|^2 &amp;&#x3D;\langle u+v,u+v\rangle\ &amp;&#x3D;|u|^2+\langle u,v\rangle +\langle v,u\rangle+|v|^2\ &amp;&#x3D;|u|^2+|v|^2 +2\operatorname{Re}\langle u,v\rangle. \end{aligned} $$</p>
+<p>这里 $\operatorname{Re}$ 表示复数的实部；如果向量空间定义在 $\mathbb R$ 上，就直接取普通实数内积。</p>
 <p>由于</p>
-<p>[ \operatorname{Re}\langle u,v\rangle \leq|\langle u,v\rangle|, ]</p>
+<p>$$ \operatorname{Re}\langle u,v\rangle \leq|\langle u,v\rangle|, $$</p>
 <p>再利用 Theorem 6.14 的柯西–施瓦茨不等式：</p>
-<p>[ |\langle u,v\rangle| \leq|u||v|, ]</p>
+<p>$$ |\langle u,v\rangle| \leq|u||v|, $$</p>
 <p>我们得到</p>
-<p>[ \begin{aligned} |u+v|^2 &amp;\leq|u|^2+2|u||v|+|v|^2\ &amp;&#x3D;(|u|+|v|)^2. \end{aligned} ]</p>
+<p>$$ \begin{aligned} |u+v|^2 &amp;\leq|u|^2+2|u||v|+|v|^2\ &amp;&#x3D;(|u|+|v|)^2. \end{aligned} $$</p>
 <p>两边均非负，因此开平方：</p>
-<p>[ \boxed{|u+v|\leq|u|+|v|}. ]</p>
+<p>$$ \boxed{|u+v|\leq|u|+|v|}. $$</p>
 <hr>
-<h1 id="Orthonormal-Bases"><a href="#Orthonormal-Bases" class="headerlink" title="Orthonormal Bases"></a>Orthonormal Bases</h1><h2 id="definition-1"><a href="#definition-1" class="headerlink" title="definition"></a>definition</h2><h3 id="Definition-6-22-—-Orthonormal-list"><a href="#Definition-6-22-—-Orthonormal-list" class="headerlink" title="Definition 6.22 — Orthonormal list"></a>Definition 6.22 — Orthonormal list</h3><p>设 (e_1,\ldots,e_m) 是内积空间 (V) 中的一个向量组。如果它满足以下条件：</p>
-<p>[ \boxed{\langle e_j,e_k\rangle&#x3D; \begin{cases} 1,&amp;j&#x3D;k,\ 0,&amp;j\ne k, \end{cases}} ]</p>
-<p>那么称 (e_1,\ldots,e_m) 是一个 orthonormal list。</p>
+<h1 id="Orthonormal-Bases"><a href="#Orthonormal-Bases" class="headerlink" title="Orthonormal Bases"></a>Orthonormal Bases</h1><h2 id="definition-1"><a href="#definition-1" class="headerlink" title="definition"></a>definition</h2><h3 id="Definition-6-22-—-Orthonormal-list"><a href="#Definition-6-22-—-Orthonormal-list" class="headerlink" title="Definition 6.22 — Orthonormal list"></a>Definition 6.22 — Orthonormal list</h3><p>设 $e_1,\ldots,e_m$ 是内积空间 $V$ 中的一个向量组。如果它满足以下条件：</p>
+<p>$$ \boxed{\langle e_j,e_k\rangle&#x3D; \begin{cases} 1,&amp;j&#x3D;k,\ 0,&amp;j\ne k, \end{cases}} $$</p>
+<p>那么称 $e_1,\ldots,e_m$ 是一个 orthonormal list。</p>
 <hr>
-<h3 id="Definition-6-27-—-Orthonormal-basis"><a href="#Definition-6-27-—-Orthonormal-basis" class="headerlink" title="Definition 6.27 — Orthonormal basis"></a>Definition 6.27 — Orthonormal basis</h3><p>如果一个向量组既是 orthonormal list，又是空间 (V) 的一组 basis（基），那么它就是 orthonormal basis（标准正交基）。</p>
-<h2 id="theorem"><a href="#theorem" class="headerlink" title="theorem"></a>theorem</h2><h3 id="Theorem-6-24-—-Norm-of-an-orthonormal-linear-combination"><a href="#Theorem-6-24-—-Norm-of-an-orthonormal-linear-combination" class="headerlink" title="Theorem 6.24 — Norm of an orthonormal linear combination"></a>Theorem 6.24 — Norm of an orthonormal linear combination</h3><p>如果 (e_1,\ldots,e_m) 是 orthonormal list，那么对任意标量 (a_1,\ldots,a_m)，都有</p>
-<p>[ \boxed{ \left|\sum_{k&#x3D;1}^{m}a_ke_k\right|^2 &#x3D;\sum_{k&#x3D;1}^{m}|a_k|^2 } ]</p>
+<h3 id="Definition-6-27-—-Orthonormal-basis"><a href="#Definition-6-27-—-Orthonormal-basis" class="headerlink" title="Definition 6.27 — Orthonormal basis"></a>Definition 6.27 — Orthonormal basis</h3><p>如果一个向量组既是 orthonormal list，又是空间 $V$ 的一组 basis（基），那么它就是 orthonormal basis（标准正交基）。</p>
+<h2 id="theorem"><a href="#theorem" class="headerlink" title="theorem"></a>theorem</h2><h3 id="Theorem-6-24-—-Norm-of-an-orthonormal-linear-combination"><a href="#Theorem-6-24-—-Norm-of-an-orthonormal-linear-combination" class="headerlink" title="Theorem 6.24 — Norm of an orthonormal linear combination"></a>Theorem 6.24 — Norm of an orthonormal linear combination</h3><p>如果 $e_1,\ldots,e_m$ 是 orthonormal list，那么对任意标量 $a_1,\ldots,a_m$，都有</p>
+<p>$$ \boxed{ \left|\sum_{k&#x3D;1}^{m}a_ke_k\right|^2 &#x3D;\sum_{k&#x3D;1}^{m}|a_k|^2 } $$</p>
 <p><em>proof</em>:</p>
 <p>根据范数的定义，</p>
-<p>[ \left|\sum_{j&#x3D;1}^{m}a_je_j\right|^2 &#x3D; \left\langle \sum_{j&#x3D;1}^{m}a_je_j, \sum_{k&#x3D;1}^{m}a_ke_k \right\rangle. ]</p>
+<p>$$ \left|\sum_{j&#x3D;1}^{m}a_je_j\right|^2 &#x3D; \left\langle \sum_{j&#x3D;1}^{m}a_je_j, \sum_{k&#x3D;1}^{m}a_ke_k \right\rangle. $$</p>
 <p>利用内积的加法性和数乘性质，可以展开为</p>
-<p>[ \sum_{j&#x3D;1}^{m}\sum_{k&#x3D;1}^{m} a_j\overline{a_k}\langle e_j,e_k\rangle. ]</p>
-<p>由于 (e_1,\ldots,e_m) 是 orthonormal list：</p>
+<p>$$ \sum_{j&#x3D;1}^{m}\sum_{k&#x3D;1}^{m} a_j\overline{a_k}\langle e_j,e_k\rangle. $$</p>
+<p>由于 $e_1,\ldots,e_m$ 是 orthonormal list：</p>
 <ul>
-<li>当 (j\ne k) 时，(\langle e_j,e_k\rangle&#x3D;0)；</li>
-<li>当 (j&#x3D;k) 时，(\langle e_j,e_j\rangle&#x3D;1)。</li>
+<li>当 $j\ne k$ 时，$\langle e_j,e_k\rangle&#x3D;0$；</li>
+<li>当 $j&#x3D;k$ 时，$\langle e_j,e_j\rangle&#x3D;1$。</li>
 </ul>
 <p>所以所有交叉项都消失，只剩下</p>
-<p>[ \sum_{j&#x3D;1}^{m}a_j\overline{a_j} &#x3D;\sum_{j&#x3D;1}^{m}|a_j|^2. ]</p>
+<p>$$ \sum_{j&#x3D;1}^{m}a_j\overline{a_j} &#x3D;\sum_{j&#x3D;1}^{m}|a_j|^2. $$</p>
 <hr>
 <h3 id="Theorem-6-25-—-Orthonormal-lists-are-linearly-independent"><a href="#Theorem-6-25-—-Orthonormal-lists-are-linearly-independent" class="headerlink" title="Theorem 6.25 — Orthonormal lists are linearly independent"></a>Theorem 6.25 — Orthonormal lists are linearly independent</h3><p>每一个 orthonormal list 都是 **linearly independent（线性无关）**的。</p>
 <p><em>proof</em>:</p>
 <p>假设</p>
-<p>[ a_1e_1+\cdots+a_me_m&#x3D;0. ]</p>
+<p>$$ a_1e_1+\cdots+a_me_m&#x3D;0. $$</p>
 <p>根据 Theorem 6.24，</p>
-<p>[ \left|a_1e_1+\cdots+a_me_m\right|^2 &#x3D;\sum_{k&#x3D;1}^{m}|a_k|^2. ]</p>
+<p>$$ \left|a_1e_1+\cdots+a_me_m\right|^2 &#x3D;\sum_{k&#x3D;1}^{m}|a_k|^2. $$</p>
 <p>左边是零向量的范数平方，因此</p>
-<p>[ 0&#x3D;\sum_{k&#x3D;1}^{m}|a_k|^2. ]</p>
-<p>每一项 (|a_k|^2) 都是非负实数。它们的和为零，只能说明每一项都为零：</p>
-<p>[ |a_k|^2&#x3D;0\quad\Longrightarrow\quad a_k&#x3D;0. ]</p>
+<p>$$ 0&#x3D;\sum_{k&#x3D;1}^{m}|a_k|^2. $$</p>
+<p>每一项 $|a_k|^2$ 都是非负实数。它们的和为零，只能说明每一项都为零：</p>
+<p>$$ |a_k|^2&#x3D;0\quad\Longrightarrow\quad a_k&#x3D;0. $$</p>
 <p>因此所有系数都为零，向量组线性无关。</p>
 <hr>
-<h3 id="Theorem-6-28-—-Orthonormal-lists-of-the-right-length-are-orthonormal-bases"><a href="#Theorem-6-28-—-Orthonormal-lists-of-the-right-length-are-orthonormal-bases" class="headerlink" title="Theorem 6.28 — Orthonormal lists of the right length are orthonormal bases"></a>Theorem 6.28 — Orthonormal lists of the right length are orthonormal bases</h3><p>设 (V) 是有限维向量空间。如果 (e_1,\ldots,e_m) 是一个 orthonormal list，并且</p>
-<p>[ m&#x3D;\dim V, ]</p>
-<p>那么 (e_1,\ldots,e_m) 是 (V) 的 orthonormal basis。</p>
+<h3 id="Theorem-6-28-—-Orthonormal-lists-of-the-right-length-are-orthonormal-bases"><a href="#Theorem-6-28-—-Orthonormal-lists-of-the-right-length-are-orthonormal-bases" class="headerlink" title="Theorem 6.28 — Orthonormal lists of the right length are orthonormal bases"></a>Theorem 6.28 — Orthonormal lists of the right length are orthonormal bases</h3><p>设 $V$ 是有限维向量空间。如果 $e_1,\ldots,e_m$ 是一个 orthonormal list，并且</p>
+<p>$$ m&#x3D;\dim V, $$</p>
+<p>那么 $e_1,\ldots,e_m$ 是 $V$ 的 orthonormal basis。</p>
 <p><em>proof</em>:</p>
-<p>根据 Theorem 6.25，(e_1,\ldots,e_m) 线性无关。</p>
-<p>已知 (m&#x3D;\dim V)。</p>
-<p>有限维向量空间中，包含 (\dim V) 个向量的线性无关向量组是基。</p>
+<p>根据 Theorem 6.25，$e_1,\ldots,e_m$ 线性无关。</p>
+<p>已知 $m&#x3D;\dim V$。</p>
+<p>有限维向量空间中，包含 $\dim V$ 个向量的线性无关向量组是基。</p>
 <p>因此这组向量是 orthonormal basis。</p>
 <hr>
-<h3 id="Theorem-6-26-—-Bessel’s-inequality（贝塞尔不等式）"><a href="#Theorem-6-26-—-Bessel’s-inequality（贝塞尔不等式）" class="headerlink" title="Theorem 6.26 — Bessel’s inequality（贝塞尔不等式）"></a>Theorem 6.26 — Bessel’s inequality（贝塞尔不等式）</h3><p>设 (e_1,\ldots,e_m) 是内积空间 (V) 中的 orthonormal list。那么对任意 (v\in V)，</p>
-<p>[ \boxed{ \sum_{k&#x3D;1}^{m}|\langle v,e_k\rangle|^2 \leq |v|^2 } ]</p>
+<h3 id="Theorem-6-26-—-Bessel’s-inequality（贝塞尔不等式）"><a href="#Theorem-6-26-—-Bessel’s-inequality（贝塞尔不等式）" class="headerlink" title="Theorem 6.26 — Bessel’s inequality（贝塞尔不等式）"></a>Theorem 6.26 — Bessel’s inequality（贝塞尔不等式）</h3><p>设 $e_1,\ldots,e_m$ 是内积空间 $V$ 中的 orthonormal list。那么对任意 $v\in V$，</p>
+<p>$$ \boxed{ \sum_{k&#x3D;1}^{m}|\langle v,e_k\rangle|^2 \leq |v|^2 } $$</p>
 <p><em>proof</em>:</p>
 <p>定义</p>
-<p>[ p&#x3D;\sum_{k&#x3D;1}^{m}\langle v,e_k\rangle e_k. ]</p>
-<p>先证明 (v-p) 与每个 (e_j) 都正交。</p>
-<p>因为 (e_1,\ldots,e_m) 是 orthonormal list，</p>
-<p>[ \begin{aligned} \langle v-p,e_j\rangle &amp;&#x3D;\langle v,e_j\rangle -\sum_{k&#x3D;1}^{m}\langle v,e_k\rangle \langle e_k,e_j\rangle\ &amp;&#x3D;\langle v,e_j\rangle-\langle v,e_j\rangle\ &amp;&#x3D;0. \end{aligned} ]</p>
-<p>因此 (v-p\perp p)。利用勾股定理：</p>
-<p>[ |v|^2&#x3D;|p|^2+|v-p|^2. ]</p>
-<p>由于 (|v-p|^2\geq0)，可得</p>
-<p>[ |p|^2\leq|v|^2. ]</p>
+<p>$$ p&#x3D;\sum_{k&#x3D;1}^{m}\langle v,e_k\rangle e_k. $$</p>
+<p>先证明 $v-p$ 与每个 $e_j$ 都正交。</p>
+<p>因为 $e_1,\ldots,e_m$ 是 orthonormal list，</p>
+<p>$$ \begin{aligned} \langle v-p,e_j\rangle &amp;&#x3D;\langle v,e_j\rangle -\sum_{k&#x3D;1}^{m}\langle v,e_k\rangle \langle e_k,e_j\rangle\ &amp;&#x3D;\langle v,e_j\rangle-\langle v,e_j\rangle\ &amp;&#x3D;0. \end{aligned} $$</p>
+<p>因此 $v-p\perp p$。利用勾股定理：</p>
+<p>$$ |v|^2&#x3D;|p|^2+|v-p|^2. $$</p>
+<p>由于 $|v-p|^2\geq0$，可得</p>
+<p>$$ |p|^2\leq|v|^2. $$</p>
 <p>再根据 Theorem 6.24，</p>
-<p>[ |p|^2 &#x3D;\sum_{k&#x3D;1}^{m}|\langle v,e_k\rangle|^2. ]</p>
+<p>$$ |p|^2 &#x3D;\sum_{k&#x3D;1}^{m}|\langle v,e_k\rangle|^2. $$</p>
 <p>所以</p>
-<p>[ \boxed{ \sum_{k&#x3D;1}^{m}|\langle v,e_k\rangle|^2 \leq|v|^2 }. ]</p>
+<p>$$ \boxed{ \sum_{k&#x3D;1}^{m}|\langle v,e_k\rangle|^2 \leq|v|^2 }. $$</p>
 <hr>
-<h3 id="Theorem-6-30-—-Writing-a-vector-as-a-linear-combination-of-an-orthonormal-basis"><a href="#Theorem-6-30-—-Writing-a-vector-as-a-linear-combination-of-an-orthonormal-basis" class="headerlink" title="Theorem 6.30 — Writing a vector as a linear combination of an orthonormal basis"></a>Theorem 6.30 — Writing a vector as a linear combination of an orthonormal basis</h3><p>设 (e_1,\ldots,e_n) 是有限维内积空间 (V) 的 orthonormal basis。对任意 (u,v\in V)，有以下三个结论。</p>
+<h3 id="Theorem-6-30-—-Writing-a-vector-as-a-linear-combination-of-an-orthonormal-basis"><a href="#Theorem-6-30-—-Writing-a-vector-as-a-linear-combination-of-an-orthonormal-basis" class="headerlink" title="Theorem 6.30 — Writing a vector as a linear combination of an orthonormal basis"></a>Theorem 6.30 — Writing a vector as a linear combination of an orthonormal basis</h3><p>设 $e_1,\ldots,e_n$ 是有限维内积空间 $V$ 的 orthonormal basis。对任意 $u,v\in V$，有以下三个结论。</p>
 <p>(a) 向量展开</p>
-<p>[ \boxed{ v&#x3D;\sum_{k&#x3D;1}^{n}\langle v,e_k\rangle e_k } ]</p>
-<p>也就是说，(v) 在 (e_k) 方向上的系数就是 (\langle v,e_k\rangle)。</p>
+<p>$$ \boxed{ v&#x3D;\sum_{k&#x3D;1}^{n}\langle v,e_k\rangle e_k } $$</p>
+<p>也就是说，$v$ 在 $e_k$ 方向上的系数就是 $\langle v,e_k\rangle$。</p>
 <p>(b) Parseval’s identity（帕塞瓦尔恒等式）</p>
-<p>[ \boxed{ |v|^2&#x3D;\sum_{k&#x3D;1}^{n}|\langle v,e_k\rangle|^2 } ]</p>
+<p>$$ \boxed{ |v|^2&#x3D;\sum_{k&#x3D;1}^{n}|\langle v,e_k\rangle|^2 } $$</p>
 <p>这与 Bessel’s inequality 的区别是：这里必须使用完整的 orthonormal basis，而且得到的是等式。</p>
 <p>(c) 内积展开</p>
 <p>在 Axler 使用的内积约定下，内积对第一个位置线性，因此</p>
-<p>[ \boxed{ \langle u,v\rangle &#x3D;\sum_{k&#x3D;1}^{n} \langle u,e_k\rangle, \overline{\langle v,e_k\rangle} } ]</p>
-<p>如果空间定义在实数域 (\mathbb R) 上，共轭符号可以省略。</p>
+<p>$$ \boxed{ \langle u,v\rangle &#x3D;\sum_{k&#x3D;1}^{n} \langle u,e_k\rangle, \overline{\langle v,e_k\rangle} } $$</p>
+<p>如果空间定义在实数域 $\mathbb R$ 上，共轭符号可以省略。</p>
 <p><em>proof</em>:</p>
-<p>对于 (a)，因为 (e_1,\ldots,e_n) 是基，所以存在系数 (a_1,\ldots,a_n)，使得</p>
-<p>[ v&#x3D;\sum_{k&#x3D;1}^{n}a_ke_k. ]</p>
-<p>两边与 (e_j) 取内积：</p>
-<p>[ \langle v,e_j\rangle &#x3D;\sum_{k&#x3D;1}^{n}a_k\langle e_k,e_j\rangle &#x3D;a_j. ]</p>
-<p>因此 (a_j&#x3D;\langle v,e_j\rangle)，从而得到 (a)。</p>
+<p>对于 (a)，因为 $e_1,\ldots,e_n$ 是基，所以存在系数 $a_1,\ldots,a_n$，使得</p>
+<p>$$ v&#x3D;\sum_{k&#x3D;1}^{n}a_ke_k. $$</p>
+<p>两边与 $e_j$ 取内积：</p>
+<p>$$ \langle v,e_j\rangle &#x3D;\sum_{k&#x3D;1}^{n}a_k\langle e_k,e_j\rangle &#x3D;a_j. $$</p>
+<p>因此 $a_j&#x3D;\langle v,e_j\rangle$，从而得到 (a)。</p>
 <p>对于 (b)，把 (a) 代入 Theorem 6.24：</p>
-<p>[ |v|^2&#x3D;\sum_{k&#x3D;1}^{n}|\langle v,e_k\rangle|^2. ]</p>
-<p>对于 (c)，将 (a) 的展开式代入 (\langle u,v\rangle)，并利用内积的线性与共轭线性性质，即可得到结论。</p>
+<p>$$ |v|^2&#x3D;\sum_{k&#x3D;1}^{n}|\langle v,e_k\rangle|^2. $$</p>
+<p>对于 (c)，将 (a) 的展开式代入 $\langle u,v\rangle$，并利用内积的线性与共轭线性性质，即可得到结论。</p>
 <hr>
-<h3 id="Theorem-6-32-—-Gram–Schmidt-procedure（格拉姆–施密特正交化过程）"><a href="#Theorem-6-32-—-Gram–Schmidt-procedure（格拉姆–施密特正交化过程）" class="headerlink" title="Theorem 6.32 — Gram–Schmidt procedure（格拉姆–施密特正交化过程）"></a>Theorem 6.32 — Gram–Schmidt procedure（格拉姆–施密特正交化过程）</h3><p>设 (v_1,\ldots,v_m) 是有限维内积空间 (V) 中的线性无关向量组。</p>
+<h3 id="Theorem-6-32-—-Gram–Schmidt-procedure（格拉姆–施密特正交化过程）"><a href="#Theorem-6-32-—-Gram–Schmidt-procedure（格拉姆–施密特正交化过程）" class="headerlink" title="Theorem 6.32 — Gram–Schmidt procedure（格拉姆–施密特正交化过程）"></a>Theorem 6.32 — Gram–Schmidt procedure（格拉姆–施密特正交化过程）</h3><p>设 $v_1,\ldots,v_m$ 是有限维内积空间 $V$ 中的线性无关向量组。</p>
 <p>先定义</p>
-<p>[ f_1&#x3D;v_1, ]</p>
-<p>之后对 (k&#x3D;2,\ldots,m)，定义</p>
-<p>[ \boxed{ f_k&#x3D;v_k-\sum_{j&#x3D;1}^{k-1} \frac{\langle v_k,f_j\rangle}{|f_j|^2}f_j } ]</p>
+<p>$$ f_1&#x3D;v_1, $$</p>
+<p>之后对 $k&#x3D;2,\ldots,m$，定义</p>
+<p>$$ \boxed{ f_k&#x3D;v_k-\sum_{j&#x3D;1}^{k-1} \frac{\langle v_k,f_j\rangle}{|f_j|^2}f_j } $$</p>
 <p>再令</p>
-<p>[ \boxed{e_k&#x3D;\frac{f_k}{|f_k|}} \qquad (k&#x3D;1,\ldots,m). ]</p>
+<p>$$ \boxed{e_k&#x3D;\frac{f_k}{|f_k|}} \qquad (k&#x3D;1,\ldots,m). $$</p>
 <p>那么：</p>
 <ol>
-<li>(e_1,\ldots,e_m) 是 orthonormal list。</li>
-<li>对每个 (k&#x3D;1,\ldots,m)，都有</li>
+<li>$e_1,\ldots,e_m$ 是 orthonormal list。</li>
+<li>对每个 $k&#x3D;1,\ldots,m$，都有</li>
 </ol>
-<p>[ \boxed{ \operatorname{span}(v_1,\ldots,v_k) &#x3D;\operatorname{span}(e_1,\ldots,e_k) } ]</p>
+<p>$$ \boxed{ \operatorname{span}(v_1,\ldots,v_k) &#x3D;\operatorname{span}(e_1,\ldots,e_k) } $$</p>
 <p>也就是说，每一步构造出的向量组都保持相同的 span（张成空间）。</p>
-<p>注意：原向量组必须线性无关，这保证了每个 (f_k\ne0)，所以归一化时分母不会为零。</p>
+<p>注意：原向量组必须线性无关，这保证了每个 $f_k\ne0$，所以归一化时分母不会为零。</p>
 <p><em>proof</em>：</p>
 <p>第一，证明正交性。</p>
 <p>根据构造公式，</p>
-<p>[ f_k&#x3D;v_k-\sum_{j&#x3D;1}^{k-1} \frac{\langle v_k,f_j\rangle}{|f_j|^2}f_j. ]</p>
-<p>对于任意 (i&lt;k)，计算 (\langle f_k,f_i\rangle)。由于前面构造的 (f_1,\ldots,f_{k-1}) 两两正交，展开后只剩下</p>
-<p>[ \langle f_k,f_i\rangle &#x3D;\langle v_k,f_i\rangle -\frac{\langle v_k,f_i\rangle}{|f_i|^2} \langle f_i,f_i\rangle &#x3D;0. ]</p>
-<p>因此，所有 (f_k) 两两正交。归一化不会改变正交关系，所以 (e_1,\ldots,e_m) 是 orthonormal list。</p>
+<p>$$ f_k&#x3D;v_k-\sum_{j&#x3D;1}^{k-1} \frac{\langle v_k,f_j\rangle}{|f_j|^2}f_j. $$</p>
+<p>对于任意 $i&lt;k$，计算 $\langle f_k,f_i\rangle$。由于前面构造的 $f_1,\ldots,f_{k-1}$ 两两正交，展开后只剩下</p>
+<p>$$ \langle f_k,f_i\rangle &#x3D;\langle v_k,f_i\rangle -\frac{\langle v_k,f_i\rangle}{|f_i|^2} \langle f_i,f_i\rangle &#x3D;0. $$</p>
+<p>因此，所有 $f_k$ 两两正交。归一化不会改变正交关系，所以 $e_1,\ldots,e_m$ 是 orthonormal list。</p>
 <p>第二，证明 span 不变。</p>
-<p>由公式可知，(f_k) 是 (v_k) 与前面向量的线性组合，所以</p>
-<p>[ f_k\in\operatorname{span}(v_1,\ldots,v_k). ]</p>
+<p>由公式可知，$f_k$ 是 $v_k$ 与前面向量的线性组合，所以</p>
+<p>$$ f_k\in\operatorname{span}(v_1,\ldots,v_k). $$</p>
 <p>反过来，将构造公式整理为</p>
-<p>[ v_k&#x3D;f_k+\sum_{j&#x3D;1}^{k-1} \frac{\langle v_k,f_j\rangle}{|f_j|^2}f_j. ]</p>
-<p>因此，(v_k) 也属于 (\operatorname{span}(f_1,\ldots,f_k))。两边的 span 相同。</p>
-<p>最后，(e_j&#x3D;f_j&#x2F;|f_j|) 只是将非零向量缩放，所以不会改变 span。因此</p>
-<p>[ \operatorname{span}(v_1,\ldots,v_k) &#x3D;\operatorname{span}(e_1,\ldots,e_k). ]</p>
+<p>$$ v_k&#x3D;f_k+\sum_{j&#x3D;1}^{k-1} \frac{\langle v_k,f_j\rangle}{|f_j|^2}f_j. $$</p>
+<p>因此，$v_k$ 也属于 $\operatorname{span}(f_1,\ldots,f_k)$。两边的 span 相同。</p>
+<p>最后，$e_j&#x3D;f_j&#x2F;|f_j|$ 只是将非零向量缩放，所以不会改变 span。因此</p>
+<p>$$ \operatorname{span}(v_1,\ldots,v_k) &#x3D;\operatorname{span}(e_1,\ldots,e_k). $$</p>
 <hr>
-<h3 id="Theorem-6-37-—-Upper-triangular-matrix-with-respect-to-some-orthonormal-basis"><a href="#Theorem-6-37-—-Upper-triangular-matrix-with-respect-to-some-orthonormal-basis" class="headerlink" title="Theorem 6.37 — Upper-triangular matrix with respect to some orthonormal basis"></a>Theorem 6.37 — Upper-triangular matrix with respect to some orthonormal basis</h3><p>设 (V) 是有限维内积空间，(T\in\mathcal L(V))。那么，(T) 相对于某一组 orthonormal basis 的矩阵是上三角矩阵，当且仅当 (T) 的最小多项式可以写成</p>
-<p>[ \boxed{ m_T(z)&#x3D;(z-\lambda_1)\cdots(z-\lambda_m) } ]</p>
-<p>其中 (\lambda_1,\ldots,\lambda_m\in\mathbb F)，每个因子都是一次因子。</p>
+<h3 id="Theorem-6-37-—-Upper-triangular-matrix-with-respect-to-some-orthonormal-basis"><a href="#Theorem-6-37-—-Upper-triangular-matrix-with-respect-to-some-orthonormal-basis" class="headerlink" title="Theorem 6.37 — Upper-triangular matrix with respect to some orthonormal basis"></a>Theorem 6.37 — Upper-triangular matrix with respect to some orthonormal basis</h3><p>设 $V$ 是有限维内积空间，$T\in\mathcal L(V)$。那么，$T$ 相对于某一组 orthonormal basis 的矩阵是上三角矩阵，当且仅当 $T$ 的最小多项式可以写成</p>
+<p>$$ \boxed{ m_T(z)&#x3D;(z-\lambda_1)\cdots(z-\lambda_m) } $$</p>
+<p>其中 $\lambda_1,\ldots,\lambda_m\in\mathbb F$，每个因子都是一次因子。</p>
 <hr>
 <h3 id="Theorem-6-38-—-Schur’s-theorem（舒尔定理）"><a href="#Theorem-6-38-—-Schur’s-theorem（舒尔定理）" class="headerlink" title="Theorem 6.38 — Schur’s theorem（舒尔定理）"></a>Theorem 6.38 — Schur’s theorem（舒尔定理）</h3><p>每一个有限维复内积空间上的线性算子，都可以在某一组标准正交基下表示为上三角矩阵。</p>
-<p>换句话说，如果 (V) 是有限维复内积空间，并且</p>
-<p>[ T\in\mathcal L(V), ]</p>
-<p>那么存在 (V) 的一组 orthonormal basis，使得 (T) 相对于该基的矩阵是上三角矩阵。</p>
+<p>换句话说，如果 $V$ 是有限维复内积空间，并且</p>
+<p>$$ T\in\mathcal L(V), $$</p>
+<p>那么存在 $V$ 的一组 orthonormal basis，使得 $T$ 相对于该基的矩阵是上三角矩阵。</p>
 <hr>
-<h3 id="Theorem-6-42-—-Riesz-representation-theorem（里斯表示定理）"><a href="#Theorem-6-42-—-Riesz-representation-theorem（里斯表示定理）" class="headerlink" title="Theorem 6.42 — Riesz representation theorem（里斯表示定理）"></a>Theorem 6.42 — Riesz representation theorem（里斯表示定理）</h3><p>设 (V) 是有限维内积空间，(\varphi) 是 (V) 上的线性泛函。那么存在唯一的向量 (v\in V)，使得对所有 (u\in V)，</p>
-<p>[ \boxed{\varphi(u)&#x3D;\langle u,v\rangle}. ]</p>
+<h3 id="Theorem-6-42-—-Riesz-representation-theorem（里斯表示定理）"><a href="#Theorem-6-42-—-Riesz-representation-theorem（里斯表示定理）" class="headerlink" title="Theorem 6.42 — Riesz representation theorem（里斯表示定理）"></a>Theorem 6.42 — Riesz representation theorem（里斯表示定理）</h3><p>设 $V$ 是有限维内积空间，$\varphi$ 是 $V$ 上的线性泛函。那么存在唯一的向量 $v\in V$，使得对所有 $u\in V$，</p>
+<p>$$ \boxed{\varphi(u)&#x3D;\langle u,v\rangle}. $$</p>
 <p><em>proof：</em></p>
-<p>设 (e_1,\ldots,e_n) 是 (V) 的一组 orthonormal basis。</p>
-<p>根据 Theorem 6.30，每个 (u\in V) 都可以写成</p>
-<p>[ u&#x3D;\sum_{k&#x3D;1}^{n}\langle u,e_k\rangle e_k. ]</p>
-<p>由于 (\varphi) 是线性泛函，</p>
-<p>[ \begin{aligned} \varphi(u) &amp;&#x3D;\varphi\left(\sum_{k&#x3D;1}^{n} \langle u,e_k\rangle e_k\right)\ &amp;&#x3D;\sum_{k&#x3D;1}^{n} \langle u,e_k\rangle\varphi(e_k). \end{aligned} ]</p>
+<p>设 $e_1,\ldots,e_n$ 是 $V$ 的一组 orthonormal basis。</p>
+<p>根据 Theorem 6.30，每个 $u\in V$ 都可以写成</p>
+<p>$$ u&#x3D;\sum_{k&#x3D;1}^{n}\langle u,e_k\rangle e_k. $$</p>
+<p>由于 $\varphi$ 是线性泛函，</p>
+<p>$$ \begin{aligned} \varphi(u) &amp;&#x3D;\varphi\left(\sum_{k&#x3D;1}^{n} \langle u,e_k\rangle e_k\right)\ &amp;&#x3D;\sum_{k&#x3D;1}^{n} \langle u,e_k\rangle\varphi(e_k). \end{aligned} $$</p>
 <p>现在定义向量</p>
-<p>[ \boxed{ v&#x3D;\sum_{k&#x3D;1}^{n}\overline{\varphi(e_k)}e_k }. ]</p>
+<p>$$ \boxed{ v&#x3D;\sum_{k&#x3D;1}^{n}\overline{\varphi(e_k)}e_k }. $$</p>
 <p>由于内积对第二个位置共轭线性，</p>
-<p>[ \begin{aligned} \langle u,v\rangle &amp;&#x3D;\left\langle u,\sum_{k&#x3D;1}^{n}\overline{\varphi(e_k)}e_k \right\rangle\ &amp;&#x3D;\sum_{k&#x3D;1}^{n} \varphi(e_k)\langle u,e_k\rangle\ &amp;&#x3D;\varphi(u). \end{aligned} ]</p>
-<p>因此，存在向量 (v)，使得对所有 (u\in V) 都有</p>
-<p>[ \varphi(u)&#x3D;\langle u,v\rangle. ]</p>
+<p>$$ \begin{aligned} \langle u,v\rangle &amp;&#x3D;\left\langle u,\sum_{k&#x3D;1}^{n}\overline{\varphi(e_k)}e_k \right\rangle\ &amp;&#x3D;\sum_{k&#x3D;1}^{n} \varphi(e_k)\langle u,e_k\rangle\ &amp;&#x3D;\varphi(u). \end{aligned} $$</p>
+<p>因此，存在向量 $v$，使得对所有 $u\in V$ 都有</p>
+<p>$$ \varphi(u)&#x3D;\langle u,v\rangle. $$</p>
 <p>接下来证明唯一性。</p>
-<p>假设还有另一个向量 (w)，满足</p>
-<p>[ \varphi(u)&#x3D;\langle u,w\rangle ]</p>
-<p>对所有 (u\in V) 都成立。那么</p>
-<p>[ \langle u,v\rangle&#x3D;\langle u,w\rangle, ]</p>
+<p>假设还有另一个向量 $w$，满足</p>
+<p>$$ \varphi(u)&#x3D;\langle u,w\rangle $$</p>
+<p>对所有 $u\in V$ 都成立。那么</p>
+<p>$$ \langle u,v\rangle&#x3D;\langle u,w\rangle, $$</p>
 <p>所以</p>
-<p>[ \langle u,v-w\rangle&#x3D;0 ]</p>
-<p>对所有 (u\in V) 成立。取 (u&#x3D;v-w)，得到</p>
-<p>[ |v-w|^2&#x3D;0. ]</p>
-<p>因此 (v&#x3D;w)，唯一性得证。</p>
-</div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comments</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/important/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/ loading='lazy'></div><div class="author-info-name">Joey</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">326</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">51</div></a></div><div class="follow-links segmented"> <a href="https://github.com/a2664476347a-ai" target="_blank"><i class="fab fa-github"></i>GitHub</a><a href="https://space.bilibili.com/59101931?spm_id_from=333.1007.0.0" target="_blank"><i class="fas fa-tv"></i>Bilibili</a><a href="mailto:a2664476347@gmail.com"><i class="fas fa-envelope"></i>Gmail</a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/11/17/LCK%E9%87%8D%E7%BB%84%EF%BC%8C%E4%B8%9C%E4%BA%AC%E6%9D%A5%E7%94%B5%EF%BC%8C%E9%A5%AD%E5%9C%88%E9%97%AE%E9%A2%98/" title="LCK重组，东京来电，饭圈问题">LCK重组，东京来电，饭圈问题</a><time datetime="2026-11-17T19:30:38.000Z" title="Created 2026-11-17 19:30:38">2026-11-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/11/16/%E5%AF%BB%E8%80%B3%E6%9C%BA%E7%8E%AF%E6%B8%B8%E8%AE%B0%EF%BC%8C%E7%BB%93%E5%86%B0%E9%BB%84%E8%89%B2%E9%A2%84%E8%AD%A6/" title="寻耳机环游记，结冰黄色预警">寻耳机环游记，结冰黄色预警</a><time datetime="2026-11-16T21:09:06.000Z" title="Created 2026-11-16 21:09:06">2026-11-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/11/15/%E6%B8%B8%E9%BE%99/" title="游龙">游龙</a><time datetime="2026-11-15T21:33:01.000Z" title="Created 2026-11-15 21:33:01">2026-11-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/11/14/%E6%88%91%E7%AD%89%E8%BF%99%E4%B8%80%E5%A4%A94%E5%B9%B4%E4%BA%86/" title="我等这一天4年了">我等这一天4年了</a><time datetime="2026-11-14T19:12:49.000Z" title="Created 2026-11-14 19:12:49">2026-11-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/11/13/%E8%BF%98%E6%9C%8924H%EF%BC%8C%E7%B9%81%E5%BF%99%E7%9A%84%E5%91%A8%E4%BA%94%EF%BC%8CMML%E7%9A%84%E4%BD%93%E9%AA%8C/" title="还有24H，繁忙的周五，MML的体验">还有24H，繁忙的周五，MML的体验</a><time datetime="2026-11-13T20:54:37.000Z" title="Created 2026-11-13 20:54:37">2026-11-13</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/%E5%B0%BC%E9%87%87/" style="font-size: 1.1em; color: #999">尼采</a> <a href="/tags/%E5%8A%A8%E6%BC%AB/" style="font-size: 1.14em; color: #999b9d">动漫</a> <a href="/tags/%E4%B8%AD%E4%B8%9C/" style="font-size: 1.14em; color: #999b9d">中东</a> <a href="/tags/cs2/" style="font-size: 1.19em; color: #999da1">cs2</a> <a href="/tags/%E5%8F%B0%E6%B5%B7/" style="font-size: 1.14em; color: #999b9d">台海</a> <a href="/tags/%E7%BD%A2%E5%B7%A5/" style="font-size: 1.1em; color: #999">罢工</a> <a href="/tags/%E6%94%BF%E6%B2%BB/" style="font-size: 1.23em; color: #999ea6">政治</a> <a href="/tags/%E6%8E%A8%E7%90%86/" style="font-size: 1.1em; color: #999">推理</a> <a href="/tags/%E8%8A%82%E6%97%A5/" style="font-size: 1.14em; color: #999b9d">节日</a> <a href="/tags/%E6%97%85%E8%A1%8C/" style="font-size: 1.1em; color: #999">旅行</a> <a href="/tags/%E7%A7%91%E6%99%AE%E7%95%AA/" style="font-size: 1.1em; color: #999">科普番</a> <a href="/tags/%E7%88%B1%E5%9B%A0%E6%96%AF%E5%9D%A6/" style="font-size: 1.1em; color: #999">爱因斯坦</a> <a href="/tags/SAOP/" style="font-size: 1.1em; color: #999">SAOP</a> <a href="/tags/%E5%8E%9F%E7%A5%9E/" style="font-size: 1.1em; color: #999">原神</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 1.46em; color: #99a7bb">游戏</a> <a href="/tags/Pudding/" style="font-size: 1.19em; color: #999da1">Pudding</a> <a href="/tags/%E4%BA%92%E8%81%94%E7%BD%91%E8%88%86%E8%AE%BA/" style="font-size: 1.37em; color: #99a4b2">互联网舆论</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 1.1em; color: #999">线性代数</a> <a href="/tags/%E8%AF%BB%E4%B9%A6/" style="font-size: 1.14em; color: #999b9d">读书</a> <a href="/tags/%E4%BA%9A%E6%89%98%E8%8E%89/" style="font-size: 1.14em; color: #999b9d">亚托莉</a> <a href="/tags/%E7%BD%91%E7%AB%99/" style="font-size: 1.1em; color: #999">网站</a> <a href="/tags/%E9%92%A2%E9%93%81%E9%9B%84%E5%BF%834/" style="font-size: 1.1em; color: #999">钢铁雄心4</a> <a href="/tags/svd/" style="font-size: 1.1em; color: #999">svd</a> <a href="/tags/%E6%B1%89%E5%AD%97%E7%BC%A9%E5%86%99/" style="font-size: 1.1em; color: #999">汉字缩写</a> <a href="/tags/%E5%85%AC%E5%BC%8F/" style="font-size: 1.14em; color: #999b9d">公式</a> <a href="/tags/%E6%AD%BB%E4%BA%A1/" style="font-size: 1.1em; color: #999">死亡</a> <a href="/tags/%E6%97%A0%E7%A5%9E%E8%AE%BA/" style="font-size: 1.1em; color: #999">无神论</a> <a href="/tags/%E9%97%B2%E6%9D%A5%E6%97%A0%E4%BA%8B/" style="font-size: 1.41em; color: #99a5b7">闲来无事</a> <a href="/tags/%E5%96%9C%E5%A5%BD%E4%B8%8E%E5%B0%B1%E4%B8%9A/" style="font-size: 1.19em; color: #999da1">喜好与就业</a> <a href="/tags/LPL/" style="font-size: 1.28em; color: #99a0aa">LPL</a> <a href="/tags/%E8%AF%95%E7%AE%A1%E5%A9%B4%E5%84%BF/" style="font-size: 1.1em; color: #999">试管婴儿</a> <a href="/tags/%E5%93%88%E4%BC%AF%EF%BC%88%E5%BE%B7%E5%9B%BD%E7%8A%B9%E5%A4%AA%E8%A3%94%E5%8C%96%E5%AD%A6%E5%AE%B6%EF%BC%89/" style="font-size: 1.1em; color: #999">哈伯（德国犹太裔化学家）</a> <a href="/tags/%E7%82%89%E7%9F%B3%E4%BC%A0%E8%AF%B4/" style="font-size: 1.14em; color: #999b9d">炉石传说</a> <a href="/tags/%E5%8E%86%E5%8F%B2/" style="font-size: 1.32em; color: #99a2ae">历史</a> <a href="/tags/%E7%94%B7%E5%A5%B3%E5%AF%B9%E7%AB%8B/" style="font-size: 1.19em; color: #999da1">男女对立</a> <a href="/tags/%E6%97%A5%E8%AE%B0/" style="font-size: 1.5em; color: #99a9bf">日记</a> <a href="/tags/%E4%BA%92%E8%81%94%E7%BD%91/" style="font-size: 1.37em; color: #99a4b2">互联网</a> <a href="/tags/%E6%8B%89%E7%93%A6%E9%94%A1/" style="font-size: 1.1em; color: #999">拉瓦锡</a> <a href="/tags/%E8%A1%8C%E7%A8%8B%E5%AE%89%E6%8E%92/" style="font-size: 1.19em; color: #999da1">行程安排</a> <a href="/tags/%E7%A7%91%E5%AD%A6%E5%AE%B6/" style="font-size: 1.1em; color: #999">科学家</a></div></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Website Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article Count :</div><div class="item-count">326</div></div><div class="webinfo-item"><div class="item-name">Total Word Count :</div><div class="item-count">129.4k</div></div><div class="webinfo-item"><div class="item-name">Unique Visitors :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Page Views :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Update :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-11-17T20:01:19.364Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Joey</span><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="Scroll to Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.9/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+<p>$$ \langle u,v-w\rangle&#x3D;0 $$</p>
+<p>对所有 $u\in V$ 成立。取 $u&#x3D;v-w$，得到</p>
+<p>$$ |v-w|^2&#x3D;0. $$</p>
+<p>因此 $v&#x3D;w$，唯一性得证。</p>
+</div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comments</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/important/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/ loading='lazy'></div><div class="author-info-name">Joey</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">326</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">51</div></a></div><div class="follow-links segmented"> <a href="https://github.com/a2664476347a-ai" target="_blank"><i class="fab fa-github"></i>GitHub</a><a href="https://space.bilibili.com/59101931?spm_id_from=333.1007.0.0" target="_blank"><i class="fas fa-tv"></i>Bilibili</a><a href="mailto:a2664476347@gmail.com"><i class="fas fa-envelope"></i>Gmail</a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/11/17/LCK%E9%87%8D%E7%BB%84%EF%BC%8C%E4%B8%9C%E4%BA%AC%E6%9D%A5%E7%94%B5%EF%BC%8C%E9%A5%AD%E5%9C%88%E9%97%AE%E9%A2%98/" title="LCK重组，东京来电，饭圈问题">LCK重组，东京来电，饭圈问题</a><time datetime="2026-11-17T19:30:38.000Z" title="Created 2026-11-17 19:30:38">2026-11-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/11/16/%E5%AF%BB%E8%80%B3%E6%9C%BA%E7%8E%AF%E6%B8%B8%E8%AE%B0%EF%BC%8C%E7%BB%93%E5%86%B0%E9%BB%84%E8%89%B2%E9%A2%84%E8%AD%A6/" title="寻耳机环游记，结冰黄色预警">寻耳机环游记，结冰黄色预警</a><time datetime="2026-11-16T21:09:06.000Z" title="Created 2026-11-16 21:09:06">2026-11-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/11/15/%E6%B8%B8%E9%BE%99/" title="游龙">游龙</a><time datetime="2026-11-15T21:33:01.000Z" title="Created 2026-11-15 21:33:01">2026-11-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/11/14/%E6%88%91%E7%AD%89%E8%BF%99%E4%B8%80%E5%A4%A94%E5%B9%B4%E4%BA%86/" title="我等这一天4年了">我等这一天4年了</a><time datetime="2026-11-14T19:12:49.000Z" title="Created 2026-11-14 19:12:49">2026-11-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/11/13/%E8%BF%98%E6%9C%8924H%EF%BC%8C%E7%B9%81%E5%BF%99%E7%9A%84%E5%91%A8%E4%BA%94%EF%BC%8CMML%E7%9A%84%E4%BD%93%E9%AA%8C/" title="还有24H，繁忙的周五，MML的体验">还有24H，繁忙的周五，MML的体验</a><time datetime="2026-11-13T20:54:37.000Z" title="Created 2026-11-13 20:54:37">2026-11-13</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/%E8%A1%8C%E7%A8%8B%E5%AE%89%E6%8E%92/" style="font-size: 1.18em; color: #999ca1">行程安排</a> <a href="/tags/%E6%97%A5%E8%AE%B0/" style="font-size: 1.5em; color: #99a9bf">日记</a> <a href="/tags/%E5%8E%86%E5%8F%B2/" style="font-size: 1.3em; color: #99a1ac">历史</a> <a href="/tags/%E7%88%B1%E5%9B%A0%E6%96%AF%E5%9D%A6/" style="font-size: 1.1em; color: #999">爱因斯坦</a> <a href="/tags/%E8%B6%B3%E7%90%83/" style="font-size: 1.26em; color: #999fa8">足球</a> <a href="/tags/%E5%96%9C%E5%A5%BD%E4%B8%8E%E5%B0%B1%E4%B8%9A/" style="font-size: 1.18em; color: #999ca1">喜好与就业</a> <a href="/tags/%E9%97%B2%E6%9D%A5%E6%97%A0%E4%BA%8B/" style="font-size: 1.46em; color: #99a7bb">闲来无事</a> <a href="/tags/%E5%8E%9F%E7%A5%9E/" style="font-size: 1.1em; color: #999">原神</a> <a href="/tags/%E4%BA%9A%E6%89%98%E8%8E%89/" style="font-size: 1.14em; color: #999b9d">亚托莉</a> <a href="/tags/%E6%8E%A8%E7%90%86/" style="font-size: 1.1em; color: #999">推理</a> <a href="/tags/%E8%8A%82%E6%97%A5/" style="font-size: 1.14em; color: #999b9d">节日</a> <a href="/tags/%E6%8B%89%E7%93%A6%E9%94%A1/" style="font-size: 1.1em; color: #999">拉瓦锡</a> <a href="/tags/%E7%94%B7%E5%A5%B3%E5%AF%B9%E7%AB%8B/" style="font-size: 1.18em; color: #999ca1">男女对立</a> <a href="/tags/%E8%AF%BB%E4%B9%A6/" style="font-size: 1.14em; color: #999b9d">读书</a> <a href="/tags/%E4%BA%BA%E4%B8%8E%E6%9C%BA%E5%99%A8%E4%BA%BA/" style="font-size: 1.14em; color: #999b9d">人与机器人</a> <a href="/tags/%E5%93%88%E4%BC%AF%EF%BC%88%E5%BE%B7%E5%9B%BD%E7%8A%B9%E5%A4%AA%E8%A3%94%E5%8C%96%E5%AD%A6%E5%AE%B6%EF%BC%89/" style="font-size: 1.1em; color: #999">哈伯（德国犹太裔化学家）</a> <a href="/tags/%E8%A1%8C%E7%A8%8B%E8%A7%84%E5%88%92/" style="font-size: 1.34em; color: #99a3b0">行程规划</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 1.1em; color: #999">线性代数</a> <a href="/tags/%E8%AF%95%E7%AE%A1%E5%A9%B4%E5%84%BF/" style="font-size: 1.1em; color: #999">试管婴儿</a> <a href="/tags/%E6%97%A0%E7%A5%9E%E8%AE%BA/" style="font-size: 1.1em; color: #999">无神论</a> <a href="/tags/%E6%B1%89%E5%AD%97%E7%BC%A9%E5%86%99/" style="font-size: 1.1em; color: #999">汉字缩写</a> <a href="/tags/galgame/" style="font-size: 1.22em; color: #999ea4">galgame</a> <a href="/tags/%E6%94%BF%E6%B2%BB/" style="font-size: 1.22em; color: #999ea4">政治</a> <a href="/tags/Pudding/" style="font-size: 1.18em; color: #999ca1">Pudding</a> <a href="/tags/svd/" style="font-size: 1.1em; color: #999">svd</a> <a href="/tags/%E7%A7%91%E6%99%AE%E7%95%AA/" style="font-size: 1.1em; color: #999">科普番</a> <a href="/tags/%E8%A1%8C%E7%A8%8B%E8%AE%A1%E5%88%92/" style="font-size: 1.14em; color: #999b9d">行程计划</a> <a href="/tags/SAOP/" style="font-size: 1.1em; color: #999">SAOP</a> <a href="/tags/%E9%80%BB%E8%BE%91%E5%AD%A6/" style="font-size: 1.14em; color: #999b9d">逻辑学</a> <a href="/tags/%E6%97%85%E8%A1%8C/" style="font-size: 1.1em; color: #999">旅行</a> <a href="/tags/cs2/" style="font-size: 1.18em; color: #999ca1">cs2</a> <a href="/tags/%E8%80%83%E8%AF%95/" style="font-size: 1.1em; color: #999">考试</a> <a href="/tags/%E4%B8%AD%E4%B8%9C/" style="font-size: 1.14em; color: #999b9d">中东</a> <a href="/tags/%E7%88%B1%E4%B8%81%E5%A0%A1%E7%94%9F%E6%B4%BB/" style="font-size: 1.42em; color: #99a6b7">爱丁堡生活</a> <a href="/tags/%E5%8F%B0%E6%B5%B7/" style="font-size: 1.14em; color: #999b9d">台海</a> <a href="/tags/%E5%8A%A8%E6%BC%AB/" style="font-size: 1.14em; color: #999b9d">动漫</a> <a href="/tags/%E6%AD%BB%E4%BA%A1/" style="font-size: 1.1em; color: #999">死亡</a> <a href="/tags/%E7%82%89%E7%9F%B3%E4%BC%A0%E8%AF%B4/" style="font-size: 1.14em; color: #999b9d">炉石传说</a> <a href="/tags/%E4%BA%92%E8%81%94%E7%BD%91/" style="font-size: 1.38em; color: #99a4b4">互联网</a> <a href="/tags/%E7%BD%A2%E5%B7%A5/" style="font-size: 1.1em; color: #999">罢工</a></div></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Website Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article Count :</div><div class="item-count">326</div></div><div class="webinfo-item"><div class="item-name">Total Word Count :</div><div class="item-count">129.4k</div></div><div class="webinfo-item"><div class="item-name">Unique Visitors :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Page Views :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Update :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-11-18T18:37:23.083Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Joey</span><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="Scroll to Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.9/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
   const loadMathjax = () => {
     if (!window.MathJax) {
       window.MathJax = {
