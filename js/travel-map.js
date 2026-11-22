@@ -496,6 +496,14 @@ const places = [
     image: "/img/Edinburgh/princes-street.jpg",
     url: "/2026/11/10/princes-street"
   },
+  {
+    name: "Cramond Beach", //  Cramond Beach
+    lat: 55.9814386,
+    lng: -3.2981664,
+    image: "/img/Edinburgh/Cramond-beach.jpg",
+    url: "/2026/11/22/cramond-beach"
+  },
+  
  
 
 

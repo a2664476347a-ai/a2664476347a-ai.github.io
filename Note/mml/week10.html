@@ -1,0 +1,869 @@
+<!DOCTYPE html><html lang="cn" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Descriptivist Theories of Names | 私家菜的个人博客</title><meta name="author" content="Joey"><meta name="copyright" content="Joey"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Saul Kripke --- Naming and Necessity, Lecture I课堂笔记（基于课程节选 pp. 22--70） 课程：PHIL08014 Mind, Matter and Language阅读：Saul A. Kripke, Naming and Necessity (1980), Lecture I: January 20, 1970, pp. 22--70笔记说明">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Descriptivist Theories of Names">
+<meta property="og:url" content="https://a2664476347a-ai.github.io/Note/mml/week10.html">
+<meta property="og:site_name" content="私家菜的个人博客">
+<meta property="og:description" content="Saul Kripke --- Naming and Necessity, Lecture I课堂笔记（基于课程节选 pp. 22--70） 课程：PHIL08014 Mind, Matter and Language阅读：Saul A. Kripke, Naming and Necessity (1980), Lecture I: January 20, 1970, pp. 22--70笔记说明">
+<meta property="og:locale">
+<meta property="og:image" content="https://a2664476347a-ai.github.io/img/important/avatar.jpg">
+<meta property="article:published_time" content="2026-11-22T12:33:33.008Z">
+<meta property="article:modified_time" content="2026-11-22T12:33:33.008Z">
+<meta property="article:author" content="Joey">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://a2664476347a-ai.github.io/img/important/avatar.jpg"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://a2664476347a-ai.github.io/Note/mml/week10.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//www.clarity.ms"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="-SA3Essa91Y2Ep02I_lVO46k18Im4ofqJesBiGXFTVA"/><meta name="msvalidate.01" content="C5E544DDD197A5A1F65FF3CC2EAA5B30"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.9/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-K3J40ZJ1S7"></script><script>window.dataLayer = window.dataLayer || []
+function gtag(){dataLayer.push(arguments)}
+gtag('js', new Date())
+gtag('config', 'G-K3J40ZJ1S7')
+btf.addGlobalFn('pjaxComplete', () => {
+  gtag('config', 'G-K3J40ZJ1S7', {'page_path': window.location.pathname})
+}, 'google_analytics')
+</script><script>(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "w4agonpixo");
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":3,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"You have switched to Traditional Chinese","cht_to_chs":"You have switched to Simplified Chinese","day_to_night":"You have switched to Dark Mode","night_to_day":"You have switched to Light Mode","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-right"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Descriptivist Theories of Names',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="/css/custom.css"><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/important/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/ loading='lazy'></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">331</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">51</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">11</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><span> 学习</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/analyse/"><i class="fa-fw fas fa-square-root-alt"></i><span> 数学分析</span></a></li><li><a class="site-page child" href="/categories/linear-algebra/"><i class="fa-fw fas fa-th"></i><span> 线性代数</span></a></li><li><a class="site-page child" href="/categories/logic/"><i class="fa-fw fas fa-project-diagram"></i><span> 逻辑学</span></a></li><li><a class="site-page child" href="/categories/philosophy/"><i class="fa-fw fas fa-brain"></i><span> 普通哲学</span></a></li><li><a class="site-page child" href="/2026/09/28/%E5%AF%BC%E8%88%AA/"><i class="fa-fw fas fa-pencil-alt"></i><span> 笔记</span></a></li><li><a class="site-page child" href="/categories/other/"><i class="fa-fw fas fa-folder"></i><span> 其他</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 图集</span></a></div><div class="menus_item"><span class="site-page group"><span> 兴趣</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/anime/"><i class="fa-fw fas fa-tv"></i><span> 动漫</span></a></li><li><a class="site-page child" href="/categories/game/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/map/"><i class="fa-fw fas fa-plane"></i><span> 旅行</span></a></li><li><a class="site-page child" href="/categories/film/"><i class="fa-fw fas fa-film"></i><span> 影视</span></a></li><li><a class="site-page child" href="/categories/reading/"><i class="fa-fw fas fa-book-open"></i><span> 阅读</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%97%A5%E8%AE%B0/"><i class="fa-fw fas fa-pen"></i><span> 日记</span></a></li><li><a class="site-page child" href="/categories/%E6%9D%82%E8%B0%88/"><i class="fa-fw fas fa-comment"></i><span> 杂谈</span></a></li></ul></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(/img/important/index.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">私家菜的个人博客</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><span> 学习</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/analyse/"><i class="fa-fw fas fa-square-root-alt"></i><span> 数学分析</span></a></li><li><a class="site-page child" href="/categories/linear-algebra/"><i class="fa-fw fas fa-th"></i><span> 线性代数</span></a></li><li><a class="site-page child" href="/categories/logic/"><i class="fa-fw fas fa-project-diagram"></i><span> 逻辑学</span></a></li><li><a class="site-page child" href="/categories/philosophy/"><i class="fa-fw fas fa-brain"></i><span> 普通哲学</span></a></li><li><a class="site-page child" href="/2026/09/28/%E5%AF%BC%E8%88%AA/"><i class="fa-fw fas fa-pencil-alt"></i><span> 笔记</span></a></li><li><a class="site-page child" href="/categories/other/"><i class="fa-fw fas fa-folder"></i><span> 其他</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 图集</span></a></div><div class="menus_item"><span class="site-page group"><span> 兴趣</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/anime/"><i class="fa-fw fas fa-tv"></i><span> 动漫</span></a></li><li><a class="site-page child" href="/categories/game/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/map/"><i class="fa-fw fas fa-plane"></i><span> 旅行</span></a></li><li><a class="site-page child" href="/categories/film/"><i class="fa-fw fas fa-film"></i><span> 影视</span></a></li><li><a class="site-page child" href="/categories/reading/"><i class="fa-fw fas fa-book-open"></i><span> 阅读</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%97%A5%E8%AE%B0/"><i class="fa-fw fas fa-pen"></i><span> 日记</span></a></li><li><a class="site-page child" href="/categories/%E6%9D%82%E8%B0%88/"><i class="fa-fw fas fa-comment"></i><span> 杂谈</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title">Descriptivist Theories of Names</h1></div></header><main class="layout" id="content-inner"><div id="page"><div class="container" id="article-container"><h1 id="Saul-Kripke-Naming-and-Necessity-Lecture-I"><a href="#Saul-Kripke-Naming-and-Necessity-Lecture-I" class="headerlink" title="Saul Kripke --- Naming and Necessity, Lecture I"></a>Saul Kripke --- <em>Naming and Necessity</em>, Lecture I</h1><h2 id="课堂笔记（基于课程节选-pp-22-70）"><a href="#课堂笔记（基于课程节选-pp-22-70）" class="headerlink" title="课堂笔记（基于课程节选 pp. 22--70）"></a>课堂笔记（基于课程节选 pp. 22--70）</h2><blockquote>
+<p>课程：PHIL08014 Mind, Matter and Language<br>阅读：Saul A. Kripke, <em>Naming and Necessity</em> (1980), Lecture I:
+January 20, 1970, pp. 22--70<br>笔记说明：以下是对本节选论证结构与核心概念的中文整理，不是原文逐字翻译。英文术语保留，便于对照阅读。</p>
+</blockquote>
+<hr>
+<h2 id="总体问题与论证路线"><a href="#总体问题与论证路线" class="headerlink" title="总体问题与论证路线"></a>总体问题与论证路线</h2><p>Kripke 将 <strong>naming（命名）</strong> 与 <strong>necessity（必然性）</strong>
+联系起来，质疑一种很有影响力的观点：专名（proper
+names）的意义可以由一个或一组描述（descriptions）给出。</p>
+<p>本讲的核心方向：</p>
+<ol>
+<li>先说明专名、摹状词以及传统描述理论的动机。</li>
+<li>区分描述是在给名字提供意义，还是仅仅帮助确定指称对象。</li>
+<li>区分认识论概念与形而上学概念：a priori &#x2F; a posteriori 与 necessary &#x2F;
+contingent。</li>
+<li>引入 rigid designator，并讨论可能世界、对象同一性与本质属性。</li>
+<li>用&quot;标准米&quot;例子说明 contingent a priori；再讨论专名的描述簇理论。</li>
+<li>指出描述簇理论面临的问题，尤其是 Moses 例子与 non-circularity
+condition。</li>
+</ol>
+<hr>
+<h1 id="Part-1-Names-and-Descriptions"><a href="#Part-1-Names-and-Descriptions" class="headerlink" title="Part 1 --- Names and Descriptions"></a>Part 1 --- Names and Descriptions</h1><h2 id="1-1-Proper-names-与-definite-descriptions"><a href="#1-1-Proper-names-与-definite-descriptions" class="headerlink" title="1.1 Proper names 与 definite descriptions"></a>1.1 Proper names 与 definite descriptions</h2><p>Kripke 在本文中对术语作了明确限定：</p>
+<ul>
+<li><strong>Name &#x2F; proper
+name（专名）</strong>：日常语言中用于命名人物、城市、国家等的名称，例如
+<code>Aristotle</code>、<code>Napoleon</code>。</li>
+<li><strong>Definite description（限定摹状词）</strong>：形如 &quot;the x such that φx&quot;
+的表达，例如 <code>the man who corrupted Hadleyburg</code>。</li>
+<li><strong>Designator（指称词／指称表达）</strong>：一个统称，涵盖专名与摹状词。</li>
+</ul>
+<p>在逻辑传统中，如果恰好有一个对象满足某个限定摹状词，那么该对象就是这个摹状词的
+<strong>referent（指称对象）</strong>。</p>
+<h2 id="1-2-Donnellan-的提醒：说话者意图与语义指称"><a href="#1-2-Donnellan-的提醒：说话者意图与语义指称" class="headerlink" title="1.2 Donnellan 的提醒：说话者意图与语义指称"></a>1.2 Donnellan 的提醒：说话者意图与语义指称</h2><p>Kripke 提到 Donnellan 的例子：</p>
+<p>有人说：&quot;拿着香槟杯的那个人很开心&quot;，但那个人杯中实际上是水。说话者可能仍然意图谈论那个拿杯子的人，而不是严格满足描述的人。</p>
+<p>Kripke
+在本文中采用较严格的技术用法：描述的语义指称对象，是唯一满足该描述条件的对象。他暂时把说话者在特殊情境中意图谈论谁的问题，与这里的语义指称问题区分开来。</p>
+<h2 id="1-3-Mill：名字有-denotation，但不一定有-connotation"><a href="#1-3-Mill：名字有-denotation，但不一定有-connotation" class="headerlink" title="1.3 Mill：名字有 denotation，但不一定有 connotation"></a>1.3 Mill：名字有 denotation，但不一定有 connotation</h2><p>John Stuart Mill 认为名字有 <strong>denotation（外延／指称）</strong>，但没有
+<strong>connotation（内涵）</strong>。</p>
+<p>例子：<code>Dartmouth</code> 这个地名可能让人联想到它位于 Dart 河口。但即使 Dart
+河改变河道，Dartmouth 仍然可以叫 Dartmouth。</p>
+<p>因此，&quot;位于 Dart 河口&quot;并不是 <code>Dartmouth</code>
+这个名字意义中不可缺少的部分。名字可能使人联想到某些特征，但这些特征不一定构成名字的意义。</p>
+<h2 id="1-4-Frege-Russell-的描述主义动机"><a href="#1-4-Frege-Russell-的描述主义动机" class="headerlink" title="1.4 Frege--Russell 的描述主义动机"></a>1.4 Frege--Russell 的描述主义动机</h2><p>Frege 与 Russell 反对 Mill
+式观点，认为日常使用的专名与描述有紧密联系；粗略地说，名字可能是某个描述的缩写或伪装。</p>
+<p>其主要动机包括：</p>
+<ul>
+<li><strong>确定指称（determining reference）</strong>：如果只说
+<code>Napoleon</code>，我们如何知道谈论的是谁？描述主义者会诉诸&quot;法国皇帝&quot;&quot;滑铁卢战败者&quot;等描述。</li>
+<li><strong>同一性陈述（identity statements）</strong>：<code>Hesperus is Phosphorus</code>
+不是简单地说一个对象等于它自己；这是一个需要经验发现的事实。描述可以解释这类陈述为何具有认知价值。</li>
+<li><strong>存在陈述（existence statements）</strong>：问 <code>Did Aristotle exist?</code>
+看起来是在问是否有某个人满足我们与 Aristotle 联系起来的描述。</li>
+</ul>
+<p>这些是描述主义理论有吸引力的原因；Kripke
+接下来要检验它们是否足以证明描述主义正确。</p>
+<hr>
+<h1 id="Part-2-From-Single-Descriptions-to-Clusters-Meaning-and-Reference"><a href="#Part-2-From-Single-Descriptions-to-Clusters-Meaning-and-Reference" class="headerlink" title="Part 2 --- From Single Descriptions to Clusters; Meaning and Reference"></a>Part 2 --- From Single Descriptions to Clusters; Meaning and Reference</h1><h2 id="2-1-单一描述理论的问题"><a href="#2-1-单一描述理论的问题" class="headerlink" title="2.1 单一描述理论的问题"></a>2.1 单一描述理论的问题</h2><p>假设 <code>Aristotle</code> 的意义就是
+<code>the teacher of Alexander</code>（亚历山大的老师）。</p>
+<p>那么，&quot;Aristotle
+是亚历山大的老师&quot;似乎会变成一种由定义保证的真理。但我们通常认为，这是一项可以通过历史研究发现、也可能被证明为假的事实，而不是单纯分析名字意义就能知道的事实。</p>
+<p>所以，单一描述似乎太简单，不能充分说明专名的意义或指称。</p>
+<h2 id="2-2-从单一描述转向描述簇（cluster）"><a href="#2-2-从单一描述转向描述簇（cluster）" class="headerlink" title="2.2 从单一描述转向描述簇（cluster）"></a>2.2 从单一描述转向描述簇（cluster）</h2><p>Frege 已经注意到，不同的人可能用不同描述来理解 <code>Aristotle</code>：</p>
+<ul>
+<li>Plato&#39;s disciple（柏拉图的学生）</li>
+<li>the teacher of Alexander（亚历山大的老师）</li>
+<li>the Stagirite（斯塔吉拉人）</li>
+</ul>
+<p>于是可以提出 <strong>cluster
+theory（描述簇理论）</strong>：一个名字不对应单一描述，而对应一组描述或属性。只要某个对象满足其中&quot;足够多&quot;或&quot;最重要&quot;的属性，它就可能成为该名字的指称对象。</p>
+<p>这比单一描述理论灵活，但会产生新问题：</p>
+<ul>
+<li>&quot;足够多&quot;究竟是多少？</li>
+<li>是否所有描述权重相同？</li>
+<li>如果最重要的描述不成立，名字是否仍然指称同一个人？</li>
+<li>不同说话者掌握的描述不同，是否会导致他们使用同一个名字却指向不同对象？</li>
+</ul>
+<h2 id="2-3-Theory-of-meaning-与-theory-of-reference"><a href="#2-3-Theory-of-meaning-与-theory-of-reference" class="headerlink" title="2.3 Theory of meaning 与 theory of reference"></a>2.3 Theory of meaning 与 theory of reference</h2><p>这是 Kripke 特别强调的区分。</p>
+<h3 id="A-Theory-of-meaning（意义理论）"><a href="#A-Theory-of-meaning（意义理论）" class="headerlink" title="A. Theory of meaning（意义理论）"></a>A. Theory of meaning（意义理论）</h3><p>描述簇就是名字的意义，名字与描述簇可以视为同义表达。</p>
+<p>如果 <code>Aristotle</code>
+意味着&quot;满足某组描述的人&quot;，那么在反事实情境中，另一个满足这些描述的人可能会成为
+Aristotle。</p>
+<h3 id="B-Theory-of-reference（指称理论）"><a href="#B-Theory-of-reference（指称理论）" class="headerlink" title="B. Theory of reference（指称理论）"></a>B. Theory of reference（指称理论）</h3><p>描述簇不一定是名字的意义；它只是帮助使用者确定名字指向谁。</p>
+<p>例如，我们通过&quot;亚历山大的老师&quot;等描述确定 <code>Aristotle</code>
+指的是哪一个人。确定之后，名字就指向那个人。设想这个人本来没有教过
+Alexander，我们仍然可以问：&quot;假如 Aristotle 没有从事哲学，会怎样？&quot;</p>
+<p>描述在这里的作用是 <strong>fix the
+reference（固定指称）</strong>，而不是提供名字的同义表达。</p>
+<blockquote>
+<p>核心区分：A description may be used as synonymous with a designator,
+or it may be used to fix its reference.</p>
+</blockquote>
+<hr>
+<h1 id="Part-3-A-Priori-Necessary-Analytic-and-Certainty"><a href="#Part-3-A-Priori-Necessary-Analytic-and-Certainty" class="headerlink" title="Part 3 --- A Priori, Necessary, Analytic, and Certainty"></a>Part 3 --- A Priori, Necessary, Analytic, and Certainty</h1><h2 id="3-1-A-priori-与-a-posteriori"><a href="#3-1-A-priori-与-a-posteriori" class="headerlink" title="3.1 A priori 与 a posteriori"></a>3.1 A priori 与 a posteriori</h2><ul>
+<li><strong>A priori（先验）</strong>：知识不依赖于相关经验调查而获得。</li>
+<li><strong>A posteriori（后验）</strong>：知识依赖于经验、观察或经验调查。</li>
+</ul>
+<p>Kripke
+强调，讨论某个命题是否能被先验知道，与讨论它是否必然为真，是两个不同问题。</p>
+<h2 id="3-2-Necessary-与-contingent"><a href="#3-2-Necessary-与-contingent" class="headerlink" title="3.2 Necessary 与 contingent"></a>3.2 Necessary 与 contingent</h2><ul>
+<li><strong>Necessary（必然）</strong>：事实不可能以其他方式成立。</li>
+<li><strong>Contingent（偶然）</strong>：事实虽然实际如此，但本来可能不是这样。</li>
+</ul>
+<p>这里关注的是形而上学上的可能性，而不是我们通过什么方式知道它。</p>
+<h2 id="3-3-两种区分不能混为一谈"><a href="#3-3-两种区分不能混为一谈" class="headerlink" title="3.3 两种区分不能混为一谈"></a>3.3 两种区分不能混为一谈</h2><hr>
+<p>  区分                    核心问题                 所属领域</p>
+<hr>
+<p>  A priori &#x2F; a posteriori 我们如何知道？           认识论（epistemology）</p>
+<h2 id="Necessary-contingent-事情是否可能本来不同？-形而上学（metaphysics）"><a href="#Necessary-contingent-事情是否可能本来不同？-形而上学（metaphysics）" class="headerlink" title="  Necessary &#x2F; contingent  事情是否可能本来不同？   形而上学（metaphysics）"></a>  Necessary &#x2F; contingent  事情是否可能本来不同？   形而上学（metaphysics）</h2><p>Kripke 用 Goldbach
+conjecture（哥德巴赫猜想）说明两者并不等同：假设该猜想为真，那么它作为数学真理是必然的；但在尚未获得证明时，我们并没有因此就拥有关于它的先验知识。</p>
+<h2 id="3-4-Analytic"><a href="#3-4-Analytic" class="headerlink" title="3.4 Analytic"></a>3.4 Analytic</h2><p>Kripke 暂时采用一种约定：</p>
+<p><strong>Analytic
+statement（分析命题）</strong>：凭借意义为真，并且凭借意义在所有可能世界中为真。</p>
+<p>例如：<code>Bachelors are unmarried.</code></p>
+<p>按这一约定，分析真理既是 <strong>necessary</strong>，也是 <strong>a
+priori</strong>。但这不意味着所有必然真理都是分析真理，或所有先验知识都必然对应必然真理。</p>
+<h2 id="3-5-Certainty（确定性）"><a href="#3-5-Certainty（确定性）" class="headerlink" title="3.5 Certainty（确定性）"></a>3.5 Certainty（确定性）</h2><p>Certainty 也是认识论概念，不能与 necessity 混为一谈。</p>
+<p>例如，读完一本数学书中的证明后，我们可能认为证明正确，但仍可能担心自己读错或计算出错。因此，一个人可以先验地相信某事，却未必对它完全确定。</p>
+<hr>
+<h1 id="Part-4-Essentialism-Modality-de-re-de-dicto-and-Rigid-Designators"><a href="#Part-4-Essentialism-Modality-de-re-de-dicto-and-Rigid-Designators" class="headerlink" title="Part 4 --- Essentialism, Modality de re &#x2F; de dicto, and Rigid Designators"></a>Part 4 --- Essentialism, Modality de re &#x2F; de dicto, and Rigid Designators</h1><h2 id="4-1-Modality-de-dicto-与-modality-de-re"><a href="#4-1-Modality-de-dicto-与-modality-de-re" class="headerlink" title="4.1 Modality de dicto 与 modality de re"></a>4.1 Modality de dicto 与 modality de re</h2><p>Kripke 讨论两种不同层次的问题：</p>
+<ul>
+<li><strong>Modality de dicto</strong>：命题本身是否必然为真。</li>
+<li><strong>Modality de
+re</strong>：某个对象是否必然具有某个属性，或某个属性是否是该对象的本质属性。</li>
+</ul>
+<p>争论焦点之一是：一个对象是否具有必要属性，是否只取决于我们如何描述它？</p>
+<h2 id="4-2-Nixon-与-1968-年大选获胜者"><a href="#4-2-Nixon-与-1968-年大选获胜者" class="headerlink" title="4.2 Nixon 与&quot;1968 年大选获胜者&quot;"></a>4.2 Nixon 与&quot;1968 年大选获胜者&quot;</h2><p>考虑同一个人 Nixon：</p>
+<ul>
+<li><code>Nixon</code> 是一个名字。</li>
+<li><code>the winner of the 1968 election</code> 是一个描述。</li>
+</ul>
+<p>Nixon 本来可能输掉选举；但&quot;1968 年大选获胜者赢得了 1968
+年大选&quot;却是由描述本身保证的。</p>
+<p>这说明：同一个对象可以由不同表达方式指称，而这些表达在反事实情境中未必表现相同。不能因为某个描述必然满足自身条件，就推断该对象本身必然具有该属性。</p>
+<h2 id="4-3-Possible-worlds：不是等待我们发现的外国"><a href="#4-3-Possible-worlds：不是等待我们发现的外国" class="headerlink" title="4.3 Possible worlds：不是等待我们发现的外国"></a>4.3 Possible worlds：不是等待我们发现的外国</h2><p>Kripke
+反对把可能世界想象成一个遥远的国家：我们只能看到其中的性质，却无法知道某个对象是不是现实世界中的同一个对象。</p>
+<p>他的替代思路是：</p>
+<ul>
+<li>可能世界是通过描述性条件（descriptive conditions）来规定的。</li>
+<li>我们可以直接谈论 Nixon，并规定一个反事实情境：Nixon 输掉了选举。</li>
+<li>不必先用一组纯粹定性的特征，重新识别那个&quot;看起来像 Nixon&quot;的人。</li>
+</ul>
+<p>Kripke 的口号式观点是：可能世界是 <strong>stipulated, not
+discovered（被规定出来，而不是被发现出来）</strong>。</p>
+<h2 id="4-4-Transworld-identity（跨世界同一性）"><a href="#4-4-Transworld-identity（跨世界同一性）" class="headerlink" title="4.4 Transworld identity（跨世界同一性）"></a>4.4 Transworld identity（跨世界同一性）</h2><p>Kripke
+并不是说跨世界同一性在所有情况下都没有问题。他承认，对复杂对象（例如桌子）而言，我们可能会问：如果替换了其中一些分子，它还是不是同一张桌子？</p>
+<p>但他反对把所有对象都简化成性质的集合，也反对要求先找到一套纯粹定性的、跨世界识别对象的必要充分条件。</p>
+<p>我们可以从现实世界中已经指称的对象出发，再问它在其他反事实情境中可能具有哪些属性。</p>
+<h2 id="4-5-Rigid-designator（刚性指称词）"><a href="#4-5-Rigid-designator（刚性指称词）" class="headerlink" title="4.5 Rigid designator（刚性指称词）"></a>4.5 Rigid designator（刚性指称词）</h2><p><strong>Rigid designator</strong>：在每一个对象存在的可能世界中，都指称同一个对象。</p>
+<p><strong>Non-rigid &#x2F; accidental
+designator</strong>：在不同可能世界中，可能指称不同对象。</p>
+<p>例子：</p>
+<ul>
+<li><code>Nixon</code>：刚性指称词。Nixon 本来可能不是总统，但他不可能不是
+Nixon（这里说的是这个人，而不是名字拼写）。</li>
+<li><code>the President of the U.S. in 1970</code>：非刚性指称词。其他人本来也可能在
+1970 年成为美国总统。</li>
+</ul>
+<p>如果一个刚性指称词指称的是一个必然存在的对象，Kripke 称之为 <strong>strongly
+rigid</strong>。</p>
+<h2 id="4-6-Essential-property（本质属性）"><a href="#4-6-Essential-property（本质属性）" class="headerlink" title="4.6 Essential property（本质属性）"></a>4.6 Essential property（本质属性）</h2><p>一个属性若是对象的本质属性，通常意味着：只要该对象存在，它就必然具有该属性。</p>
+<p>要区分：</p>
+<ul>
+<li>用来在现实世界中识别对象的属性；</li>
+<li>对象在所有可能情境中必然具有的属性。</li>
+</ul>
+<p>两者不必相同。我们现实中通过某些描述认识一个人，不代表那些描述中的属性都是这个人的本质属性。</p>
+<hr>
+<h1 id="Part-5-Necessary-A-Posteriori-and-Contingent-A-Priori"><a href="#Part-5-Necessary-A-Posteriori-and-Contingent-A-Priori" class="headerlink" title="Part 5 --- Necessary A Posteriori and Contingent A Priori"></a>Part 5 --- Necessary A Posteriori and Contingent A Priori</h1><h2 id="5-1-标准米（standard-meter）例子"><a href="#5-1-标准米（standard-meter）例子" class="headerlink" title="5.1 标准米（standard meter）例子"></a>5.1 标准米（standard meter）例子</h2><p>假设某人规定：</p>
+<p><code>one meter</code> &#x3D; 标准杆 S 在时间 t₀ 的长度。</p>
+<p>这个规定可以帮助我们 <strong>fix the reference</strong>：它确定了&quot;1
+米&quot;这个长度单位究竟指什么。</p>
+<p>但这不意味着 <code>one meter</code> 与 <code>the length of S at t₀</code> 在所有语境中都同义。</p>
+<h2 id="5-2-为什么-S-在-t₀-时长一米-可以是-contingent？"><a href="#5-2-为什么-S-在-t₀-时长一米-可以是-contingent？" class="headerlink" title="5.2 为什么 &quot;S 在 t₀ 时长一米&quot; 可以是 contingent？"></a>5.2 为什么 &quot;S 在 t₀ 时长一米&quot; 可以是 contingent？</h2><p><code>one meter</code> 被当作刚性指称词，指向同一个长度。</p>
+<p>但 <code>the length of S at t₀</code>
+并非刚性指称词：在某个反事实情境中，如果标准杆 S 在 t₀
+受到不同的热或压力，它的长度可能不同。</p>
+<p>因此，即使现实中 S 在 t₀ 的长度被用来固定&quot;一米&quot;的指称，S 在 t₀
+时长一米仍然可能是偶然事实。</p>
+<h2 id="5-3-Contingent-a-priori（先验偶然）"><a href="#5-3-Contingent-a-priori（先验偶然）" class="headerlink" title="5.3 Contingent a priori（先验偶然）"></a>5.3 Contingent a priori（先验偶然）</h2><p>对于那个用 S 固定&quot;一米&quot;指称的人来说，他无需进一步测量，就能知道：</p>
+<p><code>Stick S is one meter long at t₀.</code></p>
+<p>这在 Kripke 的讨论中可以是 <strong>a
+priori</strong>，因为该人通过固定指称的规定就能知道它。</p>
+<p>但该陈述并非 <strong>necessary</strong>：在适当的反事实条件下，S 在 t₀
+本来可能具有不同长度。</p>
+<p>所以它是一个 <strong>contingent a priori truth（先验偶然真理）</strong>。</p>
+<h2 id="5-4-Necessary-a-posteriori（后验必然）"><a href="#5-4-Necessary-a-posteriori（后验必然）" class="headerlink" title="5.4 Necessary a posteriori（后验必然）"></a>5.4 Necessary a posteriori（后验必然）</h2><p>本讲此处的总体论证方向是：认识论上的后验知识，并不自动意味着命题在形而上学上是偶然的。</p>
+<p>也就是说，某个事实可以需要经验调查才能被发现，却仍然是必然事实。Lecture
+I 后面借专名与描述簇的讨论进一步推进这一点。</p>
+<hr>
+<h1 id="Part-6-The-Cluster-Theory-and-Kripke-s-Objections"><a href="#Part-6-The-Cluster-Theory-and-Kripke-s-Objections" class="headerlink" title="Part 6 --- The Cluster Theory and Kripke&#39;s Objections"></a>Part 6 --- The Cluster Theory and Kripke&#39;s Objections</h1><h2 id="6-1-描述簇理论的六项主张"><a href="#6-1-描述簇理论的六项主张" class="headerlink" title="6.1 描述簇理论的六项主张"></a>6.1 描述簇理论的六项主张</h2><p>Kripke 在 pp. 64--66 将较完整的描述簇理论整理为若干主张。设说话者为
+A，名字为 <code>X</code>，相关属性为 φ：</p>
+<ol>
+<li>对每个名字或指称表达 <code>X</code>，都对应一个属性簇：A 相信 φX 的那些属性。</li>
+<li>A 相信其中一个或若干属性能够唯一地挑出某个个体。</li>
+<li>如果某个唯一对象满足大多数（或按权重计算的大多数）属性，那么该对象就是
+<code>X</code> 的指称对象。</li>
+<li>如果没有唯一对象满足足够多属性，那么 <code>X</code> 不指称任何对象。</li>
+<li>说话者先验地知道：如果 X 存在，那么 X 具有大多数相关属性。</li>
+<li>说话者所知道的上述条件表达一个必然真理（这一项主要适用于把描述簇当作意义理论的版本）。</li>
+</ol>
+<p>第 1 项基本上是定义属性簇的方式；Kripke 认为后续主张存在问题。</p>
+<h2 id="6-2-权重问题"><a href="#6-2-权重问题" class="headerlink" title="6.2 权重问题"></a>6.2 权重问题</h2><p>属性不一定具有相同重要性。</p>
+<p>例如，某人对 Aristotle
+的认识中，某些核心历史信息可能比一些无关紧要的细节更重要。理论需要说明：</p>
+<ul>
+<li>哪些属性参与投票？</li>
+<li>每个属性权重是多少？</li>
+<li>什么叫&quot;足够多&quot;？</li>
+<li>权重由谁决定？</li>
+</ul>
+<p>如果理论没有明确答案，指称判断就可能不稳定。</p>
+<h2 id="6-3-Moses-与-Jonah：传说不等于人物不存在"><a href="#6-3-Moses-与-Jonah：传说不等于人物不存在" class="headerlink" title="6.3 Moses 与 Jonah：传说不等于人物不存在"></a>6.3 Moses 与 Jonah：传说不等于人物不存在</h2><p>Wittgenstein 讨论 <code>Moses does not exist</code>
+时，提出这句话可能有不同意思，例如：</p>
+<ul>
+<li>以色列人离开埃及时没有一个领袖；</li>
+<li>领袖不叫 Moses；</li>
+<li>没有人完成圣经叙述中归于 Moses 的所有事迹。</li>
+</ul>
+<p>Kripke
+的回应是：即使圣经叙述大部分是虚构的，也不必然意味着没有一个真实人物构成故事的历史基础。</p>
+<p>Jonah（约拿）的例子也有类似作用：一个人物可以真实存在，而关于他的故事细节大多不真实。</p>
+<p>因此，不能简单地把故事中的大多数描述当作一个人的必要属性；一个真实人物可能没有完成传统叙述中归给他的那些事。</p>
+<h2 id="6-4-Non-circularity-condition（非循环条件）"><a href="#6-4-Non-circularity-condition（非循环条件）" class="headerlink" title="6.4 Non-circularity condition（非循环条件）"></a>6.4 Non-circularity condition（非循环条件）</h2><p>一个成功的指称理论必须满足：</p>
+<blockquote>
+<p>用来确定指称的属性，不能以一种无法消除的方式预先依赖于&quot;指称&quot;本身。</p>
+</blockquote>
+<p>Kripke 以 Kneale 对 <code>Socrates</code> 的分析为例：</p>
+<p><code>Socrates</code> &#x3D; <code>the individual called &quot;Socrates&quot;</code>。</p>
+<p>问题是：如果我们问&quot;名字 Socrates 指谁？&quot;，回答&quot;被称为 Socrates
+的那个人&quot;，并没有真正告诉我们是谁。它把原本需要解释的命名关系重新放进了解释之中。</p>
+<p>这就没有真正说明指称如何建立，因而违反 non-circularity condition。</p>
+</div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comments</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/important/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/ loading='lazy'></div><div class="author-info-name">Joey</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">331</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">51</div></a></div><div class="follow-links segmented"> <a href="https://github.com/a2664476347a-ai" target="_blank"><i class="fab fa-github"></i>GitHub</a><a href="https://space.bilibili.com/59101931?spm_id_from=333.1007.0.0" target="_blank"><i class="fas fa-tv"></i>Bilibili</a><a href="mailto:a2664476347@gmail.com"><i class="fas fa-envelope"></i>Gmail</a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/11/22/cramond-beach/" title="Cramond Beach">Cramond Beach</a><time datetime="2026-11-22T14:51:58.000Z" title="Created 2026-11-22 14:51:58">2026-11-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/11/21/%E6%97%A9%E6%99%A8%E7%9A%84%E7%88%B1%E4%B8%81%E5%A0%A1%EF%BC%8C%E5%A4%A7%E7%89%88%E5%8E%BB%E4%BF%A1%EF%BC%8CKFC%EF%BC%8CIDS%E5%B0%8F%E7%BB%84%E4%BD%9C%E4%B8%9A/" title="早晨的爱丁堡，大版去信，KFC，IDS小组作业">早晨的爱丁堡，大版去信，KFC，IDS小组作业</a><time datetime="2026-11-21T21:58:20.000Z" title="Created 2026-11-21 21:58:20">2026-11-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/11/20/%E5%9B%B0%E4%B9%8F%E7%9A%84%E4%B8%80%E5%A4%A9%EF%BC%8C%E8%B7%AF%E8%BF%87R%E6%98%9F%E9%97%A8%E5%8F%A3%EF%BC%8CAi%E5%AF%B9%E4%BA%8E%E6%95%B0%E5%AD%A6%E7%9A%84%E5%BD%B1%E5%93%8D/" title="困乏的一天，路过R星门口，Ai对于数学的影响">困乏的一天，路过R星门口，Ai对于数学的影响</a><time datetime="2026-11-20T19:41:27.000Z" title="Created 2026-11-20 19:41:27">2026-11-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/11/19/%E6%9C%9F%E6%9C%AB%EF%BC%8C%E5%AD%A6%E4%B9%A0%EF%BC%8C%E9%A2%84%E5%88%B6%E8%8F%9C/" title="期末，学习，预制菜">期末，学习，预制菜</a><time datetime="2026-11-19T20:44:15.000Z" title="Created 2026-11-19 20:44:15">2026-11-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/11/18/%E4%B8%AA%E4%BA%BA%E5%93%81%E5%91%B3%EF%BC%8C%E8%80%83%E8%AF%95%E5%B0%86%E8%BF%91%EF%BC%8C%E8%B0%A3%E8%A8%80%E5%9B%9B%E8%B5%B7%EF%BC%8C%E5%85%85%E5%AE%9E%E7%9A%84%E7%94%9F%E6%B4%BB%EF%BC%8CGTA6/" title="个人品味，考试将近，谣言四起，充实的生活，GTA6">个人品味，考试将近，谣言四起，充实的生活，GTA6</a><time datetime="2026-11-18T19:56:56.000Z" title="Created 2026-11-18 19:56:56">2026-11-18</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/%E8%A1%8C%E7%A8%8B%E8%A7%84%E5%88%92/" style="font-size: 1.34em; color: #99a3b0">行程规划</a> <a href="/tags/cs2/" style="font-size: 1.18em; color: #999ca1">cs2</a> <a href="/tags/%E8%A1%8C%E7%A8%8B%E5%AE%89%E6%8E%92/" style="font-size: 1.18em; color: #999ca1">行程安排</a> <a href="/tags/%E6%B1%89%E5%AD%97%E7%BC%A9%E5%86%99/" style="font-size: 1.1em; color: #999">汉字缩写</a> <a href="/tags/%E4%BA%92%E8%81%94%E7%BD%91/" style="font-size: 1.38em; color: #99a4b4">互联网</a> <a href="/tags/%E8%A1%8C%E7%A8%8B%E8%AE%A1%E5%88%92/" style="font-size: 1.14em; color: #999b9d">行程计划</a> <a href="/tags/%E6%97%85%E8%A1%8C/" style="font-size: 1.1em; color: #999">旅行</a> <a href="/tags/svd/" style="font-size: 1.1em; color: #999">svd</a> <a href="/tags/%E7%82%89%E7%9F%B3%E4%BC%A0%E8%AF%B4/" style="font-size: 1.14em; color: #999b9d">炉石传说</a> <a href="/tags/galgame/" style="font-size: 1.22em; color: #999ea4">galgame</a> <a href="/tags/Pudding/" style="font-size: 1.18em; color: #999ca1">Pudding</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 1.46em; color: #99a7bb">游戏</a> <a href="/tags/%E5%8E%86%E5%8F%B2/" style="font-size: 1.3em; color: #99a1ac">历史</a> <a href="/tags/%E4%BA%BA%E4%B8%8E%E6%9C%BA%E5%99%A8%E4%BA%BA/" style="font-size: 1.14em; color: #999b9d">人与机器人</a> <a href="/tags/%E5%B0%BC%E9%87%87/" style="font-size: 1.1em; color: #999">尼采</a> <a href="/tags/%E7%A7%91%E6%99%AE%E7%95%AA/" style="font-size: 1.1em; color: #999">科普番</a> <a href="/tags/LPL/" style="font-size: 1.26em; color: #999fa8">LPL</a> <a href="/tags/%E9%92%A2%E9%93%81%E9%9B%84%E5%BF%834/" style="font-size: 1.1em; color: #999">钢铁雄心4</a> <a href="/tags/%E5%85%AC%E5%BC%8F/" style="font-size: 1.14em; color: #999b9d">公式</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 1.1em; color: #999">线性代数</a> <a href="/tags/%E7%90%89%E7%92%83%E7%9A%84%E5%AE%9D%E7%9F%B3/" style="font-size: 1.18em; color: #999ca1">琉璃的宝石</a> <a href="/tags/%E4%B8%AD%E4%B8%9C/" style="font-size: 1.14em; color: #999b9d">中东</a> <a href="/tags/%E6%8E%A8%E7%90%86/" style="font-size: 1.1em; color: #999">推理</a> <a href="/tags/%E6%AD%BB%E4%BA%A1/" style="font-size: 1.1em; color: #999">死亡</a> <a href="/tags/%E5%8E%9F%E7%A5%9E/" style="font-size: 1.1em; color: #999">原神</a> <a href="/tags/%E7%94%B7%E5%A5%B3%E5%AF%B9%E7%AB%8B/" style="font-size: 1.18em; color: #999ca1">男女对立</a> <a href="/tags/%E7%BD%91%E7%AB%99/" style="font-size: 1.1em; color: #999">网站</a> <a href="/tags/%E5%96%9C%E5%A5%BD%E4%B8%8E%E5%B0%B1%E4%B8%9A/" style="font-size: 1.18em; color: #999ca1">喜好与就业</a> <a href="/tags/%E6%97%A5%E8%AE%B0/" style="font-size: 1.5em; color: #99a9bf">日记</a> <a href="/tags/%E5%8A%A8%E6%BC%AB/" style="font-size: 1.14em; color: #999b9d">动漫</a> <a href="/tags/%E8%80%83%E8%AF%95/" style="font-size: 1.1em; color: #999">考试</a> <a href="/tags/%E8%AF%95%E7%AE%A1%E5%A9%B4%E5%84%BF/" style="font-size: 1.1em; color: #999">试管婴儿</a> <a href="/tags/SAOP/" style="font-size: 1.1em; color: #999">SAOP</a> <a href="/tags/%E9%97%B2%E6%9D%A5%E6%97%A0%E4%BA%8B/" style="font-size: 1.42em; color: #99a6b7">闲来无事</a> <a href="/tags/%E4%BB%BB%E5%A4%A9%E5%A0%82/" style="font-size: 1.14em; color: #999b9d">任天堂</a> <a href="/tags/%E6%8B%89%E7%93%A6%E9%94%A1/" style="font-size: 1.1em; color: #999">拉瓦锡</a> <a href="/tags/%E6%97%A0%E7%A5%9E%E8%AE%BA/" style="font-size: 1.1em; color: #999">无神论</a> <a href="/tags/%E9%80%BB%E8%BE%91%E5%AD%A6/" style="font-size: 1.14em; color: #999b9d">逻辑学</a> <a href="/tags/%E4%BA%9A%E6%89%98%E8%8E%89/" style="font-size: 1.14em; color: #999b9d">亚托莉</a> <a href="/tags/%E7%A7%91%E5%AD%A6%E5%AE%B6/" style="font-size: 1.1em; color: #999">科学家</a></div></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Website Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article Count :</div><div class="item-count">331</div></div><div class="webinfo-item"><div class="item-name">Total Word Count :</div><div class="item-count">131.6k</div></div><div class="webinfo-item"><div class="item-name">Unique Visitors :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Page Views :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Update :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-11-22T15:21:43.377Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Joey</span><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="Scroll to Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.9/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        loader: {
+          load: [
+            // Four font extension packages (optional)
+            //- '[tex]/bbm',
+            //- '[tex]/bboldx',
+            //- '[tex]/dsfont',
+            '[tex]/mhchem'
+          ],
+          paths: {
+            'mathjax-newcm': '[mathjax]/../@mathjax/mathjax-newcm-font',
+
+            //- // Four font extension packages (optional)
+            //- 'mathjax-bbm-extension': '[mathjax]/../@mathjax/mathjax-bbm-font-extension',
+            //- 'mathjax-bboldx-extension': '[mathjax]/../@mathjax/mathjax-bboldx-font-extension',
+            //- 'mathjax-dsfont-extension': '[mathjax]/../@mathjax/mathjax-dsfont-font-extension',
+            'mathjax-mhchem-extension': '[mathjax]/../@mathjax/mathjax-mhchem-font-extension'
+          }
+        },
+        output: {
+          font: 'mathjax-newcm',
+        },
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'ams',
+          packages: {
+            '[+]': [
+              'mhchem'
+            ]
+          }
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          menuOptions: {
+            settings: {
+              enrich: false  // Turn off Braille and voice narration text automatic generation
+            }
+          },
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@4.1.0/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script><script>(() => {
+  const parseViewBox = viewBox => {
+    if (!viewBox) return null
+    const parts = viewBox.trim().split(/[\s,]+/).map(n => Number(n))
+    if (parts.length !== 4 || parts.some(n => Number.isNaN(n))) return null
+    return parts
+  }
+
+  const getSvgViewBox = svg => {
+    const attr = parseViewBox(svg.getAttribute('viewBox'))
+    if (attr) return attr
+
+    // Fallback: use bbox to build a viewBox
+    try {
+      const bbox = svg.getBBox()
+      if (bbox && bbox.width && bbox.height) return [bbox.x, bbox.y, bbox.width, bbox.height]
+    } catch (e) {
+      // getBBox may fail on some edge cases; ignore
+    }
+
+    const w = Number(svg.getAttribute('width')) || 0
+    const h = Number(svg.getAttribute('height')) || 0
+    if (w > 0 && h > 0) return [0, 0, w, h]
+    return [0, 0, 100, 100]
+  }
+
+  const setSvgViewBox = (svg, vb) => {
+    svg.setAttribute('viewBox', `${vb[0]} ${vb[1]} ${vb[2]} ${vb[3]}`)
+  }
+
+  const clamp = (v, min, max) => Math.max(min, Math.min(max, v))
+
+  const openSvgInNewTab = ({ source, initViewBox }) => {
+    const getClonedSvg = () => {
+      if (typeof source === 'string') {
+        const template = document.createElement('template')
+        template.innerHTML = source.trim()
+        const svg = template.content.querySelector('svg')
+        return svg ? svg.cloneNode(true) : null
+      }
+      if (source && typeof source.cloneNode === 'function') {
+        return source.cloneNode(true)
+      }
+      return null
+    }
+
+    const clone = getClonedSvg()
+    if (!clone) return
+    if (initViewBox && initViewBox.length === 4) {
+      clone.setAttribute('viewBox', initViewBox.join(' '))
+    }
+    if (!clone.getAttribute('xmlns')) clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg')
+    if (!clone.getAttribute('xmlns:xlink') && clone.outerHTML.includes('xlink:')) {
+      clone.setAttribute('xmlns:xlink', 'http://www.w3.org/1999/xlink')
+    }
+    // inject background to match current theme
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark'
+    const bg = getComputedStyle(document.body).backgroundColor || (isDark ? '#1e1e1e' : '#ffffff')
+    if (!clone.style.background) clone.style.background = bg
+
+    const serializer = new XMLSerializer()
+    const svgSource = serializer.serializeToString(clone)
+    const htmlSource = `<!doctype html><html><head><meta charset="utf-8" />
+      <style>
+        html, body { width: 100%; height: 100%; margin: 0; display: flex; align-items: center; justify-content: center; background: ${bg}; }
+        svg { max-width: 100%; max-height: 100%; height: auto; width: auto; }
+      </style>
+      </head><body>${svgSource}</body></html>`
+    const blob = new Blob([htmlSource], { type: 'text/html;charset=utf-8' })
+    const url = URL.createObjectURL(blob)
+    window.open(url, '_blank', 'noopener')
+    setTimeout(() => URL.revokeObjectURL(url), 30000)
+  }
+
+  const attachMermaidViewerButton = wrap => {
+    let btn = wrap.querySelector('.mermaid-open-btn')
+    if (!btn) {
+      btn = document.createElement('button')
+      btn.type = 'button'
+      btn.className = 'mermaid-open-btn'
+      wrap.appendChild(btn)
+    }
+
+    btn.innerHTML = '<i class="fa fa-search fa-fw" aria-hidden="true"></i>'
+
+    if (!btn.__mermaidViewerBound) {
+      btn.addEventListener('click', e => {
+        e.preventDefault()
+        e.stopPropagation()
+        const svg = wrap.__mermaidOriginalSvg || wrap.querySelector('svg')
+        if (!svg) return
+        const initViewBox = wrap.__mermaidInitViewBox
+        if (typeof svg === 'string') {
+          openSvgInNewTab({ source: svg, initViewBox })
+          return
+        }
+        openSvgInNewTab({ source: svg, initViewBox })
+      })
+      btn.__mermaidViewerBound = true
+    }
+  }
+
+  // Zoom around a point (px, py) in the SVG viewport (in viewBox coordinates)
+  const zoomAtPoint = (vb, factor, px, py) => {
+    const w = vb[2] * factor
+    const h = vb[3] * factor
+    const nx = px - (px - vb[0]) * factor
+    const ny = py - (py - vb[1]) * factor
+    return [nx, ny, w, h]
+  }
+
+  const initMermaidGestures = wrap => {
+    const svg = wrap.querySelector('svg')
+    if (!svg) return
+
+    // Ensure viewBox exists so gestures always work
+    const initVb = getSvgViewBox(svg)
+    wrap.__mermaidInitViewBox = initVb
+    wrap.__mermaidCurViewBox = initVb.slice()
+    setSvgViewBox(svg, initVb)
+
+    // Avoid binding multiple times on themeChange/pjax
+    if (wrap.__mermaidGestureBound) return
+    wrap.__mermaidGestureBound = true
+
+    // Helper: map client (viewport) coordinate -> viewBox coordinate
+    const clientToViewBox = (clientX, clientY) => {
+      const rect = svg.getBoundingClientRect()
+      const vb = wrap.__mermaidCurViewBox || getSvgViewBox(svg)
+      const x = vb[0] + (clientX - rect.left) * (vb[2] / rect.width)
+      const y = vb[1] + (clientY - rect.top) * (vb[3] / rect.height)
+      return { x, y, rect, vb }
+    }
+
+    const state = {
+      pointers: new Map(),
+      startVb: null,
+      startDist: 0,
+      startCenter: null
+    }
+
+    const clampVb = vb => {
+      const init = wrap.__mermaidInitViewBox || vb
+      const minW = init[2] * 0.1
+      const maxW = init[2] * 10
+      const minH = init[3] * 0.1
+      const maxH = init[3] * 10
+      vb[2] = clamp(vb[2], minW, maxW)
+      vb[3] = clamp(vb[3], minH, maxH)
+      return vb
+    }
+
+    const setCurVb = vb => {
+      vb = clampVb(vb)
+      wrap.__mermaidCurViewBox = vb
+      setSvgViewBox(svg, vb)
+    }
+
+    const onPointerDown = e => {
+      // Allow only primary button for mouse
+      if (e.pointerType === 'mouse' && e.button !== 0) return
+      svg.setPointerCapture(e.pointerId)
+      state.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY })
+
+      if (state.pointers.size === 1) {
+        state.startVb = (wrap.__mermaidCurViewBox || getSvgViewBox(svg)).slice()
+      } else if (state.pointers.size === 2) {
+        const pts = [...state.pointers.values()]
+        const dx = pts[0].x - pts[1].x
+        const dy = pts[0].y - pts[1].y
+        state.startDist = Math.hypot(dx, dy)
+        state.startVb = (wrap.__mermaidCurViewBox || getSvgViewBox(svg)).slice()
+        state.startCenter = { x: (pts[0].x + pts[1].x) / 2, y: (pts[0].y + pts[1].y) / 2 }
+      }
+    }
+
+    const onPointerMove = e => {
+      if (!state.pointers.has(e.pointerId)) return
+      state.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY })
+
+      // Pan with 1 pointer
+      if (state.pointers.size === 1 && state.startVb) {
+        const p = [...state.pointers.values()][0]
+        const prev = { x: e.clientX - e.movementX, y: e.clientY - e.movementY }
+        // movementX/Y unreliable on touch, compute from stored last position
+        const last = wrap.__mermaidLastSinglePointer || p
+        const dxClient = p.x - last.x
+        const dyClient = p.y - last.y
+        wrap.__mermaidLastSinglePointer = p
+
+        const { rect } = clientToViewBox(p.x, p.y)
+        const vb = (wrap.__mermaidCurViewBox || getSvgViewBox(svg)).slice()
+        const dx = dxClient * (vb[2] / rect.width)
+        const dy = dyClient * (vb[3] / rect.height)
+        setCurVb([vb[0] - dx, vb[1] - dy, vb[2], vb[3]])
+        return
+      }
+
+      // Pinch zoom with 2 pointers
+      if (state.pointers.size === 2 && state.startVb && state.startDist > 0) {
+        const pts = [...state.pointers.values()]
+        const dx = pts[0].x - pts[1].x
+        const dy = pts[0].y - pts[1].y
+        const dist = Math.hypot(dx, dy)
+        if (!dist) return
+        const factor = state.startDist / dist // dist bigger => zoom in (viewBox smaller)
+
+        const cx = (pts[0].x + pts[1].x) / 2
+        const cy = (pts[0].y + pts[1].y) / 2
+        const centerClient = { x: cx, y: cy }
+
+        const pxy = clientToViewBox(centerClient.x, centerClient.y)
+        const cpx = pxy.x
+        const cpy = pxy.y
+
+        const vb = zoomAtPoint(state.startVb, factor, cpx, cpy)
+        setCurVb(vb)
+      }
+    }
+
+    const onPointerUpOrCancel = e => {
+      state.pointers.delete(e.pointerId)
+      if (state.pointers.size === 0) {
+        state.startVb = null
+        state.startDist = 0
+        state.startCenter = null
+        wrap.__mermaidLastSinglePointer = null
+      } else if (state.pointers.size === 1) {
+        // reset single pointer baseline to avoid jump
+        wrap.__mermaidLastSinglePointer = [...state.pointers.values()][0]
+      }
+    }
+
+    // Wheel zoom (mouse/trackpad)
+    const onWheel = e => {
+      // ctrlKey on mac trackpad pinch; we treat both as zoom
+      e.preventDefault()
+      const delta = e.deltaY
+      const zoomFactor = delta > 0 ? 1.1 : 0.9
+      const { x, y } = clientToViewBox(e.clientX, e.clientY)
+      const vb = (wrap.__mermaidCurViewBox || getSvgViewBox(svg)).slice()
+      setCurVb(zoomAtPoint(vb, zoomFactor, x, y))
+    }
+
+    const onDblClick = () => {
+      const init = wrap.__mermaidInitViewBox
+      if (!init) return
+      wrap.__mermaidCurViewBox = init.slice()
+      setSvgViewBox(svg, init)
+    }
+
+    svg.addEventListener('pointerdown', onPointerDown)
+    svg.addEventListener('pointermove', onPointerMove)
+    svg.addEventListener('pointerup', onPointerUpOrCancel)
+    svg.addEventListener('pointercancel', onPointerUpOrCancel)
+    svg.addEventListener('wheel', onWheel, { passive: false })
+    svg.addEventListener('dblclick', onDblClick)
+  }
+
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+
+      // Clear old render (themeChange/pjax will rerun)
+      const oldSvg = item.querySelector('svg')
+      if (oldSvg) oldSvg.remove()
+      item.__mermaidGestureBound = false
+
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+        if (true) initMermaidGestures(item)
+        item.__mermaidOriginalSvg = svg
+        if (true) attachMermaidViewerButton(item)
+      }
+
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (true) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.2/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'a2664476347a-ai/blog-comments',
+      'data-repo-id': 'R_kgDORkgtKg',
+      'data-category-id': 'DIC_kwDORkgtKs4C4LUQ',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !false) {
+    if (false) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script><script>
+mermaid.initialize({
+  startOnLoad: true,
+  securityLevel: 'loose',
+  flowchart: { useMaxWidth: true }
+});
+</script>
+<script src="/js/random-tag-bg.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="local-search-input"><input placeholder="Search for Posts" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.4"></script></div></div></body></html>

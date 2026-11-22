@@ -81,35 +81,33 @@ pre.mermaid > svg {
 
 
 
+
+/* ================================
+   Travel Photo Collage - Masonry
+   ================================ */
+
 .travel-collage {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 20px;
+  columns: 2;
+  column-gap: 18px;
   margin: 36px 0;
-  padding: 12px 6px;
+  padding: 12px 8px;
 }
 
 .travel-collage .photo {
-  position: relative;
-  grid-column: span 2;
-  padding: 7px 7px 32px;
-  background: #fffdf7;
-  border: 1px solid #e8e0d3;
-  box-shadow: 0 5px 12px rgba(0, 0, 0, .12);
-  color: #665d50;
-  text-decoration: none;
-  transition: transform .25s ease,
-              box-shadow .25s ease;
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 18px;
+  padding: 7px;
+  break-inside: avoid;
 }
 
-/* 每隔几张改变宽度，形成拼贴效果 */
+/* 不同照片的倾斜角度 */
 .travel-collage .photo:nth-child(5n + 1) {
-  grid-column: span 4;
   transform: rotate(-2deg);
 }
 
 .travel-collage .photo:nth-child(5n + 2) {
-  transform: rotate(2deg);
+  transform: rotate(2.5deg);
 }
 
 .travel-collage .photo:nth-child(5n + 3) {
@@ -117,53 +115,49 @@ pre.mermaid > svg {
 }
 
 .travel-collage .photo:nth-child(5n + 4) {
-  grid-column: span 3;
-  transform: rotate(-1deg);
+  transform: rotate(-1.5deg);
 }
 
 .travel-collage .photo:nth-child(5n) {
   transform: rotate(2deg);
 }
 
+/* 原始照片比例 */
 .travel-collage .photo img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
   margin: 0;
 }
 
+/* 隐藏照片名称 */
 .travel-collage .photo span {
-  position: absolute;
-  left: 5px;
-  right: 5px;
-  bottom: 7px;
-  font-size: 13px;
-  text-align: center;
+  display: none;
 }
 
+/* 悬停效果 */
 .travel-collage .photo:hover {
-  z-index: 2;
-  transform: rotate(0deg) scale(1.04);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, .2);
+  z-index: 20;
+  transform: rotate(0deg) scale(1.055);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, .25);
 }
 
+
+/* 手机端 */
 @media (max-width: 600px) {
   .travel-collage {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px;
+    columns: 2 140px;
+    column-gap: 12px;
   }
 
-  .travel-collage .photo,
-  .travel-collage .photo:nth-child(n) {
-    grid-column: span 1;
-    transform: none;
-  }
-
-  .travel-collage .photo img {
-    aspect-ratio: 3 / 4;
+  .travel-collage .photo {
+    margin-bottom: 12px;
   }
 }
+
+
 
 
 
