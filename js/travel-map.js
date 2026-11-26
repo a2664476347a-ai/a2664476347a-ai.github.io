@@ -26,7 +26,7 @@ const bounds = [
 map.setMaxBounds(bounds);
 
 const markers = L.markerClusterGroup();
-const places = [
+const legacyPlaces = [
   {
     name: "\u4e2d\u5c71\u7eaa\u5ff5\u5802", // 中山纪念堂
     lat: 23.1337,
@@ -508,52 +508,76 @@ const places = [
 
 
 ]
-places.forEach(place => { 
+// Escape text and attribute values before inserting article data into a popup.
+function escapeHtml(value) {
+  return String(value ?? "").replace(/[&<>"']/g, char => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  })[char]);
+}
 
-  const marker = L.circleMarker(
-  [place.lat, place.lng],
-  {
-    radius: 12,
-    fillColor: "#ff4d4f",
-    color: "#ffffff",
-    weight: 2,
-    fillOpacity: 1
-  }
-);
-  markers.addLayer(marker);
+function renderMarkers(generatedPlaces) {
+  // Generated entries replace legacy entries with the same article URL.
+  const placesByUrl = new Map();
 
-  marker.bindPopup(`
-    <a href="${place.url}"
-       style="
-         text-decoration:none;
-         color:black;
-         display:block;
-         width:220px;
-       ">
+  legacyPlaces.forEach(place => {
+    if (Number.isFinite(Number(place.lat)) && Number.isFinite(Number(place.lng))) {
+      placesByUrl.set(place.url || `${place.name}-${place.lat}-${place.lng}`, place);
+    }
+  });
 
-      <img
-        src="${place.image}"
-        style="
-          width:100%;
-          border-radius:8px;
-          display:block;
-        "
-      />
+  generatedPlaces.forEach(place => {
+    if (Number.isFinite(Number(place.lat)) && Number.isFinite(Number(place.lng))) {
+      placesByUrl.set(place.url || `${place.name}-${place.lat}-${place.lng}`, place);
+    }
+  });
 
-      <div style="
-        margin-top:8px;
-        font-size:16px;
-        font-weight:600;
-        text-align:center;
-      ">
-        ${place.name}
-      </div>
+  placesByUrl.forEach(place => {
+    const marker = L.circleMarker(
+      [Number(place.lat), Number(place.lng)],
+      {
+        radius: 12,
+        fillColor: "#ff4d4f",
+        color: "#ffffff",
+        weight: 2,
+        fillOpacity: 1
+      }
+    );
 
-    </a>
-  `);
+    markers.addLayer(marker);
 
-});
+    const popup = `
+      <a href="${escapeHtml(place.url)}"
+         style="text-decoration:none;color:black;display:block;width:220px;">
+        <img src="${escapeHtml(place.image)}"
+             alt="${escapeHtml(place.name)}"
+             style="width:100%;border-radius:8px;display:block;"
+             onerror="this.style.display='none'" />
+        <div style="margin-top:8px;font-size:16px;font-weight:600;text-align:center;">
+          ${escapeHtml(place.name)}
+        </div>
+      </a>
+    `;
 
-map.addLayer(markers);
+    marker.bindPopup(popup);
+  });
+
+  map.addLayer(markers);
+}
+
+// The generator creates /travel-map.json during every Hexo generation.
+fetch("/travel-map.json")
+  .then(response => {
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    return response.json();
+  })
+  .then(data => renderMarkers(Array.isArray(data) ? data : []))
+  .catch(error => {
+    console.warn("Could not load travel-map.json; showing legacy map data only.", error);
+    renderMarkers([]);
+  });
 
 });
